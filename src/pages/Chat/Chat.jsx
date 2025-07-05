@@ -1,3 +1,4 @@
+// Import styles
 import * as styles from './Chat.module.scss';
 
 function Chat() {

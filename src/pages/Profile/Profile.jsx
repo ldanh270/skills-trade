@@ -1,3 +1,4 @@
+// Import styles
 import * as styles from './Profile.module.scss';
 
 function Profile() {

@@ -1,3 +1,4 @@
+// Import styles
 import * as styles from './Home.module.scss';
 
 function Home() {
