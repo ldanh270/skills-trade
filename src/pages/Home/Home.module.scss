@@ -1,3 +1,9 @@
 .Home {
+    // Positioning
     width: 100%;
+
+    // Flexbox
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
