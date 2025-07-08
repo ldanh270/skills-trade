@@ -1,16 +1,15 @@
 // Import styles
-import * as styles from './OnlyHeaderLayout.module.scss';
+import * as styles from './NoHeaderLayout.module.scss';
 
 // Import components
-import Header from '~/components/layouts/components/Header/Header';
 
-function OnlyHeaderLayout({ children }) {
+function NoHeaderLayout({ children }) {
     return (
-        <div className="OnlyHeaderLayout">
+        <div className={styles['NoHeaderLayout']}>
             <Header />
             <div className={styles['Content']}>{children}</div>
         </div>
     );
 }
 
-export default OnlyHeaderLayout;
+export default NoHeaderLayout;
