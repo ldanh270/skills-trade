@@ -1,0 +1,108 @@
+.Filter {
+    width: 240px;
+    height: 489px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    padding: 16px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.title {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: #555;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    label {
+        font-size: 14px;
+        font-weight: 500;
+        color: #333;
+    }
+
+    input[type='text'] {
+        padding: 6px;
+        font-size: 14px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+    }
+
+    input[type='range'] {
+        width: 100%;
+    }
+}
+
+.buttonGroup {
+    display: flex;
+    gap: 8px;
+}
+
+.button {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    background: white;
+    cursor: pointer;
+}
+
+.active {
+    background: black;
+    color: white;
+    border-color: black;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.tag {
+    background: #eee;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    button {
+        border: none;
+        background: none;
+        font-size: 14px;
+        color: #666;
+        cursor: pointer;
+    }
+}
+
+.stars {
+    display: flex;
+    gap: 4px;
+
+    svg {
+        cursor: pointer;
+        stroke: #ccc;
+    }
+}
+
+.filled {
+    fill: #e91e63;
+    stroke: #e91e63;
+}
+
+.rangeLabels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #777;
+}

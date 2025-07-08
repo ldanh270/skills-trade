@@ -8,7 +8,7 @@ import * as styles from './App.module.scss';
 
 // Import components
 import { publicRoutes } from './routes/routes';
-import { DefaultLayout } from '~/components/layouts';
+import { DefaultLayout } from '~/layouts';
 
 function App() {
     return (
