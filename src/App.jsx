@@ -1,5 +1,6 @@
 // Import libraries
 import { Fragment } from 'react';
+import clsx from 'clsx';
 import { Routes, Route } from 'react-router-dom';
 
 // Import styles
@@ -11,7 +12,7 @@ import { DefaultLayout } from '~/components/layouts';
 
 function App() {
     return (
-        <div className={styles['App']}>
+        <div className={clsx(styles.App, styles.container)}>
             <Routes>
                 {publicRoutes.map((route, index) => {
                     let Layout = DefaultLayout;
