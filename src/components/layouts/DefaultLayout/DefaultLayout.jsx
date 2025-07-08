@@ -10,7 +10,6 @@ function DefaultLayout({ children }) {
         <div className={styles['DefaultLayout']}>
             <Header />
             <div className="container">
-                <Sidebar />
                 <div className={styles['content']}>{children}</div>
             </div>
         </div>
