@@ -1,9 +1,6 @@
-// Import styles
-import * as styles from './DefaultLayout.module.scss';
+import Header from '~/layouts/components/Header/Header'
 
-// Import components
-import Header from '~/layouts/components/Header/Header';
-import Sidebar from '~/layouts/components/Sidebar/Sidebar';
+import * as styles from './DefaultLayout.module.scss'
 
 function DefaultLayout({ children }) {
     return (
@@ -13,7 +10,7 @@ function DefaultLayout({ children }) {
                 <div className={styles['content']}>{children}</div>
             </div>
         </div>
-    );
+    )
 }
 
-export default DefaultLayout;
+export default DefaultLayout
