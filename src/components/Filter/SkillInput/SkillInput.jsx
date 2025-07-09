@@ -1,4 +1,3 @@
-import clsx from 'clsx'
 import React, { useState } from 'react'
 // eslint-disable-next-line no-unused-vars
 import Select, { components } from 'react-select'
@@ -48,8 +47,8 @@ function SkillInput() {
     }
 
     return (
-        <div className={clsx(styles['container'])}>
-            <label className={clsx(styles['label'])}>Your skills:</label>
+        <div className={styles['container']}>
+            <label className={styles['label']}>Your skills:</label>
 
             <Select
                 options={groupedOptions}

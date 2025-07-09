@@ -1,29 +1,25 @@
-// Import libraries
-import { Fragment } from 'react';
-import clsx from 'clsx';
-import { Routes, Route } from 'react-router-dom';
+import { Fragment } from 'react'
+import { Route, Routes } from 'react-router-dom'
 
-// Import styles
-import * as styles from './App.module.scss';
+import { DefaultLayout } from '~/layouts'
 
-// Import components
-import { publicRoutes } from './routes/routes';
-import { DefaultLayout } from '~/layouts';
+import * as styles from './App.module.scss'
+import { publicRoutes } from './routes/routes'
 
 function App() {
     return (
-        <div className={clsx(styles.App, styles.container)}>
+        <div className={styles['App']}>
             <Routes>
                 {publicRoutes.map((route, index) => {
-                    let Layout = DefaultLayout;
+                    let Layout = DefaultLayout
 
                     if (route.layout) {
-                        Layout = route.layout;
+                        Layout = route.layout
                     } else if (route.layout === null) {
-                        Layout = Fragment;
+                        Layout = Fragment
                     }
 
-                    const Page = route.component;
+                    const Page = route.component
 
                     return (
                         <Route
@@ -35,11 +31,11 @@ function App() {
                                 </Layout>
                             }
                         />
-                    );
+                    )
                 })}
             </Routes>
         </div>
-    );
+    )
 }
 
-export default App;
+export default App
