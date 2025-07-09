@@ -8,7 +8,7 @@ function PostTypeInput() {
 
     return (
         <div className={styles['PostTypeInput']}>
-            <label>Type of post:</label>
+            <label>Type of post</label>
 
             <div className={styles['buttonGroup']}>
                 {['Order', 'Hire'].map((item) => (
