@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.badge {
+    background-color: #e5e7eb;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 13px;
+    color: #555;
+}
