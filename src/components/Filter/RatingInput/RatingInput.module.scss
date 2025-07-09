@@ -1,0 +1,34 @@
+.RatingInput {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    label {
+        font-size: 14px;
+        font-weight: 500;
+        color: #333;
+    }
+
+    .stars {
+        display: flex;
+        gap: 4px;
+    }
+
+    .star {
+        transition:
+            stroke 0.2s ease,
+            fill 0.2s ease;
+        cursor: pointer;
+        stroke: #ccc;
+
+        &:hover {
+            stroke: #ffb700;
+            fill: #ffeb99;
+        }
+    }
+
+    .filled {
+        stroke: #ffcd29;
+        fill: #ffcd29;
+    }
+}
