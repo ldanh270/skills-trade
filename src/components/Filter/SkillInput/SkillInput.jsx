@@ -48,7 +48,7 @@ function SkillInput() {
 
     return (
         <div className={styles['container']}>
-            <label className={styles['label']}>Your skills:</label>
+            <label className={styles['label']}>Your skills</label>
 
             <Select
                 options={groupedOptions}
