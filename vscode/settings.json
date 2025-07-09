@@ -5,5 +5,10 @@
         "source.fixAll": true,
         "source.fixAll.eslint": true
     },
-    "eslint.validate": ["javascript", "javascriptreact"]
+    "eslint.validate": ["javascript", "javascriptreact", "css", "scss"],
+
+    "stylelint.validate": ["css", "scss"],
+    "[scss]": {
+        "editor.defaultFormatter": "stylelint.vscode-stylelint"
+    }
 }
