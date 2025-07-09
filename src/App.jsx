@@ -6,7 +6,7 @@ import { DefaultLayout } from '~/layouts'
 import * as styles from './App.module.scss'
 import { publicRoutes } from './routes/routes'
 
-function App() {
+const App = () => {
     return (
         <div className={styles['App']}>
             <Routes>
