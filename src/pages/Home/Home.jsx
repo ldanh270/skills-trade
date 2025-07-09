@@ -1,19 +1,18 @@
 import Filter from '~/components/Filter/Filter'
-import Post from '~/components/Post/Post'
+import PostCard from '~/components/PostCard/PostCard'
 
 import * as styles from './Home.module.scss'
 
-function Home() {
+const Home = () => {
     return (
         <div className={styles['Home']}>
             <div className="Filter">
                 <Filter />
             </div>
             <div className="Feed">
-                <h1>Feed</h1>
-                <Post />
-                <Post />
-                <Post />
+                <PostCard />
+                <PostCard />
+                <PostCard />
             </div>
             <div className="Contact">
                 <h1>Contact</h1>
