@@ -1,0 +1,34 @@
+.PostTypeInput {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.buttonGroup {
+    display: flex;
+    gap: 8px;
+    button {
+        width: 100%;
+    }
+}
+
+label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+
+.button {
+    padding: 6px 12px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.active {
+    background: #ffcd29;
+    color: white;
+    border-color: #ffcd29;
+}
