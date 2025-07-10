@@ -1,0 +1,17 @@
+.stars {
+    display: flex;
+    gap: 0.2rem;
+}
+
+.star {
+    transition:
+        stroke 0.2s ease,
+        fill 0.2s ease;
+    cursor: pointer;
+    stroke: #ccc;
+}
+
+.filled {
+    stroke: #ffcd29;
+    fill: #ffcd29;
+}

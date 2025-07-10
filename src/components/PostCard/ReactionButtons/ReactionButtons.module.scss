@@ -1,0 +1,21 @@
+.reactions {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+}
+
+.reactions button {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.active {
+    color: #fbbf24;
+    fill: #fbbf24;
+}
+
+.inactive {
+    color: #999;
+}
