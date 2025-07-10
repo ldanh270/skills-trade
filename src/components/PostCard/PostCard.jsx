@@ -1,7 +1,6 @@
 import { formatDistanceToNow } from 'date-fns'
 import React from 'react'
 
-import proof from '~/assests/images/proof.png'
 import { POST_TYPE } from '~/constants/objectAttributes/PostAttributes'
 
 import * as styles from './PostCard.module.scss'
