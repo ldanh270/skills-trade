@@ -8,7 +8,7 @@
 
 .Filter {
     position: sticky;
-    top: 80px; // tuỳ chiều cao header
+    top: 80px;
     width: 250px;
     height: fit-content;
     align-self: flex-start;
@@ -16,7 +16,7 @@
 
 .Feed {
     position: relative;
-    top: 80px;
+    top: 50px;
     flex: 1;
     min-width: 0;
     max-width: 600px; // hoặc 700px, tuỳ thiết kế
