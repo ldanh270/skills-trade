@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import InfiniteScroll from 'react-infinite-scroll-component'
 
-import fetchPosts from '~/api/posts'
+import fetchNewestPosts from '~/api/posts'
 import Filter from '~/components/Filter/Filter'
 import PostCard from '~/components/PostCard/PostCard'
 
@@ -27,14 +27,14 @@ const Home = () => {
     }, [])
     return (
         <div className={styles['Home']}>
-            <div className="Filter">
+            <div className={styles['Filter']}>
                 <Filter />
             </div>
-            <div className="Feed">
+            <div className={styles['Feed']}>
                 <FeedSelection />
                 <InfiniteScroll
                     dataLength={posts.length}
-                    next={fetchPosts}
+                    next={fetchNewestPosts}
                     hasMore={true}
                     loader={<h4>Loading...</h4>}
                 >
@@ -43,8 +43,8 @@ const Home = () => {
                     })}
                 </InfiniteScroll>
             </div>
-            <div className="Contact">
-                <h1>Contact</h1>
+            <div className={styles['ChatAI']}>
+                <h1>ChatAI</h1>
             </div>
         </div>
     )
