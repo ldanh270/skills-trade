@@ -15,7 +15,7 @@ const Home = () => {
     useEffect(() => {
         const loadPosts = async () => {
             try {
-                const newPosts = await fetchPosts(page)
+                const newPosts = await fetchNewestPosts(page)
                 setPosts((prevPosts) => [...prevPosts, ...newPosts])
                 setPage((prev) => prev + 1)
             } catch (err) {
