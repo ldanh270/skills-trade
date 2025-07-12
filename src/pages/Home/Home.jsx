@@ -39,34 +39,34 @@ const Home = () => {
     const [hasMore, setHasMore] = useState(true)
     const [feedType, setFeedType] = useState('newest')
 
+    const applyClientFilters = (posts, filters) => {
+        return posts.filter((post) => {
+            if (filters.type && post.type !== filters.type) return false
+            if (filters.rating !== null && post.rating < filters.rating) return false
+            if (filters.pointMin !== null && post.price?.min < filters.pointMin) return false
+            if (filters.pointMax !== null && post.price?.max > filters.pointMax) return false
+            if (filters.skills.length > 0) {
+                const selectedSkills = filters.skills.map((s) => s.value)
+                if (!selectedSkills.every((s) => post.skills.includes(s))) return false
+            }
+            return true
+        })
+    }
+
     const fetchPostsByType = async (pageNum = 1, limit = 10) => {
         try {
             let newPosts = []
 
             if (feedType === 'newest') {
                 // Không truyền filters nữa → fetch dữ liệu gốc
-                const rawPosts = await fetchNewestPosts(pageNum, limit)
-
-                // Lọc phía client
-                newPosts = rawPosts.filter((post) => {
-                    if (filters.type && post.type !== filters.type) return false
-                    if (filters.rating !== null && post.rating < filters.rating) return false
-                    if (filters.pointMin !== null && post.price?.min < filters.pointMin)
-                        return false
-                    if (filters.pointMax !== null && post.price?.max > filters.pointMax)
-                        return false
-
-                    if (filters.skills.length > 0) {
-                        const selectedSkills = filters.skills.map((s) => s.value)
-                        if (!selectedSkills.every((s) => post.skills.includes(s))) return false
-                    }
-
-                    return true
-                })
+                const newest = await fetchNewestPosts(pageNum, limit)
+                setPosts(applyClientFilters(newest, filters))
             } else if (feedType === 'foryou') {
-                newPosts = await fetchForYouPosts(pageNum)
+                const foryou = await fetchForYouPosts(pageNum)
+                setPosts(applyClientFilters(foryou, filters))
             } else if (feedType === 'saved') {
-                newPosts = await fetchSavedPosts(user.id, pageNum)
+                const saved = await fetchSavedPosts(user.id, pageNum)
+                setPosts(applyClientFilters(saved, filters))
             }
 
             if (newPosts.length < limit) {
@@ -113,7 +113,11 @@ const Home = () => {
             <div className={styles['Feed']}>
                 <div className={styles['curtain']}>
                     <div className={styles['FeedSelection']}>
-                        <FeedSelection feedType={feedType} setFeedType={setFeedType} />
+                        <FeedSelection
+                            feedType={feedType}
+                            setFeedType={setFeedType}
+                            setFilters={setFilters}
+                        />
                     </div>
                 </div>
                 <div className={styles['infinity-scroll']}>
