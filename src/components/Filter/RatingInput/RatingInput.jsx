@@ -2,7 +2,12 @@ import { Star } from 'lucide-react'
 
 import * as styles from './RatingInput.module.scss'
 
+/**
+ * RatingInput component
+ * Allows user to select rating from 1 to 5 by clicking stars
+ */
 function RatingInput({ filters, setFilters }) {
+    // Toggle star rating (reset to 0 if clicked again)
     const handleStarClick = (prev, value) => {
         setFilters({
             ...filters,

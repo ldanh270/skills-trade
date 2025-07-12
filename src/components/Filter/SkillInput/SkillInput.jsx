@@ -6,10 +6,14 @@ import { fetchSkills } from '~/api/api-skills'
 
 import styles from './SkillInput.module.scss'
 
+/**
+ * SkillInput component
+ * Multi-select for user skills with badge indicator and API fetch
+ */
 function SkillInput({ filters, setFilters }) {
-    // State to store grouped skill options from API
-    const [skills, setSkills] = useState([])
+    const [skills, setSkills] = useState([]) // Available skills from API
 
+    // Fetch skills on mount
     useEffect(() => {
         const getSkills = async () => {
             const data = await fetchSkills()
@@ -18,6 +22,7 @@ function SkillInput({ filters, setFilters }) {
         getSkills()
     }, [])
 
+    // Handle skill selection change
     const handleSelectChange = (selectedOptions) => {
         setFilters((prevFilters) => ({
             ...prevFilters,
@@ -25,7 +30,7 @@ function SkillInput({ filters, setFilters }) {
         }))
     }
 
-    // Custom value container to show count
+    // Custom value container shows badge when menu is closed
     const CustomValueContainer = ({ children, ...props }) => {
         const { getValue, selectProps } = props
         const selected = getValue()
@@ -49,14 +54,14 @@ function SkillInput({ filters, setFilters }) {
             <label className={styles['label']}>Your skills</label>
 
             <Select
+                isMulti
                 options={skills}
                 value={filters.skills}
                 onChange={handleSelectChange}
-                isMulti
                 placeholder="Select skills..."
                 classNamePrefix="custom"
-                components={{ ValueContainer: CustomValueContainer }}
                 menuPlacement="auto"
+                components={{ ValueContainer: CustomValueContainer }}
                 styles={{
                     control: (base, state) => ({
                         ...base,
@@ -66,7 +71,6 @@ function SkillInput({ filters, setFilters }) {
                         fontSize: '14px',
                         cursor: 'pointer',
                     }),
-
                     multiValue: (base) => ({
                         ...base,
                         backgroundColor: '#eee',

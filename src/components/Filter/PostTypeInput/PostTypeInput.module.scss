@@ -1,23 +1,28 @@
+// Container của toàn bộ input
 .PostTypeInput {
     display: flex;
     flex-direction: column;
     gap: 6px;
 }
 
-.buttonGroup {
-    display: flex;
-    gap: 8px;
-    button {
-        width: 100%;
-    }
-}
-
+// Label cho nhóm nút chọn loại post
 label {
     font-size: 14px;
     font-weight: 500;
     color: #333;
 }
 
+// Nhóm nút (Offer / Hire)
+.buttonGroup {
+    display: flex;
+    gap: 8px;
+
+    button {
+        width: 100%;
+    }
+}
+
+// Nút chọn post type
 .button {
     padding: 6px 12px;
     background: white;
@@ -27,6 +32,7 @@ label {
     cursor: pointer;
 }
 
+// Nút đang được chọn
 .active {
     background: #ffcd29;
     color: white;

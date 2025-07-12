@@ -1,5 +1,9 @@
 import * as styles from './PostTypeInput.module.scss'
 
+/**
+ * PostTypeInput component
+ * Cho phép người dùng chọn loại bài viết: Offer hoặc Hire
+ */
 function PostTypeInput({ filters, setFilters }) {
     return (
         <div className={styles['PostTypeInput']}>
@@ -12,6 +16,7 @@ function PostTypeInput({ filters, setFilters }) {
                         onClick={() =>
                             setFilters({
                                 ...filters,
+                                // Nếu đã chọn thì bỏ chọn, ngược lại gán type mới
                                 type: filters.type === item ? '' : item,
                             })
                         }

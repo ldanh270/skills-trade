@@ -2,7 +2,12 @@ import { Minus } from 'lucide-react'
 
 import styles from './PointRangeInput.module.scss'
 
+/**
+ * Component: PointRangeInput
+ * Cho phép người dùng nhập khoảng điểm min - max để lọc bài đăng
+ */
 const PointRangeInput = ({ filters, setFilters }) => {
+    // Xử lý thay đổi giá trị min
     const handleMinChange = (e) => {
         const raw = e.target.value
         const value = raw === '' ? null : Number(raw)
@@ -15,6 +20,7 @@ const PointRangeInput = ({ filters, setFilters }) => {
         }
     }
 
+    // Xử lý thay đổi giá trị max
     const handleMaxChange = (e) => {
         const raw = e.target.value
         const value = raw === '' ? null : Number(raw)
@@ -30,6 +36,7 @@ const PointRangeInput = ({ filters, setFilters }) => {
     return (
         <div className={styles['container']}>
             <label>Point range</label>
+
             <div className={styles['field']}>
                 <input
                     id="min"
@@ -43,8 +50,8 @@ const PointRangeInput = ({ filters, setFilters }) => {
                 <input
                     id="max"
                     type="number"
-                    placeholder={999}
                     value={filters.pointMax}
+                    placeholder={999}
                     onChange={handleMaxChange}
                     className={styles['input']}
                 />
