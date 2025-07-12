@@ -1,0 +1,70 @@
+.Home {
+    display: flex;
+    margin: 0 auto;
+    min-height: 100vh;
+    padding: 24px;
+    gap: 24px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.Filter {
+    position: sticky;
+    top: 10vh;
+    width: 15vw;
+    height: 90vh;
+    height: fit-content;
+    padding: 2rem;
+    align-self: flex-start;
+}
+
+.Feed {
+    top: 10vh;
+    display: flex;
+    height: fit-content;
+    padding: 2rem;
+    flex: 1;
+    gap: 2rem;
+    min-width: 700px;
+    max-width: 700px;
+    flex-shrink: 0;
+    flex-direction: column;
+    align-self: flex-start;
+
+    .curtain {
+        position: sticky;
+        top: 10vh;
+
+        z-index: 2;
+        margin-top: 2rem;
+        padding-top: 2rem;
+        background-color: #f2f4f7;
+    }
+
+    .infinity-scroll {
+        overflow-y: auto;
+        height: calc(100vh - 20vh);
+        flex: 1;
+        padding-top: calc(10vh + 2rem);
+    }
+}
+
+.Contacts {
+    position: sticky;
+    top: 10vh;
+    width: 250px;
+    height: 90vh;
+    height: fit-content;
+    padding: 2rem;
+    align-self: flex-start;
+}
+
+.ChatboxContainer {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: 20;
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+}
