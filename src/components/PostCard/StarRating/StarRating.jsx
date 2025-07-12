@@ -1,8 +1,15 @@
-import { Star, StarOff } from 'lucide-react'
+import { Star } from 'lucide-react'
 import React from 'react'
 
 import * as styles from './StarRating.module.scss'
 
+/**
+ * StarRating Component
+ * Displays 5 stars, filled based on the `value` prop.
+ *
+ * Props:
+ * - value (Number): current rating (1–5)
+ */
 const StarRating = ({ value }) => {
     return (
         <div className={styles['stars']}>
@@ -10,8 +17,10 @@ const StarRating = ({ value }) => {
                 <Star
                     key={i}
                     size={20}
-                    className={i < value ? `${styles['star']} ${styles['filled']}` : styles['star']}
                     title={`Rated ${i}`}
+                    className={
+                        i <= value ? `${styles['star']} ${styles['filled']}` : styles['star']
+                    }
                 />
             ))}
         </div>

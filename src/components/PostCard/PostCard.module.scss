@@ -1,11 +1,10 @@
 .container {
     width: 100%;
-    margin: 0 auto;
+    margin: 0 auto 2rem;
     padding: 1.5rem;
     background: #fff;
     border-radius: 1rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-    margin-bottom: 2rem;
     cursor: pointer;
 
     .top {
@@ -24,9 +23,8 @@
     .info {
         display: flex;
         flex-direction: row;
-        padding: 8px 0px;
-
         justify-content: flex-start;
+        padding: 8px 0;
 
         .title {
             font-size: 1.2rem;
@@ -34,9 +32,9 @@
             align-self: center;
         }
     }
+
     .service {
         display: flex;
-        flex-direction: row;
         justify-content: space-between;
         gap: 0.5rem;
         margin-bottom: 1rem;
@@ -47,25 +45,32 @@
             gap: 8px;
             font-size: 0.9rem;
             color: #777;
+
+            &__number {
+                font-weight: 500;
+            }
         }
     }
+
     .tags {
         display: flex;
         flex-direction: row;
         gap: 0.5rem;
         margin-bottom: 1rem;
     }
-}
 
-.description {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    margin-bottom: 1rem;
-    color: #444;
-}
+    .description {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin-bottom: 1rem;
+        color: #444;
+    }
 
-.imageWrapper img {
-    width: 100%;
-    border-radius: 1rem;
-    margin-bottom: 1rem;
+    .imageWrapper {
+        img {
+            width: 100%;
+            border-radius: 1rem;
+            margin-bottom: 1rem;
+        }
+    }
 }

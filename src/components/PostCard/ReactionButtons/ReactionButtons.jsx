@@ -1,5 +1,4 @@
 import { Bookmark, ThumbsDown, ThumbsUp } from 'lucide-react'
-// import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { updateUser } from '~/api/apu-user'
@@ -7,56 +6,56 @@ import { dislikePost, likePost, savePost } from '~/redux/slices/userSlice'
 
 import styles from './ReactionButtons.module.scss'
 
+/**
+ * ReactionButtons Component
+ * Provides like, dislike, and save (bookmark) actions for a post.
+ */
 const ReactionButtons = ({ postId }) => {
-    const user = useSelector((state) => state.user.user)
     const dispatch = useDispatch()
+    const user = useSelector((state) => state.user.user)
 
-    const liked = useSelector((state) => state.user.user.likedPosts.includes(postId))
-    const disliked = useSelector((state) => state.user.user.dislikedPosts.includes(postId))
-    const bookmarked = useSelector((state) => state.user.user.savedPosts.includes(postId))
+    // Check current reaction status
+    const liked = user.likedPosts.includes(postId)
+    const disliked = user.dislikedPosts.includes(postId)
+    const bookmarked = user.savedPosts.includes(postId)
 
+    // Handle Like Toggle
     const handleLike = async () => {
-        const isLiked = user.likedPosts.includes(postId)
-        const isDisliked = user.dislikedPosts.includes(postId)
-
-        const updatedLikedPosts = isLiked
+        const updatedLikedPosts = liked
             ? user.likedPosts.filter((id) => id !== postId)
             : [...user.likedPosts, postId]
 
-        const updatedDislikedPosts = isDisliked
+        const updatedDislikedPosts = disliked
             ? user.dislikedPosts.filter((id) => id !== postId)
             : user.dislikedPosts
 
         dispatch(likePost(postId))
         await updateUser(user.id, {
             likedPosts: updatedLikedPosts,
-            dislikedPosts: isLiked ? user.dislikedPosts : updatedDislikedPosts,
+            dislikedPosts: liked ? user.dislikedPosts : updatedDislikedPosts,
         })
     }
 
+    // Handle Dislike Toggle
     const handleDislike = async () => {
-        const isDisliked = user.dislikedPosts.includes(postId)
-        const isLiked = user.likedPosts.includes(postId)
-
-        const updatedDislikedPosts = isDisliked
+        const updatedDislikedPosts = disliked
             ? user.dislikedPosts.filter((id) => id !== postId)
             : [...user.dislikedPosts, postId]
 
-        const updatedLikedPosts = isLiked
+        const updatedLikedPosts = liked
             ? user.likedPosts.filter((id) => id !== postId)
             : user.likedPosts
 
         dispatch(dislikePost(postId))
         await updateUser(user.id, {
             dislikedPosts: updatedDislikedPosts,
-            likedPosts: isDisliked ? user.likedPosts : updatedLikedPosts,
+            likedPosts: disliked ? user.likedPosts : updatedLikedPosts,
         })
     }
 
+    // Handle Save Toggle
     const handleSave = async () => {
-        const isSaved = user.savedPosts.includes(postId)
-
-        const updatedSavedPosts = isSaved
+        const updatedSavedPosts = bookmarked
             ? user.savedPosts.filter((id) => id !== postId)
             : [...user.savedPosts, postId]
 

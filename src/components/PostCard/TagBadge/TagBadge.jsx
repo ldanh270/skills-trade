@@ -2,6 +2,13 @@ import React from 'react'
 
 import * as styles from './TagBadge.module.scss'
 
+/**
+ * TagBadge component
+ * Displays a badge based on the tag name:
+ * - 'Offer' → yellow
+ * - 'Hire' → green
+ * - default → gray (used for skills)
+ */
 const TagBadge = ({ name }) => {
     return (
         <span
