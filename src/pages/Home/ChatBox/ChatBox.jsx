@@ -5,24 +5,25 @@ import { createChat, fetchChats, updateChatMessages } from '~/api/api-chat'
 
 import styles from './ChatBox.module.scss'
 
+// Simulated current user ID (normally from auth state)
 const currentUserId = '1a2b3c4d-5e6f-7a8b-9c0d-111213141516'
 
 const ChatBox = ({ contact, onClose }) => {
     const [messages, setMessages] = useState([])
     const [chatId, setChatId] = useState(null)
     const [input, setInput] = useState('')
-
     const bottomRef = useRef()
 
+    // Scroll to bottom when messages change
     useEffect(() => {
-        if (bottomRef.current) {
-            bottomRef.current.scrollIntoView({ behavior: 'smooth' })
-        }
+        bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
     }, [messages])
 
+    // Load or initialize chat with contact
     useEffect(() => {
         const loadChat = async () => {
             if (!contact) return
+
             const chats = await fetchChats()
             const chat = chats.find(
                 (c) =>
@@ -41,6 +42,7 @@ const ChatBox = ({ contact, onClose }) => {
         loadChat()
     }, [contact])
 
+    // Handle sending message
     const handleSend = async () => {
         if (!input.trim()) return
 
@@ -50,27 +52,26 @@ const ChatBox = ({ contact, onClose }) => {
             timestamp: new Date().toISOString(),
         }
 
-        const updated = [...messages, newMessage]
-        setMessages(updated)
+        const updatedMessages = [...messages, newMessage]
+        setMessages(updatedMessages)
         setInput('')
 
         if (chatId) {
-            await updateChatMessages(chatId, updated)
+            await updateChatMessages(chatId, updatedMessages)
         } else {
             const newChat = await createChat([currentUserId, contact.id], newMessage)
             setChatId(newChat.id)
         }
     }
 
-    // Press 'Enter' to add task
+    // Send on Enter
     const handleKeyDown = (e) => {
-        if (e.key === 'Enter') {
-            handleSend()
-        }
+        if (e.key === 'Enter') handleSend()
     }
 
     return (
         <div className={styles['chat-container']}>
+            {/* Header with contact info */}
             <div className={styles['chat-header']}>
                 <div className={styles['contact-info']}>
                     <div className={styles['avatar-wrapper']}>
@@ -84,6 +85,7 @@ const ChatBox = ({ contact, onClose }) => {
                 </button>
             </div>
 
+            {/* Message list */}
             <div className={styles['chat-body']}>
                 {messages.map((msg, i) => (
                     <div
@@ -98,6 +100,7 @@ const ChatBox = ({ contact, onClose }) => {
                 <div ref={bottomRef} />
             </div>
 
+            {/* Input box */}
             <div className={styles['chat-input']}>
                 <input
                     type="text"

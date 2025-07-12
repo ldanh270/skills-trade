@@ -1,15 +1,16 @@
 import styles from './FeedSelection.module.scss'
 
 const FeedSelection = ({ feedType, setFeedType, setFilters }) => {
+    // Define available tabs
     const tabs = [
         { key: 'newest', label: 'Newest' },
         { key: 'foryou', label: 'For you' },
         { key: 'saved', label: 'Saved posts' },
     ]
 
+    // Handle tab click: set feed type and reset filters
     const handleSelect = (key) => {
         setFeedType(key)
-        // Reset filters
         setFilters({
             type: null,
             skills: [],

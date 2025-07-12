@@ -1,29 +1,33 @@
+// Color variables
 $color-background: #f2f4f7;
 $color-text: #080809;
 $color-received: #dee2e6;
 $color-sent: #7edc89;
 $color-accent: #7edc89;
 $color-accent-second: #e5e7eb;
+
+// Chat container
 .chat-container {
     display: flex;
+    flex-direction: column;
     width: 300px;
     height: 450px;
     overflow: hidden;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    color: $color-text;
-    flex-direction: column;
     background-color: $color-background;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     font-family: 'Segoe UI', sans-serif;
+    color: $color-text;
 }
 
+// Header section
 .chat-header {
     display: flex;
     padding: 0.75rem 1rem;
-    justify-content: space-between;
     gap: 10px;
     font-weight: bold;
     color: #fff;
+    justify-content: space-between;
     align-items: center;
     background-color: $color-accent;
 
@@ -33,6 +37,7 @@ $color-accent-second: #e5e7eb;
         align-items: center;
         gap: 1rem;
         cursor: pointer;
+
         .avatar-wrapper {
             position: relative;
 
@@ -73,15 +78,17 @@ $color-accent-second: #e5e7eb;
     }
 }
 
+// Message list container
 .chat-body {
     display: flex;
     padding: 1rem;
     flex: 1;
     gap: 0.5rem;
-    overflow-y: auto;
     flex-direction: column;
+    overflow-y: auto;
 }
 
+// Individual message bubble
 .message {
     max-width: 70%;
     padding: 0.5rem 1rem;
@@ -105,12 +112,13 @@ $color-accent-second: #e5e7eb;
     }
 }
 
+// Input section
 .chat-input {
     display: flex;
-    align-items: center;
     padding: 0.75rem 1rem;
-    background-color: $color-accent;
     gap: 1rem;
+    align-items: center;
+    background-color: $color-accent;
 
     input {
         padding: 0.5rem 1rem;
