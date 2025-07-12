@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import InfiniteScroll from 'react-infinite-scroll-component'
+import { useSelector } from 'react-redux'
 
-import { fetchForYouPosts, fetchNewestPosts, fetchSavedPosts } from '~/api/post/post'
-import { fetchUser } from '~/api/user/getUser'
+import { fetchForYouPosts, fetchNewestPosts, fetchSavedPosts } from '~/api/post'
 import Filter from '~/components/Filter/Filter'
 import PostCard from '~/components/PostCard/PostCard'
 
@@ -20,6 +20,8 @@ const Home = () => {
     const [hasMore, setHasMore] = useState(true)
     const [feedType, setFeedType] = useState('newest')
 
+    const user = useSelector((state) => state.user.user)
+
     const fetchPostsByType = async (pageNum = 1) => {
         try {
             let newPosts = []
@@ -28,7 +30,7 @@ const Home = () => {
             } else if (feedType === 'foryou') {
                 newPosts = await fetchForYouPosts(pageNum)
             } else if (feedType === 'saved') {
-                newPosts = await fetchSavedPosts(pageNum)
+                newPosts = await fetchSavedPosts(user.id, pageNum)
             }
 
             // Nếu hết dữ liệu (VD: < limit), tắt hasMore
@@ -55,16 +57,6 @@ const Home = () => {
     /**
      * Contacts
      */
-
-    const [user, setUser] = useState(null)
-
-    useEffect(() => {
-        const loadUser = async () => {
-            const data = await fetchUser()
-            setUser(data)
-        }
-        loadUser()
-    }, [])
 
     const [openChats, setOpenChats] = useState([]) // list user object
 

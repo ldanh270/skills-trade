@@ -1,7 +1,7 @@
 import { SendHorizonal } from 'lucide-react'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
-import { createChat, fetchChats, updateChatMessages } from '~/api/chat/chat'
+import { createChat, fetchChats, updateChatMessages } from '~/api/chat'
 
 import styles from './ChatBox.module.scss'
 
@@ -11,6 +11,14 @@ const ChatBox = ({ contact, onClose }) => {
     const [messages, setMessages] = useState([])
     const [chatId, setChatId] = useState(null)
     const [input, setInput] = useState('')
+
+    const bottomRef = useRef()
+
+    useEffect(() => {
+        if (bottomRef.current) {
+            bottomRef.current.scrollIntoView({ behavior: 'smooth' })
+        }
+    }, [messages])
 
     useEffect(() => {
         const loadChat = async () => {
@@ -87,6 +95,7 @@ const ChatBox = ({ contact, onClose }) => {
                         <span>{msg.content}</span>
                     </div>
                 ))}
+                <div ref={bottomRef} />
             </div>
 
             <div className={styles['chat-input']}>

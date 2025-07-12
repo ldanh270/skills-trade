@@ -5,8 +5,10 @@ import styles from './ContactList.module.scss'
 
 const ContactList = ({ user, onSelect }) => {
     if (!user) return null
-    const contacts = [...user.follower, ...user.following]
-
+    const following = user.following
+    const followers = user.follower
+    const contacts = followers.filter((follower) => following.some((f) => f.id === follower.id))
+    console.log(following, followers, contacts)
     return (
         <div className={styles['wrapper']}>
             <div className={styles['header']}>

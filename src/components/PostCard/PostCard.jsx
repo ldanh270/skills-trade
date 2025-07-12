@@ -9,6 +9,7 @@ import StarRating from './StarRating/StarRating'
 import TagBadge from './TagBadge/TagBadge'
 
 const PostCard = ({ post }) => {
+    // console.log(post.id)
     const timeAgo = formatDistanceToNow(new Date(post.createdAt), { addSuffix: true })
 
     return (
@@ -37,7 +38,7 @@ const PostCard = ({ post }) => {
                     <span className={styles['rating__number']}>Rating: {post.rating}</span>
                     <StarRating value={post.rating} />
                 </div>
-                <ReactionButtons className={styles['reactions']} />
+                <ReactionButtons postId={post.id} className={styles['reactions']} />
             </div>
 
             <div className={styles['tags']}>
