@@ -244,14 +244,14 @@
         }
       ],
       "likedPosts": [
-        "post-007"
+        "post-007",
+        "post-010"
       ],
       "dislikedPosts": [
         "post-004",
         "post-009"
       ],
       "savedPosts": [
-        "post-007",
         "post-010",
         "post-009"
       ],

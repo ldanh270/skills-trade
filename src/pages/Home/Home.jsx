@@ -12,6 +12,8 @@ import FeedSelection from './FeedSelection/FeedSelection'
 import * as styles from './Home.module.scss'
 
 const Home = () => {
+    /** */
+
     /**
      * Feed
      */
@@ -46,7 +48,6 @@ const Home = () => {
     }
 
     useEffect(() => {
-        // Reset lại khi đổi feedType
         setPosts([])
         setPage(1)
         setHasMore(true)
