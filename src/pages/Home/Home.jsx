@@ -12,10 +12,7 @@ import FeedSelection from './FeedSelection/FeedSelection'
 import * as styles from './Home.module.scss'
 
 const Home = () => {
-    /**
-     * Filter
-     */
-
+    // ----- FILTER STATE -----
     const [filters, setFilters] = useState({
         type: null,
         skills: [],
@@ -24,13 +21,7 @@ const Home = () => {
         pointMax: null,
     })
 
-    useEffect(() => {
-        console.log(filters)
-    }, [filters])
-
-    /**
-     * Feed
-     */
+    // ----- FEED STATE -----
     const LOAD_LIMIT = 10
     const user = useSelector((state) => state.user.user)
 
@@ -53,27 +44,22 @@ const Home = () => {
         })
     }
 
-    const fetchPostsByType = async (pageNum = 1, limit = 10) => {
+    const fetchPostsByType = async (pageNum = 1, limit = LOAD_LIMIT) => {
         try {
-            let newPosts = []
+            let fetched = []
 
             if (feedType === 'newest') {
-                // Không truyền filters nữa → fetch dữ liệu gốc
-                const newest = await fetchNewestPosts(pageNum, limit)
-                setPosts(applyClientFilters(newest, filters))
+                fetched = await fetchNewestPosts(pageNum, limit)
             } else if (feedType === 'foryou') {
-                const foryou = await fetchForYouPosts(pageNum)
-                setPosts(applyClientFilters(foryou, filters))
+                fetched = await fetchForYouPosts(pageNum)
             } else if (feedType === 'saved') {
-                const saved = await fetchSavedPosts(user.id, pageNum)
-                setPosts(applyClientFilters(saved, filters))
+                fetched = await fetchSavedPosts(user.id, pageNum)
             }
 
-            if (newPosts.length < limit) {
-                setHasMore(false)
-            }
+            const filtered = applyClientFilters(fetched, filters)
+            if (filtered.length < limit) setHasMore(false)
 
-            setPosts((prevPosts) => [...prevPosts, ...newPosts])
+            setPosts((prev) => [...prev, ...filtered])
             setPage((prev) => prev + 1)
         } catch (err) {
             console.error('Cannot fetch. Error:', err)
@@ -88,17 +74,11 @@ const Home = () => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [filters, feedType])
 
-    /**
-     * Contacts
-     */
-
-    const [openChats, setOpenChats] = useState([]) // list user object
+    // ----- CHAT STATE -----
+    const [openChats, setOpenChats] = useState([])
 
     const handleOpenChat = (user) => {
-        setOpenChats((prev) => {
-            const exists = prev.find((u) => u.id === user.id)
-            return exists ? prev : [...prev, user]
-        })
+        setOpenChats((prev) => (prev.find((u) => u.id === user.id) ? prev : [...prev, user]))
     }
 
     const handleCloseChat = (userId) => {
@@ -110,6 +90,7 @@ const Home = () => {
             <div className={styles['Filter']}>
                 <Filter filters={filters} setFilters={setFilters} />
             </div>
+
             <div className={styles['Feed']}>
                 <div className={styles['curtain']}>
                     <div className={styles['FeedSelection']}>
@@ -120,6 +101,7 @@ const Home = () => {
                         />
                     </div>
                 </div>
+
                 <div className={styles['infinity-scroll']}>
                     <InfiniteScroll
                         dataLength={posts.length}
@@ -127,12 +109,13 @@ const Home = () => {
                         hasMore={hasMore}
                         loader={<h4>Loading...</h4>}
                     >
-                        {posts.map((post, index) => (
-                            <PostCard key={index} post={post} />
+                        {posts.map((post) => (
+                            <PostCard key={post.id} post={post} />
                         ))}
                     </InfiniteScroll>
                 </div>
             </div>
+
             <div className={styles['Contacts']}>
                 <ContactsList user={user} onSelect={handleOpenChat} />
             </div>

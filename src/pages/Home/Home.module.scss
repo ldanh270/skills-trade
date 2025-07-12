@@ -1,64 +1,66 @@
+// Main layout wrapper
 .Home {
     display: flex;
     margin: 0 auto;
-    min-height: 100vh;
     padding: 24px;
     gap: 24px;
     justify-content: center;
     align-items: flex-start;
+    min-height: 100vh;
 }
 
+// Left sidebar: filters
 .Filter {
     position: sticky;
     top: 10vh;
     width: 15vw;
-    height: 90vh;
     height: fit-content;
     padding: 2rem;
     align-self: flex-start;
 }
 
+// Main feed container
 .Feed {
-    top: 10vh;
     display: flex;
     height: fit-content;
     padding: 2rem;
     flex: 1;
     gap: 2rem;
+    flex-direction: column;
     min-width: 700px;
     max-width: 700px;
-    flex-shrink: 0;
-    flex-direction: column;
     align-self: flex-start;
 
+    // Sticky bar above the feed (e.g. tabs)
     .curtain {
         position: sticky;
         top: 10vh;
-
         z-index: 2;
         margin-top: 2rem;
         padding-top: 2rem;
         background-color: #f2f4f7;
     }
 
+    // Scrollable feed section
     .infinity-scroll {
-        overflow-y: auto;
         height: calc(100vh - 20vh);
         flex: 1;
+        overflow-y: auto;
         padding-top: calc(10vh + 2rem);
     }
 }
 
+// Right sidebar: contacts
 .Contacts {
     position: sticky;
     top: 10vh;
     width: 250px;
-    height: 90vh;
     height: fit-content;
     padding: 2rem;
     align-self: flex-start;
 }
 
+// Fixed chatbox row at bottom-right
 .ChatboxContainer {
     position: fixed;
     right: 0;
