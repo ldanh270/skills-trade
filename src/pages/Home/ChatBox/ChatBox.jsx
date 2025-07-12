@@ -1,7 +1,7 @@
 import { SendHorizonal } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 
-import { createChat, fetchChats, updateChatMessages } from '~/api/chat'
+import { createChat, fetchChats, updateChatMessages } from '~/api/api-chat'
 
 import styles from './ChatBox.module.scss'
 

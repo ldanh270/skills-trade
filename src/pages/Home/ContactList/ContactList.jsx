@@ -8,7 +8,6 @@ const ContactList = ({ user, onSelect }) => {
     const following = user.following
     const followers = user.follower
     const contacts = followers.filter((follower) => following.some((f) => f.id === follower.id))
-    console.log(following, followers, contacts)
     return (
         <div className={styles['wrapper']}>
             <div className={styles['header']}>

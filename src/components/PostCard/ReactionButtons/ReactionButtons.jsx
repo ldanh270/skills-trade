@@ -2,7 +2,7 @@ import { Bookmark, ThumbsDown, ThumbsUp } from 'lucide-react'
 // import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { updateUser } from '~/api/user'
+import { updateUser } from '~/api/apu-user'
 import { dislikePost, likePost, savePost } from '~/redux/slices/userSlice'
 
 import styles from './ReactionButtons.module.scss'

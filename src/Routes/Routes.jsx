@@ -3,11 +3,10 @@ import { OnlyHeaderLayout } from '~/layouts'
 import Chat from '~/pages/Chat/Chat'
 // Import pages
 import Home from '~/pages/Home/Home'
-import Chat from '~/pages/Chat/Chat'
-import Profile from '~/pages/Profile/Profile'
-import Upload from '~/pages/Upload/Upload'
 import Login from '~/pages/Login/Login'
+import Profile from '~/pages/Profile/Profile'
 import Signup from '~/pages/Signup/Signup'
+import Upload from '~/pages/Upload/Upload'
 
 // Public routes
 const publicRoutes = [

@@ -1,6 +1,6 @@
 export const POST_TYPE = {
-    OFFER: 'Offer',
-    HIRE: 'Hire',
+    Offer: 'Offer',
+    Hire: 'Hire',
 }
 
 export const POST_REACTION = {

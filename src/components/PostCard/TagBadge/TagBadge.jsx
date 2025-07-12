@@ -2,18 +2,18 @@ import React from 'react'
 
 import * as styles from './TagBadge.module.scss'
 
-const TagBadge = ({ text }) => {
+const TagBadge = ({ name }) => {
     return (
         <span
             className={`${styles['TagBadge']} ${
-                text === 'Offer'
+                name === 'Offer'
                     ? styles['badgeOffer']
-                    : text === 'Hire'
+                    : name === 'Hire'
                       ? styles['badgeHire']
                       : styles['badgeSkill']
             }`}
         >
-            {text}
+            {name}
         </span>
     )
 }

@@ -1,22 +1,22 @@
-import { useState } from 'react'
-
 import * as styles from './PostTypeInput.module.scss'
 
-function PostTypeInput() {
-    // State to display type of post
-    const [type, setType] = useState('Order')
-
+function PostTypeInput({ filters, setFilters }) {
     return (
         <div className={styles['PostTypeInput']}>
             <label>Type of post</label>
 
             <div className={styles['buttonGroup']}>
-                {['Order', 'Hire'].map((item) => (
+                {['Offer', 'Hire'].map((item) => (
                     <button
                         key={item}
-                        onClick={() => setType(item)}
+                        onClick={() =>
+                            setFilters({
+                                ...filters,
+                                type: filters.type === item ? '' : item,
+                            })
+                        }
                         className={
-                            type === item
+                            filters.type === item
                                 ? `${styles['button']} ${styles['active']}`
                                 : styles['button']
                         }

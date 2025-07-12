@@ -6,8 +6,8 @@ import { fetchSkills } from '~/api/api-skills'
 
 import styles from './SkillInput.module.scss'
 
-function SkillInput() {
-    // State to store grouped skill options
+function SkillInput({ filters, setFilters }) {
+    // State to store grouped skill options from API
     const [skills, setSkills] = useState([])
 
     useEffect(() => {
@@ -18,8 +18,12 @@ function SkillInput() {
         getSkills()
     }, [])
 
-    // State to store selected skills
-    const [selected, setSelected] = useState([])
+    const handleSelectChange = (selectedOptions) => {
+        setFilters((prevFilters) => ({
+            ...prevFilters,
+            skills: selectedOptions,
+        }))
+    }
 
     // Custom value container to show count
     const CustomValueContainer = ({ children, ...props }) => {
@@ -46,8 +50,8 @@ function SkillInput() {
 
             <Select
                 options={skills}
-                value={selected}
-                onChange={setSelected}
+                value={filters.skills}
+                onChange={handleSelectChange}
                 isMulti
                 placeholder="Select skills..."
                 classNamePrefix="custom"

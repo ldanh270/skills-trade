@@ -1,13 +1,13 @@
 import { Star } from 'lucide-react'
-import { useState } from 'react'
 
 import * as styles from './RatingInput.module.scss'
 
-function RatingInput() {
-    const [rating, setRating] = useState(0)
-
-    const handleStarClick = (value) => {
-        setRating((prev) => (prev === value ? 0 : value))
+function RatingInput({ filters, setFilters }) {
+    const handleStarClick = (prev, value) => {
+        setFilters({
+            ...filters,
+            rating: filters.rating === value ? 0 : value,
+        })
     }
 
     return (
@@ -18,9 +18,11 @@ function RatingInput() {
                     <Star
                         key={i}
                         size={20}
-                        onClick={() => handleStarClick(i)}
+                        onClick={(prev) => handleStarClick(prev, i)}
                         className={
-                            rating >= i ? `${styles['star']} ${styles['filled']}` : styles['star']
+                            filters.rating >= i
+                                ? `${styles['star']} ${styles['filled']}`
+                                : styles['star']
                         }
                         title={`Rated ${i}`}
                     />

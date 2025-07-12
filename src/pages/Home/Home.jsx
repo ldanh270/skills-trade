@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import { useSelector } from 'react-redux'
 
-import { fetchForYouPosts, fetchNewestPosts, fetchSavedPosts } from '~/api/post'
+import { fetchForYouPosts, fetchNewestPosts, fetchSavedPosts } from '~/api/api-post'
 import Filter from '~/components/Filter/Filter'
 import PostCard from '~/components/PostCard/PostCard'
 
@@ -12,31 +12,64 @@ import FeedSelection from './FeedSelection/FeedSelection'
 import * as styles from './Home.module.scss'
 
 const Home = () => {
-    /** */
+    /**
+     * Filter
+     */
+
+    const [filters, setFilters] = useState({
+        type: null,
+        skills: [],
+        rating: null,
+        pointMin: null,
+        pointMax: null,
+    })
+
+    useEffect(() => {
+        console.log(filters)
+    }, [filters])
 
     /**
      * Feed
      */
+    const LOAD_LIMIT = 10
+    const user = useSelector((state) => state.user.user)
+
     const [posts, setPosts] = useState([])
     const [page, setPage] = useState(1)
     const [hasMore, setHasMore] = useState(true)
     const [feedType, setFeedType] = useState('newest')
 
-    const user = useSelector((state) => state.user.user)
-
-    const fetchPostsByType = async (pageNum = 1) => {
+    const fetchPostsByType = async (pageNum = 1, limit = 10) => {
         try {
             let newPosts = []
+
             if (feedType === 'newest') {
-                newPosts = await fetchNewestPosts(pageNum)
+                // Không truyền filters nữa → fetch dữ liệu gốc
+                const rawPosts = await fetchNewestPosts(pageNum, limit)
+
+                // Lọc phía client
+                newPosts = rawPosts.filter((post) => {
+                    if (filters.type && post.type !== filters.type) return false
+                    if (filters.rating !== null && post.rating < filters.rating) return false
+                    if (filters.pointMin !== null && post.price?.min < filters.pointMin)
+                        return false
+                    if (filters.pointMax !== null && post.price?.max > filters.pointMax)
+                        return false
+
+                    if (filters.skills.length > 0) {
+                        const selectedSkills = filters.skills.map((s) => s.value)
+                        if (!selectedSkills.every((s) => post.skills.includes(s))) return false
+                    }
+
+                    return true
+                })
             } else if (feedType === 'foryou') {
                 newPosts = await fetchForYouPosts(pageNum)
             } else if (feedType === 'saved') {
                 newPosts = await fetchSavedPosts(user.id, pageNum)
             }
 
-            // Nếu hết dữ liệu (VD: < limit), tắt hasMore
-            if (newPosts.length === 0) {
+            if (newPosts.length < limit) {
                 setHasMore(false)
             }
 
@@ -53,7 +86,7 @@ const Home = () => {
         setHasMore(true)
         fetchPostsByType(1)
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [feedType])
+    }, [filters, feedType])
 
     /**
      * Contacts
@@ -75,7 +108,7 @@ const Home = () => {
     return (
         <div className={styles['Home']}>
             <div className={styles['Filter']}>
-                <Filter />
+                <Filter filters={filters} setFilters={setFilters} />
             </div>
             <div className={styles['Feed']}>
                 <div className={styles['curtain']}>

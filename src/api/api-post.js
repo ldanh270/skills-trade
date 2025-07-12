@@ -2,22 +2,9 @@ import axios from 'axios'
 
 import { BASE_URL } from '~/constants/globalConstants'
 
-const fetchNewestPosts = async (page = 1, limit = 10, filters = {}) => {
-    let query = `_page=${page}&_limit=${limit}&_sort=createdAt&_order=desc`
-
-    if (filters.type) query += `&type=${filters.type}`
-    if (filters.rating) query += `&rating_gte=${filters.rating}`
-    if (filters.pointMin) query += `&price_gte=${filters.pointMin}`
-    if (filters.pointMax) query += `&price_lte=${filters.pointMax}`
-
-    const res = await axios.get(`${BASE_URL}/posts?${query}`)
-    let data = res.data
-
-    if (filters.skills?.length > 0) {
-        data = data.filter((post) => filters.skills.every((s) => post.skills.includes(s)))
-    }
-
-    return data
+const fetchNewestPosts = async () => {
+    const res = await axios.get(`${BASE_URL}/posts?_sort=createdAt&_order=desc`)
+    return res.data
 }
 
 // Example API call with AI

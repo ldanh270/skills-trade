@@ -1,6 +1,7 @@
 import { formatDistanceToNow } from 'date-fns'
 import React from 'react'
 
+// import { useSelector } from 'react-redux'
 import { POST_TYPE } from '~/constants/objectAttributes/PostAttributes'
 
 import * as styles from './PostCard.module.scss'
@@ -9,13 +10,12 @@ import StarRating from './StarRating/StarRating'
 import TagBadge from './TagBadge/TagBadge'
 
 const PostCard = ({ post }) => {
-    // console.log(post.id)
     const timeAgo = formatDistanceToNow(new Date(post.createdAt), { addSuffix: true })
 
     return (
         <div className={styles['container']}>
             <div className={styles['top']}>
-                <TagBadge text={POST_TYPE[post.type]} />
+                <TagBadge name={POST_TYPE[post.type]} type="post" />
                 <span className={`${styles['postedTime']} ${styles['meta']}`}>
                     Posted {timeAgo}
                 </span>
@@ -42,12 +42,9 @@ const PostCard = ({ post }) => {
             </div>
 
             <div className={styles['tags']}>
-                <TagBadge text="Web design" />
-                <TagBadge text="UX-UI" />
-                <TagBadge text="Javascript" />
-                <TagBadge text="HTML" />
-                <TagBadge text="CSS" />
-                <TagBadge text="Search Engine Optimization" />
+                {post.skills.map((skill, index) => (
+                    <TagBadge key={index} name={skill} type="skill" />
+                ))}
             </div>
 
             <p className={styles['description']}>{post.description}</p>
