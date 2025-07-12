@@ -1,7 +1,7 @@
 import { Bookmark, ThumbsDown, ThumbsUp } from 'lucide-react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { updateUser } from '~/api/apu-user'
+import { updateUser } from '~/api/api-user'
 import { dislikePost, likePost, savePost } from '~/redux/slices/userSlice'
 
 import styles from './ReactionButtons.module.scss'

@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { Route, Routes } from 'react-router-dom'
 
-import { fetchUser } from '~/api/apu-user'
+import { fetchUser } from '~/api/api-user'
 import { DefaultLayout } from '~/layouts'
 import { setUser } from '~/redux/slices/userSlice'
 
