@@ -8,17 +8,22 @@ const ReactionButtons = () => {
     const [disliked, setDisliked] = useState(false)
     const [bookmarked, setBookmarked] = useState(false)
 
-    const handleLike = () => {
-        setLiked(!liked)
-        if (disliked) setDisliked(false)
+    const handleLike = async () => {
+        const newLiked = !liked
+        setLiked(newLiked)
+        if (disliked && newLiked) setDisliked(false)
     }
 
-    const handleDislike = () => {
-        setDisliked(!disliked)
-        if (liked) setLiked(false)
+    const handleDislike = async () => {
+        const newDisliked = !disliked
+        setDisliked(newDisliked)
+        if (liked && newDisliked) setLiked(false)
     }
 
-    const handleBookmark = () => setBookmarked(!bookmarked)
+    const handleBookmark = async () => {
+        const newBookmarked = !bookmarked
+        setBookmarked(newBookmarked)
+    }
 
     return (
         <div className={styles['reactions']}>

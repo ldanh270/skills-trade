@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom'
 
 import { DefaultLayout } from '~/layouts'
 
-import * as styles from './App.module.scss'
+import styles from './App.module.scss'
 import { publicRoutes } from './routes/routes'
 
 const App = () => {

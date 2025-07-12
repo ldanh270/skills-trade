@@ -1,3 +1,5 @@
+import { memo } from 'react'
+
 import styles from './Filter.module.scss'
 import PointRangeInput from './PointRangeInput/PointRangeInput'
 import PostTypeInput from './PostTypeInput/PostTypeInput'
@@ -16,4 +18,4 @@ function Filter() {
     )
 }
 
-export default Filter
+export default memo(Filter)

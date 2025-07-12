@@ -1,134 +1,412 @@
 {
+  "posts": [
+    {
+      "id": "post-001",
+      "type": "HIRE",
+      "title": "Looking for a Java mentor",
+      "author": {
+        "id": "user_001",
+        "name": "Le Minh Duc"
+      },
+      "rating": 4.7,
+      "reactions": "LIKE",
+      "skills": [
+        "Java",
+        "OOP",
+        "Mentoring"
+      ],
+      "price": 300,
+      "description": "I'm a first-year student looking for someone to help me understand Java and OOP concepts.",
+      "createdAt": "2025-07-10T08:00:00Z",
+      "proofs": []
+    },
+    {
+      "id": "post-002",
+      "type": "OFFER",
+      "title": "Offering online English speaking lessons",
+      "author": {
+        "id": "user_002",
+        "name": "Pham Hong Hanh"
+      },
+      "rating": 4.9,
+      "reactions": "LIKE",
+      "skills": [
+        "English",
+        "Speaking",
+        "Teaching"
+      ],
+      "price": 250,
+      "description": "I have an IELTS 8.0 and experience teaching communication English for students and professionals.",
+      "createdAt": "2025-07-09T14:20:00Z",
+      "proofs": [
+        "https://images.unsplash.com/photo-1581093588401-860eee694d7b"
+      ]
+    },
+    {
+      "id": "post-003",
+      "type": "HIRE",
+      "title": "Need poster designer for school event",
+      "author": {
+        "id": "user_003",
+        "name": "Ngo Truong Giang"
+      },
+      "rating": 4.2,
+      "reactions": "NONE",
+      "skills": [
+        "Photoshop",
+        "Illustrator",
+        "Design"
+      ],
+      "price": 180,
+      "description": "We need an attractive event poster. Deadline is within 3 days.",
+      "createdAt": "2025-07-08T17:45:00Z",
+      "proofs": [
+        "https://images.unsplash.com/photo-1612214074521-40b46d94f3c1"
+      ]
+    },
+    {
+      "id": "post-004",
+      "type": "OFFER",
+      "title": "Build your personal portfolio with HTML/CSS",
+      "author": {
+        "id": "user_004",
+        "name": "Nguyen Thi Kim"
+      },
+      "rating": 4.8,
+      "reactions": "LIKE",
+      "skills": [
+        "HTML",
+        "CSS",
+        "Portfolio"
+      ],
+      "price": 120,
+      "description": "Step-by-step guidance to create a responsive personal portfolio.",
+      "createdAt": "2025-07-07T12:00:00Z",
+      "proofs": [
+        "https://images.unsplash.com/photo-1587620962725-abab7fe55159"
+      ]
+    },
+    {
+      "id": "post-005",
+      "type": "HIRE",
+      "title": "Looking for an IT interview coach",
+      "author": {
+        "id": "user_005",
+        "name": "Tran Quoc Huy"
+      },
+      "rating": 4,
+      "reactions": "DISLIKE",
+      "skills": [
+        "Interview",
+        "IT",
+        "Soft Skills"
+      ],
+      "price": 220,
+      "description": "I need mock interviews in English for backend developer roles.",
+      "createdAt": "2025-07-06T19:00:00Z",
+      "proofs": []
+    },
+    {
+      "id": "post-006",
+      "type": "OFFER",
+      "title": "Writing tech blog content on demand",
+      "author": {
+        "id": "user_006",
+        "name": "Dang Thi Lan"
+      },
+      "rating": 4.3,
+      "reactions": "LIKE",
+      "skills": [
+        "Content",
+        "Writing",
+        "Tech"
+      ],
+      "price": 90,
+      "description": "Experienced in writing technical blog posts for various platforms.",
+      "createdAt": "2025-07-06T09:15:00Z",
+      "proofs": [
+        "https://images.unsplash.com/photo-1581276879432-15a59c1d0bde"
+      ]
+    },
+    {
+      "id": "post-007",
+      "type": "HIRE",
+      "title": "Need video editor for short TikToks",
+      "author": {
+        "id": "user_007",
+        "name": "Phan Duy Anh"
+      },
+      "rating": 3.9,
+      "reactions": "NONE",
+      "skills": [
+        "CapCut",
+        "Editing",
+        "Video"
+      ],
+      "price": 130,
+      "description": "Looking for trendy and engaging edits with captions under 60s.",
+      "createdAt": "2025-07-05T18:10:00Z",
+      "proofs": [
+        "https://images.unsplash.com/photo-1593697820373-1ec44e4cba68"
+      ]
+    },
+    {
+      "id": "post-008",
+      "type": "OFFER",
+      "title": "Teaching Python from scratch",
+      "author": {
+        "id": "user_008",
+        "name": "Vu Thanh Tung"
+      },
+      "rating": 4.6,
+      "reactions": "LIKE",
+      "skills": [
+        "Python",
+        "Beginner",
+        "Teaching"
+      ],
+      "price": 200,
+      "description": "Project-based learning for Python beginners with simple explanations.",
+      "createdAt": "2025-07-05T10:00:00Z",
+      "proofs": [
+        "https://images.unsplash.com/photo-1585076815874-1ec7817d0d65"
+      ]
+    },
+    {
+      "id": "post-009",
+      "type": "HIRE",
+      "title": "Looking for digital art teacher",
+      "author": {
+        "id": "user_009",
+        "name": "Ly Thi Mai"
+      },
+      "rating": 3.5,
+      "reactions": "DISLIKE",
+      "skills": [
+        "Digital Art",
+        "Drawing",
+        "Tablet"
+      ],
+      "price": 170,
+      "description": "Need help with Clip Studio and Wacom tablet basics.",
+      "createdAt": "2025-07-04T20:30:00Z",
+      "proofs": [
+        "https://images.unsplash.com/photo-1573497019440-cf3c6b0ad773"
+      ]
+    },
+    {
+      "id": "post-010",
+      "type": "OFFER",
+      "title": "Professional presentation slide design",
+      "author": {
+        "id": "user_010",
+        "name": "Nguyen Khanh Linh"
+      },
+      "rating": 4.95,
+      "reactions": "LIKE",
+      "skills": [
+        "PowerPoint",
+        "Design",
+        "Presentation"
+      ],
+      "price": 110,
+      "description": "Slides for reports, conferences, or startup pitches with premium quality.",
+      "createdAt": "2025-07-04T08:00:00Z",
+      "proofs": [
+        "https://images.unsplash.com/photo-1581091221906-fb8af1f62092"
+      ]
+    }
+  ],
+  "user": {
+    "id": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+    "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=LeDucAnh",
+    "fullName": "Lê Đức Anh",
+    "email": "leducanh@example.com",
+    "username": "leducanh",
+    "password": "daylapassword",
+    "phone": "0901234567",
+    "region": "Hồ Chí Minh",
+    "rating": 4.8,
+    "point": 1200,
+    "status": "online",
     "posts": [
-        {
-            "id": "post-001",
-            "type": "HIRE",
-            "title": "Looking for a Java mentor",
-            "author": { "id": "user_001", "name": "Le Minh Duc" },
-            "rating": 4.7,
-            "reactions": "LIKE",
-            "skills": ["Java", "OOP", "Mentoring"],
-            "price": 300,
-            "description": "I'm a first-year student looking for someone to help me understand Java and OOP concepts.",
-            "createdAt": "2025-07-10T08:00:00Z",
-            "proofs": []
-        },
-        {
-            "id": "post-002",
-            "type": "OFFER",
-            "title": "Offering online English speaking lessons",
-            "author": { "id": "user_002", "name": "Pham Hong Hanh" },
-            "rating": 4.9,
-            "reactions": "LIKE",
-            "skills": ["English", "Speaking", "Teaching"],
-            "price": 250,
-            "description": "I have an IELTS 8.0 and experience teaching communication English for students and professionals.",
-            "createdAt": "2025-07-09T14:20:00Z",
-            "proofs": ["https://images.unsplash.com/photo-1581093588401-860eee694d7b"]
-        },
-        {
-            "id": "post-003",
-            "type": "HIRE",
-            "title": "Need poster designer for school event",
-            "author": { "id": "user_003", "name": "Ngo Truong Giang" },
-            "rating": 4.2,
-            "reactions": "NONE",
-            "skills": ["Photoshop", "Illustrator", "Design"],
-            "price": 180,
-            "description": "We need an attractive event poster. Deadline is within 3 days.",
-            "createdAt": "2025-07-08T17:45:00Z",
-            "proofs": ["https://images.unsplash.com/photo-1612214074521-40b46d94f3c1"]
-        },
-        {
-            "id": "post-004",
-            "type": "OFFER",
-            "title": "Build your personal portfolio with HTML/CSS",
-            "author": { "id": "user_004", "name": "Nguyen Thi Kim" },
-            "rating": 4.8,
-            "reactions": "LIKE",
-            "skills": ["HTML", "CSS", "Portfolio"],
-            "price": 120,
-            "description": "Step-by-step guidance to create a responsive personal portfolio.",
-            "createdAt": "2025-07-07T12:00:00Z",
-            "proofs": ["https://images.unsplash.com/photo-1587620962725-abab7fe55159"]
-        },
-        {
-            "id": "post-005",
-            "type": "HIRE",
-            "title": "Looking for an IT interview coach",
-            "author": { "id": "user_005", "name": "Tran Quoc Huy" },
-            "rating": 4.0,
-            "reactions": "DISLIKE",
-            "skills": ["Interview", "IT", "Soft Skills"],
-            "price": 220,
-            "description": "I need mock interviews in English for backend developer roles.",
-            "createdAt": "2025-07-06T19:00:00Z",
-            "proofs": []
-        },
-        {
-            "id": "post-006",
-            "type": "OFFER",
-            "title": "Writing tech blog content on demand",
-            "author": { "id": "user_006", "name": "Dang Thi Lan" },
-            "rating": 4.3,
-            "reactions": "LIKE",
-            "skills": ["Content", "Writing", "Tech"],
-            "price": 90,
-            "description": "Experienced in writing technical blog posts for various platforms.",
-            "createdAt": "2025-07-06T09:15:00Z",
-            "proofs": ["https://images.unsplash.com/photo-1581276879432-15a59c1d0bde"]
-        },
-        {
-            "id": "post-007",
-            "type": "HIRE",
-            "title": "Need video editor for short TikToks",
-            "author": { "id": "user_007", "name": "Phan Duy Anh" },
-            "rating": 3.9,
-            "reactions": "NONE",
-            "skills": ["CapCut", "Editing", "Video"],
-            "price": 130,
-            "description": "Looking for trendy and engaging edits with captions under 60s.",
-            "createdAt": "2025-07-05T18:10:00Z",
-            "proofs": ["https://images.unsplash.com/photo-1593697820373-1ec44e4cba68"]
-        },
-        {
-            "id": "post-008",
-            "type": "OFFER",
-            "title": "Teaching Python from scratch",
-            "author": { "id": "user_008", "name": "Vu Thanh Tung" },
-            "rating": 4.6,
-            "reactions": "LIKE",
-            "skills": ["Python", "Beginner", "Teaching"],
-            "price": 200,
-            "description": "Project-based learning for Python beginners with simple explanations.",
-            "createdAt": "2025-07-05T10:00:00Z",
-            "proofs": ["https://images.unsplash.com/photo-1585076815874-1ec7817d0d65"]
-        },
-        {
-            "id": "post-009",
-            "type": "HIRE",
-            "title": "Looking for digital art teacher",
-            "author": { "id": "user_009", "name": "Ly Thi Mai" },
-            "rating": 3.5,
-            "reactions": "DISLIKE",
-            "skills": ["Digital Art", "Drawing", "Tablet"],
-            "price": 170,
-            "description": "Need help with Clip Studio and Wacom tablet basics.",
-            "createdAt": "2025-07-04T20:30:00Z",
-            "proofs": ["https://images.unsplash.com/photo-1573497019440-cf3c6b0ad773"]
-        },
-        {
-            "id": "post-010",
-            "type": "OFFER",
-            "title": "Professional presentation slide design",
-            "author": { "id": "user_010", "name": "Nguyen Khanh Linh" },
-            "rating": 4.95,
-            "reactions": "LIKE",
-            "skills": ["PowerPoint", "Design", "Presentation"],
-            "price": 110,
-            "description": "Slides for reports, conferences, or startup pitches with premium quality.",
-            "createdAt": "2025-07-04T08:00:00Z",
-            "proofs": ["https://images.unsplash.com/photo-1581091221906-fb8af1f62092"]
-        }
+      "post_001",
+      "post_002"
+    ],
+    "transactions": [
+      "tx_001",
+      "tx_002"
+    ],
+    "notifications": [
+      {
+        "id": "noti_001",
+        "message": "You received a new message",
+        "read": false,
+        "createdAt": "2025-07-11T12:00:00Z"
+      }
+    ],
+    "likedPosts": [
+      "post_002",
+      "post_003"
+    ],
+    "dislikedPosts": [
+      "post_004"
+    ],
+    "follower": [
+      {
+        "id": "user_002",
+        "fullName": "Nguyễn Văn A",
+        "status": "offline",
+        "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=NguyenVanA"
+      },
+      {
+        "id": "user_003",
+        "fullName": "Trần Thị B",
+        "status": "online",
+        "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=TranThiB"
+      }
+    ],
+    "following": [
+      {
+        "id": "user_004",
+        "fullName": "Phạm Văn C",
+        "status": "online",
+        "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=PhamVanC"
+      },
+      {
+        "id": "user_005",
+        "fullName": "Lê Thị D",
+        "status": "offline",
+        "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=LeThiD"
+      }
     ]
+  },
+  "chats": [
+    {
+      "id": "chat_001",
+      "participants": [
+        "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+        "user_002"
+      ],
+      "messages": [
+        {
+          "senderId": "user_002",
+          "content": "Chào bạn!",
+          "timestamp": "2025-07-11T13:00:00Z"
+        },
+        {
+          "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+          "content": "Xin chào, cần hỗ trợ gì?",
+          "timestamp": "2025-07-11T13:01:00Z"
+        },
+        {
+          "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+          "content": "gm",
+          "timestamp": "2025-07-11T08:23:43.102Z"
+        },
+        {
+          "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+          "content": "sao",
+          "timestamp": "2025-07-11T08:23:46.384Z"
+        },
+        {
+          "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+          "content": "j",
+          "timestamp": "2025-07-11T08:23:48.400Z"
+        },
+        {
+          "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+          "content": "k",
+          "timestamp": "2025-07-11T08:23:49.304Z"
+        },
+        {
+          "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+          "content": "j",
+          "timestamp": "2025-07-11T08:23:50.576Z"
+        },
+        {
+          "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+          "content": "g",
+          "timestamp": "2025-07-11T08:23:52.043Z"
+        },
+        {
+          "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+          "content": "f",
+          "timestamp": "2025-07-11T08:23:53.256Z"
+        },
+        {
+          "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+          "content": "k",
+          "timestamp": "2025-07-11T08:23:54.336Z"
+        },
+        {
+          "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+          "content": "g",
+          "timestamp": "2025-07-11T08:23:55.424Z"
+        },
+        {
+          "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+          "content": "j",
+          "timestamp": "2025-07-11T08:23:57.856Z"
+        },
+        {
+          "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+          "content": "âfsdagdsagsadg",
+          "timestamp": "2025-07-11T13:16:14.601Z"
+        }
+      ]
+    },
+    {
+      "id": "c9e7",
+      "participants": [
+        "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+        "user_005"
+      ],
+      "messages": [
+        {
+          "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+          "content": "a",
+          "timestamp": "2025-07-11T07:33:01.518Z"
+        },
+        {
+          "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+          "content": "a",
+          "timestamp": "2025-07-11T13:28:10.853Z"
+        },
+        {
+          "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+          "content": "hi",
+          "timestamp": "2025-07-11T13:38:39.900Z"
+        }
+      ]
+    },
+    {
+      "id": "c0fb",
+      "participants": [
+        "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+        "user_003"
+      ],
+      "messages": [
+        {
+          "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+          "content": "gm",
+          "timestamp": "2025-07-11T07:33:05.933Z"
+        }
+      ]
+    },
+    {
+      "id": "6b54",
+      "participants": [
+        "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+        "user_004"
+      ],
+      "messages": [
+        {
+          "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+          "content": "s",
+          "timestamp": "2025-07-11T13:26:44.243Z"
+        }
+      ]
+    }
+  ]
 }
