@@ -1,28 +1,29 @@
-// Container của toàn bộ input
+// Root container for the PostTypeInput component
 .PostTypeInput {
     display: flex;
     flex-direction: column;
     gap: 6px;
 }
 
-// Label cho nhóm nút chọn loại post
+// Label styling
 label {
     font-size: 14px;
     font-weight: 500;
     color: #333;
 }
 
-// Nhóm nút (Offer / Hire)
+// Group of buttons for selecting post types
 .buttonGroup {
     display: flex;
     gap: 8px;
 
+    // Each button takes full width
     button {
         width: 100%;
     }
 }
 
-// Nút chọn post type
+// Default button style
 .button {
     padding: 6px 12px;
     background: white;
@@ -32,7 +33,7 @@ label {
     cursor: pointer;
 }
 
-// Nút đang được chọn
+// Active button style (highlighted when selected)
 .active {
     background: #ffcd29;
     color: white;

@@ -2,13 +2,15 @@ import * as styles from './PostTypeInput.module.scss'
 
 /**
  * PostTypeInput component
- * Cho phép người dùng chọn loại bài viết: Offer hoặc Hire
+ * Allows users to select the type of post: Offer or Hire
  */
 function PostTypeInput({ filters, setFilters }) {
     return (
         <div className={styles['PostTypeInput']}>
+            {/* Label for the input section */}
             <label>Type of post</label>
 
+            {/* Render buttons for each post type */}
             <div className={styles['buttonGroup']}>
                 {['Offer', 'Hire'].map((item) => (
                     <button
@@ -16,7 +18,7 @@ function PostTypeInput({ filters, setFilters }) {
                         onClick={() =>
                             setFilters({
                                 ...filters,
-                                // Nếu đã chọn thì bỏ chọn, ngược lại gán type mới
+                                // Toggle type: unselect if already selected, otherwise set new type
                                 type: filters.type === item ? '' : item,
                             })
                         }
