@@ -1,0 +1,25 @@
+// Container for all reaction icons
+.reactions {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+}
+
+// Remove default button styles
+.reactions button {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+// Highlighted icon
+.active {
+    color: #fbbf24;
+    fill: #fbbf24;
+}
+
+// Normal (gray) icon
+.inactive {
+    color: #999;
+}

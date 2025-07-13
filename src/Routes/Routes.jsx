@@ -1,11 +1,12 @@
 // Import layouts
-import { OnlyHeaderLayout } from '~/components/layouts';
-
+import { OnlyHeaderLayout } from '~/layouts'
+import Chat from '~/pages/Chat/Chat'
 // Import pages
-import Home from '~/pages/Home/Home';
-import Chat from '~/pages/Chat/Chat';
-import Profile from '~/pages/Profile/Profile';
-import Upload from '~/pages/Upload/Upload';
+import Home from '~/pages/Home/Home'
+import Login from '~/pages/Login/Login'
+import Profile from '~/pages/Profile/Profile'
+import Signup from '~/pages/Signup/Signup'
+import Upload from '~/pages/Upload/Upload'
 
 // Public routes
 const publicRoutes = [
@@ -13,9 +14,11 @@ const publicRoutes = [
     { path: '/chat', component: Chat },
     { path: '/profile', component: Profile },
     { path: '/upload', component: Upload, layout: OnlyHeaderLayout },
-];
+    { path: '/login', component: Login, layout: OnlyHeaderLayout },
+    { path: '/signup', component: Signup, layout: OnlyHeaderLayout },
+]
 
 // Private routes
-const privateRoutes = [];
+const privateRoutes = []
 
-export { publicRoutes, privateRoutes };
+export { privateRoutes, publicRoutes }

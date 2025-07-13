@@ -1,0 +1,41 @@
+// Root container for the PostTypeInput component
+.PostTypeInput {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+// Label styling
+label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+
+// Group of buttons for selecting post types
+.buttonGroup {
+    display: flex;
+    gap: 8px;
+
+    // Each button takes full width
+    button {
+        width: 100%;
+    }
+}
+
+// Default button style
+.button {
+    padding: 6px 12px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+// Active button style (highlighted when selected)
+.active {
+    background: #ffcd29;
+    color: white;
+    border-color: #ffcd29;
+}
