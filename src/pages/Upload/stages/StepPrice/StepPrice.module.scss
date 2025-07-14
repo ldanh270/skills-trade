@@ -1,0 +1,139 @@
+.step-price {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    overflow: auto;
+    align-items: center;
+    justify-content: space-between;
+
+    .content {
+        display: flex;
+        width: 80%;
+        gap: 1.5rem;
+        flex-direction: column;
+
+        .title {
+            font-size: 3rem;
+            font-weight: 600;
+            text-align: center;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        .description {
+            font-size: 1.5rem;
+            color: #555;
+
+            strong {
+                font-size: 1.6rem;
+                font-weight: 600;
+            }
+        }
+
+        .price-input-group {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+
+            .price-field {
+                display: flex;
+                flex-direction: column;
+                flex: 1;
+                min-width: 180px;
+
+                label {
+                    font-size: 1.4rem;
+                    color: #333;
+                    margin-bottom: 0.5rem;
+                }
+
+                .input-wrapper {
+                    display: flex;
+                    padding: 0.8rem 1.5rem;
+                    background: #fff;
+                    border: 1px solid #ccc;
+                    border-radius: 1rem;
+                    align-items: center;
+
+                    .prefix {
+                        font-size: 1.4rem;
+                        color: #888;
+                        margin-right: 0.5rem;
+                    }
+
+                    input {
+                        flex: 1;
+                        border: none;
+                        font-size: 1.6rem;
+                        outline: none;
+
+                        &::placeholder {
+                            color: #aaa;
+                        }
+                    }
+                }
+            }
+        }
+
+        .error {
+            font-size: 1.2rem;
+            color: red;
+        }
+    }
+
+    .actions {
+        display: flex;
+        width: 100%;
+        padding: 0 2rem;
+        gap: 1rem;
+        flex-direction: column;
+        align-items: flex-end;
+
+        .separator {
+            width: 100%;
+            margin: 1rem 0;
+            border-top: 0.2rem solid #ccc;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 0.5rem;
+
+            button {
+                padding: 1.2rem 3rem;
+                border: none;
+                border-radius: 2rem;
+                font-weight: bold;
+                cursor: pointer;
+            }
+
+            .back {
+                background: #ccc;
+
+                &:hover {
+                    background: #b3b3b3;
+                }
+            }
+
+            .next {
+                background: #ffc107;
+
+                &:hover {
+                    background: #e6b800;
+                }
+            }
+
+            .disabled {
+                background: #ccc;
+                color: #555;
+                cursor: not-allowed;
+
+                &:hover {
+                    background: #ccc;
+                }
+            }
+        }
+    }
+}
