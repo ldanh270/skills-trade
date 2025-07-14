@@ -23,8 +23,10 @@ export default function StepPrice({ formData, setFormData, next, prev }) {
         }
         setFormData({
             ...formData,
-            min: Number(minPrice),
-            max: Number(maxPrice),
+            price: {
+                min: Number(minPrice),
+                max: Number(maxPrice),
+            },
         })
         next()
     }
