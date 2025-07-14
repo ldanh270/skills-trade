@@ -1,0 +1,132 @@
+.step-description {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    overflow: auto;
+    align-items: center;
+    justify-content: space-between;
+
+    .content {
+        display: flex;
+        width: 80%;
+        gap: 1.5rem;
+        flex-direction: column;
+
+        .title {
+            font-size: 3rem;
+            font-weight: 600;
+            text-align: center;
+            color: #555;
+        }
+
+        .description {
+            font-size: 1.5rem;
+            color: #555;
+            strong {
+                font-size: 1.7rem;
+                font-weight: 600;
+            }
+        }
+
+        .textarea-wrapper {
+            position: relative;
+            width: 100%;
+            min-height: 12rem;
+
+            textarea {
+                width: 100%;
+                height: 100%;
+                padding: 1.2rem 1.2rem 1.2rem 3.5rem;
+                border: 1px solid #ccc;
+                border-radius: 0.8rem;
+                font-size: 1.5rem;
+                resize: vertical;
+                min-height: 10rem;
+
+                &:focus {
+                    outline: none;
+                    border-color: #ffc107;
+                }
+            }
+
+            .icon {
+                position: absolute;
+                top: 1.2rem;
+                left: 1rem;
+                color: #888;
+            }
+
+            .placeholder {
+                position: absolute;
+                top: 1.2rem;
+                left: 3.5rem;
+                font-size: 1.5rem;
+                color: #aaa;
+                pointer-events: none;
+            }
+        }
+
+        .focused {
+            .placeholder {
+                display: none;
+            }
+        }
+    }
+
+    .actions {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        width: 100%;
+        padding: 0 2rem;
+        gap: 1rem;
+
+        .separator {
+            width: 100%;
+            margin: 1rem 0;
+            border-top: 0.2rem solid #ccc;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: row;
+            gap: 0.5rem;
+
+            button {
+                padding: 1.2rem 3rem;
+                border: none;
+                border-radius: 2rem;
+                font-weight: bold;
+                cursor: pointer;
+            }
+
+            .back {
+                background: #ccc;
+
+                &:hover {
+                    background: #b3b3b3;
+                }
+            }
+
+            .next {
+                background: #ffc107;
+
+                &:hover {
+                    background: #e6b800;
+                }
+            }
+
+            .disabled {
+                background: #ccc;
+                color: #555;
+                cursor: not-allowed;
+
+                &:hover {
+                    background: #ccc;
+                }
+            }
+        }
+    }
+}
