@@ -3,8 +3,8 @@ import React, { useState } from 'react'
 import styles from './StepPrice.module.scss'
 
 export default function StepPrice({ formData, setFormData, next, prev }) {
-    const [minPrice, setMinPrice] = useState(formData.minPrice || '')
-    const [maxPrice, setMaxPrice] = useState(formData.maxPrice || '')
+    const [minPrice, setMinPrice] = useState(formData.price.min || '')
+    const [maxPrice, setMaxPrice] = useState(formData.price.max || '')
     const [error, setError] = useState(null)
 
     const validate = () => {
