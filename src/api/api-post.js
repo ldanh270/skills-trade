@@ -6,7 +6,7 @@ import { BASE_URL } from '~/constants/globalConstants'
  * Fetch all posts sorted by creation date (newest first).
  * @returns {Promise<Array>} List of newest posts
  */
-const fetchNewestPosts = async () => {
+export const fetchNewestPosts = async () => {
     const res = await axios.get(`${BASE_URL}/posts?_sort=createdAt&_order=desc`)
     return res.data
 }
@@ -17,7 +17,7 @@ const fetchNewestPosts = async () => {
  * @param {number} limit - Number of posts per page
  * @returns {Promise<Array>} List of recommended posts
  */
-const fetchForYouPosts = async (page = 1, limit = 10) => {
+export const fetchForYouPosts = async (page = 1, limit = 10) => {
     const response = await axios.get(
         `${BASE_URL}/posts?_page=${page}&_limit=${limit}&_sort=rating&_order=desc`,
     )
@@ -31,7 +31,7 @@ const fetchForYouPosts = async (page = 1, limit = 10) => {
  * @param {number} limit - Number of posts per page
  * @returns {Promise<Array>} List of saved post objects
  */
-const fetchSavedPosts = async (userId, page = 1, limit = 10) => {
+export const fetchSavedPosts = async (userId, page = 1, limit = 10) => {
     try {
         // Step 1: Fetch user to get list of saved post IDs
         const userRes = await axios.get(`${BASE_URL}/users/${userId}`)
@@ -55,4 +55,18 @@ const fetchSavedPosts = async (userId, page = 1, limit = 10) => {
     }
 }
 
-export { fetchForYouPosts, fetchNewestPosts, fetchSavedPosts }
+/**
+ * Create a new post
+ * @param {Object} postData - Data of the post to create
+ * @returns {Promise<Object>} Created post data
+ */
+
+export const createPost = async (postData) => {
+    try {
+        const response = await axios.post(`${BASE_URL}/posts`, postData)
+        return response.data
+    } catch (error) {
+        console.error('Error creating post:', error)
+        throw error // Re-throw để xử lý tiếp ở component
+    }
+}
