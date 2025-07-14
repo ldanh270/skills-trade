@@ -9,7 +9,7 @@ import PostCard from '~/components/PostCard/PostCard'
 import ChatBox from './ChatBox/ChatBox'
 import ContactsList from './ContactList/ContactList'
 import FeedSelection from './FeedSelection/FeedSelection'
-import * as styles from './Home.module.scss'
+import styles from './Home.module.scss'
 
 const Home = () => {
     // ----- FILTER STATE -----
