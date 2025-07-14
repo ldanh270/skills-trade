@@ -8,9 +8,9 @@ export default function StepPrice({ formData, setFormData, next, prev }) {
     const [error, setError] = useState(null)
 
     const validate = () => {
-        if (!minPrice || !maxPrice) return 'Please fill in both fields.'
+        if (!maxPrice) return 'Please fill in fields.'
         if (isNaN(minPrice) || isNaN(maxPrice)) return 'Values must be numbers.'
-        if (minPrice <= 0 || maxPrice <= 0) return 'Prices must be greater than 0.'
+        if (minPrice < 0 || maxPrice <= 0) return 'Max prices must be greater than 0.'
         if (Number(maxPrice) < Number(minPrice)) return 'Max must be greater than Min.'
         return null
     }
@@ -24,7 +24,7 @@ export default function StepPrice({ formData, setFormData, next, prev }) {
         setFormData({
             ...formData,
             price: {
-                min: Number(minPrice),
+                min: Number(minPrice) || 0,
                 max: Number(maxPrice),
             },
         })
