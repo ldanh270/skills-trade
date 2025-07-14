@@ -1,0 +1,125 @@
+.step-submit {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    overflow: auto;
+    align-items: center;
+    justify-content: space-between;
+
+    .content {
+        display: flex;
+        width: 80%;
+        gap: 1.5rem;
+        flex-direction: column;
+        align-items: center;
+
+        .title {
+            font-size: 3rem;
+            font-weight: 600;
+            color: #555;
+        }
+
+        .description {
+            font-size: 1.5rem;
+            text-align: center;
+            color: #555;
+        }
+
+        .status {
+            display: flex;
+            width: 10px;
+            height: 100px;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            font-size: 1.6rem;
+            color: #84d484;
+
+            svg {
+                width: 50rem;
+                height: 50rem;
+                animation: spin 1s linear infinite;
+            }
+        }
+
+        .success {
+            color: #28a745;
+
+            svg {
+                animation: none;
+            }
+        }
+
+        .error {
+            color: #dc3545;
+
+            svg {
+                animation: none;
+            }
+        }
+    }
+
+    .actions {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 0 2rem;
+        align-items: flex-end;
+        gap: 1rem;
+
+        .separator {
+            width: 100%;
+            border-top: 0.2rem solid #ccc;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 0.5rem;
+
+            button {
+                padding: 1.2rem 3rem;
+                border: none;
+                border-radius: 2rem;
+                font-weight: bold;
+                cursor: pointer;
+            }
+
+            .back {
+                background: #ccc;
+
+                &:hover {
+                    background: #b3b3b3;
+                }
+            }
+
+            .submit {
+                background: #ffc107;
+
+                &:hover {
+                    background: #e6b800;
+                }
+            }
+
+            .disabled {
+                background: #ccc;
+                color: #555;
+                cursor: not-allowed;
+
+                &:hover {
+                    background: #ccc;
+                }
+            }
+        }
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
