@@ -62,22 +62,7 @@ const PostCard = ({ post, preview = false }) => {
                     <div className={styles['link-preview']}>
                         {post.proofs.links.map((link, index) => (
                             <div className={styles['link-container']} key={index}>
-                                {link.includes('youtube.com') || link.includes('youtu.be') ? (
-                                    <iframe
-                                        width="100%"
-                                        height="315"
-                                        src={
-                                            link.includes('watch?v=')
-                                                ? link.replace('watch?v=', 'embed/')
-                                                : link.replace(
-                                                      'youtu.be/',
-                                                      'www.youtube.com/embed/',
-                                                  )
-                                        }
-                                        title="YouTube video"
-                                        allowFullScreen
-                                    ></iframe>
-                                ) : link.includes('github.com') ? (
+                                {link.includes('github.com') ? (
                                     <a
                                         href={link}
                                         target="_blank"
@@ -91,7 +76,12 @@ const PostCard = ({ post, preview = false }) => {
                                         {link}
                                     </a>
                                 ) : (
-                                    <a href={link} target="_blank" rel="noreferrer">
+                                    <a
+                                        href={link}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        className={styles['other-link']}
+                                    >
                                         {link}
                                     </a>
                                 )}
