@@ -1,3 +1,5 @@
+@use '~/constants/styles/variables.scss' as *;
+
 * {
     margin: 0;
     padding: 0;
@@ -14,5 +16,5 @@ body {
 
     font-size: 12px;
 
-    background-color: #f2f4f7;
+    background-color: $base-background;
 }

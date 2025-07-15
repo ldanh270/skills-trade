@@ -1,3 +1,6 @@
+@use '~/constants/styles/variables.scss' as *;
+@use 'sass:color';
+
 .container {
     position: relative;
     top: calc(10vh + 4rem);
@@ -11,7 +14,8 @@
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
-    background-color: #e5e7eb;
+
+    background-color: $element-background; // thay vì #e5e7eb
     font-family: 'Segoe UI', sans-serif;
 }
 
@@ -26,4 +30,5 @@
 .sidebar {
     width: 240px;
     height: 100%;
+    background-color: $base-background; // nếu cần màu nền riêng cho sidebar
 }

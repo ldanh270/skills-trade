@@ -1,3 +1,6 @@
+@use '~/constants/styles/variables.scss' as *;
+@use 'sass:color';
+
 .Sidebar {
     display: flex;
     flex-direction: column;
@@ -6,7 +9,8 @@
     width: 240px;
     height: 100%;
     padding: 2rem;
-    border-right: 0.2rem solid #ccc;
+    background-color: $element-background;
+    border-right: 0.2rem solid $gap;
 }
 
 .step-item {
@@ -22,19 +26,20 @@
     border-radius: 50%;
     font-size: 14px;
     font-weight: bold;
-    color: #fff;
+    color: $element-background;
     transition: background 0.3s ease;
-    background-color: #d6d6d6;
+    background-color: color.adjust($base-background, $lightness: 20%);
     align-items: center;
     justify-content: center;
     margin-right: 10px;
 }
 
 .active {
-    background-color: #ffc107;
+    background-color: $accent-secondary;
+    color: $white;
 }
 
 .step-label {
     font-size: 15px;
-    color: #333;
+    color: $text-info;
 }
