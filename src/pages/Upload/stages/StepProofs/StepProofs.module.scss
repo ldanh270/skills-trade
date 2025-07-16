@@ -1,19 +1,12 @@
-/* ==========================================================================
-   📌 Layout Wrapper
-   ========================================================================== */
 .step-media {
     display: flex;
-    flex-direction: column;
     width: 100%;
     height: 100%;
     padding: 2rem;
-    overflow: auto;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
 
-    /* ==========================================================================
-       📌 Content Area
-       ========================================================================== */
     .content {
         display: flex;
         width: 80%;
@@ -30,15 +23,39 @@
         .description {
             font-size: 1.5rem;
             color: #555;
-
             strong {
                 font-weight: 600;
             }
         }
 
-        /* ==========================================================================
-           🔗 Link Input Section
-           ========================================================================== */
+        .upload-section {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+            .upload-btn {
+                display: inline-flex;
+                width: 30rem;
+                height: 5rem;
+                padding: 1rem 2rem;
+                gap: 0.5rem;
+                background: #ffc107;
+                border: none;
+                border-radius: 2rem;
+                font-size: 1.4rem;
+                font-weight: bold;
+                cursor: pointer;
+                justify-self: center;
+                align-self: center;
+                justify-content: center;
+                align-items: center;
+
+                &:hover {
+                    background: #e6b800;
+                }
+            }
+        }
+
         .link-wrapper {
             position: relative;
             display: flex;
@@ -48,19 +65,6 @@
             font-size: 1.5rem;
             align-items: center;
             padding-left: 3.5rem;
-
-            .icon {
-                position: absolute;
-                left: 1rem;
-                color: #888;
-            }
-
-            .placeholder {
-                position: absolute;
-                left: 5rem;
-                color: #aaa;
-                pointer-events: none;
-            }
 
             .input-group {
                 display: flex;
@@ -96,190 +100,160 @@
 
                     &:hover {
                         background: #ffc107;
-
                         svg {
                             color: #fff;
                         }
                     }
                 }
             }
+
+            .icon {
+                position: absolute;
+                left: 1rem;
+                color: #888;
+            }
+
+            .placeholder {
+                position: absolute;
+                left: 5rem;
+                color: #aaa;
+                pointer-events: none;
+            }
         }
 
         .focused {
             border-color: #ffc107;
-
             .placeholder {
                 display: none;
             }
         }
-
-        /* ==========================================================================
-           🖼️ Upload Section
-           ========================================================================== */
-        .upload-section {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-
-            .upload-btn {
-                display: inline-flex;
-                width: 30rem;
-                height: 5rem;
-                padding: 1rem 2rem;
-                gap: 0.5rem;
-                background: #ffc107;
-                border: none;
-                border-radius: 2rem;
-                font-size: 1.4rem;
-                font-weight: bold;
-                cursor: pointer;
-                align-self: center;
-                justify-content: center;
-                align-items: center;
-
-                &:hover {
-                    background: #e6b800;
-                }
-            }
-        }
-
-        /* ==========================================================================
-           🔍 Preview Uploaded Files + Links
-           ========================================================================== */
+        // ---- PREVIEW SUBMITED MEDIA ----
         .preview {
             display: flex;
             width: 100%;
-            gap: 2rem;
+            gap: 2rem; /* Tăng khoảng cách giữa các section */
             flex-direction: column;
             margin-top: 2rem;
 
-            /* 🖼️ Image Preview: 1 HÀNG NGANG, KHÔNG WRAP */
             .image-preview {
                 display: flex;
-                flex-direction: row;
+                padding: 1rem;
+                gap: 1.5rem; /* Tăng khoảng cách giữa các ảnh */
+                flex-wrap: nowrap; /* Cho phép xuống dòng khi không đủ chỗ */
                 overflow-x: auto;
-                gap: 1.2rem;
-                padding-bottom: 1rem;
-                scroll-snap-type: x mandatory;
+                align-items: flex-start;
+            }
 
-                .file-item {
-                    position: relative;
-                    flex: 0 0 auto;
-                    scroll-snap-align: start;
+            .link-preview {
+                display: flex;
+                width: 100%;
+                overflow-x: auto;
+                gap: 1.5rem; /* Tăng khoảng cách giữa các link */
+                flex-direction: row;
+            }
+        }
 
-                    img {
-                        width: 8rem;
-                        height: 8rem;
-                        border: 1px solid #ccc;
-                        border-radius: 0.8rem;
-                        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-                        object-fit: cover;
-                    }
+        .file-item {
+            position: relative;
+            display: inline-block;
+            margin-right: 0;
 
-                    .remove-btn {
-                        position: absolute;
-                        top: -10px;
-                        right: -10px;
-                        display: flex;
-                        width: 26px;
-                        height: 26px;
-                        background: #ff4d4f;
-                        border: none;
-                        border-radius: 50%;
-                        color: white;
-                        cursor: pointer;
-                        align-items: center;
-                        justify-content: center;
+            img {
+                width: 8rem; /* Tăng kích thước ảnh */
+                height: 8rem;
+                border: 1px solid #ccc;
+                border-radius: 0.8rem;
+                object-fit: cover;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Thêm đổ bóng */
+            }
 
-                        &:hover {
-                            background: #ff0000;
-                            transform: scale(1.1);
-                        }
+            .remove-btn {
+                position: absolute;
+                top: -10px;
+                right: -10px;
+                display: flex;
+                width: 26px;
+                height: 26px;
+                background: #ff4d4f;
+                border: none;
+                border-radius: 50%;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+                font-size: 16px;
+                color: white;
+                transition: all 0.2s;
+                cursor: pointer;
+                align-items: center;
+                justify-content: center;
+
+                &:hover {
+                    background: #ff0000;
+                    transform: scale(1.1);
+                }
+            }
+        }
+        .link-preview {
+            padding-top: 1rem;
+            width: 100%;
+
+            .link-container {
+                position: relative;
+                margin-bottom: 1rem;
+                // width: 100%;
+
+                .remove-btn {
+                    position: absolute;
+                    top: -8px;
+                    right: -8px;
+                    display: flex;
+                    width: 24px;
+                    height: 24px;
+                    background: #ff4d4f;
+                    border: none;
+                    border-radius: 50%;
+                    font-size: 16px;
+                    line-height: 24px;
+                    text-align: center;
+                    color: white;
+                    cursor: pointer;
+                    align-items: center;
+                    justify-content: center;
+
+                    &:hover {
+                        background: #ff0000;
                     }
                 }
             }
 
-            /* 🔗 Link Preview: CŨNG 1 HÀNG, PHÂN LOẠI */
-            .link-preview {
+            iframe {
+                border: 1px solid #ccc;
+                border-radius: 0.8rem;
+                max-width: 100%;
+            }
+
+            .github-link {
                 display: flex;
-                width: 100%;
-                padding: 0.5rem 0;
-                gap: 1.5rem;
-                flex-direction: row;
-                flex-wrap: wrap;
+                padding: 1rem;
+                gap: 0.8rem;
+                background: #f5f5f5;
+                border-radius: 0.8rem;
+                font-size: 1.4rem;
+                color: #000;
+                align-items: center;
+                text-decoration: none;
+                text-wrap: nowrap;
 
+                img {
+                    width: 24px;
+                    height: 24px;
+                }
 
-                .link-container {
-                    position: relative;
-                    width: fit-content;
-                    flex: 0 0 auto;
-                    scroll-snap-align: start;
-                    flex-wrap: nowrap;
-
-                    .github-link {
-                        display: flex;
-                        padding: 1rem;
-                        gap: 0.8rem;
-                        background: #24292e;
-                        border-radius: 0.8rem;
-                        font-size: 1.4rem;
-                        color: white;
-                        align-items: center;
-                        text-decoration: none;
-
-                        img {
-                            width: 24px;
-                            height: 24px;
-                        }
-
-                        &:hover {
-                            background: #000;
-                        }
-                    }
-
-                    .other-link {
-                        display: flex;
-                        padding: 1rem;
-                        gap: 0.8rem;
-                        background: #f5f5f5;
-                        border-radius: 0.8rem;
-                        font-size: 1.4rem;
-                        color: #000;
-                        align-items: center;
-                        text-decoration: none;
-
-                        &:hover {
-                            background: #e0e0e0;
-                        }
-                    }
-
-                    .remove-btn {
-                        position: absolute;
-                        top: -8px;
-                        right: -8px;
-                        display: flex;
-                        width: 24px;
-                        height: 24px;
-                        background: #ff4d4f;
-                        border: none;
-                        border-radius: 50%;
-                        color: white;
-                        cursor: pointer;
-                        align-items: center;
-                        justify-content: center;
-
-                        &:hover {
-                            background: #ff0000;
-                        }
-                    }
+                &:hover {
+                    background: #eaeaea;
                 }
             }
         }
     }
 
-    /* ==========================================================================
-       ⬇️ Actions Buttons (Back / Next)
-       ========================================================================== */
     .actions {
         display: flex;
         flex-direction: column;
@@ -330,6 +304,42 @@
                     background: #ccc;
                 }
             }
+        }
+    }
+}
+.file-item {
+    position: relative;
+    display: inline-block;
+    margin-right: 1rem;
+
+    img {
+        width: 100px;
+        height: 100px;
+        border: 1px solid #ccc;
+        border-radius: 0.8rem;
+        object-fit: cover;
+    }
+
+    .remove-btn {
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        display: flex;
+        width: 24px;
+        height: 24px;
+        background: #ff4d4f;
+        border: none;
+        border-radius: 50%;
+        font-size: 16px;
+        line-height: 24px;
+        text-align: center;
+        color: white;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+            background: #ff0000;
         }
     }
 }
