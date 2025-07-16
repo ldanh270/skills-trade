@@ -90,7 +90,7 @@ export default function StepProofs({ formData, setFormData, next, prev }) {
                         </button>
                     </div>
                 </div>
-                {/* ----- UPLOAD IMAGES ----- */}
+                {/* ----- UPLOAD IMAGE ----- */}
                 <div className={styles['upload-section']}>
                     <button
                         type="button"
@@ -112,27 +112,7 @@ export default function StepProofs({ formData, setFormData, next, prev }) {
                 {/* ----- PREVIEW PROOFS ----- */}
                 {(mediaFiles.length > 0 || mediaLinks.length > 0) && (
                     <div className={styles['preview']}>
-                        {mediaFiles.length > 0 && (
-                            <div className={styles['image-preview']}>
-                                {mediaFiles.map((file, index) => (
-                                    <div className={styles['file-item']} key={index}>
-                                        <img src={file} alt={`Proof ${index + 1}`} />
-                                        <button
-                                            className={styles['remove-btn']}
-                                            onClick={() => {
-                                                URL.revokeObjectURL(file)
-                                                setMediaFiles((prev) =>
-                                                    prev.filter((_, i) => i !== index),
-                                                )
-                                            }}
-                                        >
-                                            &times;
-                                        </button>
-                                    </div>
-                                ))}
-                            </div>
-                        )}
-
+                        {/* ----- LINK PREVIEW ----- */}
                         {mediaLinks.length > 0 && (
                             <div className={styles['link-preview']}>
                                 {mediaLinks.map((link, index) => (
@@ -167,7 +147,12 @@ export default function StepProofs({ formData, setFormData, next, prev }) {
                                                 {link}
                                             </a>
                                         ) : (
-                                            <a href={link} target="_blank" rel="noreferrer">
+                                            <a
+                                                href={link}
+                                                target="_blank"
+                                                rel="noreferrer"
+                                                className={styles['link-container']}
+                                            >
                                                 {link}
                                             </a>
                                         )}
@@ -179,6 +164,28 @@ export default function StepProofs({ formData, setFormData, next, prev }) {
                                                     prev.filter((_, i) => i !== index),
                                                 )
                                             }
+                                        >
+                                            &times;
+                                        </button>
+                                    </div>
+                                ))}
+                            </div>
+                        )}
+
+                        {/* ----- IMAGE PREVIEW ----- */}
+                        {mediaFiles.length > 0 && (
+                            <div className={styles['image-preview']}>
+                                {mediaFiles.map((file, index) => (
+                                    <div className={styles['file-item']} key={index}>
+                                        <img src={file} alt={`Proof ${index + 1}`} />
+                                        <button
+                                            className={styles['remove-btn']}
+                                            onClick={() => {
+                                                URL.revokeObjectURL(file)
+                                                setMediaFiles((prev) =>
+                                                    prev.filter((_, i) => i !== index),
+                                                )
+                                            }}
                                         >
                                             &times;
                                         </button>

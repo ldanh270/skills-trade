@@ -78,73 +78,138 @@
 
     // 🔹 Proof media wrapper (images and links)
     .imageWrapper {
-
-        // === Uploaded proof images ===
-        .proof-image {
-            width: 10rem;
-            border-radius: 1rem;
-            margin-bottom: 1rem;
-        }
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
 
         // === External proof links (iframe or GitHub) ===
         .link-preview {
             display: flex;
-            flex-wrap: nowrap;
-            gap: 0.5rem;
-            overflow-x: auto;
+            width: 100%;
+            padding: 0 1rem;
+            padding-bottom: 1rem;
+            overflow: visible;
+            gap: 1.5rem;
             flex-direction: row;
+            overflow-x: auto;
 
+
+            // Link preview element
             .link-container {
                 position: relative;
-                display: flex;
-                flex-wrap: nowrap;
-                width: 100%;
+                text-wrap: nowrap;
+
                 overflow-y: visible;
-
-                background: $accent-secondary; // Light background
+                display: flex;
+                padding: 0 0.5rem;
+                background: #f5f5f5;
                 border-radius: 0.8rem;
-                margin-bottom: 1rem;
+                font-size: 1.2rem;
+                color: #000;
+                align-items: center;
+                text-decoration: none;
 
-                iframe {
-                    border: 1px solid $gap;
-                    border-radius: 0.8rem;
+                &:hover {
+                    background: #eaeaea;
                 }
 
-                // GitHub-style link preview box
-                .github-link {
+                .remove-btn {
+                    position: absolute;
+                    top: -8px;
+                    right: -8px;
+                    z-index: 5;
                     display: flex;
-                    flex-direction: row;
-                    justify-content: flex-start;
+                    width: 24px;
+                    height: 24px;
+                    background: #ff4d4f;
+                    border: none;
+                    border-radius: 50%;
+                    font-size: 16px;
+                    color: white;
+                    cursor: pointer;
                     align-items: center;
-                    text-wrap: nowrap;
-                    width: 100%;
-                    padding: 1rem;
-                    gap: 0.8rem;
-                    background: $accent-secondary;
-                    border-radius: 0.8rem;
-                    font-size: 1.4rem;
-                    color: $text-info;
-                    text-decoration: none;
-
-                    img {
-                        width: 30px;
-                        aspect-ratio: 1 / 1;
-                    }
+                    justify-content: center;
 
                     &:hover {
-                        background: color.adjust($accent-secondary, $lightness: -5%);
+                        background: #ff0000;
+                    }
+                }
+
+                a {
+                    color: inherit;
+                    text-decoration: none;
+
+                    &:hover,
+                    &:active,
+                    &:visited {
+                        color: inherit;
+                        text-decoration: none;
                     }
                 }
             }
+
+            .github-link {
+                overflow-y: visible;
+                display: flex;
+                padding: 1rem;
+                gap: 0.8rem;
+                background: #f5f5f5;
+                border-radius: 0.8rem;
+                font-size: 1.2rem;
+                color: #000;
+                align-items: center;
+                text-decoration: none;
+
+                img {
+                    width: 24px;
+                    height: 24px;
+                }
+
+                &:hover {
+                    background: #eaeaea;
+                }
+            }
+
         }
 
-        // === Image preview gallery (horizontal scroll) ===
+        // ----- FILE ITEM (IMAGE) -----
         .image-preview {
-            display: flex;
-            flex-wrap: nowrap;
-            gap: 0.5rem;
-            overflow-x: auto;
-            flex-direction: row;
+            position: relative;
+            display: inline-block;
+            overflow-x: visible;
+
+            img {
+                width: 100%;
+                height: auto;
+                border: 1px solid $gap;
+                border-radius: 0.8rem;
+                object-fit: cover;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+
+            .remove-btn {
+                position: absolute;
+                overflow-x: visible;
+                top: 10px;
+                right: 10px;
+                z-index: 10;
+                display: flex;
+                width: 26px;
+                height: 26px;
+                background: #ff4d4f;
+                border: none;
+                border-radius: 50%;
+                font-size: 16px;
+                color: white;
+                cursor: pointer;
+                align-items: center;
+                justify-content: center;
+
+                &:hover {
+                    background: #ff0000;
+                    transform: scale(1.1);
+                }
+            }
         }
     }
 }

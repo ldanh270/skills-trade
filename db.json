@@ -507,6 +507,62 @@
         "files": [],
         "links": []
       }
+    },
+    {
+      "id": "«r0»",
+      "type": "Offer",
+      "title": "123",
+      "author": {
+        "id": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+        "name": "Lê Đức Anh"
+      },
+      "rating": 4.8,
+      "skills": [
+        "OOP",
+        "Speaking"
+      ],
+      "price": {
+        "min": 0,
+        "max": 100
+      },
+      "description": "141441",
+      "media": null,
+      "createdAt": "2025-07-16T06:37:29.615Z",
+      "proofs": {
+        "files": [],
+        "links": []
+      }
+    },
+    {
+      "id": "«r1»",
+      "type": "Hire",
+      "title": "1ret",
+      "author": {
+        "id": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+        "name": "Lê Đức Anh"
+      },
+      "rating": 4.8,
+      "skills": [
+        "Mentoring"
+      ],
+      "price": {
+        "min": 0,
+        "max": 13414
+      },
+      "description": "sgágág",
+      "media": null,
+      "createdAt": "2025-07-16T07:17:38.441Z",
+      "proofs": {
+        "files": [
+          "blob:http://localhost:5173/320d4bd0-5b0a-4284-9c3e-f7aa9729e2c3"
+        ],
+        "links": [
+          "https://github.com/",
+          "https://github.com/Garchomppy",
+          "https://github.com/HyunDinh/D10-RT01",
+          "https://chat.deepseek.com/a/chat/s/e02efba7-9ca2-4441-8f6f-cfaab871e1d2"
+        ]
+      }
     }
   ],
   "users": [
