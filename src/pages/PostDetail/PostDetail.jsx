@@ -101,7 +101,18 @@ const PostDetail = () => {
                     {/* Post header: type, title, author info, meta, description, skills */}
                     <div className={styles['postHeader']}>
                         {/* Post type badge */}
-                        <span className={styles['postType']}>{post.type}</span>
+                        <span
+                            className={
+                                `${styles['postType']} ` +
+                                (post.type === 'Offer'
+                                    ? styles['offer']
+                                    : post.type === 'Hire'
+                                      ? styles['hire']
+                                      : '')
+                            }
+                        >
+                            {post.type}
+                        </span>
                         {/* Post title */}
                         <h1 className={styles['postTitle']}>{post.title}</h1>
 

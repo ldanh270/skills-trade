@@ -35,15 +35,22 @@
         margin-bottom: 20px;
 
         .postType {
-            // Badge for post type (e.g. Hiring, Offering)
+            // Common style
             display: inline-block;
             padding: 4px 12px;
             border-radius: 4px;
             font-size: 14px;
             font-weight: 600;
             color: $white;
-            background-color: $accent-fourth;
             margin-bottom: 10px;
+
+            &.offer {
+                background-color: $accent-first; // ví dụ: xanh
+            }
+
+            &.hire {
+                background-color: $accent-fourth; // ví dụ: cam/đỏ
+            }
         }
 
         .postTitle {
@@ -218,7 +225,7 @@
                 color: $text-element;
 
                 .statValue {
-                    // Stat value
+                    // Stats value
                     font-weight: 600;
                     color: $text-info;
                 }
