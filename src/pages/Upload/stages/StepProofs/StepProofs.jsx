@@ -3,7 +3,9 @@ import React, { useEffect, useRef, useState } from 'react'
 
 import styles from './StepProofs.module.scss'
 
+// ----- STEP PROOFS COMPONENT -----
 export default function StepProofs({ formData, setFormData, next, prev }) {
+    // ----- STATE -----
     const [mediaFiles, setMediaFiles] = useState(formData.proofs?.files || [])
     const [mediaLinks, setMediaLinks] = useState(formData.proofs?.links || [])
     const [inputLink, setInputLink] = useState('')
@@ -11,12 +13,14 @@ export default function StepProofs({ formData, setFormData, next, prev }) {
     const [isFocused, setIsFocused] = useState(false)
     const fileRef = useRef(null)
 
+    // ----- HANDLE UPLOAD -----
     const handleUpload = (e) => {
         const files = Array.from(e.target.files)
         const newFiles = files.map((file) => URL.createObjectURL(file))
         setMediaFiles((prev) => [...prev, ...newFiles])
     }
 
+    // ----- UPDATE FORM DATA ON MEDIA CHANGE -----
     useEffect(() => {
         setFormData({
             ...formData,
@@ -30,6 +34,7 @@ export default function StepProofs({ formData, setFormData, next, prev }) {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [mediaFiles, mediaLinks])
 
+    // ----- RENDER -----
     return (
         <div className={styles['step-media']}>
             <div className={styles['content']}>
@@ -39,7 +44,7 @@ export default function StepProofs({ formData, setFormData, next, prev }) {
                     .
                 </p>
 
-                {/* Link Input */}
+                {/* ----- LINK INPUT ----- */}
                 <div
                     className={`${styles['link-wrapper']} ${isFocused || inputLink ? styles['focused'] : ''}`}
                 >
@@ -81,7 +86,7 @@ export default function StepProofs({ formData, setFormData, next, prev }) {
                         </button>
                     </div>
                 </div>
-                {/* Upload Images */}
+                {/* ----- UPLOAD IMAGES ----- */}
                 <div className={styles['upload-section']}>
                     <button
                         type="button"
@@ -101,7 +106,7 @@ export default function StepProofs({ formData, setFormData, next, prev }) {
                     />
                 </div>
 
-                {/* Preview Proofs */}
+                {/* ----- PREVIEW PROOFS ----- */}
                 {(mediaFiles.length > 0 || mediaLinks.length > 0) && (
                     <div className={styles['preview']}>
                         {mediaFiles.length > 0 && (
@@ -181,7 +186,7 @@ export default function StepProofs({ formData, setFormData, next, prev }) {
                     </div>
                 )}
             </div>
-            {/* Actions bar */}
+            {/* ----- ACTIONS BAR ----- */}
             <div className={styles['actions']}>
                 <hr className={styles['separator']} />
                 <div className={styles['buttons']}>
