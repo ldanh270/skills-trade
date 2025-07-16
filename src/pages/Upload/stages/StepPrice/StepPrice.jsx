@@ -34,15 +34,14 @@ export default function StepPrice({ formData, setFormData, next, prev }) {
     return (
         <div className={styles['step-price']}>
             <div className={styles['content']}>
-                <h1 className={styles['title']}>Set Your Price Range</h1>
+                <h1 className={styles['title']}>Set Your Point Range</h1>
                 <p className={styles['description']}>
-                    Indicate the <strong>price range (in USD)</strong> that fits your offer or
-                    budget.
+                    Indicate the <strong>point range (pts)</strong> that fits your offer or budget.
                 </p>
 
                 <div className={styles['price-input-group']}>
                     <div className={styles['price-field']}>
-                        <label htmlFor="min">Min Price</label>
+                        <label htmlFor="min">Min Points</label>
                         <div className={styles['input-wrapper']}>
                             <span className={styles['prefix']}>$</span>
                             <input
@@ -60,7 +59,7 @@ export default function StepPrice({ formData, setFormData, next, prev }) {
                     </div>
 
                     <div className={styles['price-field']}>
-                        <label htmlFor="max">Max Price</label>
+                        <label htmlFor="max">Max Points</label>
                         <div className={styles['input-wrapper']}>
                             <span className={styles['prefix']}>$</span>
                             <input
