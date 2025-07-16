@@ -1,4 +1,5 @@
 import { Search } from 'lucide-react'
+import { lighten } from 'polished'
 import React, { useEffect, useState } from 'react'
 // eslint-disable-next-line no-unused-vars
 import Select, { components } from 'react-select'
@@ -78,11 +79,12 @@ export default function StepSkills({ formData, setFormData, next, prev }) {
                             justifyContent: 'flex-start',
                             height: '5rem',
                             fontSize: '1.5rem',
-                            borderColor: state.isFocused ? '#ffc107' : '#ccc',
+                            backgroundColor: '#fff', // $white
+                            borderColor: state.isFocused ? '#4F80E2' : '#ccc', // $accent-secondary or $gap
                             borderRadius: '8px',
                             boxShadow: 'none',
                             '&:hover': {
-                                borderColor: '#ffc107',
+                                borderColor: '#4F80E2', // hover = $accent-secondary
                             },
                         }),
                         valueContainer: (base) => ({
@@ -90,17 +92,23 @@ export default function StepSkills({ formData, setFormData, next, prev }) {
                             display: 'flex',
                             alignItems: 'center',
                             gap: '0.5rem',
+                            color: '#080809', // $text-info
                         }),
                         multiValue: () => ({
-                            display: 'none',
+                            display: 'none', // Hide default, replaced with custom tags
                         }),
                         option: (base, state) => ({
                             ...base,
                             height: '3rem',
                             fontSize: '1rem',
-                            backgroundColor: state.isFocused ? '#ffe082' : 'white',
-                            color: '#000',
+                            backgroundColor: state.isFocused ? lighten(0.1, '#4F80E2') : '#fff', // focused = $accent-first (lighter)
+                            color: '#080809', // $text-info
                             cursor: 'pointer',
+                        }),
+                        placeholder: (base) => ({
+                            ...base,
+                            color: '#65686C', // $text-element
+                            fontStyle: 'italic',
                         }),
                     }}
                     classNamePrefix="react-select"

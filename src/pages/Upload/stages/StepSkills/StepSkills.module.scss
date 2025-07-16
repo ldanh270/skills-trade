@@ -1,3 +1,7 @@
+@use '~/constants/styles/variables.scss' as *;
+@use 'sass:color';
+
+// Main wrapper for the "Step Skills" section
 .step-skills {
     display: flex;
     width: 100%;
@@ -8,6 +12,7 @@
     align-items: center;
     justify-content: space-between;
 
+    // Content section (title, description, tags, skill input)
     .content {
         display: flex;
         flex-direction: column;
@@ -15,25 +20,30 @@
         height: 100%;
         gap: 1.5rem;
 
+        // Step title
         .title {
             font-size: 3rem;
             font-weight: 600;
             text-align: center;
-            color: #555;
+            color: $accent-first;
             margin-bottom: 1rem;
         }
 
+        // Description below the title
         .description {
             font-size: 1.5rem;
-            color: #555;
+            text-align: center;
+            color: $text-element;
+
+            // Emphasized text within description
             strong {
                 font-size: 1.7rem;
                 font-weight: 600;
-                text-align: center;
-                color: #555;
+                color: $text-info;
             }
         }
 
+        // Tag list for selected skills
         .selected-tags {
             display: flex;
             flex-wrap: wrap;
@@ -41,33 +51,35 @@
             max-width: 600px;
             margin-bottom: 2rem;
 
+            // Individual tag
             .tag {
                 display: flex;
                 padding: 1rem 1.5rem;
                 gap: 8px;
-                background: #ffcd29;
+                background: lighten($color: $accent-first, $amount: 29%);
                 border-radius: 2rem;
                 font-size: 1.2rem;
-                color: #000;
+                color: $black;
                 align-items: center;
 
+                // Remove button (X icon)
                 button {
                     background: none;
                     border: none;
                     font-size: 16px;
-                    color: #000;
+                    color: $black;
                     cursor: pointer;
                     margin-left: 4px;
 
                     &:hover {
-                        color: #333;
+                        color: $text-element;
                     }
                 }
             }
         }
     }
 
-    // Actions
+    // Footer area with action buttons (Back, Next)
     .actions {
         display: flex;
         width: 100%;
@@ -78,45 +90,58 @@
         align-items: flex-end;
         gap: 1rem;
 
+        // Horizontal line to separate content from buttons
         .separator {
             width: 100%;
             margin: 1rem 0;
-            border-top: 0.2rem solid #ccc;
+            border-top: 0.2rem solid $gap;
         }
 
+        // Button group container
         .buttons {
             display: flex;
             flex-direction: row;
             gap: 0.5rem;
+
+            // Base button style
             button {
                 padding: 1.2rem 3rem;
-                background: #ffcd29;
                 border: none;
                 border-radius: 2rem;
+                font-size: 1.4rem;
                 font-weight: bold;
+                color: $white;
+                transition: background 0.3s ease;
                 cursor: pointer;
-                align-self: flex-end;
             }
+
+            // Back button style
             .back {
-                background: #ccc;
+                background: $gap;
+                color: $text-element;
+
                 &:hover {
-                    background: #b3b3b3;
-                }
-            }
-            .next {
-                background: #ffc107;
-                &:hover {
-                    background: #e6b800;
+                    background: color.adjust($gap, $lightness: -10%);
                 }
             }
 
+            // Next button style
+            .next {
+                background: $accent-first;
+
+                &:hover {
+                    background: color.adjust($accent-first, $lightness: -10%);
+                }
+            }
+
+            // Disabled button style
             .disabled {
-                background: #ccc;
-                color: #555;
+                background: $disabled;
+                color: $text-element;
                 cursor: not-allowed;
 
                 &:hover {
-                    background: #ccc;
+                    background: color.adjust($disabled, $lightness: -10%);
                 }
             }
         }
