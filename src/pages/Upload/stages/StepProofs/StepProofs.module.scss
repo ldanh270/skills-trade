@@ -249,7 +249,10 @@
         .file-item {
             position: relative;
             display: inline-block;
+            display: flex;
+            padding: 1rem;
             overflow-x: visible;
+            flex-direction: column;
 
             img {
                 width: 100%;
@@ -263,8 +266,8 @@
             .remove-btn {
                 position: absolute;
                 overflow-x: visible;
-                top: 10px;
-                right: 10px;
+                top: 20px;
+                right: 20px;
                 z-index: 10;
                 display: flex;
                 width: 26px;

@@ -563,6 +563,35 @@
           "https://chat.deepseek.com/a/chat/s/e02efba7-9ca2-4441-8f6f-cfaab871e1d2"
         ]
       }
+    },
+    {
+      "id": "«r0»",
+      "type": "Hire",
+      "title": "124412",
+      "author": {
+        "id": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+        "name": "Lê Đức Anh"
+      },
+      "rating": 4.8,
+      "skills": [
+        "OOP",
+        "Interview"
+      ],
+      "price": {
+        "min": 0,
+        "max": 13141
+      },
+      "description": "sdsagdág",
+      "media": null,
+      "createdAt": "2025-07-16T08:13:34.294Z",
+      "proofs": {
+        "files": [
+          "blob:http://localhost:5173/b4acdff0-a687-4b02-bad8-0658bef553c9"
+        ],
+        "links": [
+          "https://github.com/"
+        ]
+      }
     }
   ],
   "users": [
