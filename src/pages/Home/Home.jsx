@@ -6,8 +6,8 @@ import { fetchForYouPosts, fetchNewestPosts, fetchSavedPosts } from '~/api/api-p
 import Filter from '~/components/Filter/Filter'
 import PostCard from '~/components/PostCard/PostCard'
 
+import ContactsList from '../../components/ContactList/ContactList'
 import ChatBox from './ChatBox/ChatBox'
-import ContactsList from './ContactList/ContactList'
 import FeedSelection from './FeedSelection/FeedSelection'
 import styles from './Home.module.scss'
 
