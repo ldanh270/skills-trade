@@ -30,19 +30,6 @@ export default function StepProofs({ formData, setFormData, next, prev }) {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [mediaFiles, mediaLinks])
 
-    const handleNext = () => {
-        setFormData({
-            ...formData,
-            createdAt: new Date().toISOString(),
-            proofs: {
-                files: mediaFiles,
-                links: mediaLinks,
-            },
-        })
-        // console.log(formData)
-        next()
-    }
-
     return (
         <div className={styles['step-media']}>
             <div className={styles['content']}>
@@ -194,7 +181,6 @@ export default function StepProofs({ formData, setFormData, next, prev }) {
                     </div>
                 )}
             </div>
-
             {/* Actions bar */}
             <div className={styles['actions']}>
                 <hr className={styles['separator']} />
@@ -203,8 +189,21 @@ export default function StepProofs({ formData, setFormData, next, prev }) {
                         Back
                     </button>
                     <button
-                        className={`${styles['next']} ${styles['active']}`}
-                        onClick={handleNext}
+                        className={`${styles['next']} ${mediaFiles.length > 0 || mediaLinks.length > 0 ? styles['active'] : styles['disabled']}`}
+                        onClick={() => {
+                            if (mediaFiles.length > 0 || mediaLinks.length > 0) {
+                                setFormData({
+                                    ...formData,
+                                    createdAt: new Date().toISOString(),
+                                    proofs: {
+                                        files: mediaFiles,
+                                        links: mediaLinks,
+                                    },
+                                })
+                                next()
+                            }
+                        }}
+                        disabled={!(mediaFiles.length > 0 || mediaLinks.length > 0)}
                     >
                         Next
                     </button>
