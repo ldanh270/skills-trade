@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 import { fetchForYouPosts, fetchNewestPosts, fetchSavedPosts } from '~/api/api-post'
 import Filter from '~/components/Filter/Filter'
@@ -110,7 +111,9 @@ const Home = () => {
                         loader={<h4>Loading...</h4>}
                     >
                         {posts.map((post) => (
-                            <PostCard key={post.id} post={post} />
+                            <Link to={`/posts/${post.id}`} key={post.id}>
+                                <PostCard post={post} />
+                            </Link>
                         ))}
                     </InfiniteScroll>
                 </div>
