@@ -1,3 +1,4 @@
+@use '~/constants/styles/variables.scss' as *;
 .RatingInput {
     display: flex;
     flex-direction: column;
@@ -22,18 +23,18 @@
             stroke 0.2s ease,
             fill 0.2s ease;
         cursor: pointer;
-        stroke: #ccc;
+        stroke: $accent-secondary;
 
         // Hover state
         &:hover {
-            stroke: #ffb700;
-            fill: #ffeb99;
+            stroke: $accent-first;
+            fill: $accent-first;
         }
     }
 
     // Star when selected/filled
     .filled {
-        stroke: #ffcd29;
-        fill: #ffcd29;
+        stroke: $accent-first;
+        fill: $accent-first;
     }
 }

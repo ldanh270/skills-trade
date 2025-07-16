@@ -1,3 +1,4 @@
+@use '~/constants/styles/variables.scss' as *;
 // Root container for the PostTypeInput component
 .PostTypeInput {
     display: flex;
@@ -26,16 +27,17 @@ label {
 // Default button style
 .button {
     padding: 6px 12px;
-    background: white;
-    border: 1px solid #ccc;
+    background: $accent-secondary;
+    border: 1px solid $accent-secondary;
     border-radius: 20px;
     font-size: 14px;
     cursor: pointer;
+    color: $text-element;
 }
 
 // Active button style (highlighted when selected)
 .active {
-    background: #ffcd29;
-    color: white;
-    border-color: #ffcd29;
+    background: $accent-first;
+    color: $white;
+    border-color: $accent-first;
 }

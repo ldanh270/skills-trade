@@ -1,10 +1,11 @@
+@use '~/constants/styles/variables.scss' as *;
 // Color variables
-$color-background: #f2f4f7;
-$color-text: #080809;
-$color-received: #dee2e6;
-$color-sent: #7edc89;
-$color-accent: #7edc89;
-$color-accent-second: #e5e7eb;
+$color-background: $base-background;
+$color-text: $text-info;
+$color-received: $accent-secondary;
+$color-sent: $accent-fourth;
+$color-accent: $accent-first;
+$color-accent-second: $accent-secondary;
 
 // Chat container
 .chat-container {
@@ -26,7 +27,7 @@ $color-accent-second: #e5e7eb;
     padding: 0.75rem 1rem;
     gap: 10px;
     font-weight: bold;
-    color: #fff;
+    color: $white;
     justify-content: space-between;
     align-items: center;
     background-color: $color-accent;
@@ -59,12 +60,12 @@ $color-accent-second: #e5e7eb;
                 border-radius: 50%;
 
                 &.online {
-                    background-color: #7edc89;
+                    background-color: $online;
                 }
 
                 &.offline {
-                    background-color: #000;
-                    border: 3px solid #ff1a1a;
+                    background-color: $black;
+                    border: 3px solid $offline;
                 }
             }
         }

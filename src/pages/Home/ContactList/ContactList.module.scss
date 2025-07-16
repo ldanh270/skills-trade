@@ -1,3 +1,4 @@
+@use '~/constants/styles/variables.scss' as *;
 // Root wrapper
 .wrapper {
     display: flex;
@@ -13,13 +14,13 @@
     align-items: center;
     font-size: 14px;
     font-weight: bold;
-    color: #333;
+    color: $text-element;
 
     .title {
         font-size: 18px;
         font-weight: 600;
         text-align: center;
-        color: #555;
+        color: $text-element;
     }
 }
 
@@ -44,7 +45,7 @@
     align-items: center;
 
     &:hover {
-        background: #eaeaea;
+        background: $accent-secondary;
     }
 
     // Avatar and online/offline dot
@@ -84,6 +85,6 @@
         font-size: 14px;
         font-weight: 400;
         text-align: center;
-        color: #333;
+        color: $text-info;
     }
 }

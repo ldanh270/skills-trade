@@ -1,28 +1,38 @@
+// === Main Theme Colors ===
+
 // Main header, Logo, CTA
-$accent-first: "#3E54D3";
+$accent-first: #4F80E2;
 
 // Side button, Hover, menubar
-$accent-secondary: "#4F80e2";
+$accent-secondary: #D6D9DD;
 
 // Elements / Sections background, Highlight box, Info card
-$element-background: "#15cdca";
+$element-background: #15CDCA;
 
 // Side footer/background, confirm button
-$accent-fourth: "#4fE0B6";
+$accent-fourth: #4FE0B6;
 
 // Base background
-$base-background: "#1c1c1d";
+$base-background: #E5E7EB;
+
+// Disabled elements, borders
+$disabled: #00000040;
+
+// === Text Colors ===
 
 // Name, description, display data
-$text-info: "#E2E5E9";
+$text-info: #080809;
 
 // Title, placeholder
-$text-element: "#B0B3B8";
+$text-element: #555;
 
-// Status colors
-$online: "#3fbb46";
-$offline: "#FF0D0D";
+// === Status Colors ===
+$online: #3FBB46;
+$offline: #FF0D0D;
 
-// Basis colors
-$white: "#fff";
-$black: "$000";
+// === Basic Colors ===
+$white: #FFFFFF;
+$black: #000000;
+
+// === Neutral / Divider ===
+$gap: #CCCCCC;
