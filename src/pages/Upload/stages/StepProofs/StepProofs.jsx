@@ -11,6 +11,7 @@ export default function StepProofs({ formData, setFormData, next, prev }) {
     const [inputLink, setInputLink] = useState('')
 
     const [isFocused, setIsFocused] = useState(false)
+
     const fileRef = useRef(null)
 
     // ----- HANDLE UPLOAD -----

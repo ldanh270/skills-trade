@@ -10,6 +10,8 @@ import StepSubmit from './stages/StepSubmit/StepSubmit'
 import StepTitle from './stages/StepTitle/StepTitle'
 import StepType from './stages/StepType/StepType'
 import styles from './Upload.module.scss'
+
+// ----- STEP DEFINITIONS -----
 const steps = [
     { key: 'type', label: 'Type of Post' },
     { key: 'title', label: 'Title' },
@@ -21,6 +23,7 @@ const steps = [
 ]
 
 export default function Upload() {
+    // ----- USER & FORM STATE -----
     const user = useSelector((state) => state.user.user)
     // State to manage submiting post
     const [formData, setFormData] = useState({
@@ -42,6 +45,7 @@ export default function Upload() {
     const [currentStep, setCurrentStep] = useState(0)
     const [status, setStatus] = useState(null)
 
+    // ----- STEP NAVIGATION -----
     const next = () => setCurrentStep((prev) => Math.min(prev + 1, steps.length - 1))
     const prev = () => setCurrentStep((prev) => Math.max(prev - 1, 0))
     const reset = () => {
@@ -50,8 +54,10 @@ export default function Upload() {
         setStatus(null)
     }
 
+    // ----- SHARED PROPS FOR STEPS -----
     const sharedProps = { formData, setFormData, next, prev, setStatus }
 
+    // ----- STEP COMPONENTS -----
     const stepComponents = [
         <StepType {...sharedProps} />,
         <StepTitle {...sharedProps} />,
@@ -62,6 +68,7 @@ export default function Upload() {
         <StepSubmit {...sharedProps} status={status} reset={reset} />,
     ]
 
+    // ----- RENDER -----
     return (
         <div className={styles['container']}>
             <div className={styles['sidebar']}>
