@@ -458,6 +458,55 @@
           "https://github.com/cybervinh2077/cuuDomConBackend/tree/master/user-acc-log-reg"
         ]
       }
+    },
+    {
+      "id": "«r2»",
+      "type": "Hire",
+      "title": "1",
+      "author": {
+        "id": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+        "name": "Lê Đức Anh"
+      },
+      "rating": 4.8,
+      "skills": [
+        "OOP",
+        "Teaching"
+      ],
+      "price": {
+        "min": 0,
+        "max": 100
+      },
+      "description": "100",
+      "media": null,
+      "createdAt": "2025-07-16T00:48:43.482Z",
+      "proofs": {
+        "files": [],
+        "links": []
+      }
+    },
+    {
+      "id": "«r0»",
+      "type": "Hire",
+      "title": "1",
+      "author": {
+        "id": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+        "name": "Lê Đức Anh"
+      },
+      "rating": 4.8,
+      "skills": [
+        "OOP"
+      ],
+      "price": {
+        "min": 0,
+        "max": 1
+      },
+      "description": "1000",
+      "media": null,
+      "createdAt": "2025-07-16T00:50:20.284Z",
+      "proofs": {
+        "files": [],
+        "links": []
+      }
     }
   ],
   "users": [
