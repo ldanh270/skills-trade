@@ -16,7 +16,7 @@ const steps = [
     { key: 'skills', label: 'Skills' },
     { key: 'price', label: 'Price Range' },
     { key: 'description', label: 'Description' },
-    { key: 'media', label: 'Media Proof' },
+    // { key: 'media', label: 'Media Proof' },
     { key: 'submit', label: 'Submit' },
 ]
 
@@ -58,7 +58,7 @@ export default function Upload() {
         <StepSkills {...sharedProps} />,
         <StepPrice {...sharedProps} />,
         <StepDescription {...sharedProps} />,
-        <StepProofs {...sharedProps} />,
+        // <StepProofs {...sharedProps} />,
         <StepSubmit {...sharedProps} status={status} reset={reset} />,
     ]
 

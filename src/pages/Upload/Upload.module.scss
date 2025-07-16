@@ -10,12 +10,13 @@
     height: calc(100vh - 10vh - 8rem);
     margin: auto;
     padding: 2rem 0;
+    border: $gap solid 1.5px;
     border-radius: 20px;
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
 
-    background-color: $element-background; // thay vì #e5e7eb
+    background-color: $base-background;
     font-family: 'Segoe UI', sans-serif;
 }
 
