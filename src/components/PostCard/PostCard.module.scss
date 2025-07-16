@@ -1,6 +1,15 @@
 @use '~/constants/styles/variables.scss' as *;
 @use 'sass:color';
 
+a,
+a:visited,
+a:hover,
+a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+
 .container {
     width: 100%;
     margin: 0 auto 2rem;
@@ -9,6 +18,8 @@
     border-radius: 1rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05); // Soft shadow
     cursor: pointer;
+
+
 
     // 🔹 Top section: avatar, name, meta
     .top {
