@@ -9,7 +9,7 @@
     width: 240px;
     height: 100%;
     padding: 2rem;
-    background-color: $element-background;
+    background-color: $base-background;
     border-right: 0.2rem solid $gap;
 }
 
@@ -26,7 +26,7 @@
     border-radius: 50%;
     font-size: 14px;
     font-weight: bold;
-    color: $element-background;
+    color: $text-element;
     transition: background 0.3s ease;
     background-color: color.adjust($base-background, $lightness: 20%);
     align-items: center;
@@ -35,7 +35,7 @@
 }
 
 .active {
-    background-color: $accent-secondary;
+    background-color: $accent-first;
     color: $white;
 }
 
