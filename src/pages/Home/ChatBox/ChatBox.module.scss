@@ -1,10 +1,5 @@
-// Color variables
-$color-background: #f2f4f7;
-$color-text: #080809;
-$color-received: #dee2e6;
-$color-sent: #7edc89;
-$color-accent: #7edc89;
-$color-accent-second: #e5e7eb;
+@use 'sass:color';
+@use '~/constants/styles/variables.scss' as *;
 
 // Chat container
 .chat-container {
@@ -14,10 +9,10 @@ $color-accent-second: #e5e7eb;
     height: 450px;
     overflow: hidden;
     border-radius: 10px;
-    background-color: $color-background;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    background-color: $base-background;
+    box-shadow: 0 0 10px rgba($black, 0.3);
     font-family: 'Segoe UI', sans-serif;
-    color: $color-text;
+    color: $text-info;
 }
 
 // Header section
@@ -26,10 +21,10 @@ $color-accent-second: #e5e7eb;
     padding: 0.75rem 1rem;
     gap: 10px;
     font-weight: bold;
-    color: #fff;
+    color: $white;
     justify-content: space-between;
     align-items: center;
-    background-color: $color-accent;
+    background-color: $accent-first;
 
     .contact-info {
         display: flex;
@@ -44,9 +39,9 @@ $color-accent-second: #e5e7eb;
             img {
                 width: 3rem;
                 height: 3rem;
-                background: black;
+                background: $black;
                 border-radius: 50%;
-                stroke: rgb(0, 0, 0, 1);
+                stroke: rgba($black, 1);
                 backface-visibility: hidden;
             }
 
@@ -59,12 +54,12 @@ $color-accent-second: #e5e7eb;
                 border-radius: 50%;
 
                 &.online {
-                    background-color: #7edc89;
+                    background-color: $online;
                 }
 
                 &.offline {
-                    background-color: #000;
-                    border: 3px solid #ff1a1a;
+                    background-color: $black;
+                    border: 3px solid $offline;
                 }
             }
         }
@@ -72,7 +67,7 @@ $color-accent-second: #e5e7eb;
 
     .close-button {
         font-size: 2.5rem;
-        color: #fff;
+        color: $white;
         cursor: pointer;
         background-color: transparent;
     }
@@ -88,7 +83,7 @@ $color-accent-second: #e5e7eb;
     overflow-y: auto;
 }
 
-// Individual message bubble
+// Message bubbles
 .message {
     max-width: 70%;
     padding: 0.5rem 1rem;
@@ -98,15 +93,15 @@ $color-accent-second: #e5e7eb;
     word-wrap: break-word;
 
     &.received {
-        background-color: $color-received;
-        color: $color-text;
+        background-color: $accent-secondary;
+        color: $text-info;
         align-self: flex-start;
         border-bottom-left-radius: 0.25rem;
     }
 
     &.sent {
-        background-color: $color-sent;
-        color: $color-text;
+        background-color: $accent-first;
+        color: $white;
         align-self: flex-end;
         border-bottom-right-radius: 0.25rem;
     }
@@ -118,7 +113,7 @@ $color-accent-second: #e5e7eb;
     padding: 0.75rem 1rem;
     gap: 1rem;
     align-items: center;
-    background-color: $color-accent;
+    background-color: $accent-first;
 
     input {
         padding: 0.5rem 1rem;
@@ -126,8 +121,8 @@ $color-accent-second: #e5e7eb;
         border: none;
         border-radius: 19px;
         font-size: 14px;
-        color: $color-text;
-        background-color: $color-background;
+        color: $text-info;
+        background-color: $base-background;
         outline: none;
     }
 
@@ -140,6 +135,7 @@ $color-accent-second: #e5e7eb;
         cursor: pointer;
         justify-content: center;
         align-items: center;
-        fill: $color-accent;
+        fill: $accent-fourth;
+        background-color: transparent;
     }
 }
