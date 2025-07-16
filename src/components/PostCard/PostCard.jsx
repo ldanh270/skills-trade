@@ -58,7 +58,7 @@ const PostCard = ({ post, preview = false }) => {
 
             {/* Proof links */}
             <div className={styles['imageWrapper']}>
-                {post.proofs.links.length > 0 && (
+                {post.proofs?.links?.length > 0 && (
                     <div className={styles['link-preview']}>
                         {post.proofs.links.map((link, index) => (
                             <div className={styles['link-container']} key={index}>
@@ -99,7 +99,7 @@ const PostCard = ({ post, preview = false }) => {
                         ))}
                     </div>
                 )}
-                {post.proofs.files.length > 0 && (
+                {post.proofs?.files?.length > 0 && (
                     <div className={styles['image-preview']}>
                         {post.proofs.files.map((proof, index) => (
                             <img
