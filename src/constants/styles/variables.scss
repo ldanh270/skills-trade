@@ -1,38 +1,51 @@
-    // === Main Theme Colors ===
+// src/styles/_variables.scss
 
-    // Main header, Logo, CTA
-    $accent-first: #4F80E2;
+// === Main Theme Colors ===
+$accent-first: #4F80E2; // Main header, Logo, CTA
+$accent-secondary: #D6D9DD; // Side button, Hover, menubar
+$element-background: #15CDCA; // Elements/Sections background
+$accent-fourth: #4FE0B6; // Side footer/background, confirm button
+$base-background: #E5E7EB; // Base background
+$disabled: rgba(0, 0, 0, 0.25); // Disabled elements, borders
 
-    // Side button, Hover, menubar
-    $accent-secondary: #D6D9DD;
+// === Text Colors ===
+$text-info: #080809; // Name, description, display data
+$text-element: #555; // Title, placeholder
 
-    // Elements / Sections background, Highlight box, Info card
-    $element-background: #15CDCA;
+// === Status Colors ===
+$online: #3FBB46;
+$offline: #FF0D0D;
 
-    // Side footer/background, confirm button
-    $accent-fourth: #4FE0B6;
+// === Basic Colors ===
+$white: #FFFFFF;
+$black: #000000;
 
-    // Base background
-    $base-background: #E5E7EB;
+// === Neutral/Divider ===
+$gap: #CCCCCC;
 
-    // Disabled elements, borders
-    $disabled: #00000040;
+// === Typography ===
+$font-primary: 'Segoe UI', Roboto, sans-serif;
+$font-secondary: 'Helvetica Neue', Arial, sans-serif;
 
-    // === Text Colors ===
+// === Spacing ===
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
 
-    // Name, description, display data
-    $text-info: #080809;
+// === Border Radius ===
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
 
-    // Title, placeholder
-    $text-element: #555;
+// === Shadows ===
+$shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
 
-    // === Status Colors ===
-    $online: #3FBB46;
-    $offline: #FF0D0D;
-
-    // === Basic Colors ===
-    $white: #FFFFFF;
-    $black: #000000;
-
-    // === Neutral / Divider ===
-    $gap: #CCCCCC;
+// === Breakpoints ===
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
