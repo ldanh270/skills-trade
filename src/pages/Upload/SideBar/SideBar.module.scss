@@ -1,6 +1,7 @@
 @use '~/constants/styles/variables.scss' as *;
 @use 'sass:color';
 
+// ----- SIDEBAR WRAPPER -----
 .Sidebar {
     display: flex;
     flex-direction: column;
@@ -13,12 +14,14 @@
     border-right: 0.2rem solid $gap;
 }
 
+// ----- STEP ITEM -----
 .step-item {
     display: flex;
     align-items: center;
     margin-bottom: 2rem;
 }
 
+// ----- STEP CIRCLE (NUMBER/ICON) -----
 .step-circle {
     display: flex;
     width: 4rem;
@@ -34,11 +37,13 @@
     margin-right: 10px;
 }
 
+// ----- ACTIVE STEP -----
 .active {
     background-color: $accent-first;
     color: $white;
 }
 
+// ----- STEP LABEL -----
 .step-label {
     font-size: 15px;
     color: $text-info;

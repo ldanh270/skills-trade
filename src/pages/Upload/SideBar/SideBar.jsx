@@ -2,7 +2,9 @@ import React from 'react'
 
 import styles from './Sidebar.module.scss'
 
+// ----- SIDEBAR COMPONENT -----
 const Sidebar = ({ steps, current, status }) => {
+    // ----- RENDER SIDEBAR STEPS -----
     return (
         <div className={styles['Sidebar']}>
             {steps.map((step, idx) => (
@@ -25,4 +27,5 @@ const Sidebar = ({ steps, current, status }) => {
     )
 }
 
+// ----- EXPORT COMPONENT -----
 export default Sidebar
