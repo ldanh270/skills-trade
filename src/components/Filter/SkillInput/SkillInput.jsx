@@ -91,7 +91,7 @@ function SkillInput({ filters, setFilters }) {
                         backgroundColor: state.isSelected
                             ? '#e5e7eb'
                             : state.isFocused
-                              ? '#f3f4f6'
+                              ? '#D6D9DD'
                               : 'white',
                         color: '#333',
                     }),
