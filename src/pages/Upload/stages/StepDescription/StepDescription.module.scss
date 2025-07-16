@@ -1,3 +1,6 @@
+@use '~/constants/styles/variables.scss' as *;
+@use 'sass:color';
+
 .step-description {
     display: flex;
     flex-direction: column;
@@ -8,6 +11,7 @@
     align-items: center;
     justify-content: space-between;
 
+    // Nội dung chính (tiêu đề, mô tả, textarea)
     .content {
         display: flex;
         width: 80%;
@@ -18,15 +22,19 @@
             font-size: 3rem;
             font-weight: 600;
             text-align: center;
-            color: #555;
+            color: $accent-first;
+            margin-bottom: 1rem;
         }
 
         .description {
             font-size: 1.5rem;
-            color: #555;
+            text-align: center;
+            color: $text-element;
+
             strong {
-                font-size: 1.7rem;
+                font-size: 1.6rem;
                 font-weight: 600;
+                color: $text-info;
             }
         }
 
@@ -39,15 +47,21 @@
                 width: 100%;
                 height: 100%;
                 padding: 1.2rem 1.2rem 1.2rem 3.5rem;
-                border: 1px solid #ccc;
+                background: $white;
+                border: 1px solid $gap;
                 border-radius: 0.8rem;
                 font-size: 1.5rem;
+                color: $text-info;
                 resize: vertical;
                 min-height: 10rem;
 
                 &:focus {
                     outline: none;
-                    border-color: #ffc107;
+                    border-color: $accent-first;
+                }
+
+                &::placeholder {
+                    color: $text-element;
                 }
             }
 
@@ -55,7 +69,7 @@
                 position: absolute;
                 top: 1.2rem;
                 left: 1rem;
-                color: #888;
+                color: $text-element;
             }
 
             .placeholder {
@@ -63,7 +77,7 @@
                 top: 1.2rem;
                 left: 3.5rem;
                 font-size: 1.5rem;
-                color: #aaa;
+                color: $text-element;
                 pointer-events: none;
             }
         }
@@ -73,8 +87,14 @@
                 display: none;
             }
         }
+
+        .error {
+            font-size: 1.2rem;
+            color: red;
+        }
     }
 
+    // Footer: nút điều hướng
     .actions {
         display: flex;
         flex-direction: column;
@@ -86,7 +106,7 @@
         .separator {
             width: 100%;
             margin: 1rem 0;
-            border-top: 0.2rem solid #ccc;
+            border-top: 0.2rem solid $gap;
         }
 
         .buttons {
@@ -98,33 +118,37 @@
                 padding: 1.2rem 3rem;
                 border: none;
                 border-radius: 2rem;
+                font-size: 1.4rem;
                 font-weight: bold;
+                color: $white;
+                transition: background 0.3s ease;
                 cursor: pointer;
             }
 
             .back {
-                background: #ccc;
+                background: $gap;
+                color: $text-element;
 
                 &:hover {
-                    background: #b3b3b3;
+                    background: color.adjust($gap, $lightness: -10%);
                 }
             }
 
             .next {
-                background: #ffc107;
+                background: $accent-first;
 
                 &:hover {
-                    background: #e6b800;
+                    background: color.adjust($accent-first, $lightness: -10%);
                 }
             }
 
             .disabled {
-                background: #ccc;
-                color: #555;
+                background: $disabled;
+                color: $text-element;
                 cursor: not-allowed;
 
                 &:hover {
-                    background: #ccc;
+                    background: color.adjust($disabled, $lightness: -10%);
                 }
             }
         }
