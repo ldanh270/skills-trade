@@ -29,7 +29,7 @@ label {
 .button {
     padding: 6px 12px;
     background: $white;
-    border: 1px solid $gap;
+    border: 0.5px solid $gap;
     border-radius: 20px;
     font-size: 14px;
     color: $text-info;
@@ -42,11 +42,18 @@ label {
 
 // Active button style (highlighted when selected)
 .active {
-    background: $accent-first;
     color: $white;
     border-color: $text-element;
 
     &:hover {
         background: $accent-first;
     }
+}
+
+.offer {
+    background: $accent-first;
+}
+
+.hire {
+    background: $accent-fourth;
 }
