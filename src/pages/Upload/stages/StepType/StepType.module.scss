@@ -11,6 +11,7 @@
     align-items: center;
     justify-content: space-between;
 
+    // Main content section
     .content {
         display: flex;
         flex-direction: column;
@@ -22,7 +23,7 @@
             font-size: 3rem;
             font-weight: 600;
             text-align: center;
-            color: $text-element;
+            color: $accent-first;
             margin-bottom: 1rem;
         }
 
@@ -65,31 +66,36 @@
             }
         }
 
+        // HIRE button style
         .Hire {
             padding: 1rem;
             background: $white;
-            border: 1px solid $accent-secondary;
+            border: 1px solid $accent-fourth;
             border-radius: 20px;
             font-size: 1.5rem;
+            transition: all 0.2s;
             cursor: pointer;
 
             &:hover {
-                background: $accent-secondary;
+                background: $accent-fourth;
                 color: $white;
             }
 
             &.active {
                 background: $accent-fourth;
                 color: $white;
+                border-color: $accent-fourth;
             }
         }
 
+        // OFFER button style
         .Offer {
             padding: 1rem;
             background: $white;
             border: 1px solid $accent-secondary;
             border-radius: 20px;
             font-size: 1.5rem;
+            transition: all 0.2s;
             cursor: pointer;
 
             &:hover {
@@ -100,10 +106,12 @@
             &.active {
                 background: $accent-first;
                 color: $white;
+                border-color: $accent-first;
             }
         }
     }
 
+    // Actions (footer of step)
     .actions {
         display: flex;
         width: 100%;
@@ -127,20 +135,22 @@
 
             button {
                 padding: 1.2rem 3rem;
-                background: $accent-fourth;
+                background: $accent-first;
                 border: none;
                 border-radius: 2rem;
                 font-weight: bold;
+                color: $white;
+                transition: background 0.2s;
                 cursor: pointer;
                 align-self: flex-end;
 
                 &:hover {
-                    background: color.adjust($accent-fourth, $lightness: -10%);
+                    background: color.adjust($accent-first, $lightness: -10%);
                 }
             }
 
             .disabled {
-                background: rgba($black, 0.3);
+                background: $disabled;
                 color: $text-element;
                 cursor: not-allowed;
 
