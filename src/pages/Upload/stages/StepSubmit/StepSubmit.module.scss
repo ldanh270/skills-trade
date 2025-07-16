@@ -1,3 +1,6 @@
+@use '~/constants/styles/variables.scss' as *;
+@use 'sass:color';
+
 .step-submit {
     display: flex;
     flex-direction: column;
@@ -8,6 +11,7 @@
     align-items: center;
     justify-content: space-between;
 
+    // Nội dung chính
     .content {
         display: flex;
         width: 80%;
@@ -18,28 +22,31 @@
         .title {
             font-size: 3rem;
             font-weight: 600;
-            color: #555;
+            text-align: center;
+            color: $accent-first;
         }
 
         .description {
             font-size: 1.5rem;
             text-align: center;
-            color: #555;
+            color: $text-element;
         }
 
         .status {
             display: flex;
-            width: 10px;
-            height: 100px;
+            width: 100%;
+            height: auto;
             align-items: center;
             justify-content: center;
             gap: 1rem;
             font-size: 1.6rem;
-            color: #84d484;
+            color: $text-info;
+            margin-top: 2rem;
 
             svg {
-                width: 50rem;
-                height: 50rem;
+                width: 5rem;
+                height: 5rem;
+                color: $accent-first;
                 animation: spin 1s linear infinite;
             }
         }
@@ -48,6 +55,7 @@
             color: #28a745;
 
             svg {
+                color: #28a745;
                 animation: none;
             }
         }
@@ -56,11 +64,13 @@
             color: #dc3545;
 
             svg {
+                color: #dc3545;
                 animation: none;
             }
         }
     }
 
+    // Footer: nút điều hướng
     .actions {
         display: flex;
         flex-direction: column;
@@ -71,7 +81,7 @@
 
         .separator {
             width: 100%;
-            border-top: 0.2rem solid #ccc;
+            border-top: 0.2rem solid $gap;
         }
 
         .buttons {
@@ -82,33 +92,37 @@
                 padding: 1.2rem 3rem;
                 border: none;
                 border-radius: 2rem;
+                font-size: 1.4rem;
                 font-weight: bold;
+                color: $white;
+                transition: background 0.3s ease;
                 cursor: pointer;
             }
 
             .back {
-                background: #ccc;
+                background: $gap;
+                color: $text-element;
 
                 &:hover {
-                    background: #b3b3b3;
+                    background: color.adjust($gap, $lightness: -10%);
                 }
             }
 
             .submit {
-                background: #ffc107;
+                background: $accent-first;
 
                 &:hover {
-                    background: #e6b800;
+                    background: color.adjust($accent-first, $lightness: -10%);
                 }
             }
 
             .disabled {
-                background: #ccc;
-                color: #555;
+                background: $disabled;
+                color: $text-element;
                 cursor: not-allowed;
 
                 &:hover {
-                    background: #ccc;
+                    background: color.adjust($disabled, $lightness: -10%);
                 }
             }
         }
@@ -119,6 +133,7 @@
     from {
         transform: rotate(0deg);
     }
+
     to {
         transform: rotate(360deg);
     }

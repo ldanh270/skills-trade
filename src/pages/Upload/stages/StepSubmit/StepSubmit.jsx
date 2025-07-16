@@ -47,7 +47,6 @@ export default function StepSubmit({ formData, setFormData, prev }) {
     }
 
     const renderStatus = () => {
-        // Common styles
         const containerStyle = {
             display: 'flex',
             flexDirection: 'column',
@@ -59,8 +58,8 @@ export default function StepSubmit({ formData, setFormData, prev }) {
         }
 
         const iconStyle = {
-            width: '64px',
-            height: '64px',
+            width: '5rem',
+            height: '5rem',
             strokeWidth: '1.5',
             marginBottom: '2rem',
         }
@@ -84,43 +83,49 @@ export default function StepSubmit({ formData, setFormData, prev }) {
             borderRadius: '2rem',
             border: 'none',
             cursor: 'pointer',
-            backgroundColor: '#ffc107',
-            color: '#333',
+            backgroundColor: '#4F80E2', // $accent-first
+            color: '#fff', // $text-info
             boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-            transition: 'all 0.2s',
+            transition: 'all 0.2s ease-in-out',
         }
 
         const secondaryButtonStyle = {
             ...primaryButtonStyle,
-            backgroundColor: '#f0f0f0',
-            color: '#666',
+            backgroundColor: '#D6D9DD', // $accent-secondary
+            color: '#555', // $text-element
             boxShadow: 'none',
         }
 
         switch (status) {
             case 'pending':
                 return (
-                    <div style={{ ...containerStyle, color: '#666' }}>
-                        <Loader2 style={{ ...iconStyle, animation: 'spin 1s linear infinite' }} />
+                    <div style={{ ...containerStyle, color: '#555' /* $text-element */ }}>
+                        <Loader2
+                            style={{
+                                ...iconStyle,
+                                animation: 'spin 1s linear infinite',
+                                color: '#4F80E2', // $accent-first
+                            }}
+                        />
                         <p style={textStyle}>Submitting your post...</p>
                     </div>
                 )
 
             case 'success':
                 return (
-                    <div style={{ ...containerStyle, color: '#4CAF50' }}>
-                        <CheckCircle style={iconStyle} />
+                    <div style={{ ...containerStyle, color: '#3FBB46' /* $online */ }}>
+                        <CheckCircle style={{ ...iconStyle, color: '#3FBB46' }} />
                         <p style={textStyle}>Post submitted successfully!</p>
                         <div style={buttonsContainerStyle}>
                             <button
                                 style={primaryButtonStyle}
-                                onClick={() => (window.location.href = '/')} // Return to home
+                                onClick={() => (window.location.href = '/')}
                             >
                                 Return to Home
                             </button>
                             <button
                                 style={secondaryButtonStyle}
-                                onClick={() => window.location.reload()} // Create new post
+                                onClick={() => window.location.reload()}
                             >
                                 Create New Post
                             </button>
@@ -130,19 +135,16 @@ export default function StepSubmit({ formData, setFormData, prev }) {
 
             case 'failed':
                 return (
-                    <div style={{ ...containerStyle, color: '#F44336' }}>
-                        <XCircle style={iconStyle} />
+                    <div style={{ ...containerStyle, color: '#FF0D0D' /* $offline */ }}>
+                        <XCircle style={{ ...iconStyle, color: '#FF0D0D' }} />
                         <p style={textStyle}>Submission failed. Please try again.</p>
                         <div style={buttonsContainerStyle}>
-                            <button
-                                style={primaryButtonStyle}
-                                onClick={handleSubmit} // Try again
-                            >
+                            <button style={primaryButtonStyle} onClick={handleSubmit}>
                                 Try Again
                             </button>
                             <button
                                 style={secondaryButtonStyle}
-                                onClick={() => (window.location.href = '/')} // Return to home
+                                onClick={() => (window.location.href = '/')}
                             >
                                 Return to Home
                             </button>
