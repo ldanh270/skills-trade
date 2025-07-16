@@ -16,9 +16,12 @@ export default function StepProofs({ formData, setFormData, next, prev }) {
 
     // ----- HANDLE UPLOAD -----
     const handleUpload = (e) => {
-        const files = Array.from(e.target.files)
-        const newFiles = files.map((file) => URL.createObjectURL(file))
-        setMediaFiles((prev) => [...prev, ...newFiles])
+        const file = e.target.files[0]
+        if (file) {
+            const newFile = URL.createObjectURL(file)
+            // Only keep the latest selected image
+            setMediaFiles([newFile])
+        }
     }
 
     // ----- UPDATE FORM DATA ON MEDIA CHANGE -----
@@ -99,7 +102,6 @@ export default function StepProofs({ formData, setFormData, next, prev }) {
                     </button>
                     <input
                         type="file"
-                        multiple
                         accept="image/*"
                         ref={fileRef}
                         style={{ display: 'none' }}

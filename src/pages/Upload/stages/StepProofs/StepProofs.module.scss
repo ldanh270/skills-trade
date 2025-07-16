@@ -163,6 +163,7 @@
                 align-items: flex-start;
             }
 
+            // Link preview container
             .link-preview {
                 display: flex;
                 width: 100%;
@@ -170,10 +171,12 @@
                 overflow: visible;
                 gap: 1.5rem;
                 flex-direction: row;
-                overflow-x: scroll;
+                overflow-x: auto;
 
+                // Link preview element
                 .link-container {
                     position: relative;
+                    text-wrap: nowrap;
 
                     iframe {
                         border: 1px solid $gap;
