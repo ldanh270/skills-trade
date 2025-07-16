@@ -70,3 +70,13 @@ export const createPost = async (postData) => {
         throw error // Re-throw để xử lý tiếp ở component
     }
 }
+
+/**
+ * Fetch a post by its ID
+ * @param {string} postId - ID of the post to fetch
+ * @returns {Promise<Object>} Post data
+ */
+export const getPostById = async (postId) => {
+    const res = await axios.get(`${BASE_URL}/posts/${postId}`)
+    return res.data
+}
