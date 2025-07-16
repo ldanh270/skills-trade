@@ -592,6 +592,36 @@
           "https://github.com/"
         ]
       }
+    },
+    {
+      "id": "«r0»",
+      "type": "Hire",
+      "title": "Title",
+      "author": {
+        "id": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+        "name": "Lê Đức Anh"
+      },
+      "rating": 4.8,
+      "skills": [
+        "OOP",
+        "Interview",
+        "Speaking"
+      ],
+      "price": {
+        "min": 10,
+        "max": 100
+      },
+      "description": "This is description.",
+      "media": null,
+      "createdAt": "2025-07-16T08:19:14.115Z",
+      "proofs": {
+        "files": [
+          "blob:http://localhost:5173/dcec7f69-17d2-44d1-b614-609ce0209bd5"
+        ],
+        "links": [
+          "https://github.com/ldanh270/skills-trade/compare/Upload?expand=1"
+        ]
+      }
     }
   ],
   "users": [

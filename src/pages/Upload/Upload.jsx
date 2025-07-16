@@ -16,9 +16,9 @@ const steps = [
     { key: 'type', label: 'Type of Post' },
     { key: 'title', label: 'Title' },
     { key: 'skills', label: 'Skills' },
-    { key: 'price', label: 'Price Range' },
+    { key: 'price', label: 'Points Range' },
     { key: 'description', label: 'Description' },
-    { key: 'media', label: 'Media Proof' },
+    { key: 'media', label: 'Media' },
     { key: 'submit', label: 'Submit' },
 ]
 
