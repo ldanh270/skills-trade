@@ -1,224 +1,276 @@
 @use '~/constants/styles/variables' as *;
+@use 'sass:color';
 
+// Main style for the Post Detail page
 .postDetail {
+    // Overall style for the page
     margin: 0;
     padding: 0;
+    padding-top: 5rem;
     line-height: 1.6;
     color: $text-info;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: $base-background;
-}
 
-.container {
-    display: grid;
-    margin: 0 auto;
-    padding: 20px;
-    gap: 30px;
-    max-width: 1200px;
-    grid-template-columns: 2fr 1fr;
+    .container {
+        // Grid layout: main content and sidebar
+        display: grid;
+        margin: 0 auto;
+        padding: 20px;
+        gap: 30px;
+        max-width: 1200px;
+        grid-template-columns: 2fr 1fr; // 2 parts: main content (2) - sidebar (1)
 
-    @media (max-width: 768px) {
-        grid-template-columns: 1fr;
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr; // Mobile: single column
+        }
     }
-}
 
-.postHeader {
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    background-color: $white;
-    margin-bottom: 20px;
-}
+    .postHeader {
+        // Box for post header (avatar, name, post type, ...)
+        padding: 25px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        background-color: $white;
+        margin-bottom: 20px;
 
-.postType {
-    display: inline-block;
-    padding: 4px 12px;
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: 600;
-    color: $white;
-    background-color: $accent-fourth;
-    margin-bottom: 10px;
-}
+        .postType {
+            // Badge for post type (e.g. Hiring, Offering)
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+            color: $white;
+            background-color: $accent-fourth;
+            margin-bottom: 10px;
+        }
 
-.postTitle {
-    margin: 10px 0;
-    font-size: 24px;
-    font-weight: 700;
-    color: $text-info;
-}
+        .postTitle {
+            // Post title
+            margin: 10px 0;
+            font-size: 24px;
+            font-weight: 700;
+            color: $text-info;
+        }
 
-.authorInfo {
-    display: flex;
-    align-items: center;
-    margin: 15px 0;
-}
+        .authorInfo {
+            // Box for avatar + name + rating
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
 
-.authorAvatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-right: 15px;
-    object-fit: cover;
-}
+            .authorAvatar {
+                // User avatar
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                margin-right: 15px;
+                object-fit: cover;
+            }
 
-.authorName {
-    font-weight: 600;
-    margin-bottom: 5px;
-}
+            .authorName {
+                // User name
+                font-weight: 600;
+                margin-bottom: 5px;
+            }
 
-.authorRating {
-    font-size: 14px;
-    color: $text-element;
-}
+            .authorRating {
+                // User rating
+                font-size: 14px;
+                color: $text-element;
 
-.ratingStars {
-    color: #FFC107;
-    margin-right: 5px;
-}
+                .ratingTitle {
+                    margin-right: 8px;
+                }
 
-.postMeta {
-    display: flex;
-    margin: 20px 0;
-    padding: 15px 0;
-    gap: 20px;
-    flex-wrap: wrap;
-    border-top: 1px solid $gap;
-    border-bottom: 1px solid $gap;
-}
+                .ratingStars {
+                    width: 5rem;
+                    height: 5rem;
+                    // Star icon for rating
+                    color: #FFC107;
+                    margin-right: 5px;
+                }
+            }
+        }
 
-.metaItem {
-    display: flex;
-    align-items: center;
-}
+        .postMeta {
+            // Meta info: price, skills, time, etc.
+            display: flex;
+            margin: 20px 0;
+            padding: 15px 0;
+            gap: 20px;
+            flex-wrap: wrap;
+            border-top: 1px solid $gap;
+            border-bottom: 1px solid $gap;
 
-.metaIcon {
-    margin-right: 8px;
-    color: $accent-first;
-}
+            .metaItem {
+                // Each meta item
+                display: flex;
+                align-items: center;
 
-.priceRange {
-    font-weight: 600;
-    color: $accent-first;
-}
+                .metaIcon {
+                    // Icon for meta
+                    margin-right: 8px;
+                    color: $accent-first;
+                }
 
-.postDescription {
-    margin: 25px 0;
-    line-height: 1.7;
-    color: $text-info;
-}
+                .priceRange {
+                    // Price/points
+                    font-weight: 600;
+                    color: $accent-first;
+                }
+            }
+        }
 
-.skillsContainer {
-    display: flex;
-    margin: 20px 0;
-    gap: 10px;
-    flex-wrap: wrap;
-}
+        .postDescription {
+            // Post description
+            margin: 25px 0;
+            line-height: 1.7;
+            color: $text-info;
+        }
 
-.skillTag {
-    background-color: $accent-secondary;
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 14px;
-}
+        .skillsContainer {
+            // Box for skill tags
+            display: flex;
+            margin: 20px 0;
+            gap: 10px;
+            flex-wrap: wrap;
 
-.postSidebar {
-    height: fit-content;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    background-color: $white;
-}
-
-.sidebarTitle {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 20px;
-    color: $text-info;
-}
-
-.actionButton {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    border-radius: 6px;
-    font-weight: 600;
-    transition: all 0.3s;
-    cursor: pointer;
-    margin-bottom: 15px;
-
-    &:hover {
-        opacity: 0.9;
-        transform: translateY(-2px);
+            .skillTag {
+                // Skill tag
+                background-color: $accent-secondary;
+                padding: 6px 12px;
+                border-radius: 20px;
+                font-size: 14px;
+            }
+        }
     }
-}
 
-.primaryBtn {
-    background-color: $accent-first;
-    color: $white;
-}
+    .postSidebar {
+        // Sidebar box (extra info, suggestions, etc.)
+        height: fit-content;
+        padding: 25px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        background-color: $white;
 
-.secondaryBtn {
-    border: 1px solid $accent-first;
-    color: $accent-first;
-    background-color: $white;
-}
+        .sidebarTitle {
+            // Sidebar title
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: $text-info;
+        }
 
-.postStats {
-    margin: 20px 0;
-}
+        .actionButton {
+            // Action button (contact, apply, ...)
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s;
+            cursor: pointer;
+            margin-bottom: 15px;
 
-.statItem {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-    color: $text-element;
-}
+            &:hover {
+                opacity: 0.9;
+                transform: translateY(-2px);
+            }
+        }
 
-.statValue {
-    font-weight: 600;
-    color: $text-info;
-}
+        .primaryBtn {
+            // Main button (highlighted color)
+            background-color: $accent-first;
+            color: $white;
+        }
 
-.authorActivity {
-    margin-top: 25px;
-}
+        .secondaryBtn {
+            // Secondary button (border, light color)
+            border: 1px solid $accent-first;
+            color: $accent-first;
+            background-color: $white;
+        }
 
-.activityItem {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-}
+        // Add saved state for Save/Unsave button
+        .saved {
+            border: none;
+            color: $white;
+            transition: background 0.2s, color 0.2s;
+            background-color: $accent-fourth;
 
-.activityIcon {
-    margin-right: 10px;
-    color: $accent-first;
-}
+            &:hover {
+                background-color: color.adjust($accent-fourth, $lightness: -8%);
+                color: $white;
+            }
+        }
 
-.statusBadge {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    margin-left: 5px;
-}
+        .postStats {
+            // Stats box (like, comment, ...)
+            margin: 20px 0;
 
-.online {
-    background-color: $online;
-}
+            .statItem {
+                // Each stat row
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 10px;
+                color: $text-element;
 
-.offline {
-    background-color: $offline;
-}
+                .statValue {
+                    // Stat value
+                    font-weight: 600;
+                    color: $text-info;
+                }
+            }
+        }
 
-.loading,
-.error,
-.notFound {
-    padding: 2rem;
-    font-size: 1.2rem;
-    text-align: center;
-}
+        .authorActivity {
+            // User activity box
+            margin-top: 25px;
 
-.error {
-    color: red;
+            .activityItem {
+                // Each activity
+                display: flex;
+                align-items: center;
+                margin-bottom: 15px;
+
+                .activityIcon {
+                    // Activity icon
+                    margin-right: 10px;
+                    color: $accent-first;
+                }
+            }
+
+            .statusBadge {
+                // Online/offline status dot
+                display: inline-block;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                margin-left: 5px;
+            }
+
+            .online {
+                background-color: $online;
+            }
+
+            .offline {
+                background-color: $offline;
+            }
+        }
+    }
+
+    .loading,
+    .error,
+    .notFound {
+        // Style for loading, error, not found states
+        padding: 2rem;
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .error {
+        color: red;
+    }
 }
