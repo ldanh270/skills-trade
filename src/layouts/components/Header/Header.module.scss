@@ -1,36 +1,65 @@
-@use '~/constants/styles/variables.scss' as *;
+  @use '~/constants/styles/variables.scss' as *;
 .Header {
-  font-family: Roboto, sans-serif;
+    position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  min-width: 0;
+  max-width: 100vw;
+  z-index: 2000;
+  background: $white;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 5vh;
-  background: $white;
-  z-index: 100;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
   padding: 0 32px;
+  gap: 32px;
+  height: 8vh;
 }
-
 .leftBox {
   display: flex;
   align-items: center;
   flex: 6.5;
   min-width: 0;
+  gap: 32px;
 }
-
 .rightBox {
   display: flex;
   align-items: center;
   justify-content: flex-end;
   flex: 3.5;
   min-width: 0;
+  gap: 24px;
 }
-
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-left: 40px;
+  min-width: 260px;
+  flex-shrink: 0;
+}
+.search {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 24px;
+  padding: 0 16px;
+  margin: 0 32px;
+  height: 40px;
+  min-width: 180px;
+  max-width: 400px;
+  flex: 1 1 220px;
+  overflow: hidden;
+}
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
 .left {
   display: flex;
   align-items: center;
@@ -49,21 +78,11 @@
   font-weight: 700;
   color: #6b6b6b;
   margin-left: 4px;
-  /* Remove any margin-top or margin-bottom to ensure vertical centering */
   margin-top: 0;
   margin-bottom: 0;
   line-height: 1;
   display: flex;
   align-items: center;
-}
-
-.nav {
-  display: flex;
-  align-items: center;
-  flex: 1;
-  justify-content: flex-start;
-  gap: 100px;
-  margin-left: 40px;
 }
 
 .nav a {
@@ -91,22 +110,18 @@
   bottom: -8px;
 }
 
-.search {
+.searchIcon {
   display: flex;
   align-items: center;
-  background: #fff;
-  border: 1px solid #e0e0e0;
-  border-radius: 24px;
-  padding: 0 16px;
-  margin: 0 32px;
-  height: 40px;
-  min-width: 220px;
-}
-
-.searchIcon {
-  color: #888;
-  font-size: 1.2rem;
+  height: 1em;
+  width: 1em;
+  min-width: 0;
   margin-right: 8px;
+  svg {
+    width: auto;
+    height: 100%;
+    display: block;
+  }
 }
 
 .search input {
@@ -114,25 +129,20 @@
   outline: none;
   font-size: 1rem;
   background: transparent;
-  width: 120px;
-}
-
-.icons {
-  display: flex;
-  align-items: center;
-  gap: 16px;
+  width: 100%;
+  min-width: 0;
 }
 
 .iconBtn {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background: #e5e7eb;
   border: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   cursor: pointer;
   transition: background 0.2s;
 }
@@ -148,4 +158,334 @@
   background: #000;
   border: none;
   cursor: pointer;
+  margin-left: 8px;
+}
+
+.hamburger, .iconHamburger {
+  display: none;
+  background: none;
+  border: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 120;
+}
+.iconHamburger {
+  margin-left: 8px;
+}
+.bar {
+  width: 24px;
+  height: 3px;
+  background: $accent-first;
+  margin: 3px 0;
+  border-radius: 2px;
+  display: block;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: auto;
+  width: 70vw;
+  max-width: 320px;
+  height: 100vh;
+  background: $white;
+  box-shadow: 2px 0 12px rgba(0,0,0,0.12);
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 16px 16px 24px;
+  animation: slideInDrawerLeft 0.2s;
+}
+@keyframes slideInDrawerLeft {
+  from { left: -100vw; }
+  to { left: 0; }
+}
+
+.drawerIconsPanel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: auto;
+  width: 70vw;
+  max-width: 320px;
+  height: 100vh;
+  background: $white;
+  box-shadow: -2px 0 12px rgba(0,0,0,0.12);
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 16px 16px 24px;
+  animation: slideInDrawerRight 0.2s;
+}
+@keyframes slideInDrawerRight {
+  from { right: -100vw; }
+  to { right: 0; }
+}
+.closeDrawer {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: $accent-first;
+  align-self: flex-end;
+  cursor: pointer;
+  margin-bottom: 16px;
+}
+.drawerNav {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 32px;
+  a {
+    color: $text-element;
+    font-size: 1.1rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+    &:hover {
+      color: $accent-first;
+    }
+  }
+}
+.drawerIcons {
+  display: flex;
+  gap: 16px;
+}
+
+.iconGroup {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.notificationPopup {
+  position: absolute;
+  top: 60px;
+  right: 32px;
+  z-index: 3000;
+  background: $white;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  border-radius: 10px;
+  min-width: 220px;
+  max-width: 90vw;
+  animation: fadeInPopup 0.18s;
+}
+@keyframes fadeInPopup {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.notificationContent {
+  padding: 18px 20px;
+  color: $text-element;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: left;
+}
+
+// Responsive styles
+@media (max-width: 1200px) {
+  .Header {
+    padding: 0 12px;
+    gap: 16px;
+  }
+  .leftBox {
+    gap: 16px;
+  }
+  .rightBox {
+    gap: 12px;
+  }
+  .nav {
+    gap: 24px;
+    margin-left: 16px;
+    min-width: 180px;
+  }
+  .search {
+    margin: 0 8px;
+    min-width: 120px;
+    max-width: 260px;
+    height: 32px;
+    padding: 0 8px;
+    flex: 1 1 140px;
+  }
+  .search input {
+    font-size: 0.95rem;
+  }
+}
+@media (max-width: 900px) {
+  .Header {
+    padding: 0 4px;
+    gap: 8px;
+  }
+  .leftBox, .rightBox {
+    gap: 8px;
+  }
+  .nav, .icons {
+    display: none !important;
+  }
+  .hamburger, .iconHamburger {
+    display: flex;
+  }
+  .search {
+    min-width: 30px;
+    max-width: 120px;
+    height: 28px;
+    margin: 0 4px;
+    padding: 0 4px;
+    flex: 1 1 40px;
+  }
+  .icons {
+    display: none !important;
+  }
+  .iconHamburger {
+    display: flex;
+  }
+  .search input {
+    font-size: 0.9rem;
+  }
+}
+@media (min-width: 600px) and (max-width: 899px) {
+  .iconGroup {
+    gap: 12px;
+  }
+  .icons {
+    gap: 12px;
+    display: flex !important;
+  }
+  .iconBtn {
+    width: 28px;
+    height: 28px;
+    font-size: 1rem;
+  }
+  .profileBtn {
+    width: 32px;
+    height: 32px;
+    margin-left: 6px;
+  }
+  .iconHamburger {
+    display: none !important;
+  }
+}
+@media (max-width: 599.98px) {
+  .icons {
+    display: none !important;
+  }
+  .iconHamburger {
+    display: flex;
+  }
+  .iconGroup {
+    gap: 8px;
+  }
+  .iconBtn {
+    width: 20px;
+    height: 20px;
+    font-size: 0.85rem;
+  }
+  .profileBtn {
+    width: 24px;
+    height: 24px;
+    margin-left: 2px;
+  }
+}
+@media (min-width: 900px) {
+  .drawer, .drawerIconsPanel, .closeDrawer {
+    display: none !important;
+  }
+  .hamburger, .iconHamburger {
+    display: none !important;
+  }
+  .nav, .icons {
+    display: flex;
+  }
+  .Header {
+    flex-wrap: nowrap;
+    width: 100vw;
+    min-width: 0;
+    max-width: 100vw;
+  }
+  .icons {
+    display: flex;
+  }
+  .iconHamburger {
+    display: none !important;
+  }
+}
+@media (max-width: 350px) {
+  .Header {
+    padding: 0 2px;
+    gap: 2px;
+  }
+  .logo {
+    width: 20px;
+    height: 20px;
+  }
+  .title {
+    font-size: 0.8rem;
+    max-width: 60px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .search {
+    min-width: 20px;
+    max-width: 60px;
+    padding: 0 2px;
+    height: 20px;
+  }
+  .search input {
+    font-size: 0.8rem;
+  }
+  .iconBtn {
+    width: 16px;
+    height: 16px;
+    font-size: 0.7rem;
+  }
+  .profileBtn {
+    width: 18px;
+    height: 18px;
+    margin-left: 1px;
+  }
+  .iconGroup {
+    gap: 2px;
+  }
+}
+@media (min-width: 600px) and (max-width: 899px) {
+  .hamburger, .iconHamburger {
+    width: 28px;
+    height: 28px;
+    font-size: 1.3rem;
+  }
+  .bar {
+    width: 18px;
+    height: 2.5px;
+    margin: 2px 0;
+  }
+}
+@media (max-width: 599.98px) {
+  .hamburger, .iconHamburger {
+    width: 22px;
+    height: 22px;
+    font-size: 1rem;
+  }
+  .bar {
+    width: 14px;
+    height: 2px;
+    margin: 1.5px 0;
+  }
+}
+@media (max-width: 350px) {
+  .hamburger, .iconHamburger {
+    width: 16px;
+    height: 16px;
+    font-size: 0.8rem;
+  }
+  .bar {
+    width: 10px;
+    height: 1.5px;
+    margin: 1px 0;
+  }
 }
