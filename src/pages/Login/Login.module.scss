@@ -1,0 +1,255 @@
+@use '~/constants/styles/variables' as *;
+
+.container {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.6rem;
+  color: $text-info;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-image: url('~/assests/images/background.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  height: 8vh;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.2); // Nền mờ nhẹ
+  backdrop-filter: blur(10px);     // Làm mờ nền phía sau
+  border-bottom: none;
+  z-index: 100;
+  
+  .logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: $white;
+    letter-spacing: 1px;
+    margin-left: 1.5rem; 
+  }
+  
+  .login-btn {
+    padding: 0.4rem 1.5rem; 
+    font-size: 1rem;     
+    border-radius: 2rem;
+    background: $white;
+    border: 2px solid $white;
+    border-radius: 2.5rem;
+    color: $accent-first;
+    font-weight: 600; /* Chữ đậm hơn */
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-right: 1.5rem; 
+    
+    &:hover {
+      background: $accent-fourth;
+      color: $white;
+    }
+  }
+}
+
+.login-container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; // Đẩy login box xuống dưới
+  padding: 4rem 2rem 4rem 2rem; // Tăng khoảng cách phía trên
+  background: none;
+}
+
+.login-box {
+  background: rgba(62, 84, 211, 0.25);
+  border: 2px solid $accent-first;
+  border-radius: 1.2rem;
+  padding: 3rem 2.5rem 2.5rem 2.5rem;
+  width: 100%;
+  max-width: 400px;
+  backdrop-filter: blur(16px);
+  color: $accent-first;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+}
+
+.login-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: $accent-first;
+  margin-bottom: 1.5rem;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center; /* Căn giữa theo chiều dọc */
+
+  input {
+    width: 100%;
+    padding: 1.5rem 3.5rem 1.5rem 3.5rem;
+    height: 0.5rem;
+    font-size: 1.2rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    
+    &:focus {
+      outline: none;
+      border-color: $accent-first;
+      box-shadow: 0 0 0 2px rgba(62, 84, 211, 0.2);
+    }
+  }
+
+  .input-icon {
+    position: absolute;
+    left: 1.2rem;
+    top: 50%;
+    transform: translateY(-50%); /* Căn giữa theo chiều dọc */
+    color: $text-element;
+    font-size: 1.2rem;
+  }
+
+  .toggle-password {
+    position: absolute;
+    right: 1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $text-element;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.options-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+
+  .checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: 0.5rem;
+
+    input[type='checkbox'] {
+      width: 1.2rem;
+      height: 1.2rem;
+      accent-color: $accent-fourth;
+      cursor: pointer;
+      margin: 0;
+    }
+
+    label {
+      font-size: 1.1rem;
+      color: $accent-first;
+      cursor: pointer;
+    }
+  }
+
+  .forgot-password {
+    font-size: 1.1rem;
+    color: $accent-first;
+    text-decoration: none;
+    transition: color 0.3s;
+    margin-right: 0.5rem;
+
+    &:hover {
+      color: $accent-fourth;
+      text-decoration: underline;
+    }
+  }
+}
+
+.login-button {
+  width: 100%;
+  padding: 1.1rem;
+  background: $accent-first;
+  color: $white;
+  border: 2px solid $white;
+  border-radius: 0.6rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1.5rem;
+  text-transform: uppercase;
+  
+  &:hover {
+    background: $accent-fourth;
+    color: $white;
+    transform: translateY(-2px); /* Hiệu ứng nhấn nhẹ */
+    box-shadow: 0 4px 8px rgba(62, 84, 211, 0.2);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.register-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+  color: $accent-first;
+
+  a {
+    color: $accent-first;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $accent-fourth;
+      text-decoration: underline;
+    }
+  }
+}
+
+// Optional: Close button for modal
+.login-box .close-btn {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  background: transparent;
+  border: 1.5px solid $white;
+  border-radius: 0.6rem;
+  color: $white;
+  font-size: 1.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+
+  &:hover {
+    background: $accent-fourth;
+    color: $base-background;
+  }
+}

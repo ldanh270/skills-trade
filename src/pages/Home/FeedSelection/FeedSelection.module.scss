@@ -1,0 +1,57 @@
+// Wrapper container for feed tab buttons
+.wrapper {
+    display: flex;
+    width: auto;
+    height: 50px;
+    margin-bottom: 2rem;
+
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+// Individual tab style
+.tab {
+    position: relative;
+    display: flex;
+
+    height: 100%;
+    flex: 1;
+
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    color: #6b7280;
+    transition: color 0.2s ease;
+
+    cursor: pointer;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 6px;
+
+    // Text label inside tab
+    .label {
+        position: relative;
+        top: 3px;
+    }
+
+    // Active underline animation
+    .underline {
+        position: absolute;
+        bottom: 0;
+        width: 70%;
+        height: 3px;
+        background-color: #fbbf24;
+        border-radius: 9999px;
+        transition: all 0.5s ease;
+    }
+}
+
+// Active tab style
+.active {
+    color: #fbbf24;
+}

@@ -1,0 +1,39 @@
+.RatingInput {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    // Label for the rating input
+    label {
+        font-size: 14px;
+        font-weight: 500;
+        color: #333;
+    }
+
+    // Container holding the stars
+    .stars {
+        display: flex;
+        gap: 4px;
+    }
+
+    // Style for each star icon
+    .star {
+        transition:
+            stroke 0.2s ease,
+            fill 0.2s ease;
+        cursor: pointer;
+        stroke: #ccc;
+
+        // Hover state
+        &:hover {
+            stroke: #ffb700;
+            fill: #ffeb99;
+        }
+    }
+
+    // Star when selected/filled
+    .filled {
+        stroke: #ffcd29;
+        fill: #ffcd29;
+    }
+}

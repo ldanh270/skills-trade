@@ -1,0 +1,20 @@
+// Container for all stars
+.stars {
+    display: flex;
+    gap: 0.2rem;
+}
+
+// Base star style
+.star {
+    transition:
+        stroke 0.2s ease,
+        fill 0.2s ease;
+    cursor: pointer;
+    stroke: #ccc;
+}
+
+// Highlighted (filled) star
+.filled {
+    stroke: #ffcd29;
+    fill: #ffcd29;
+}
