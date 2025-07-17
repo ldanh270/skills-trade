@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-import { BASE_URL } from '~/constants/globalConstants'
+import { BASE_URL } from '~/api/api-constants'
 
 /**
  * Fetch all chat conversations from the server.
