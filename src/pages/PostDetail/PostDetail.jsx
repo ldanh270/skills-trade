@@ -153,12 +153,12 @@ const PostDetail = () => {
                         {/* Author info: avatar, name, rating */}
                         <div className={styles['authorInfo']}>
                             <img
-                                src={post.author.avatar || defaultAvatar}
+                                src={post.author?.avatar || defaultAvatar}
                                 alt="Author avatar"
                                 className={styles['authorAvatar']}
                             />
                             <div>
-                                <div className={styles['authorName']}>{post.author.name}</div>
+                                <div className={styles['authorName']}>{post.author?.name}</div>
                                 <div className={styles['authorRating']}>
                                     <span className={styles['ratingTitle']}>
                                         Rating: {post.rating}
@@ -177,7 +177,7 @@ const PostDetail = () => {
                             <div className={styles['metaItem']}>
                                 <span className={styles['metaIcon']}>💰</span>
                                 <span className={styles['priceRange']}>
-                                    ${post.price.min} - ${post.price.max}
+                                    ${post.price?.min} - ${post.price?.max}
                                 </span>
                             </div>
                             <div className={styles['metaItem']}>
@@ -198,7 +198,7 @@ const PostDetail = () => {
                         {/* Skills required section */}
                         <h3>Skills Required</h3>
                         <div className={styles['skillsContainer']}>
-                            {post.skills.map((skill, index) => (
+                            {post.skills?.map((skill, index) => (
                                 <span key={index} className={styles['skillTag']}>
                                     {skill}
                                 </span>
