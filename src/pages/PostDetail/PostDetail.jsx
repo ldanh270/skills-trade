@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom'
 import { getPostById } from '~/api/api-post'
 import { updateUser } from '~/api/api-user'
 import defaultAvatar from '~/assets/images/default.jpg'
+import ConfirmationModal from '~/components/ConfirmationModal/ConfirmationModal'
 import { setUser } from '~/redux/slices/userSlice'
 
 import styles from './PostDetail.module.scss'
@@ -23,6 +24,10 @@ const PostDetail = () => {
     const [saving, setSaving] = useState(false)
     // State for save button hover effect
     const [saveHovered, setSaveHovered] = useState(false)
+    // State for confirmation modal
+    const [showConfirm, setShowConfirm] = useState(false)
+    // State for applying (API call)
+    const [applying, setApplying] = useState(false)
 
     // Fetch post data when component mounts or postId changes
     useEffect(() => {
@@ -73,6 +78,23 @@ const PostDetail = () => {
         setSaving(false)
     }
 
+    // Handler for Apply Now button
+    const handleApplyClick = () => {
+        setShowConfirm(true)
+    }
+
+    // Handler for confirming apply
+    const handleConfirmApply = async () => {
+        setApplying(true)
+        // TODO: Replace with actual API call for applying to post
+        // await applyToPost(post.id, user.id)
+        setTimeout(() => {
+            setApplying(false)
+            // Optionally show success message or redirect
+            alert('Applied successfully!')
+        }, 1000)
+    }
+
     // Loading state UI
     if (loading) {
         return <div className={styles['loading']}>Loading post...</div>
@@ -94,6 +116,18 @@ const PostDetail = () => {
     // Main UI rendering
     return (
         <div className={styles['postDetail']}>
+            {/* Confirmation Modal for Apply */}
+            <ConfirmationModal
+                isOpen={showConfirm}
+                onClose={() => setShowConfirm(false)}
+                onConfirm={handleConfirmApply}
+                title="Apply for this post?"
+                message="Are you sure you want to apply for this post? This action cannot be undone."
+                confirmText={applying ? 'Applying...' : 'Yes, Apply'}
+                cancelText="Cancel"
+                confirmButtonClass="primary"
+                cancelButtonClass="secondary"
+            />
             {/* Main grid container: left = main content, right = sidebar */}
             <div className={styles['container']}>
                 {/* Main post content section */}
@@ -179,8 +213,12 @@ const PostDetail = () => {
                     <h3 className={styles['sidebarTitle']}>About This Post</h3>
 
                     {/* Action buttons */}
-                    <button className={`${styles['actionButton']} ${styles['primaryBtn']}`}>
-                        Apply Now
+                    <button
+                        className={`${styles['actionButton']} ${styles['primaryBtn']}`}
+                        onClick={handleApplyClick}
+                        disabled={applying}
+                    >
+                        {applying ? 'Applying...' : 'Apply Now'}
                     </button>
                     <button
                         className={`${styles['actionButton']} ${styles['secondaryBtn']} ${isSaved ? styles['saved'] : ''}`}
