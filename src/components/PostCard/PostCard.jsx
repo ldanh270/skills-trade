@@ -3,13 +3,15 @@ import React from 'react'
 
 import { POST_TYPE } from '~/constants/objectAttributes/PostAttributes'
 
-import * as styles from './PostCard.module.scss'
+import styles from './PostCard.module.scss'
 import ReactionButtons from './ReactionButtons/ReactionButtons'
 import StarRating from './StarRating/StarRating'
 import TagBadge from './TagBadge/TagBadge'
 
-const PostCard = ({ post }) => {
-    const timeAgo = formatDistanceToNow(new Date(post.createdAt), { addSuffix: true })
+const PostCard = ({ post, preview = false }) => {
+    const timeAgo = post.createdAt
+        ? formatDistanceToNow(new Date(post.createdAt), { addSuffix: true })
+        : 'Unknown time'
 
     return (
         <div className={styles['container']}>
@@ -41,7 +43,7 @@ const PostCard = ({ post }) => {
                     <span className={styles['rating__number']}>Rating: {post.rating}</span>
                     <StarRating value={post.rating} />
                 </div>
-                <ReactionButtons postId={post.id} className={styles['reactions']} />
+                {!preview && <ReactionButtons postId={post.id} className={styles['reactions']} />}
             </div>
 
             {/* Skill tags */}
@@ -54,12 +56,51 @@ const PostCard = ({ post }) => {
             {/* Description */}
             <p className={styles['description']}>{post.description}</p>
 
-            {/* Proof images */}
+            {/* Proof links */}
             <div className={styles['imageWrapper']}>
-                {post.proofs.length > 0 &&
-                    post.proofs.map((proof, index) => (
-                        <img key={index} src={proof} alt="Proof" className={styles['proof']} />
-                    ))}
+                {post.proofs?.links?.length > 0 && (
+                    <div className={styles['link-preview']}>
+                        {post.proofs.links.map((link, index) => (
+                            <div className={styles['link-container']} key={index}>
+                                {link.includes('github.com') ? (
+                                    <a
+                                        href={link}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        className={styles['github-link']}
+                                    >
+                                        <img
+                                            src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+                                            alt="GitHub"
+                                        />
+                                        {link}
+                                    </a>
+                                ) : (
+                                    <a
+                                        href={link}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        className={styles['other-link']}
+                                    >
+                                        {link}
+                                    </a>
+                                )}
+                            </div>
+                        ))}
+                    </div>
+                )}
+                {post.proofs?.files?.length > 0 && (
+                    <div className={styles['image-preview']}>
+                        {post.proofs.files.map((proof, index) => (
+                            <img
+                                key={index}
+                                src={proof}
+                                alt="Proof"
+                                className={styles['proof-image']}
+                            />
+                        ))}
+                    </div>
+                )}
             </div>
         </div>
     )

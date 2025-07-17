@@ -1,0 +1,126 @@
+@use '~/constants/styles/variables.scss' as *;
+@use 'sass:color';
+
+// Main wrapper for the "Step Title" section
+.step-title {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    overflow: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    // Content area containing title, description, and input
+    .content {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        height: 100%;
+        gap: 1.5rem;
+
+        // Big heading/title of the step
+        .title {
+            font-size: 3rem;
+            font-weight: 600;
+            text-align: center;
+            color: $accent-first;
+            margin-bottom: 1rem;
+        }
+
+        // Subtitle or description below the title
+        .description {
+            font-size: 1.5rem;
+            text-align: center;
+            color: $text-element;
+        }
+
+        // Input field to enter the post title
+        input {
+            width: 100%;
+            height: 4rem;
+            padding: 1rem 1.5rem;
+            background: $white;
+            border: 1px solid $gap;
+            border-radius: 1.2rem;
+            font-size: 1.5rem;
+            color: $text-info;
+            transition: border 0.3s ease, box-shadow 0.3s ease;
+
+            // Highlight the input on focus
+            &:focus {
+                outline: none;
+                border-color: $accent-first;
+            }
+        }
+    }
+
+    // Footer area with action buttons (Back, Next)
+    .actions {
+        display: flex;
+        width: 100%;
+        height: 50px;
+        padding: 0 2rem;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        gap: 1rem;
+
+        // Horizontal line to separate content from buttons
+        .separator {
+            width: 100%;
+            margin: 1rem 0;
+            border-top: 0.2rem solid $gap;
+        }
+
+        // Button group container
+        .buttons {
+            display: flex;
+            flex-direction: row;
+            gap: 0.5rem;
+
+            // Base button style
+            button {
+                padding: 1.2rem 3rem;
+                border: none;
+                border-radius: 2rem;
+                font-size: 1.4rem;
+                font-weight: bold;
+                color: $white;
+                transition: background 0.3s ease;
+                cursor: pointer;
+            }
+
+            // Back button style
+            .back {
+                background: $gap;
+                color: $text-element;
+
+                &:hover {
+                    background: color.adjust($gap, $lightness: -10%);
+                }
+            }
+
+            // Next button style
+            .next {
+                background: $accent-first;
+
+                &:hover {
+                    background: color.adjust($accent-first, $lightness: -10%);
+                }
+            }
+
+            // Disabled button style
+            .disabled {
+                background: $disabled;
+                color: $text-element;
+                cursor: not-allowed;
+
+                &:hover {
+                    background: color.adjust($disabled, $lightness: -10%);
+                }
+            }
+        }
+    }
+}

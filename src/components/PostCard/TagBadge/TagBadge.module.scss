@@ -1,26 +1,29 @@
-// Base style for all tags
+@use '~/constants/styles/variables.scss' as *;
+@use 'sass:color';
+
+// 🔹 Base style for all tag badges (pill-shaped)
 .TagBadge {
     display: inline-block;
     padding: 0.3rem 0.75rem;
-    border-radius: 9999px; // pill shape
+    border-radius: 9999px; // Fully rounded corners for pill shape
     font-size: 0.75rem;
     font-weight: 600;
 }
 
-// Offer badge - yellow
+// Badge used for "OFFER" posts
 .badgeOffer {
-    background: #fcd34d;
-    color: #000;
+    background: color.adjust($accent-first, $lightness: 10%); // High contrast text
+    color: $white;
 }
 
-// Hire badge - green
+// Badge used for "HIRE" posts
 .badgeHire {
-    background: #34d399;
-    color: #fff;
+    background: $accent-fourth;
+    color: $white;
 }
 
-// Skill badge - light gray
+// Badge used for skill tags (neutral)
 .badgeSkill {
-    background: #e5e7eb;
-    color: #333;
+    background: color.adjust($gap, $lightness: 10%);
+    color: $text-info;
 }

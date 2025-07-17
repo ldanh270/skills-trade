@@ -24,7 +24,17 @@ function PostTypeInput({ filters, setFilters }) {
                         }
                         className={
                             filters.type === item
-                                ? `${styles['button']} ${styles['active']}`
+                                ? item === 'Offer'
+                                    ? styles['offer'] +
+                                      ' ' +
+                                      styles['active'] +
+                                      ' ' +
+                                      styles['button']
+                                    : styles['hire'] +
+                                      ' ' +
+                                      styles['active'] +
+                                      ' ' +
+                                      styles['button']
                                 : styles['button']
                         }
                     >

@@ -1,0 +1,283 @@
+@use '~/constants/styles/variables' as *;
+@use 'sass:color';
+
+// Main style for the Post Detail page
+.postDetail {
+    // Overall style for the page
+    margin: 0;
+    padding: 0;
+    padding-top: 5rem;
+    line-height: 1.6;
+    color: $text-info;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: $base-background;
+
+    .container {
+        // Grid layout: main content and sidebar
+        display: grid;
+        margin: 0 auto;
+        padding: 20px;
+        gap: 30px;
+        max-width: 1200px;
+        grid-template-columns: 2fr 1fr; // 2 parts: main content (2) - sidebar (1)
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr; // Mobile: single column
+        }
+    }
+
+    .postHeader {
+        // Box for post header (avatar, name, post type, ...)
+        padding: 25px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        background-color: $white;
+        margin-bottom: 20px;
+
+        .postType {
+            // Common style
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+            color: $white;
+            margin-bottom: 10px;
+
+            &.offer {
+                background-color: $accent-first; // ví dụ: xanh
+            }
+
+            &.hire {
+                background-color: $accent-fourth; // ví dụ: cam/đỏ
+            }
+        }
+
+        .postTitle {
+            // Post title
+            margin: 10px 0;
+            font-size: 24px;
+            font-weight: 700;
+            color: $text-info;
+        }
+
+        .authorInfo {
+            // Box for avatar + name + rating
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+
+            .authorAvatar {
+                // User avatar
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                margin-right: 15px;
+                object-fit: cover;
+            }
+
+            .authorName {
+                // User name
+                font-weight: 600;
+                margin-bottom: 5px;
+            }
+
+            .authorRating {
+                // User rating
+                font-size: 14px;
+                color: $text-element;
+
+                .ratingTitle {
+                    margin-right: 8px;
+                }
+
+                .ratingStars {
+                    width: 5rem;
+                    height: 5rem;
+                    // Star icon for rating
+                    color: #FFC107;
+                    margin-right: 5px;
+                }
+            }
+        }
+
+        .postMeta {
+            // Meta info: price, skills, time, etc.
+            display: flex;
+            margin: 20px 0;
+            padding: 15px 0;
+            gap: 20px;
+            flex-wrap: wrap;
+            border-top: 1px solid $gap;
+            border-bottom: 1px solid $gap;
+
+            .metaItem {
+                // Each meta item
+                display: flex;
+                align-items: center;
+
+                .metaIcon {
+                    // Icon for meta
+                    margin-right: 8px;
+                    color: $accent-first;
+                }
+
+                .priceRange {
+                    // Price/points
+                    font-weight: 600;
+                    color: $accent-first;
+                }
+            }
+        }
+
+        .postDescription {
+            // Post description
+            margin: 25px 0;
+            line-height: 1.7;
+            color: $text-info;
+        }
+
+        .skillsContainer {
+            // Box for skill tags
+            display: flex;
+            margin: 20px 0;
+            gap: 10px;
+            flex-wrap: wrap;
+
+            .skillTag {
+                // Skill tag
+                background-color: $accent-secondary;
+                padding: 6px 12px;
+                border-radius: 20px;
+                font-size: 14px;
+            }
+        }
+    }
+
+    .postSidebar {
+        // Sidebar box (extra info, suggestions, etc.)
+        height: fit-content;
+        padding: 25px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        background-color: $white;
+
+        .sidebarTitle {
+            // Sidebar title
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: $text-info;
+        }
+
+        .actionButton {
+            // Action button (contact, apply, ...)
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s;
+            cursor: pointer;
+            margin-bottom: 15px;
+
+            &:hover {
+                opacity: 0.9;
+                transform: translateY(-2px);
+            }
+        }
+
+        .primaryBtn {
+            // Main button (highlighted color)
+            background-color: $accent-first;
+            color: $white;
+        }
+
+        .secondaryBtn {
+            // Secondary button (border, light color)
+            border: 1px solid $accent-first;
+            color: $accent-first;
+            background-color: $white;
+        }
+
+        // Add saved state for Save/Unsave button
+        .saved {
+            border: none;
+            color: $white;
+            transition: background 0.2s, color 0.2s;
+            background-color: $accent-fourth;
+
+            &:hover {
+                background-color: color.adjust($accent-fourth, $lightness: -8%);
+                color: $white;
+            }
+        }
+
+        .postStats {
+            // Stats box (like, comment, ...)
+            margin: 20px 0;
+
+            .statItem {
+                // Each stat row
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 10px;
+                color: $text-element;
+
+                .statValue {
+                    // Stats value
+                    font-weight: 600;
+                    color: $text-info;
+                }
+            }
+        }
+
+        .authorActivity {
+            // User activity box
+            margin-top: 25px;
+
+            .activityItem {
+                // Each activity
+                display: flex;
+                align-items: center;
+                margin-bottom: 15px;
+
+                .activityIcon {
+                    // Activity icon
+                    margin-right: 10px;
+                    color: $accent-first;
+                }
+            }
+
+            .statusBadge {
+                // Online/offline status dot
+                display: inline-block;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                margin-left: 5px;
+            }
+
+            .online {
+                background-color: $online;
+            }
+
+            .offline {
+                background-color: $offline;
+            }
+        }
+    }
+
+    .loading,
+    .error,
+    .notFound {
+        // Style for loading, error, not found states
+        padding: 2rem;
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .error {
+        color: red;
+    }
+}

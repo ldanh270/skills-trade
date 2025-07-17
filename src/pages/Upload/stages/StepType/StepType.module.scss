@@ -1,0 +1,163 @@
+@use '~/constants/styles/variables.scss' as *;
+@use 'sass:color';
+
+.step-type {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    overflow: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    // Main content section
+    .content {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        height: 100%;
+        gap: 1.5rem;
+
+        .title {
+            font-size: 3rem;
+            font-weight: 600;
+            text-align: center;
+            color: $accent-first;
+            margin-bottom: 1rem;
+        }
+
+        .description {
+            font-size: 1.5rem;
+            color: $text-info;
+        }
+
+        .type-list {
+            display: flex;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            color: $text-info;
+            flex-direction: column;
+            padding-left: 1.25rem;
+            list-style-type: circle;
+            margin-bottom: 1rem;
+
+            li {
+                font-size: 1.5rem;
+                color: $text-info;
+                margin-bottom: 0.5rem;
+
+                strong {
+                    font-size: 1.7rem;
+                    font-weight: 600;
+                    text-align: center;
+                    color: $text-element;
+                }
+            }
+        }
+
+        .buttons {
+            display: flex;
+            padding: 0 2rem;
+            gap: 1rem;
+
+            button {
+                width: 100%;
+            }
+        }
+
+        // HIRE button style
+        .Hire {
+            padding: 1rem;
+            background: $white;
+            border: 1px solid $accent-fourth;
+            border-radius: 20px;
+            font-size: 1.5rem;
+            transition: all 0.2s;
+            cursor: pointer;
+
+            &:hover {
+                background: $accent-fourth;
+                color: $white;
+            }
+
+            &.active {
+                background: $accent-fourth;
+                color: $white;
+                border-color: $accent-fourth;
+            }
+        }
+
+        // OFFER button style
+        .Offer {
+            padding: 1rem;
+            background: $white;
+            border: 1px solid $accent-secondary;
+            border-radius: 20px;
+            font-size: 1.5rem;
+            transition: all 0.2s;
+            cursor: pointer;
+
+            &:hover {
+                background: $accent-first;
+                color: $white;
+            }
+
+            &.active {
+                background: $accent-first;
+                color: $white;
+                border-color: $accent-first;
+            }
+        }
+    }
+
+    // Actions (footer of step)
+    .actions {
+        display: flex;
+        width: 100%;
+        height: 50px;
+        padding: 0 2rem;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        gap: 1rem;
+
+        .separator {
+            width: 100%;
+            margin: 1rem 0;
+            border-top: 0.2rem solid $gap;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: row;
+            gap: 0.5rem;
+
+            button {
+                padding: 1.2rem 3rem;
+                background: $accent-first;
+                border: none;
+                border-radius: 2rem;
+                font-weight: bold;
+                color: $white;
+                transition: background 0.2s;
+                cursor: pointer;
+                align-self: flex-end;
+
+                &:hover {
+                    background: color.adjust($accent-first, $lightness: -10%);
+                }
+            }
+
+            .disabled {
+                background: $disabled;
+                color: $text-element;
+                cursor: not-allowed;
+
+                &:hover {
+                    background: $accent-secondary;
+                }
+            }
+        }
+    }
+}

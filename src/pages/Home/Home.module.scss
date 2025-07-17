@@ -1,3 +1,6 @@
+@use '~/constants/styles/variables.scss' as *;
+@use 'sass:color';
+
 // Main layout wrapper
 .Home {
     display: flex;
@@ -12,7 +15,7 @@
 // Left sidebar: filters
 .Filter {
     position: sticky;
-    top: 10vh;
+    top: 5vh;
     width: 15vw;
     height: fit-content;
     padding: 2rem;
@@ -21,11 +24,11 @@
 
 // Main feed container
 .Feed {
+    top: 5vh;
     display: flex;
     height: fit-content;
     padding: 2rem;
     flex: 1;
-    gap: 2rem;
     flex-direction: column;
     min-width: 700px;
     max-width: 700px;
@@ -34,26 +37,24 @@
     // Sticky bar above the feed (e.g. tabs)
     .curtain {
         position: sticky;
-        top: 10vh;
+        top: 5vh;
         z-index: 2;
-        margin-top: 2rem;
         padding-top: 2rem;
-        background-color: #f2f4f7;
+        background-color: $base-background;
     }
 
     // Scrollable feed section
     .infinity-scroll {
-        height: calc(100vh - 20vh);
+        height: auto;
         flex: 1;
         overflow-y: auto;
-        padding-top: calc(10vh + 2rem);
     }
 }
 
 // Right sidebar: contacts
 .Contacts {
     position: sticky;
-    top: 10vh;
+    top: 5vh;
     width: 250px;
     height: fit-content;
     padding: 2rem;
@@ -67,6 +68,6 @@
     bottom: 0;
     z-index: 20;
     display: flex;
-    padding: 10px;
+    // padding: 10px;
     gap: 10px;
 }

@@ -1,6 +1,9 @@
+@use '~/constants/styles/variables.scss' as *;
+
 .Header {
     position: fixed;
-    background-color: #ffcd29;
+    z-index: 2;
     width: 100vw;
-    height: 10vh;
+    height: 5vh;
+    background-color: $accent-first;
 }
