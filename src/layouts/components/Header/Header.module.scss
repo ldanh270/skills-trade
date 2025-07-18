@@ -1,3 +1,4 @@
+@use 'sass:color';
   @use '~/constants/styles/variables.scss' as *;
 .Header {
     position: fixed;
@@ -17,6 +18,16 @@
   padding: 0 32px;
   gap: 32px;
   height: 7vh;
+}
+@media (max-width: 899px) {
+  .Header {
+    height: 44px;
+  }
+}
+@media (max-width: 599.98px) {
+  .Header {
+    height: 36px;
+  }
 }
 .leftBox {
   display: flex;
@@ -58,7 +69,55 @@
 .icons {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 12px;
+}
+.iconBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1.5px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.18s, border-color 0.18s, box-shadow 0.18s, color 0.18s;
+  padding: 0;
+}
+.iconBtn[title="Add"] {
+  border-color: #e0e0e0;
+  background: #e5e7eb;
+}
+.iconBtn[title="Add"] svg * {
+  stroke: #65686C !important;
+  fill: none !important;
+}
+.iconBtn[title="Add"]:hover {
+  background: #ffcd29;
+  border-color: #ffcd29;
+}
+.iconBtn[title="AI"] {
+  border-color: #e0e0e0;
+  background: #f7f7f7;
+}
+.iconBtn[title="Notifications"] {
+  border-color: #e0e0e0;
+  background: #f7f7f7;
+}
+.iconBtn:hover {
+  box-shadow: 0 2px 8px rgba(255,205,41,0.12);
+  border-color: $accent-first;
+}
+@media (max-width: 899px) {
+  .icons {
+    gap: 8px;
+  }
+  .iconBtn {
+    width: 26px;
+    height: 26px;
+    font-size: 1rem;
+  }
 }
 .left {
   display: flex;
@@ -374,21 +433,54 @@
   .icons {
     display: none !important;
   }
-  .iconHamburger {
+  .fab {
+    position: static;
+    margin-left: 8px;
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    min-height: 32px;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
     display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
   }
-  .iconGroup {
-    gap: 8px;
+  .fab svg {
+    width: 100%;
+    height: 100%;
   }
-  .iconBtn {
-    width: 20px;
-    height: 20px;
-    font-size: 0.85rem;
+  .fab:active {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
   }
-  .profileBtn {
-    width: 24px;
-    height: 24px;
-    margin-left: 2px;
+  .fabMenu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 3099;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: transparent;
+    box-shadow: none;
+    align-items: flex-end;
+  }
+  .fabMenu .iconBtn {
+    width: 32px;
+    height: 32px;
+    font-size: 1.1rem;
+    background: #fff;
+    border: 1.5px solid #e0e0e0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  }
+}
+.fab, .fabMenu {
+  display: none;
+}
+@media (max-width: 599.98px) {
+  .fab, .fabMenu {
+    display: flex;
   }
 }
 @media (min-width: 900px) {
@@ -487,5 +579,82 @@
     width: 10px;
     height: 1.5px;
     margin: 1px 0;
+  }
+}
+@media (max-width: 899px) {
+  .logo {
+    width: 28px;
+    height: 28px;
+  }
+  .title {
+    font-size: 1.1rem;
+    margin-left: 2px;
+  }
+}
+@media (max-width: 599.98px) {
+  .logo {
+    width: 20px;
+    height: 20px;
+  }
+  .title {
+    font-size: 0.9rem;
+    margin-left: 1px;
+  }
+}
+.iconBtn.shake {
+  animation: shake-bell 0.5s linear 1;
+}
+@keyframes shake-bell {
+  0% { transform: rotate(0); }
+  15% { transform: rotate(-18deg); }
+  30% { transform: rotate(16deg); }
+  45% { transform: rotate(-12deg); }
+  60% { transform: rotate(8deg); }
+  75% { transform: rotate(-4deg); }
+  100% { transform: rotate(0); }
+}
+.iconBtn.spin svg {
+  animation: spin-ai 1s linear infinite;
+}
+@keyframes spin-ai {
+  100% { transform: rotate(360deg); }
+}
+.iconBtn:hover, .fabMenu .iconBtn:hover {
+  background: #fffbe6;
+  border-color: $accent-first;
+  color: inherit;
+  box-shadow: 0 2px 12px rgba(255,205,41,0.18);
+}
+.iconBtn[title="Add"]:hover {
+  background: color.adjust($accent-first, $lightness: -8%);
+  border-color: color.adjust($accent-first, $lightness: -8%);
+}
+.iconBtn[title="AI"]:hover, .iconBtn[title="Notifications"]:hover {
+  background: #ffe9a7;
+  border-color: $accent-first;
+}
+// Đảm bảo icon không đổi màu khi hover
+.iconBtn:hover svg *,
+.fabMenu .iconBtn:hover svg * {
+  stroke: #65686C !important;
+  fill: none !important;
+}
+.iconBtn[title="Add"]:hover svg * {
+  stroke: #65686C !important;
+  fill: none !important;
+}
+.fab {
+  transition: background 0.18s, box-shadow 0.18s;
+}
+.fab:hover {
+  background: color.adjust($accent-first, $lightness: -8%);
+  box-shadow: 0 4px 20px rgba(255,205,41,0.22);
+}
+.desktopOnly {
+  display: flex;
+}
+@media (max-width: 599.98px) {
+  .desktopOnly {
+    display: none !important;
   }
 }
