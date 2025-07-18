@@ -1,0 +1,134 @@
+@use '~/constants/styles/variables.scss' as *;
+
+.chatPage {
+  background: $base-background;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  background: $white;
+  border-radius: 18px 18px 0 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  padding: 18px 32px 14px 32px;
+  margin-top: 40px;
+  width: 100%;
+  max-width: 520px;
+}
+.avatar {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2.5px solid $accent-first;
+}
+.botName {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: $accent-first;
+}
+.statusOnline {
+  color: $online;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+.chatBody {
+  background: $white;
+  width: 100%;
+  max-width: 520px;
+  min-height: 420px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 24px 18px 16px 18px;
+  overflow-y: auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.bubbleBot {
+  align-self: flex-start;
+  background: #f3f4f6;
+  color: $text-info;
+  border-radius: 16px 16px 16px 4px;
+  padding: 12px 18px;
+  margin-bottom: 6px;
+  max-width: 80%;
+  font-size: 1.08rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+}
+.bubbleUser {
+  align-self: flex-end;
+  background: $accent-first;
+  color: $white;
+  border-radius: 16px 16px 4px 16px;
+  padding: 12px 18px;
+  margin-bottom: 6px;
+  max-width: 80%;
+  font-size: 1.08rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+.inputRow {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  background: $white;
+  border-radius: 0 0 18px 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  width: 100%;
+  max-width: 520px;
+  padding: 16px 18px 18px 18px;
+  margin-bottom: 40px;
+}
+.input {
+  flex: 1;
+  border: 1.5px solid $accent-first;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 1.08rem;
+  outline: none;
+  resize: none;
+  min-height: 44px;
+  max-height: 120px;
+  background: #f8f8fa;
+  color: $text-info;
+  transition: border 0.2s;
+}
+.input:focus {
+  border-color: $accent-first;
+  background: $white;
+}
+.sendBtn {
+  background: $accent-first;
+  color: $white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 28px;
+  font-size: 1.08rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+.sendBtn:hover {
+  background: #1746a2;
+}
+
+@media (max-width: 600px) {
+  .header, .chatBody, .inputRow {
+    max-width: 100vw;
+    border-radius: 0 !important;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .chatPage {
+    padding: 0;
+  }
+} 
