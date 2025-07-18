@@ -200,9 +200,44 @@
             background-color: $white;
         }
 
-        // Add saved state for Save/Unsave button
-        .saved {
-            border: none;
+        .applyBtn {
+            border: 1.5px solid $accent-first;
+            color: $accent-first;
+            transition: background 0.2s, color 0.2s;
+            background-color: $white;
+
+            &:hover {
+                background-color: color.adjust($accent-first, $lightness: 40%);
+                color: $accent-first;
+            }
+        }
+
+        .appliedBtn {
+            border: 1.5px solid $accent-first;
+            color: $white;
+            transition: background 0.2s, color 0.2s;
+            background-color: $accent-first;
+
+            &:hover {
+                background-color: color.adjust($accent-first, $lightness: -8%);
+                color: $white;
+            }
+        }
+
+        .saveBtn {
+            border: 1.5px solid $accent-fourth;
+            color: $accent-fourth;
+            transition: background 0.2s, color 0.2s;
+            background-color: $white;
+
+            &:hover {
+                background-color: color.adjust($accent-fourth, $lightness: 40%);
+                color: $accent-fourth;
+            }
+        }
+
+        .savedBtn {
+            border: 1.5px solid $accent-fourth;
             color: $white;
             transition: background 0.2s, color 0.2s;
             background-color: $accent-fourth;

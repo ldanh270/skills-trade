@@ -2,8 +2,14 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 
+import {
+    createPartnerRequest,
+    deletePartnerRequest,
+    fetchPartnerRequestStatus,
+} from '~/api/api-partner-request'
 import { getPostById } from '~/api/api-post'
-import { updateUser } from '~/api/api-user'
+import { updateUser } from '~/api/api-profile'
+import { fetchUserById } from '~/api/api-users'
 import defaultAvatar from '~/assets/images/default.jpg'
 import ConfirmationModal from '~/pages/PostDetail/ConfirmationModal/ConfirmationModal'
 import { setUser } from '~/redux/slices/userSlice'
@@ -29,6 +35,8 @@ const PostDetail = () => {
         type: '', // 'loading', 'success', 'error'
     })
     const [applyHovered, setApplyHovered] = useState(false)
+    const [isSaved, setIsSaved] = useState(false)
+    const [authorInfo, setAuthorInfo] = useState(null)
 
     useEffect(() => {
         const fetchPost = async () => {
@@ -36,13 +44,41 @@ const PostDetail = () => {
                 const postData = await getPostById(postId)
                 setPost(postData)
                 setLoading(false)
+                // Fetch author info
+                if (postData.author && postData.author.id) {
+                    try {
+                        const user = await fetchUserById(postData.author.id)
+                        setAuthorInfo(user)
+                    } catch {
+                        setAuthorInfo(null)
+                    }
+                }
+                // Kiểm tra trạng thái applied
+                if (user && user.id) {
+                    const partnerRequest = await fetchPartnerRequestStatus(postId, user.id)
+                    if (
+                        partnerRequest &&
+                        (partnerRequest.status === 'pending' ||
+                            partnerRequest.status === 'accepted')
+                    ) {
+                        setApplied(true)
+                    } else {
+                        setApplied(false)
+                    }
+                }
             } catch (err) {
                 setError(err.message)
                 setLoading(false)
             }
         }
         fetchPost()
-    }, [postId])
+    }, [postId, user])
+
+    useEffect(() => {
+        if (user && user.savedPosts && post) {
+            setIsSaved(user.savedPosts.includes(post.id))
+        }
+    }, [user, post])
 
     const showToast = (message, type) => {
         setToast({ show: true, message, type })
@@ -67,17 +103,16 @@ const PostDetail = () => {
     const handleSavePost = async () => {
         if (!user || !user.id || !post) return
         setSaving(true)
-        const isSaved = user.savedPosts.includes(post.id)
         let updatedSavedPosts
         if (isSaved) {
             updatedSavedPosts = user.savedPosts.filter((id) => id !== post.id)
-            showToast('Post unsaved', 'success')
         } else {
             updatedSavedPosts = [...user.savedPosts, post.id]
-            showToast('Post saved', 'success')
         }
         await updateUser(user.id, { savedPosts: updatedSavedPosts })
         dispatch(setUser({ ...user, savedPosts: updatedSavedPosts }))
+        setIsSaved(!isSaved)
+        showToast(isSaved ? 'Post unsaved' : 'Post saved', 'success')
         setSaving(false)
     }
 
@@ -88,12 +123,14 @@ const PostDetail = () => {
     const handleConfirmApply = async () => {
         setApplying(true)
         showToast('Applying to post...', 'loading')
-
         try {
-            // TODO: Replace with actual API call for applying to post
-            // await applyToPost(post.id, user.id)
-            await new Promise((resolve) => setTimeout(resolve, 1000)) // Simulate API call
-
+            await createPartnerRequest({
+                postId: post.id,
+                applyUserId: user.id,
+                postAuthorId: post.author.id,
+                status: 'pending',
+                createdAt: new Date().toISOString(),
+            })
             setApplying(false)
             setApplied(true)
             showToast('Applied successfully!', 'success')
@@ -108,11 +145,15 @@ const PostDetail = () => {
         setApplying(true)
         showToast('Unapplying...', 'loading')
         try {
-            // TODO: Gọi API unapply nếu có
-            await new Promise((resolve) => setTimeout(resolve, 1000))
-            setApplying(false)
-            setApplied(false)
-            showToast('Unapplied!', 'success')
+            const ok = await deletePartnerRequest(post.id, user.id)
+            if (ok) {
+                setApplying(false)
+                setApplied(false)
+                showToast('Unapplied!', 'success')
+            } else {
+                setApplying(false)
+                showToast('Failed to unapply.', 'error')
+            }
         } catch (error) {
             setApplying(false)
             showToast('Failed to unapply.', error.message)
@@ -130,8 +171,6 @@ const PostDetail = () => {
     if (!post) {
         return <div className={styles['notFound']}>Post not found</div>
     }
-
-    const isSaved = user && user.savedPosts && user.savedPosts.includes(post.id)
 
     return (
         <div className={styles['postDetail']}>
@@ -198,10 +237,6 @@ const PostDetail = () => {
                                 <span className={styles['metaIcon']}>📅</span>
                                 <span>Posted on {formatDate(post.createdAt)}</span>
                             </div>
-                            <div className={styles['metaItem']}>
-                                <span className={styles['metaIcon']}>📍</span>
-                                <span>{post.location || 'Ho Chi Minh'}</span>
-                            </div>
                         </div>
 
                         <div className={styles['postDescription']}>
@@ -223,7 +258,10 @@ const PostDetail = () => {
                     <h3 className={styles['sidebarTitle']}>About This Post</h3>
 
                     <button
-                        className={`${styles['actionButton']} ${styles['primaryBtn']}`}
+                        className={
+                            `${styles['actionButton']} ` +
+                            (applied ? styles['appliedBtn'] : styles['applyBtn'])
+                        }
                         onClick={applied ? handleUnapply : handleApplyClick}
                         disabled={applying}
                         onMouseEnter={() => applied && setApplyHovered(true)}
@@ -238,7 +276,10 @@ const PostDetail = () => {
                               : 'Apply Now'}
                     </button>
                     <button
-                        className={`${styles['actionButton']} ${styles['secondaryBtn']} ${isSaved ? styles['saved'] : ''}`}
+                        className={
+                            `${styles['actionButton']} ` +
+                            (isSaved ? styles['savedBtn'] : styles['saveBtn'])
+                        }
                         onClick={handleSavePost}
                         disabled={saving}
                         onMouseEnter={() => isSaved && setSaveHovered(true)}
@@ -273,26 +314,50 @@ const PostDetail = () => {
                     <div className={styles['authorActivity']}>
                         <h3 className={styles['sidebarTitle']}>Author Activity</h3>
 
-                        <div className={styles['activityItem']}>
-                            <span className={styles['activityIcon']}>👥</span>
-                            <span>{post.author.followers} Followers</span>
-                        </div>
-                        <div className={styles['activityItem']}>
-                            <span className={styles['activityIcon']}>❤️</span>
-                            <span>{post.author.likedPosts} Liked Posts</span>
-                        </div>
-                        <div className={styles['activityItem']}>
-                            <span className={styles['activityIcon']}>💾</span>
-                            <span>{post.author.savedPosts} Saved Post</span>
-                        </div>
-                        <div className={styles['activityItem']}>
-                            <span className={styles['activityIcon']}>🔔</span>
-                            <span>{post.author.unreadNotifications} Unread Notification</span>
-                        </div>
-                        <div className={styles['activityItem']}>
-                            <span className={styles['activityIcon']}>⭕</span>
-                            <span>Status</span>
-                        </div>
+                        {authorInfo ? (
+                            <>
+                                <div className={styles['activityItem']}>
+                                    <span className={styles['activityIcon']}>👥</span>
+                                    <span>
+                                        {authorInfo.follower ? authorInfo.follower.length : 0}{' '}
+                                        Followers
+                                    </span>
+                                </div>
+                                <div className={styles['activityItem']}>
+                                    <span className={styles['activityIcon']}>❤️</span>
+                                    <span>
+                                        {authorInfo.likedPosts ? authorInfo.likedPosts.length : 0}{' '}
+                                        Liked Posts
+                                    </span>
+                                </div>
+                                <div className={styles['activityItem']}>
+                                    <span className={styles['activityIcon']}>💾</span>
+                                    <span>
+                                        {authorInfo.savedPosts ? authorInfo.savedPosts.length : 0}{' '}
+                                        Saved Posts
+                                    </span>
+                                </div>
+                                <div className={styles['activityItem']}>
+                                    <span className={styles['activityIcon']}>🔔</span>
+                                    <span>
+                                        {authorInfo.notifications
+                                            ? authorInfo.notifications.filter((n) => !n.read).length
+                                            : 0}{' '}
+                                        Unread Notifications
+                                    </span>
+                                </div>
+                                <div className={styles['activityItem']}>
+                                    <span className={styles['activityIcon']}>📍</span>
+                                    <span>{authorInfo.region || 'Unknown'}</span>
+                                </div>
+                                <div className={styles['activityItem']}>
+                                    <span className={styles['activityIcon']}>⭕</span>
+                                    <span>{authorInfo.status || 'Unknown'}</span>
+                                </div>
+                            </>
+                        ) : (
+                            <div>Loading author info...</div>
+                        )}
                     </div>
                 </div>
             </div>

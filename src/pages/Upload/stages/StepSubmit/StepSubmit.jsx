@@ -22,7 +22,6 @@ export default function StepSubmit({ formData, setFormData, prev }) {
             rating: user.rating,
             createdAt: new Date().toISOString(),
         })
-        console.log(formData)
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 

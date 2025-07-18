@@ -533,7 +533,7 @@
       "username": "leducanh",
       "password": "daylapassword",
       "phone": "0901234567",
-      "region": "Hồ Chí Minh",
+      "region": "Đà Nẵng",
       "rating": 4.8,
       "point": 1200,
       "status": "online",
@@ -560,7 +560,6 @@
         "post-004"
       ],
       "savedPosts": [
-        "post-010",
         "post-009"
       ],
       "follower": [
@@ -904,6 +903,56 @@
         }
       ],
       "id": "6856"
+    }
+  ],
+  "partnerRequests": [
+    {
+      "from": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+      "to": "user-002",
+      "status": "pending",
+      "createdAt": "2025-07-16T10:00:00Z",
+      "postId": "post-001"
+    },
+    {
+      "from": "user-002",
+      "to": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+      "status": "accepted",
+      "createdAt": "2025-07-16T11:00:00Z",
+      "postId": "post-002"
+    }
+  ],
+  "notifications": [
+    {
+      "to": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+      "type": "friend_request",
+      "from": "user-002",
+      "accept": false,
+      "createdAt": "2025-07-16T10:05:00Z"
+    },
+    {
+      "to": "user-002",
+      "type": "post_accepted",
+      "from": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+      "accept": true,
+      "createdAt": "2025-07-16T11:05:00Z"
+    }
+  ],
+  "transactions": [
+    {
+      "id": "tx-001",
+      "from": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+      "to": "user-002",
+      "amount": 100,
+      "type": "payment",
+      "createdAt": "2025-07-16T12:00:00Z"
+    },
+    {
+      "id": "tx-002",
+      "from": "user-002",
+      "to": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+      "amount": 50,
+      "type": "refund",
+      "createdAt": "2025-07-16T13:00:00Z"
     }
   ]
 }
