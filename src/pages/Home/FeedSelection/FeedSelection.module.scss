@@ -1,4 +1,3 @@
-@use 'sass:color';
 @use '~/constants/styles/variables.scss' as *;
 
 // Wrapper container for feed tab buttons
@@ -7,7 +6,7 @@
     width: auto;
     height: 50px;
 
-    background: $white;
+    background: $accent-secondary;
     border-radius: 6px;
     box-shadow: 0 0 10px rgba($black, 0.05);
     cursor: pointer;
@@ -28,6 +27,7 @@
     font-size: 14px;
     font-weight: 500;
     text-align: center;
+    color: $text-element;
     transition: color 0.2s ease;
 
     cursor: pointer;
@@ -49,6 +49,7 @@
         bottom: 0;
         width: 70%;
         height: 3px;
+        background-color: $accent-first;
         border-radius: 9999px;
         transition: all 0.5s ease;
         background-color: $accent-first;
@@ -57,5 +58,5 @@
 
 // Active tab style
 .active {
-    color: $accent-fourth;
+    color: $accent-first;
 }

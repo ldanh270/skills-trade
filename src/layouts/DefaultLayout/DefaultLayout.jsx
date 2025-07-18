@@ -4,12 +4,14 @@ import * as styles from './DefaultLayout.module.scss'
 
 function DefaultLayout({ children }) {
     return (
-        <div className={styles['DefaultLayout']}>
+        <>
             <Header />
+            <div className={styles['DefaultLayout']}>
             <div className="container">
                 <div className={styles['content']}>{children}</div>
             </div>
         </div>
+        </>
     )
 }
 

@@ -1,16 +1,30 @@
-// src/styles/_variables.scss
-
 // === Main Theme Colors ===
-$accent-first: #4F80E2; // Main header, Logo, CTA
-$accent-secondary: #D6D9DD; // Side button, Hover, menubar
-$element-background: #15CDCA; // Elements/Sections background
-$accent-fourth: #4FE0B6; // Side footer/background, confirm button
-$base-background: #E5E7EB; // Base background
-$disabled: rgba(0, 0, 0, 0.25); // Disabled elements, borders
+
+// Main header, Logo, CTA
+$accent-first: #4F80E2;
+
+// Side button, Hover, menubar
+$accent-secondary: #D6D9DD;
+
+// Elements / Sections background, Highlight box, Info card
+$element-background: #15CDCA;
+
+// Side footer/background, confirm button
+$accent-fourth: #4FE0B6;
+
+// Base background
+$base-background: #E5E7EB;
+
+// Disabled elements, borders
+$disabled: #00000040;
 
 // === Text Colors ===
-$text-info: #080809; // Name, description, display data
-$text-element: #555; // Title, placeholder
+
+// Name, description, display data
+$text-info: #080809;
+
+// Title, placeholder
+$text-element: #555;
 
 // === Status Colors ===
 $online: #3FBB46;
@@ -20,5 +34,5 @@ $offline: #FF0D0D;
 $white: #FFFFFF;
 $black: #000000;
 
-// === Neutral/Divider ===
+// === Neutral / Divider ===
 $gap: #CCCCCC;
