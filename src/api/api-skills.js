@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-import { BASE_URL } from '~/constants/globalConstants'
+import { BASE_URL } from '~/api/api-constants'
 
 /**
  * Fetch the list of available skills from the server.

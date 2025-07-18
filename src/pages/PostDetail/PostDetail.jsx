@@ -5,26 +5,31 @@ import { useParams } from 'react-router-dom'
 import { getPostById } from '~/api/api-post'
 import { updateUser } from '~/api/api-user'
 import defaultAvatar from '~/assets/images/default.jpg'
+import ConfirmationModal from '~/pages/PostDetail/ConfirmationModal/ConfirmationModal'
 import { setUser } from '~/redux/slices/userSlice'
 
 import styles from './PostDetail.module.scss'
+import Toast from './Toast/Toast'
 
-// Main component for displaying post details
 const PostDetail = () => {
-    // Current user from Redux
     const user = useSelector((state) => state.user.user)
     const dispatch = useDispatch()
-    // Get postId from the URL params
     const { postId } = useParams()
-    // Local state for post data, loading, and error
     const [post, setPost] = useState(null)
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
     const [saving, setSaving] = useState(false)
-    // State for save button hover effect
     const [saveHovered, setSaveHovered] = useState(false)
+    const [showConfirm, setShowConfirm] = useState(false)
+    const [applying, setApplying] = useState(false)
+    const [applied, setApplied] = useState(false)
+    const [toast, setToast] = useState({
+        show: false,
+        message: '',
+        type: '', // 'loading', 'success', 'error'
+    })
+    const [applyHovered, setApplyHovered] = useState(false)
 
-    // Fetch post data when component mounts or postId changes
     useEffect(() => {
         const fetchPost = async () => {
             try {
@@ -39,13 +44,19 @@ const PostDetail = () => {
         fetchPost()
     }, [postId])
 
-    // Format date to readable string
+    const showToast = (message, type) => {
+        setToast({ show: true, message, type })
+    }
+
+    const hideToast = () => {
+        setToast({ ...toast, show: false })
+    }
+
     const formatDate = (dateString) => {
         const options = { year: 'numeric', month: 'long', day: 'numeric' }
         return new Date(dateString).toLocaleDateString(undefined, options)
     }
 
-    // Calculate how many days ago the post was created
     const daysAgo = (dateString) => {
         const postDate = new Date(dateString)
         const today = new Date()
@@ -53,54 +64,95 @@ const PostDetail = () => {
         return Math.floor(diffTime / (1000 * 60 * 60 * 24))
     }
 
-    // Toggle save/unsave post
     const handleSavePost = async () => {
         if (!user || !user.id || !post) return
         setSaving(true)
         const isSaved = user.savedPosts.includes(post.id)
         let updatedSavedPosts
         if (isSaved) {
-            // Unsave
             updatedSavedPosts = user.savedPosts.filter((id) => id !== post.id)
+            showToast('Post unsaved', 'success')
         } else {
-            // Save
             updatedSavedPosts = [...user.savedPosts, post.id]
+            showToast('Post saved', 'success')
         }
-        // Update backend
         await updateUser(user.id, { savedPosts: updatedSavedPosts })
-        // Update Redux
         dispatch(setUser({ ...user, savedPosts: updatedSavedPosts }))
         setSaving(false)
     }
 
-    // Loading state UI
+    const handleApplyClick = () => {
+        setShowConfirm(true)
+    }
+
+    const handleConfirmApply = async () => {
+        setApplying(true)
+        showToast('Applying to post...', 'loading')
+
+        try {
+            // TODO: Replace with actual API call for applying to post
+            // await applyToPost(post.id, user.id)
+            await new Promise((resolve) => setTimeout(resolve, 1000)) // Simulate API call
+
+            setApplying(false)
+            setApplied(true)
+            showToast('Applied successfully!', 'success')
+        } catch (error) {
+            setApplying(false)
+            showToast('Failed to apply. Please try again.', 'error')
+            console.error('Apply error:', error)
+        }
+    }
+
+    const handleUnapply = async () => {
+        setApplying(true)
+        showToast('Unapplying...', 'loading')
+        try {
+            // TODO: Gọi API unapply nếu có
+            await new Promise((resolve) => setTimeout(resolve, 1000))
+            setApplying(false)
+            setApplied(false)
+            showToast('Unapplied!', 'success')
+        } catch (error) {
+            setApplying(false)
+            showToast('Failed to unapply.', error.message)
+        }
+    }
+
     if (loading) {
         return <div className={styles['loading']}>Loading post...</div>
     }
 
-    // Error state UI
     if (error) {
         return <div className={styles['error']}>Error: {error}</div>
     }
 
-    // Not found state UI
     if (!post) {
         return <div className={styles['notFound']}>Post not found</div>
     }
 
-    // Check if post is saved
     const isSaved = user && user.savedPosts && user.savedPosts.includes(post.id)
 
-    // Main UI rendering
     return (
         <div className={styles['postDetail']}>
-            {/* Main grid container: left = main content, right = sidebar */}
+            <ConfirmationModal
+                isOpen={showConfirm}
+                onClose={() => setShowConfirm(false)}
+                onConfirm={handleConfirmApply}
+                title="Apply for this post?"
+                message="Are you sure you want to apply for this post? This action cannot be undone."
+                confirmText={applying ? 'Applying...' : 'Yes, Apply'}
+                cancelText="Cancel"
+                confirmButtonClass="primary"
+                cancelButtonClass="secondary"
+            />
+
+            {/* Toast Notification */}
+            {toast.show && <Toast message={toast.message} type={toast.type} onClose={hideToast} />}
+
             <div className={styles['container']}>
-                {/* Main post content section */}
                 <div className={styles['postmain']}>
-                    {/* Post header: type, title, author info, meta, description, skills */}
                     <div className={styles['postHeader']}>
-                        {/* Post type badge */}
                         <span
                             className={
                                 `${styles['postType']} ` +
@@ -113,18 +165,16 @@ const PostDetail = () => {
                         >
                             {post.type}
                         </span>
-                        {/* Post title */}
                         <h1 className={styles['postTitle']}>{post.title}</h1>
 
-                        {/* Author info: avatar, name, rating */}
                         <div className={styles['authorInfo']}>
                             <img
-                                src={post.author.avatar || defaultAvatar}
+                                src={post.author?.avatar || defaultAvatar}
                                 alt="Author avatar"
                                 className={styles['authorAvatar']}
                             />
                             <div>
-                                <div className={styles['authorName']}>{post.author.name}</div>
+                                <div className={styles['authorName']}>{post.author?.name}</div>
                                 <div className={styles['authorRating']}>
                                     <span className={styles['ratingTitle']}>
                                         Rating: {post.rating}
@@ -133,17 +183,15 @@ const PostDetail = () => {
                                         {'★'.repeat(Math.floor(post.rating))}
                                         {'☆'.repeat(5 - Math.floor(post.rating))}
                                     </span>
-                                    <span></span>
                                 </div>
                             </div>
                         </div>
 
-                        {/* Meta info: price, date, location */}
                         <div className={styles['postMeta']}>
                             <div className={styles['metaItem']}>
                                 <span className={styles['metaIcon']}>💰</span>
                                 <span className={styles['priceRange']}>
-                                    ${post.price.min} - ${post.price.max}
+                                    ${post.price?.min} - ${post.price?.max}
                                 </span>
                             </div>
                             <div className={styles['metaItem']}>
@@ -156,15 +204,13 @@ const PostDetail = () => {
                             </div>
                         </div>
 
-                        {/* Post description */}
                         <div className={styles['postDescription']}>
                             <p>{post.description}</p>
                         </div>
 
-                        {/* Skills required section */}
                         <h3>Skills Required</h3>
                         <div className={styles['skillsContainer']}>
-                            {post.skills.map((skill, index) => (
+                            {post.skills?.map((skill, index) => (
                                 <span key={index} className={styles['skillTag']}>
                                     {skill}
                                 </span>
@@ -173,14 +219,23 @@ const PostDetail = () => {
                     </div>
                 </div>
 
-                {/* Sidebar section: actions, stats, author activity */}
                 <div className={styles['postSidebar']}>
-                    {/* Sidebar title */}
                     <h3 className={styles['sidebarTitle']}>About This Post</h3>
 
-                    {/* Action buttons */}
-                    <button className={`${styles['actionButton']} ${styles['primaryBtn']}`}>
-                        Apply Now
+                    <button
+                        className={`${styles['actionButton']} ${styles['primaryBtn']}`}
+                        onClick={applied ? handleUnapply : handleApplyClick}
+                        disabled={applying}
+                        onMouseEnter={() => applied && setApplyHovered(true)}
+                        onMouseLeave={() => applied && setApplyHovered(false)}
+                    >
+                        {applying
+                            ? 'Applying...'
+                            : applied
+                              ? applyHovered
+                                  ? 'Undo Apply'
+                                  : 'Applied'
+                              : 'Apply Now'}
                     </button>
                     <button
                         className={`${styles['actionButton']} ${styles['secondaryBtn']} ${isSaved ? styles['saved'] : ''}`}
@@ -192,7 +247,6 @@ const PostDetail = () => {
                         {isSaved ? (saveHovered ? 'Unsave' : 'Saved') : 'Save Post'}
                     </button>
 
-                    {/* Post stats: type, budget, posted, author rating */}
                     <div className={styles['postStats']}>
                         <div className={styles['statItem']}>
                             <span>Post Type:</span>
@@ -216,7 +270,6 @@ const PostDetail = () => {
                         </div>
                     </div>
 
-                    {/* Author activity: followers, liked posts, saved posts, notifications, status */}
                     <div className={styles['authorActivity']}>
                         <h3 className={styles['sidebarTitle']}>Author Activity</h3>
 
