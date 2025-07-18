@@ -4,6 +4,7 @@ import { FaEnvelope, FaLock, FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [password, setPassword] = useState("");
 
   const handleTogglePassword = () => {
     setShowPassword((prev) => !prev);
@@ -19,7 +20,6 @@ const Login = () => {
         <div className={styles.logo}>
           <span className={styles['logo-text']}>SkillsTrade</span>
         </div>
-        <button className={styles['login-btn']}>Login</button>
       </nav>
 
       <div className={styles['login-container']}>
@@ -39,10 +39,14 @@ const Login = () => {
             <input
               type={showPassword ? "text" : "password"}
               placeholder="Enter your password"
+              value={password}
+              onChange={e => setPassword(e.target.value)}
             />
-            <span className={styles['toggle-password']} onClick={handleTogglePassword}>
-              {showPassword ? <FaEyeSlash /> : <FaEye />}
-            </span>
+            {password && (
+              <span className={styles['toggle-password']} onClick={handleTogglePassword}>
+                {showPassword ? <FaEyeSlash /> : <FaEye />}
+              </span>
+            )}
           </div>
 
           <div className={styles['options-row']}>
