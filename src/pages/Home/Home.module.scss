@@ -5,11 +5,10 @@
 .Home {
     display: flex;
     margin: 0 auto;
-    padding: 24px;
     gap: 24px;
     justify-content: center;
     align-items: flex-start;
-    min-height: 100vh;
+    min-height: 120vh;
 }
 
 // Left sidebar: filters
@@ -27,7 +26,6 @@
     top: 5vh;
     display: flex;
     height: fit-content;
-    padding: 2rem;
     flex: 1;
     flex-direction: column;
     min-width: 700px;
@@ -68,6 +66,6 @@
     bottom: 0;
     z-index: 20;
     display: flex;
-    // padding: 10px;
+    padding: 10px;
     gap: 10px;
 }

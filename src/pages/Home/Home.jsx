@@ -45,35 +45,52 @@ const Home = () => {
         })
     }
 
-    const fetchPostsByType = async (pageNum = 1, limit = LOAD_LIMIT) => {
-        try {
-            let fetched = []
-
-            if (feedType === 'newest') {
-                fetched = await fetchNewestPosts(pageNum, limit)
-            } else if (feedType === 'foryou') {
-                fetched = await fetchForYouPosts(pageNum)
-            } else if (feedType === 'saved') {
-                fetched = await fetchSavedPosts(user.id, pageNum)
-            }
-
-            const filtered = applyClientFilters(fetched, filters)
-            if (filtered.length < limit) setHasMore(false)
-
-            setPosts((prev) => [...prev, ...filtered])
-            setPage((prev) => prev + 1)
-        } catch (err) {
-            console.error('Cannot fetch. Error:', err)
-        }
-    }
-
     useEffect(() => {
         setPosts([])
         setPage(1)
         setHasMore(true)
-        fetchPostsByType(1)
+        // Chỉ fetch trang đầu, không nối thêm
+        const fetchFirstPage = async () => {
+            try {
+                let fetched = []
+                if (feedType === 'newest') {
+                    fetched = await fetchNewestPosts(1, LOAD_LIMIT)
+                } else if (feedType === 'foryou') {
+                    fetched = await fetchForYouPosts(1)
+                } else if (feedType === 'saved') {
+                    fetched = await fetchSavedPosts(user.id, 1)
+                }
+                const filtered = applyClientFilters(fetched, filters)
+                setPosts(filtered)
+                setPage(2)
+                setHasMore(filtered.length === LOAD_LIMIT)
+            } catch (err) {
+                console.error('Cannot fetch. Error:', err)
+            }
+        }
+        fetchFirstPage()
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [filters, feedType])
+
+    // Hàm fetch thêm trang tiếp theo (chỉ nối thêm, không reset)
+    const fetchNextPage = async () => {
+        try {
+            let fetched = []
+            if (feedType === 'newest') {
+                fetched = await fetchNewestPosts(page, LOAD_LIMIT)
+            } else if (feedType === 'foryou') {
+                fetched = await fetchForYouPosts(page)
+            } else if (feedType === 'saved') {
+                fetched = await fetchSavedPosts(user.id, page)
+            }
+            const filtered = applyClientFilters(fetched, filters)
+            setPosts((prev) => [...prev, ...filtered])
+            setPage((prev) => prev + 1)
+            if (filtered.length < LOAD_LIMIT) setHasMore(false)
+        } catch (err) {
+            console.error('Cannot fetch. Error:', err)
+        }
+    }
 
     // ----- CHAT STATE -----
     const [openChats, setOpenChats] = useState([])
@@ -106,7 +123,7 @@ const Home = () => {
                 <div className={styles['infinity-scroll']}>
                     <InfiniteScroll
                         dataLength={posts.length}
-                        next={() => fetchPostsByType(page)}
+                        next={fetchNextPage}
                         hasMore={hasMore}
                         loader={<h4>Loading...</h4>}
                     >
