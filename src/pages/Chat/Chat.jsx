@@ -1,44 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import * as styles from './Chat.module.scss';
-
-const conversations = [
-  {
-    id: 'leslie',
-    name: 'Leslie Alexander',
-    avatar: '/placeholder.svg?height=40&width=40',
-    message: 'Sure, I can help you with that project...',
-    time: '2m',
-    isActive: true,
-    bgColor: '#fef3c7',
-  },
-  {
-    id: 'john',
-    name: 'John Smith',
-    avatar: '/placeholder.svg?height=40&width=40',
-    message: 'Thanks for the design feedback!',
-    time: '1h',
-    isActive: false,
-    bgColor: 'transparent',
-  },
-  {
-    id: 'sarah',
-    name: 'Sarah Wilson',
-    avatar: '/placeholder.svg?height=40&width=40',
-    message: "Let's schedule a call tomorrow",
-    time: '3h',
-    isActive: false,
-    bgColor: 'transparent',
-  },
-  {
-    id: 'mike',
-    name: 'Mike Johnson',
-    avatar: '/placeholder.svg?height=40&width=40',
-    message: 'Great work on the website!',
-    time: '1d',
-    isActive: false,
-    bgColor: 'transparent',
-  },
-];
+import { useSelector } from 'react-redux';
+import { fetchChats } from '~/api/api-chat';
 
 function Avatar({ src, alt, fallback, className }) {
   return (
@@ -49,7 +12,44 @@ function Avatar({ src, alt, fallback, className }) {
 }
 
 function Chat() {
-  const [selectedChat, setSelectedChat] = useState('leslie');
+  const [selectedChat, setSelectedChat] = useState(null);
+  const [conversations, setConversations] = useState([]);
+  const [input, setInput] = useState('');
+  const [messages, setMessages] = useState([
+    // Có thể khởi tạo bằng messages mẫu hoặc lấy từ API nếu muốn
+  ]);
+  const user = useSelector(state => state.user.user);
+  const messagesEndRef = useRef(null);
+
+  useEffect(() => {
+    const loadChats = async () => {
+      const chats = await fetchChats();
+      setConversations(chats);
+      if (chats.length > 0) setSelectedChat(chats[0].id);
+    };
+    loadChats();
+  }, []);
+
+  // Auto scroll to bottom when messages change
+  useEffect(() => {
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [messages]);
+
+  const handleSend = () => {
+    if (!input.trim()) return;
+    setMessages(prev => [
+      ...prev,
+      {
+        id: Date.now(),
+        sender: 'me',
+        content: input,
+        time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+      }
+    ]);
+    setInput('');
+  };
 
     return (
     <div className={styles.ChatPage}>
@@ -60,7 +60,7 @@ function Chat() {
             <div className={styles.sidebarHeaderTop}>
               <h2>Messages</h2>
               <div className={styles.sidebarHeaderIcons}>
-                <span className={styles.iconBtn} title="Notifications">
+                <button className={styles.iconBtn} title="Notifications" aria-label="Notifications">
                   <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <mask id="mask0_138_1830" style={{maskType:'luminance'}} maskUnits="userSpaceOnUse" x="0" y="0" width="14" height="16">
                       <path d="M14 0H0V16H14V0Z" fill="white"/>
@@ -69,9 +69,16 @@ function Chat() {
                       <path d="M7.00001 0C6.44689 0 6.00001 0.446875 6.00001 1V1.6C3.71876 2.0625 2.00001 4.08125 2.00001 6.5V7.0875C2.00001 8.55625 1.45939 9.975 0.484387 11.075L0.253137 11.3344C-0.00936288 11.6281 -0.0718628 12.05 0.0875122 12.4094C0.246887 12.7688 0.606262 13 1.00001 13H13C13.3938 13 13.75 12.7688 13.9125 12.4094C14.075 12.05 14.0094 11.6281 13.7469 11.3344L13.5156 11.075C12.5406 9.975 12 8.55937 12 7.0875V6.5C12 4.08125 10.2813 2.0625 8.00001 1.6V1C8.00001 0.446875 7.55314 0 7.00001 0ZM8.41564 15.4156C8.79064 15.0406 9.00001 14.5312 9.00001 14H7.00001H5.00001C5.00001 14.5312 5.20939 15.0406 5.58439 15.4156C5.95939 15.7906 6.46876 16 7.00001 16C7.53126 16 8.04064 15.7906 8.41564 15.4156Z" fill="#6B7280"/>
                     </g>
                   </svg>
-                </span>
-                <div className={styles.avatarTiny}><span>U</span></div>
-                <span className={styles.iconBtn} title="Settings">
+                </button>
+                <button className={styles.iconBtn} title="User" aria-label="User">
+                  <Avatar
+                    src={user.avatar ? user.avatar : '/logo.png'}
+                    alt={user.fullName || 'User'}
+                    fallback={user.fullName ? user.fullName[0] : 'U'}
+                    className={styles.avatarTiny}
+                  />
+                </button>
+                <button className={styles.iconBtn} title="Settings" aria-label="Settings">
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <mask id="mask0_138_1837" style={{maskType:'luminance'}} maskUnits="userSpaceOnUse" x="0" y="0" width="16" height="16">
                       <path d="M16 0H0V16H16V0Z" fill="white"/>
@@ -80,7 +87,7 @@ function Chat() {
                       <path d="M15.4969 5.20625C15.5969 5.47813 15.5126 5.78125 15.2969 5.975L13.9438 7.20625C13.9782 7.46563 13.9969 7.73125 13.9969 8C13.9969 8.26875 13.9782 8.53438 13.9438 8.79375L15.2969 10.025C15.5126 10.2188 15.5969 10.5219 15.4969 10.7937C15.3594 11.1656 15.1938 11.5219 15.0032 11.8656L14.8563 12.1187C14.6501 12.4625 14.4188 12.7875 14.1657 13.0938C13.9813 13.3188 13.6751 13.3937 13.4001 13.3062L11.6594 12.7531C11.2407 13.075 10.7782 13.3438 10.2844 13.5469L9.89381 15.3313C9.83131 15.6156 9.61256 15.8406 9.32506 15.8875C8.89381 15.9594 8.45006 15.9969 7.99693 15.9969C7.54381 15.9969 7.10006 15.9594 6.66881 15.8875C6.38131 15.8406 6.16256 15.6156 6.10006 15.3313L5.70943 13.5469C5.21568 13.3438 4.75318 13.075 4.33443 12.7531L2.59693 13.3094C2.32193 13.3969 2.01568 13.3188 1.83131 13.0969C1.57818 12.7906 1.34693 12.4656 1.14068 12.1219L0.993807 11.8687C0.803182 11.525 0.637557 11.1687 0.500057 10.7969C0.400057 10.525 0.484432 10.2219 0.700057 10.0281L2.05318 8.79688C2.01881 8.53438 2.00006 8.26875 2.00006 8C2.00006 7.73125 2.01881 7.46563 2.05318 7.20625L0.700057 5.975C0.484432 5.78125 0.400057 5.47813 0.500057 5.20625C0.637557 4.83438 0.803182 4.47813 0.993807 4.13438L1.14068 3.88125C1.34693 3.5375 1.57818 3.2125 1.83131 2.90625C2.01568 2.68125 2.32193 2.60625 2.59693 2.69375L4.33756 3.24688C4.75631 2.925 5.21881 2.65625 5.71256 2.45312L6.10318 0.66875C6.16568 0.384375 6.38443 0.159375 6.67193 0.1125C7.10318 0.0375 7.54693 0 8.00006 0C8.45318 0 8.89693 0.0375 9.32818 0.109375C9.61568 0.15625 9.83443 0.38125 9.89693 0.665625L10.2876 2.45C10.7813 2.65313 11.2438 2.92188 11.6626 3.24375L13.4032 2.69062C13.6782 2.60312 13.9844 2.68125 14.1688 2.90313C14.4219 3.20938 14.6532 3.53437 14.8594 3.87812L15.0063 4.13125C15.1969 4.475 15.3626 4.83125 15.5001 5.20312L15.4969 5.20625ZM8.00006 10.5C8.6631 10.5 9.29898 10.2366 9.76782 9.76777C10.2367 9.29893 10.5001 8.66304 10.5001 8C10.5001 7.33696 10.2367 6.70107 9.76782 6.23223C9.29898 5.76339 8.6631 5.5 8.00006 5.5C7.33702 5.5 6.70113 5.76339 6.23229 6.23223C5.76345 6.70107 5.50006 7.33696 5.50006 8C5.50006 8.66304 5.76345 9.29893 6.23229 9.76777C6.70113 10.2366 7.33702 10.5 8.00006 10.5Z" fill="#4B5563"/>
                     </g>
                   </svg>
-                </span>
+                </button>
               </div>
             </div>
             <div className={styles.sidebarSearchBox}>
@@ -98,7 +105,7 @@ function Chat() {
                 onClick={() => setSelectedChat(conv.id)}
               >
                 <div className={styles.conversationAvatarBox}>
-                  <Avatar src={conv.avatar} alt={conv.name} fallback={conv.name.split(' ').map((n) => n[0]).join('')} />
+                  <Avatar src={conv.avatar} alt={conv.name} fallback={(conv.name || '').split(' ').map((n) => n[0]).join('')} />
                   {conv.id === 'leslie' && <span className={styles.onlineDot} />}
                 </div>
                 <div className={styles.conversationInfo}>
@@ -118,7 +125,7 @@ function Chat() {
           <div className={styles.chatHeader}>
             <div className={styles.chatHeaderLeft}>
               <div className={styles.conversationAvatarBox}>
-                <Avatar src="/placeholder.svg?height=40&width=40" alt="Leslie Alexander" fallback="LA" />
+                <Avatar src="/vite.svg?height=40&width=40" alt="Leslie Alexander" fallback="LA" />
                 <span className={styles.onlineDot} />
               </div>
               <div>
@@ -158,35 +165,15 @@ function Chat() {
           </div>
           {/* Chat Messages */}
           <div className={styles.chatMessages}>
-            <div className={styles.messageRow}>
-              <Avatar src="/placeholder.svg?height=32&width=32" alt="LA" fallback="LA" className={styles.avatarSmall} />
-              <div className={styles.messageBubbleLeft}>
-                <p>Hi! I saw your post about web design services. I'm interested in working with you on my e-commerce project.</p>
-                <span className={styles.messageTime}>10:30 AM</span>
+            {messages.map(msg => (
+              <div key={msg.id} className={msg.sender === 'me' ? styles.messageRowRight : styles.messageRow}>
+                <div className={msg.sender === 'me' ? styles.messageBubbleRight : styles.messageBubbleLeft}>
+                  <p>{msg.content}</p>
+                  <span className={msg.sender === 'me' ? styles.messageTimeRight : styles.messageTime}>{msg.time}</span>
+                </div>
               </div>
-            </div>
-            <div className={styles.messageRowRight}>
-              <div className={styles.messageBubbleRight}>
-                <p>Hello Leslie! Thanks for reaching out. I'd love to help with your e-commerce project. Can you tell me more about your requirements?</p>
-                <span className={styles.messageTimeRight}>10:32 AM</span>
-              </div>
-            </div>
-            <div className={styles.messageRow}>
-              <Avatar src="/placeholder.svg?height=32&width=32" alt="LA" fallback="LA" className={styles.avatarSmall} />
-              <div className={styles.messageBubbleLeftAudio}>
-                <button className={styles.iconBtn} title="Play">
-                  <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#ffcd29" strokeWidth="2"/><polygon points="10,8 16,12 10,16" fill="#1f2937"/></svg>
-                </button>
-                <span className={styles.audioDuration}>0:45</span>
-                <span className={styles.messageTime}>10:35 AM</span>
-              </div>
-            </div>
-            <div className={styles.messageRowRight}>
-              <div className={styles.messageBubbleRight}>
-                <p>Sure, I can help you with that project. Let me know your budget and timeline.</p>
-                <span className={styles.messageTimeRight}>10:38 AM</span>
-              </div>
-            </div>
+            ))}
+            <div ref={messagesEndRef} />
           </div>
           {/* Message Input */}
           <div className={styles.messageInputBox}>
@@ -194,21 +181,28 @@ function Chat() {
               <svg width="20" height="20" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#6b7280" strokeWidth="2"/><path d="M12 8v8M8 12h8" stroke="#6b7280" strokeWidth="2" strokeLinecap="round"/></svg>
             </button>
             <div className={styles.inputWrapper}>
-              <input className={styles.input} placeholder="Type your message..." />
-              <button className={styles.inputSendBtn} title="Send">
-                <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="4" stroke="#6b7280" strokeWidth="2"/><path d="M7 10h10M7 14h6" stroke="#6b7280" strokeWidth="2" strokeLinecap="round"/></svg>
+              <input
+                className={styles.input}
+                placeholder="Type your message..."
+                value={input}
+                onChange={e => setInput(e.target.value)}
+                onKeyDown={e => {
+                  if (e.key === 'Enter') handleSend();
+                }}
+              />
+              <button className={styles.inputSendBtn} title="Send" onClick={handleSend}>
+                <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+                  <path d="M2 21L23 12L2 3V10L17 12L2 14V21Z" fill="#2563eb"/>
+                </svg>
               </button>
             </div>
-            <button className={styles.sendBtn}>
-              <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="4" stroke="#1f2937" strokeWidth="2"/><path d="M7 10h10M7 14h6" stroke="#1f2937" strokeWidth="2" strokeLinecap="round"/></svg>
-            </button>
           </div>
         </main>
         {/* Right Sidebar - Profile */}
         <aside className={styles.profileSidebar}>
           <div className={styles.profileHeader}>
             <div className={styles.profileAvatarBox}>
-              <Avatar src="/placeholder.svg?height=80&width=80" alt="LA" fallback="LA" className={styles.avatarLarge} />
+              <Avatar src="/vite.svg?height=40&width=40" alt="LA" fallback="LA" className={styles.avatarLarge} />
               <span className={styles.onlineDotLarge} />
             </div>
             <span className={styles.profileName}>Leslie Alexander</span>

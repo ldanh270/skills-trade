@@ -1,6 +1,7 @@
     import { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import * as styles from './Header.module.scss'
+import { useSelector } from 'react-redux';
 
 function Header() {
     const [navOpen, setNavOpen] = useState(false);
@@ -44,6 +45,8 @@ function Header() {
       return () => clearInterval(interval);
     }, []);
 
+    const user = useSelector(state => state.user.user);
+
     return (
         <header className={styles['Header']}>
             <div className={styles['leftBox']}>
@@ -85,16 +88,16 @@ function Header() {
                         <div className={styles['icons']}>
                             <button className={styles['iconBtn']} title="Add" onClick={() => navigate('/upload')}><svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect width="45" height="45" rx="22.5" fill="#E5E7EB"/>
-<circle cx="22.5" cy="22.5" r="10.5" stroke="#65686C" stroke-width="2"/>
-<path d="M22.5 17V28" stroke="#65686C" stroke-width="2" stroke-linecap="round"/>
-<path d="M17 22L28 22" stroke="#65686C" stroke-width="2" stroke-linecap="round"/>
+<circle cx="22.5" cy="22.5" r="10.5" stroke="#65686C" strokeWidth="2"/>
+<path d="M22.5 17V28" stroke="#65686C" strokeWidth="2" strokeLinecap="round"/>
+<path d="M17 22L28 22" stroke="#65686C" strokeWidth="2" strokeLinecap="round"/>
 </svg>
 </button>
                         <button className={styles['iconBtn'] + (isAIProcessing ? ' ' + styles['spin'] : '')} title="AI" onClick={() => navigate('/chat-ai')}><svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect width="45" height="45" rx="22.5" fill="#E5E7EB"/>
 <path d="M18.291 31.824L13 33L14.176 27.709C13.4017 26.2603 12.9977 24.6426 13 23C13 17.477 17.477 13 23 13C28.523 13 33 17.477 33 23C33 28.523 28.523 33 23 33C21.3574 33.0023 19.7397 32.5983 18.291 31.824ZM18.581 29.711L19.234 30.061C20.3926 30.6799 21.6864 31.0025 23 31C24.5823 31 26.129 30.5308 27.4446 29.6518C28.7602 28.7727 29.7855 27.5233 30.391 26.0615C30.9965 24.5997 31.155 22.9911 30.8463 21.4393C30.5376 19.8874 29.7757 18.462 28.6569 17.3431C27.538 16.2243 26.1126 15.4624 24.5607 15.1537C23.0089 14.845 21.4004 15.0035 19.9385 15.609C18.4767 16.2145 17.2273 17.2398 16.3483 18.5554C15.4692 19.871 15 21.4177 15 23C15 24.335 15.325 25.617 15.94 26.766L16.289 27.419L15.634 30.366L18.581 29.711Z" fill="#65686C"/>
-<path d="M25.17 31.8899C29.354 31.6129 32.686 28.2329 32.96 23.9899C33.013 23.1599 33.013 22.2999 32.96 21.4699C32.686 17.2279 29.354 13.8499 25.17 13.5709C23.7249 13.4757 22.2751 13.4757 20.83 13.5709C16.646 13.8489 13.314 17.2279 13.04 21.4709C12.987 22.3101 12.987 23.1518 13.04 23.9909C13.14 25.5359 13.823 26.9669 14.628 28.1749C15.095 29.0199 14.787 30.0749 14.3 30.9979C13.95 31.6629 13.774 31.9949 13.915 32.2349C14.055 32.4749 14.37 32.4829 14.999 32.4979C16.244 32.5279 17.083 32.1759 17.749 31.6849C18.126 31.4059 18.315 31.2669 18.445 31.2509C18.575 31.2349 18.832 31.3409 19.344 31.5509C19.804 31.7409 20.339 31.8579 20.829 31.8909C22.254 31.9849 23.743 31.9849 25.171 31.8909" stroke="#65686C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M18.5 26L20.342 20.474C20.3882 20.3361 20.4766 20.2162 20.5947 20.1313C20.7128 20.0463 20.8545 20.0006 21 20.0006C21.1455 20.0006 21.2872 20.0463 21.4053 20.1313C21.5234 20.2162 21.6118 20.3361 21.658 20.474L23.5 26M26.5 20V26M19.5 24H22.5" stroke="#65686C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M25.17 31.8899C29.354 31.6129 32.686 28.2329 32.96 23.9899C33.013 23.1599 33.013 22.2999 32.96 21.4699C32.686 17.2279 29.354 13.8499 25.17 13.5709C23.7249 13.4757 22.2751 13.4757 20.83 13.5709C16.646 13.8489 13.314 17.2279 13.04 21.4709C12.987 22.3101 12.987 23.1518 13.04 23.9909C13.14 25.5359 13.823 26.9669 14.628 28.1749C15.095 29.0199 14.787 30.0749 14.3 30.9979C13.95 31.6629 13.774 31.9949 13.915 32.2349C14.055 32.4749 14.37 32.4829 14.999 32.4979C16.244 32.5279 17.083 32.1759 17.749 31.6849C18.126 31.4059 18.315 31.2669 18.445 31.2509C18.575 31.2349 18.832 31.3409 19.344 31.5509C19.804 31.7409 20.339 31.8579 20.829 31.8909C22.254 31.9849 23.743 31.9849 25.171 31.8909" stroke="#65686C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M18.5 26L20.342 20.474C20.3882 20.3361 20.4766 20.2162 20.5947 20.1313C20.7128 20.0463 20.8545 20.0006 21 20.0006C21.1455 20.0006 21.2872 20.0463 21.4053 20.1313C21.5234 20.2162 21.6118 20.3361 21.658 20.474L23.5 26M26.5 20V26M19.5 24H22.5" stroke="#65686C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
 </svg>
 </button>
                         <button className={styles['iconBtn'] + (isNewNotification ? ' ' + styles['shake'] : '')} title="Notifications" onClick={handleNotificationClick}><svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -105,13 +108,13 @@ function Header() {
 </button>
                         </div>
                     )}
-                    <button className={styles['profileBtn']} title="Profile">
-  <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" aria-hidden="true" focusable="false">
-    <circle cx="16" cy="16" r="16" fill="#fff"/>
-    <circle cx="16" cy="13" r="5" fill="#D1D5DB"/>
-    <ellipse cx="16" cy="23.5" rx="8" ry="4.5" fill="#D1D5DB"/>
-  </svg>
-</button>
+                    <button className={styles['profileBtn']} title="Profile" onClick={() => navigate('/profile')}>
+                      {user.avatar ? (
+                        <img src={user.avatar} alt={user.fullName || 'User'} style={{ width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover' }} />
+                      ) : (
+                        <span style={{ fontWeight: 700, color: '#fff', fontSize: '1rem' }}>{user.fullName ? user.fullName.split(' ').map(n => n[0]).join('') : 'U'}</span>
+                      )}
+                    </button>
                 </div>
                 {/* FAB chỉ hiển thị trên mobile, nằm trong header */}
                 <button className={styles['fab']} onClick={() => setFabOpen((o) => !o)} aria-label="Open actions">
@@ -140,16 +143,16 @@ function Header() {
                     <div className={styles['drawerIcons']}>
                         <button className={styles['iconBtn']} title="Add" onClick={() => navigate('/upload')}><svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect width="45" height="45" rx="22.5" fill="#E5E7EB"/>
-<circle cx="22.5" cy="22.5" r="10.5" stroke="#65686C" stroke-width="2"/>
-<path d="M22.5 17V28" stroke="#65686C" stroke-width="2" stroke-linecap="round"/>
-<path d="M17 22L28 22" stroke="#65686C" stroke-width="2" stroke-linecap="round"/>
+<circle cx="22.5" cy="22.5" r="10.5" stroke="#65686C" strokeWidth="2"/>
+<path d="M22.5 17V28" stroke="#65686C" strokeWidth="2" strokeLinecap="round"/>
+<path d="M17 22L28 22" stroke="#65686C" strokeWidth="2" strokeLinecap="round"/>
 </svg>
 </button>
                         <button className={styles['iconBtn']} title="AI" onClick={() => navigate('/chat-ai')}><svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect width="45" height="45" rx="22.5" fill="#E5E7EB"/>
 <path d="M18.291 31.824L13 33L14.176 27.709C13.4017 26.2603 12.9977 24.6426 13 23C13 17.477 17.477 13 23 13C28.523 13 33 17.477 33 23C33 28.523 28.523 33 23 33C21.3574 33.0023 19.7397 32.5983 18.291 31.824ZM18.581 29.711L19.234 30.061C20.3926 30.6799 21.6864 31.0025 23 31C24.5823 31 26.129 30.5308 27.4446 29.6518C28.7602 28.7727 29.7855 27.5233 30.391 26.0615C30.9965 24.5997 31.155 22.9911 30.8463 21.4393C30.5376 19.8874 29.7757 18.462 28.6569 17.3431C27.538 16.2243 26.1126 15.4624 24.5607 15.1537C23.0089 14.845 21.4004 15.0035 19.9385 15.609C18.4767 16.2145 17.2273 17.2398 16.3483 18.5554C15.4692 19.871 15 21.4177 15 23C15 24.335 15.325 25.617 15.94 26.766L16.289 27.419L15.634 30.366L18.581 29.711Z" fill="#65686C"/>
-<path d="M25.17 31.8899C29.354 31.6129 32.686 28.2329 32.96 23.9899C33.013 23.1599 33.013 22.2999 32.96 21.4699C32.686 17.2279 29.354 13.8499 25.17 13.5709C23.7249 13.4757 22.2751 13.4757 20.83 13.5709C16.646 13.8489 13.314 17.2279 13.04 21.4709C12.987 22.3101 12.987 23.1518 13.04 23.9909C13.14 25.5359 13.823 26.9669 14.628 28.1749C15.095 29.0199 14.787 30.0749 14.3 30.9979C13.95 31.6629 13.774 31.9949 13.915 32.2349C14.055 32.4749 14.37 32.4829 14.999 32.4979C16.244 32.5279 17.083 32.1759 17.749 31.6849C18.126 31.4059 18.315 31.2669 18.445 31.2509C18.575 31.2349 18.832 31.3409 19.344 31.5509C19.804 31.7409 20.339 31.8579 20.829 31.8909C22.254 31.9849 23.743 31.9849 25.171 31.8909" stroke="#65686C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M18.5 26L20.342 20.474C20.3882 20.3361 20.4766 20.2162 20.5947 20.1313C20.7128 20.0463 20.8545 20.0006 21 20.0006C21.1455 20.0006 21.2872 20.0463 21.4053 20.1313C21.5234 20.2162 21.6118 20.3361 21.658 20.474L23.5 26M26.5 20V26M19.5 24H22.5" stroke="#65686C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M25.17 31.8899C29.354 31.6129 32.686 28.2329 32.96 23.9899C33.013 23.1599 33.013 22.2999 32.96 21.4699C32.686 17.2279 29.354 13.8499 25.17 13.5709C23.7249 13.4757 22.2751 13.4757 20.83 13.5709C16.646 13.8489 13.314 17.2279 13.04 21.4709C12.987 22.3101 12.987 23.1518 13.04 23.9909C13.14 25.5359 13.823 26.9669 14.628 28.1749C15.095 29.0199 14.787 30.0749 14.3 30.9979C13.95 31.6629 13.774 31.9949 13.915 32.2349C14.055 32.4749 14.37 32.4829 14.999 32.4979C16.244 32.5279 17.083 32.1759 17.749 31.6849C18.126 31.4059 18.315 31.2669 18.445 31.2509C18.575 31.2349 18.832 31.3409 19.344 31.5509C19.804 31.7409 20.339 31.8579 20.829 31.8909C22.254 31.9849 23.743 31.9849 25.171 31.8909" stroke="#65686C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+<path d="M18.5 26L20.342 20.474C20.3882 20.3361 20.4766 20.2162 20.5947 20.1313C20.7128 20.0463 20.8545 20.0006 21 20.0006C21.1455 20.0006 21.2872 20.0463 21.4053 20.1313C21.5234 20.2162 21.6118 20.3361 21.658 20.474L23.5 26M26.5 20V26M19.5 24H22.5" stroke="#65686C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
 </svg>
 </button>
                         <button className={styles['iconBtn']} title="Notifications" onClick={handleNotificationClick}><svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
