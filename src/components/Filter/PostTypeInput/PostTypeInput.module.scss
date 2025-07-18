@@ -28,32 +28,18 @@ label {
 // Default button style
 .button {
     padding: 6px 12px;
-    background: $white;
-    border: 0.5px solid $gap;
+    background: $accent-secondary;
+    border: 1px solid $accent-secondary;
     border-radius: 20px;
     font-size: 14px;
     color: $text-info;
+    color: $text-element;
     cursor: pointer;
-
-    &:hover {
-        background: $accent-secondary;
-    }
 }
 
 // Active button style (highlighted when selected)
 .active {
-    color: $white;
-    border-color: $text-element;
-
-    &:hover {
-        background: $accent-first;
-    }
-}
-
-.offer {
     background: $accent-first;
-}
-
-.hire {
-    background: $accent-fourth;
+    color: $white;
+    border-color: $accent-first;
 }

@@ -1,9 +1,587 @@
-@use '~/constants/styles/variables.scss' as *;
+  @use '~/constants/styles/variables.scss' as *;
 
-.Header {
+  .Header {
     position: fixed;
-    z-index: 2;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 2000;
+    display: flex;
     width: 100vw;
     height: 5vh;
-    background-color: $accent-first;
-}
+    padding: 0 32px;
+    gap: 32px;
+    background: $white;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+    min-width: 0;
+    max-width: 100vw;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .leftBox {
+    display: flex;
+    align-items: center;
+    flex: 6.5;
+    min-width: 0;
+    gap: 32px;
+  }
+
+  .rightBox {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 3.5;
+    min-width: 0;
+    gap: 24px;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-left: 40px;
+    min-width: 260px;
+    flex-shrink: 0;
+  }
+
+  .search {
+    display: flex;
+    height: 40px;
+    margin: 0 32px;
+    padding: 0 16px;
+    overflow: hidden;
+    flex: 1 1 220px;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 24px;
+    align-items: center;
+    min-width: 180px;
+    max-width: 400px;
+  }
+
+  .icons {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .title {
+    display: flex;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #6b6b6b;
+    margin-left: 4px;
+    margin-top: 0;
+    margin-bottom: 0;
+    align-items: center;
+  }
+
+  .nav a {
+    position: relative;
+    font-size: 1rem;
+    font-weight: 500;
+    color: $text-element;
+    transition: color 0.2s;
+    text-decoration: none;
+  }
+
+  .nav a:hover,
+  .nav a:focus {
+    color: $accent-first;
+  }
+
+  .nav a:hover::after,
+  .nav a:focus::after {
+    position: absolute;
+    right: 0;
+    bottom: -8px;
+    left: 0;
+    display: block;
+    height: 3px;
+    background: $accent-first;
+    border-radius: 2px;
+    content: '';
+  }
+
+  .searchIcon {
+    display: flex;
+    width: 1em;
+    height: 1em;
+    align-items: center;
+    min-width: 0;
+    margin-right: 8px;
+
+    svg {
+      display: block;
+      width: auto;
+      height: 100%;
+    }
+  }
+
+  .search input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    font-size: 1rem;
+    outline: none;
+    min-width: 0;
+  }
+
+  .iconBtn {
+    display: flex;
+    width: 36px;
+    height: 36px;
+    background: #e5e7eb;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    transition: background 0.2s;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .iconBtn:hover {
+    background: #ffcd29;
+  }
+
+  .profileBtn {
+    width: 40px;
+    height: 40px;
+    background: #000;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 8px;
+  }
+
+  .hamburger,
+  .iconHamburger {
+    z-index: 120;
+    display: none;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .iconHamburger {
+    margin-left: 8px;
+  }
+
+  .bar {
+    display: block;
+    width: 24px;
+    height: 3px;
+    margin: 3px 0;
+    background: $accent-first;
+    border-radius: 2px;
+  }
+
+  .drawer {
+    position: fixed;
+    top: 0;
+    right: auto;
+    left: 0;
+    z-index: 200;
+    display: flex;
+    width: 70vw;
+    height: 100vh;
+    padding: 24px 16px 16px 24px;
+    background: $white;
+    box-shadow: 2px 0 12px rgba(0, 0, 0, 0.12);
+    animation: slideInDrawerLeft 0.2s;
+    max-width: 320px;
+    flex-direction: column;
+  }
+
+  @keyframes slideInDrawerLeft {
+    from {
+      left: -100vw;
+    }
+
+    to {
+      left: 0;
+    }
+  }
+
+  .drawerIconsPanel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: auto;
+    z-index: 200;
+    display: flex;
+    width: 70vw;
+    height: 100vh;
+    padding: 24px 16px 16px 24px;
+    background: $white;
+    box-shadow: -2px 0 12px rgba(0, 0, 0, 0.12);
+    animation: slideInDrawerRight 0.2s;
+    max-width: 320px;
+    flex-direction: column;
+  }
+
+  @keyframes slideInDrawerRight {
+    from {
+      right: -100vw;
+    }
+
+    to {
+      right: 0;
+    }
+  }
+
+  .closeDrawer {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: $accent-first;
+    align-self: flex-end;
+    cursor: pointer;
+    margin-bottom: 16px;
+  }
+
+  .drawerNav {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 32px;
+
+    a {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: $text-element;
+      transition: color 0.2s;
+      text-decoration: none;
+
+      &:hover {
+        color: $accent-first;
+      }
+    }
+  }
+
+  .drawerIcons {
+    display: flex;
+    gap: 16px;
+  }
+
+  .iconGroup {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .notificationPopup {
+    position: absolute;
+    top: 60px;
+    right: 32px;
+    z-index: 3000;
+    background: $white;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    animation: fadeInPopup 0.18s;
+    min-width: 220px;
+    max-width: 90vw;
+  }
+
+  @keyframes fadeInPopup {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .notificationContent {
+    padding: 18px 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: left;
+    color: $text-element;
+  }
+
+  // Responsive styles
+  @media (max-width: 1200px) {
+    .Header {
+      padding: 0 12px;
+      gap: 16px;
+    }
+
+    .leftBox {
+      gap: 16px;
+    }
+
+    .rightBox {
+      gap: 12px;
+    }
+
+    .nav {
+      gap: 24px;
+      margin-left: 16px;
+      min-width: 180px;
+    }
+
+    .search {
+      height: 32px;
+      margin: 0 8px;
+      padding: 0 8px;
+      flex: 1 1 140px;
+      min-width: 120px;
+      max-width: 260px;
+    }
+
+    .search input {
+      font-size: 0.95rem;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .Header {
+      padding: 0 4px;
+      gap: 8px;
+    }
+
+    .leftBox,
+    .rightBox {
+      gap: 8px;
+    }
+
+    .nav,
+    .icons {
+      display: none !important;
+    }
+
+    .hamburger,
+    .iconHamburger {
+      display: flex;
+    }
+
+    .search {
+      min-width: 30px;
+      max-width: 120px;
+      height: 28px;
+      margin: 0 4px;
+      padding: 0 4px;
+      flex: 1 1 40px;
+    }
+
+    .icons {
+      display: none !important;
+    }
+
+    .iconHamburger {
+      display: flex;
+    }
+
+    .search input {
+      font-size: 0.9rem;
+    }
+  }
+
+  @media (min-width: 600px) and (max-width: 899px) {
+    .iconGroup {
+      gap: 12px;
+    }
+
+    .icons {
+      display: flex !important;
+      gap: 12px;
+    }
+
+    .iconBtn {
+      width: 28px;
+      height: 28px;
+      font-size: 1rem;
+    }
+
+    .profileBtn {
+      width: 32px;
+      height: 32px;
+      margin-left: 6px;
+    }
+
+    .iconHamburger {
+      display: none !important;
+    }
+  }
+
+  @media (max-width: 599.98px) {
+    .icons {
+      display: none !important;
+    }
+
+    .iconHamburger {
+      display: flex;
+    }
+
+    .iconGroup {
+      gap: 8px;
+    }
+
+    .iconBtn {
+      width: 20px;
+      height: 20px;
+      font-size: 0.85rem;
+    }
+
+    .profileBtn {
+      width: 24px;
+      height: 24px;
+      margin-left: 2px;
+    }
+  }
+
+  @media (min-width: 900px) {
+
+    .drawer,
+    .drawerIconsPanel,
+    .closeDrawer {
+      display: none !important;
+    }
+
+    .hamburger,
+    .iconHamburger {
+      display: none !important;
+    }
+
+    .nav,
+    .icons {
+      display: flex;
+    }
+
+    .Header {
+      flex-wrap: nowrap;
+      width: 100vw;
+      min-width: 0;
+      max-width: 100vw;
+    }
+
+    .icons {
+      display: flex;
+    }
+
+    .iconHamburger {
+      display: none !important;
+    }
+  }
+
+  @media (max-width: 350px) {
+    .Header {
+      padding: 0 2px;
+      gap: 2px;
+    }
+
+    .logo {
+      width: 20px;
+      height: 20px;
+    }
+
+    .title {
+      overflow: hidden;
+      font-size: 0.8rem;
+      max-width: 60px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .search {
+      height: 20px;
+      padding: 0 2px;
+      min-width: 20px;
+      max-width: 60px;
+    }
+
+    .search input {
+      font-size: 0.8rem;
+    }
+
+    .iconBtn {
+      width: 16px;
+      height: 16px;
+      font-size: 0.7rem;
+    }
+
+    .profileBtn {
+      width: 18px;
+      height: 18px;
+      margin-left: 1px;
+    }
+
+    .iconGroup {
+      gap: 2px;
+    }
+  }
+
+  @media (min-width: 600px) and (max-width: 899px) {
+
+    .hamburger,
+    .iconHamburger {
+      width: 28px;
+      height: 28px;
+      font-size: 1.3rem;
+    }
+
+    .bar {
+      width: 18px;
+      height: 2.5px;
+      margin: 2px 0;
+    }
+  }
+
+  @media (max-width: 599.98px) {
+
+    .hamburger,
+    .iconHamburger {
+      width: 22px;
+      height: 22px;
+      font-size: 1rem;
+    }
+
+    .bar {
+      width: 14px;
+      height: 2px;
+      margin: 1.5px 0;
+    }
+  }
+
+  @media (max-width: 350px) {
+
+    .hamburger,
+    .iconHamburger {
+      width: 16px;
+      height: 16px;
+      font-size: 0.8rem;
+    }
+
+    .bar {
+      width: 10px;
+      height: 1.5px;
+      margin: 1px 0;
+    }
+  }

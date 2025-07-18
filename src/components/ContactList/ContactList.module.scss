@@ -46,7 +46,7 @@
     align-items: center;
 
     &:hover {
-        background: $base-background;
+        background: $accent-secondary;
     }
 
     // Avatar and online/offline dot
@@ -86,6 +86,6 @@
         font-size: 14px;
         font-weight: 400;
         text-align: center;
-        color: $text-element;
+        color: $text-info;
     }
 }

@@ -1,5 +1,11 @@
-@use 'sass:color';
 @use '~/constants/styles/variables.scss' as *;
+// Color variables
+$color-background: $base-background;
+$color-text: $text-info;
+$color-received: $accent-secondary;
+$color-sent: $accent-fourth;
+$color-accent: $accent-first;
+$color-accent-second: $accent-secondary;
 
 // Chat container
 .chat-container {
