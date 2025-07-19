@@ -48,7 +48,7 @@ const PointRangeInput = ({ filters, setFilters }) => {
                 <input
                     id="min"
                     type="number"
-                    value={filters.pointMin}
+                    value={filters.pointMin !== null && filters.pointMin !== undefined ? filters.pointMin : ''}
                     placeholder={0}
                     onChange={handleMinChange}
                     className={styles['input']}
@@ -61,7 +61,7 @@ const PointRangeInput = ({ filters, setFilters }) => {
                 <input
                     id="max"
                     type="number"
-                    value={filters.pointMax}
+                    value={filters.pointMax !== null && filters.pointMax !== undefined ? filters.pointMax : ''}
                     placeholder={999}
                     onChange={handleMaxChange}
                     className={styles['input']}
