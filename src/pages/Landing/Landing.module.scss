@@ -1,0 +1,163 @@
+@use '~/constants/styles/variables' as *;
+
+.container {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.6rem;
+    color: $text-info;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: none;
+    background-image: url('~/assets/images/background.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+.navbar {
+  height: 8vh;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba($black, 0.2);
+  backdrop-filter: blur(10px);
+  border-bottom: none;
+  z-index: 100;
+
+  .logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: $white;
+    letter-spacing: 1px;
+    margin-left: 1.5rem;
+  }
+
+  .menu {
+    display: flex;
+    gap: 2.5rem;
+    flex: 1;
+    justify-content: center;
+
+    a, .menu :global(a), .menu :global(.link) {
+      color: #fff;
+      font-size: 1.2rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: color 0.2s;
+      position: relative;
+
+      &:hover {
+        color: #ffe082;
+      }
+      &::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 2px;
+        background: #ffe082;
+        transition: width 0.2s;
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+      }
+      &:hover::after {
+        width: 100%;
+      }
+    }
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+
+    .login {
+      background: #fff;
+      color: #2563eb;
+      border: none;
+      border-radius: 2rem;
+      padding: 0.7rem 2rem;
+      font-weight: 600;
+      font-size: 1.1rem;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      transition: background 0.2s, color 0.2s;
+      text-decoration: none;
+
+      &:hover {
+        background: #2563eb;
+        color: #fff;
+      }
+    }
+  }
+}
+
+.hero {
+  display: flex;
+  align-items: flex-start;      // Đưa lên trên
+  justify-content: flex-start;  // Đưa sang trái
+  padding: 3rem 6rem 0 6rem;    // Padding trên nhỏ lại
+  min-height: 70vh;
+  position: relative;
+  z-index: 1;
+
+  .text {
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;    // Căn trái
+    justify-content: flex-start;
+    text-align: left;           // Căn trái chữ
+    margin-top: 4rem; // Đẩy phần text xuống thấp hơn
+    animation: fadeInUp 1s ease;
+    h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 1.5rem;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 16px rgba(0,0,0,0.35), 0 1px 0 #222;
+      line-height: 1.1;
+    }
+    p {
+      font-size: 1.3rem;
+      color: #f3f3f3;
+      margin-bottom: 2.5rem;
+      max-width: 520px;
+      text-shadow: 0 1px 8px rgba(0,0,0,0.25);
+      line-height: 1.7;
+      letter-spacing: 0.01em;
+    }
+    .get-started {
+      background: #fff;
+      color: #2563eb;
+      border: none;
+      border-radius: 2rem;
+      padding: 0.7rem 2rem;
+      font-weight: 600;
+      font-size: 1.1rem;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      transition: background 0.2s, color 0.2s;
+      text-decoration: none;
+      display: inline-block;
+      &:hover {
+        background: #2563eb;
+        color: #fff;
+      }
+    }
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

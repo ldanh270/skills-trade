@@ -9,7 +9,7 @@ import Profile from '~/pages/Profile/Profile'
 import Signup from '~/pages/Signup/Signup'
 import Upload from '~/pages/Upload/Upload'
 import ResetPW from '~/pages/ResetPW/ResetPW'
-
+import Landing from '~/pages/Landing/Landing'   
 
 // Public routes
 const publicRoutes = [
@@ -21,7 +21,7 @@ const publicRoutes = [
     { path: '/signup', component: Signup, layout: NoHeaderLayout },
     { path: '/posts/:postId', component: PostDetail },
     { path: '/reset-password', component: ResetPW , layout: NoHeaderLayout },
-
+    { path: '/landing', component: Landing , layout: NoHeaderLayout },
 ]
 
 // Private routes
