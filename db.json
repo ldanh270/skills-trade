@@ -6,7 +6,10 @@
       "title": "Looking for a Java mentor",
       "author": {
         "id": "user-001",
-        "name": "Le Minh Duc"
+        "name": "Le Minh Duc",
+        "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=LeMinhDuc",
+        "rating": 4.7,
+        "region": "Hồ Chí Minh"
       },
       "rating": 4.7,
       "skills": [
@@ -31,7 +34,10 @@
       "title": "Offering online English speaking lessons",
       "author": {
         "id": "user-002",
-        "name": "Pham Hong Hanh"
+        "name": "Pham Hong Hanh",
+        "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=PhamHongHanh",
+        "rating": 4.9,
+        "region": "Hà Nội"
       },
       "rating": 4.9,
       "skills": [
@@ -56,7 +62,10 @@
       "title": "Need poster designer for school event",
       "author": {
         "id": "user-003",
-        "name": "Ngo Truong Giang"
+        "name": "Ngo Truong Giang",
+        "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=NgoTruongGiang",
+        "rating": 4.2,
+        "region": "Đà Nẵng"
       },
       "rating": 4.2,
       "skills": [
@@ -81,7 +90,10 @@
       "title": "Build your personal portfolio with HTML/CSS",
       "author": {
         "id": "user-004",
-        "name": "Nguyen Thi Kim"
+        "name": "Nguyen Thi Kim",
+        "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=NguyenThiKim",
+        "rating": 4.8,
+        "region": "Cần Thơ"
       },
       "rating": 4.8,
       "skills": [
@@ -106,7 +118,10 @@
       "title": "Looking for an IT interview coach",
       "author": {
         "id": "user-005",
-        "name": "Tran Quoc Huy"
+        "name": "Tran Quoc Huy",
+        "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=TranQuocHuy",
+        "rating": 4,
+        "region": "Hải Phòng"
       },
       "rating": 4,
       "skills": [
@@ -131,7 +146,10 @@
       "title": "Writing tech blog content on demand",
       "author": {
         "id": "user-006",
-        "name": "Dang Thi Lan"
+        "name": "Dang Thi Lan",
+        "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=DangThiLan",
+        "rating": 4.3,
+        "region": "Huế"
       },
       "rating": 4.3,
       "skills": [
@@ -156,7 +174,10 @@
       "title": "Need video editor for short TikToks",
       "author": {
         "id": "user-007",
-        "name": "Phan Duy Anh"
+        "name": "Phan Duy Anh",
+        "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=PhanDuyAnh",
+        "rating": 3.9,
+        "region": "Nha Trang"
       },
       "rating": 3.9,
       "skills": [
@@ -181,7 +202,10 @@
       "title": "Teaching Python from scratch",
       "author": {
         "id": "user-008",
-        "name": "Vu Thanh Tung"
+        "name": "Vu Thanh Tung",
+        "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=VuThanhTung",
+        "rating": 4.6,
+        "region": "Vũng Tàu"
       },
       "rating": 4.6,
       "skills": [
@@ -206,7 +230,10 @@
       "title": "Looking for digital art teacher",
       "author": {
         "id": "user-009",
-        "name": "Ly Thi Mai"
+        "name": "Ly Thi Mai",
+        "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=LyThiMai",
+        "rating": 3.5,
+        "region": "Bình Dương"
       },
       "rating": 3.5,
       "skills": [
@@ -231,7 +258,10 @@
       "title": "Professional presentation slide design",
       "author": {
         "id": "user-010",
-        "name": "Nguyen Khanh Linh"
+        "name": "Nguyen Khanh Linh",
+        "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=NguyenKhanhLinh",
+        "rating": 4.95,
+        "region": "Đồng Nai"
       },
       "rating": 4.95,
       "skills": [
@@ -560,8 +590,8 @@
         "post-004"
       ],
       "savedPosts": [
-        "post-010",
-        "post-009"
+        "post-009",
+        "post-010"
       ],
       "follower": [
         {
@@ -601,6 +631,465 @@
           "fullName": "Lê Thị D",
           "status": "offline",
           "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=LeThiD"
+        }
+      ]
+    },
+    {
+      "id": "user-002",
+      "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=PhamHongHanh",
+      "fullName": "Phạm Hồng Hạnh",
+      "email": "phamhonghanh@example.com",
+      "username": "phamhonghanh",
+      "password": "$2a$10$FWLuunwIFoTRActzqAwOC.SwFKehpKRBKtHwbbC6Pd.iXjig0Jy3u",
+      "phone": "0901234568",
+      "region": "Hà Nội",
+      "rating": 4.9,
+      "point": 850,
+      "status": "online",
+      "posts": [
+        "post-002"
+      ],
+      "transactions": [
+        "tx-003",
+        "tx-004"
+      ],
+      "notifications": [
+        {
+          "id": "noti-002",
+          "message": "Your post received a new offer",
+          "read": false,
+          "createdAt": "2025-07-11T14:00:00Z"
+        }
+      ],
+      "likedPosts": [
+        "post-001",
+        "post-003",
+        "post-005"
+      ],
+      "dislikedPosts": [],
+      "savedPosts": [
+        "post-001",
+        "post-003"
+      ],
+      "follower": [
+        {
+          "id": "user-001",
+          "fullName": "Lê Minh Đức",
+          "status": "offline",
+          "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=LeMinhDuc"
+        }
+      ],
+      "following": [
+        {
+          "id": "user-001",
+          "fullName": "Lê Minh Đức",
+          "status": "offline",
+          "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=LeMinhDuc"
+        }
+      ]
+    },
+    {
+      "id": "user-003",
+      "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=NgoTruongGiang",
+      "fullName": "Ngô Trường Giang",
+      "email": "ngotruonggiang@example.com",
+      "username": "ngotruonggiang",
+      "password": "$2a$10$K6cZmXndPq1dx/AVjQLJwOTjX9aQZg2y1Z6rBFTwRrOd59h8n/ONy",
+      "phone": "0901234569",
+      "region": "Đà Nẵng",
+      "rating": 4.2,
+      "point": 650,
+      "status": "offline",
+      "posts": [
+        "post-003"
+      ],
+      "transactions": [
+        "tx-005"
+      ],
+      "notifications": [
+        {
+          "id": "noti-003",
+          "message": "Someone liked your post",
+          "read": true,
+          "createdAt": "2025-07-10T10:00:00Z"
+        }
+      ],
+      "likedPosts": [
+        "post-002",
+        "post-004"
+      ],
+      "dislikedPosts": [
+        "post-007"
+      ],
+      "savedPosts": [
+        "post-002"
+      ],
+      "follower": [],
+      "following": [
+        {
+          "id": "user-002",
+          "fullName": "Phạm Hồng Hạnh",
+          "status": "online",
+          "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=PhamHongHanh"
+        }
+      ]
+    },
+    {
+      "id": "user-004",
+      "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=NguyenThiKim",
+      "fullName": "Nguyễn Thị Kim",
+      "email": "nguyenthiKim@example.com",
+      "username": "nguyenthiKim",
+      "password": "$2a$10$Sx9PpH1RIbE/7rZwSnDnTu1.3cZc7QUJnyGxYqhvjlqX41wQpJ1N2",
+      "phone": "0901234570",
+      "region": "Cần Thơ",
+      "rating": 4.8,
+      "point": 920,
+      "status": "online",
+      "posts": [
+        "post-004"
+      ],
+      "transactions": [
+        "tx-006",
+        "tx-007"
+      ],
+      "notifications": [
+        {
+          "id": "noti-004",
+          "message": "New message from client",
+          "read": false,
+          "createdAt": "2025-07-11T16:00:00Z"
+        }
+      ],
+      "likedPosts": [
+        "post-001",
+        "post-005",
+        "post-008"
+      ],
+      "dislikedPosts": [
+        "post-009"
+      ],
+      "savedPosts": [
+        "post-005",
+        "post-008"
+      ],
+      "follower": [
+        {
+          "id": "user-005",
+          "fullName": "Trần Quốc Huy",
+          "status": "online",
+          "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=TranQuocHuy"
+        }
+      ],
+      "following": [
+        {
+          "id": "user-005",
+          "fullName": "Trần Quốc Huy",
+          "status": "online",
+          "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=TranQuocHuy"
+        }
+      ]
+    },
+    {
+      "id": "user-005",
+      "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=TranQuocHuy",
+      "fullName": "Trần Quốc Huy",
+      "email": "tranquochuy@example.com",
+      "username": "tranquochuy",
+      "password": "$2a$10$FWLuunwIFoTRActzqAwOC.SwFKehpKRBKtHwbbC6Pd.iXjig0Jy3u",
+      "phone": "0901234571",
+      "region": "Hải Phòng",
+      "rating": 4,
+      "point": 480,
+      "status": "online",
+      "posts": [
+        "post-005"
+      ],
+      "transactions": [
+        "tx-008"
+      ],
+      "notifications": [
+        {
+          "id": "noti-005",
+          "message": "Your interview request was accepted",
+          "read": false,
+          "createdAt": "2025-07-11T18:00:00Z"
+        }
+      ],
+      "likedPosts": [
+        "post-004",
+        "post-006"
+      ],
+      "dislikedPosts": [
+        "post-003"
+      ],
+      "savedPosts": [
+        "post-004"
+      ],
+      "follower": [
+        {
+          "id": "user-004",
+          "fullName": "Nguyễn Thị Kim",
+          "status": "online",
+          "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=NguyenThiKim"
+        }
+      ],
+      "following": [
+        {
+          "id": "user-004",
+          "fullName": "Nguyễn Thị Kim",
+          "status": "online",
+          "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=NguyenThiKim"
+        }
+      ]
+    },
+    {
+      "id": "user-006",
+      "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=DangThiLan",
+      "fullName": "Đặng Thị Lan",
+      "email": "dangthilan@example.com",
+      "username": "dangthilan",
+      "password": "$2a$10$K6cZmXndPq1dx/AVjQLJwOTjX9aQZg2y1Z6rBFTwRrOd59h8n/ONy",
+      "phone": "0901234572",
+      "region": "Huế",
+      "rating": 4.3,
+      "point": 720,
+      "status": "offline",
+      "posts": [
+        "post-006"
+      ],
+      "transactions": [
+        "tx-009"
+      ],
+      "notifications": [
+        {
+          "id": "noti-006",
+          "message": "New blog post request",
+          "read": true,
+          "createdAt": "2025-07-10T15:00:00Z"
+        }
+      ],
+      "likedPosts": [
+        "post-007",
+        "post-010"
+      ],
+      "dislikedPosts": [],
+      "savedPosts": [
+        "post-007"
+      ],
+      "follower": [],
+      "following": []
+    },
+    {
+      "id": "user-007",
+      "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=PhanDuyAnh",
+      "fullName": "Phan Duy Anh",
+      "email": "phanduyanh@example.com",
+      "username": "phanduyanh",
+      "password": "$2a$10$Sx9PpH1RIbE/7rZwSnDnTu1.3cZc7QUJnyGxYqhvjlqX41wQpJ1N2",
+      "phone": "0901234573",
+      "region": "Nha Trang",
+      "rating": 3.9,
+      "point": 350,
+      "status": "offline",
+      "posts": [
+        "post-007"
+      ],
+      "transactions": [
+        "tx-010"
+      ],
+      "notifications": [
+        {
+          "id": "noti-007",
+          "message": "Video editing project completed",
+          "read": true,
+          "createdAt": "2025-07-09T20:00:00Z"
+        }
+      ],
+      "likedPosts": [
+        "post-006",
+        "post-008"
+      ],
+      "dislikedPosts": [
+        "post-001"
+      ],
+      "savedPosts": [
+        "post-006"
+      ],
+      "follower": [],
+      "following": []
+    },
+    {
+      "id": "user-008",
+      "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=VuThanhTung",
+      "fullName": "Vũ Thanh Tùng",
+      "email": "vuthanhtung@example.com",
+      "username": "vuthanhtung",
+      "password": "$2a$10$FWLuunwIFoTRActzqAwOC.SwFKehpKRBKtHwbbC6Pd.iXjig0Jy3u",
+      "phone": "0901234574",
+      "region": "Vũng Tàu",
+      "rating": 4.6,
+      "point": 880,
+      "status": "online",
+      "posts": [
+        "post-008"
+      ],
+      "transactions": [
+        "tx-011",
+        "tx-012"
+      ],
+      "notifications": [
+        {
+          "id": "noti-008",
+          "message": "New student enrolled in Python course",
+          "read": false,
+          "createdAt": "2025-07-11T19:00:00Z"
+        }
+      ],
+      "likedPosts": [
+        "post-001",
+        "post-004",
+        "post-007"
+      ],
+      "dislikedPosts": [],
+      "savedPosts": [
+        "post-001",
+        "post-004"
+      ],
+      "follower": [
+        {
+          "id": "user-009",
+          "fullName": "Lý Thị Mai",
+          "status": "offline",
+          "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=LyThiMai"
+        }
+      ],
+      "following": [
+        {
+          "id": "user-009",
+          "fullName": "Lý Thị Mai",
+          "status": "offline",
+          "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=LyThiMai"
+        }
+      ]
+    },
+    {
+      "id": "user-009",
+      "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=LyThiMai",
+      "fullName": "Lý Thị Mai",
+      "email": "lythimai@example.com",
+      "username": "lythimai",
+      "password": "$2a$10$K6cZmXndPq1dx/AVjQLJwOTjX9aQZg2y1Z6rBFTwRrOd59h8n/ONy",
+      "phone": "0901234575",
+      "region": "Bình Dương",
+      "rating": 3.5,
+      "point": 280,
+      "status": "offline",
+      "posts": [
+        "post-009"
+      ],
+      "transactions": [
+        "tx-013"
+      ],
+      "notifications": [
+        {
+          "id": "noti-009",
+          "message": "Digital art lesson scheduled",
+          "read": false,
+          "createdAt": "2025-07-11T20:00:00Z"
+        }
+      ],
+      "likedPosts": [
+        "post-008",
+        "post-010"
+      ],
+      "dislikedPosts": [
+        "post-004"
+      ],
+      "savedPosts": [
+        "post-008"
+      ],
+      "follower": [
+        {
+          "id": "user-008",
+          "fullName": "Vũ Thanh Tùng",
+          "status": "online",
+          "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=VuThanhTung"
+        }
+      ],
+      "following": [
+        {
+          "id": "user-008",
+          "fullName": "Vũ Thanh Tùng",
+          "status": "online",
+          "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=VuThanhTung"
+        }
+      ]
+    },
+    {
+      "id": "user-010",
+      "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=NguyenKhanhLinh",
+      "fullName": "Nguyễn Khánh Linh",
+      "email": "nguyenkhanhlinh@example.com",
+      "username": "nguyenkhanhlinh",
+      "password": "$2a$10$Sx9PpH1RIbE/7rZwSnDnTu1.3cZc7QUJnyGxYqhvjlqX41wQpJ1N2",
+      "phone": "0901234576",
+      "region": "Đồng Nai",
+      "rating": 4.95,
+      "point": 1500,
+      "status": "online",
+      "posts": [
+        "post-010"
+      ],
+      "transactions": [
+        "tx-014",
+        "tx-015",
+        "tx-016"
+      ],
+      "notifications": [
+        {
+          "id": "noti-010",
+          "message": "Presentation design completed successfully",
+          "read": true,
+          "createdAt": "2025-07-11T21:00:00Z"
+        }
+      ],
+      "likedPosts": [
+        "post-001",
+        "post-002",
+        "post-003"
+      ],
+      "dislikedPosts": [],
+      "savedPosts": [
+        "post-001",
+        "post-002"
+      ],
+      "follower": [
+        {
+          "id": "user-001",
+          "fullName": "Lê Minh Đức",
+          "status": "offline",
+          "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=LeMinhDuc"
+        },
+        {
+          "id": "user-002",
+          "fullName": "Phạm Hồng Hạnh",
+          "status": "online",
+          "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=PhamHongHanh"
+        }
+      ],
+      "following": [
+        {
+          "id": "user-001",
+          "fullName": "Lê Minh Đức",
+          "status": "offline",
+          "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=LeMinhDuc"
+        },
+        {
+          "id": "user-002",
+          "fullName": "Phạm Hồng Hạnh",
+          "status": "online",
+          "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=PhamHongHanh"
         }
       ]
     }

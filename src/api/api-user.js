@@ -3,6 +3,45 @@ import axios from 'axios'
 import { BASE_URL } from '~/api/api-constants'
 
 /**
+ * Login user with email/username and password
+ *
+ * @async
+ * @function loginUser
+ * @param {string} email - User's email or username
+ * @param {string} password - User's password
+ * @returns {Promise<Object|null>} A promise that resolves to the user object if login successful,
+ *                                 or null if login fails
+ */
+export const loginUser = async (email, password) => {
+    try {
+        // Get all users to find matching credentials
+        const res = await axios.get(`${BASE_URL}/users`)
+        const users = res.data
+
+        // First check if user exists
+        const userExists = users.find((u) => u.email === email || u.username === email)
+
+        if (!userExists) {
+            throw new Error('User not found')
+        }
+
+        // Then check password
+        const user = users.find(
+            (u) => (u.email === email || u.username === email) && u.password === password,
+        )
+
+        if (user) {
+            return user
+        } else {
+            throw new Error('Invalid credentials')
+        }
+    } catch (err) {
+        console.error('Login failed:', err)
+        throw err // Re-throw the error to handle it in the component
+    }
+}
+
+/**
  * Fetch the user data for the hardcoded user ID.
  *
  * @async

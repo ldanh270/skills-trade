@@ -1,35 +1,38 @@
 @use 'sass:color';
-  @use '~/constants/styles/variables.scss' as *;
+@use '~/constants/styles/variables.scss' as *;
 
-  .Header {
-    position: fixed;
+.Header {
+  position: fixed;
   top: 0;
-  left: 0;
   right: 0;
+  left: 0;
+  z-index: 2000;
+  display: flex;
   width: 100vw;
+  height: 7vh;
+  padding: 0 32px;
+  gap: 32px;
+  background: $white;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
   min-width: 0;
   max-width: 100vw;
-  z-index: 2000;
-  background: $white;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
-  display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 0 32px;
-  gap: 32px;
-  height: 7vh;
 }
+
 @media (max-width: 899px) {
   .Header {
     height: 44px;
   }
 }
+
 @media (max-width: 599.98px) {
   .Header {
     height: 36px;
   }
 }
+
 .leftBox {
   display: flex;
   align-items: center;
@@ -37,6 +40,7 @@
   min-width: 0;
   gap: 32px;
 }
+
 .rightBox {
   display: flex;
   align-items: center;
@@ -45,6 +49,7 @@
   min-width: 0;
   gap: 24px;
 }
+
 .nav {
   display: flex;
   align-items: center;
@@ -53,73 +58,85 @@
   min-width: 260px;
   flex-shrink: 0;
 }
+
 .search {
   display: flex;
-  align-items: center;
+  height: 40px;
+  margin: 0 32px;
+  padding: 0 16px;
+  overflow: hidden;
+  flex: 1 1 220px;
   background: #fff;
   border: 1px solid #e0e0e0;
   border-radius: 24px;
-  padding: 0 16px;
-  margin: 0 32px;
-  height: 40px;
+  align-items: center;
   min-width: 180px;
   max-width: 400px;
-  flex: 1 1 220px;
-  overflow: hidden;
 }
+
 .icons {
   display: flex;
   align-items: center;
   gap: 12px;
 }
+
 .iconBtn {
+  display: flex;
   width: 32px;
   height: 32px;
-  border-radius: 50%;
+  padding: 0;
   background: #fff;
   border: 1.5px solid #e0e0e0;
-  display: flex;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  transition: background 0.18s, border-color 0.18s, box-shadow 0.18s, color 0.18s;
+  cursor: pointer;
   align-items: center;
   justify-content: center;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: background 0.18s, border-color 0.18s, box-shadow 0.18s, color 0.18s;
-  padding: 0;
 }
+
 .iconBtn[title="Add"] {
   border-color: #e0e0e0;
   background: #e5e7eb;
 }
+
 .iconBtn[title="Add"] svg * {
   stroke: #65686C !important;
   fill: none !important;
 }
+
 .iconBtn[title="Add"]:hover {
   background: #ffcd29;
   border-color: #ffcd29;
 }
+
 .iconBtn[title="AI"] {
   border-color: #e0e0e0;
   background: #f7f7f7;
 }
+
 .iconBtn[title="Notifications"] {
   border-color: #e0e0e0;
   background: #f7f7f7;
 }
+
 .iconBtn:hover {
-  box-shadow: 0 2px 8px rgba(255,205,41,0.12);
+  box-shadow: 0 2px 8px rgba(255, 205, 41, 0.12);
   border-color: $accent-first;
 }
+
 @media (max-width: 899px) {
   .icons {
     gap: 8px;
   }
+
   .iconBtn {
     width: 26px;
     height: 26px;
     font-size: 1rem;
   }
 }
+
 .left {
   display: flex;
   align-items: center;
@@ -134,77 +151,80 @@
 }
 
 .title {
+  display: flex;
   font-size: 2rem;
   font-weight: 700;
+  line-height: 1;
   color: #6b6b6b;
   margin-left: 4px;
   margin-top: 0;
   margin-bottom: 0;
-  line-height: 1;
-  display: flex;
   align-items: center;
 }
 
 .nav a {
-  color: $text-element;
-  text-decoration: none;
+  position: relative;
   font-size: 1rem;
   font-weight: 500;
+  color: $text-element;
   transition: color 0.2s;
-  position: relative;
+  text-decoration: none;
 }
 
-.nav a:hover, .nav a:focus {
+.nav a:hover,
+.nav a:focus {
   color: $accent-first;
 }
 
-.nav a:hover::after, .nav a:focus::after {
-  content: '';
+.nav a:hover::after,
+.nav a:focus::after {
+  position: absolute;
+  right: 0;
+  bottom: -8px;
+  left: 0;
   display: block;
   height: 3px;
   background: $accent-first;
   border-radius: 2px;
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -8px;
+  content: '';
 }
 
 .searchIcon {
   display: flex;
-  align-items: center;
-  height: 1em;
   width: 1em;
+  height: 1em;
+  align-items: center;
   min-width: 0;
   margin-right: 8px;
+
   svg {
+    display: block;
     width: auto;
     height: 100%;
-    display: block;
   }
 }
 
 .search input {
-  border: none;
-  outline: none;
-  font-size: 1rem;
-  background: transparent;
   width: 100%;
+  background: transparent;
+  border: none;
+  font-size: 1rem;
+  outline: none;
   min-width: 0;
 }
 
 .iconBtn {
+  display: flex;
   width: 36px;
   height: 36px;
-  border-radius: 50%;
   background: #e5e7eb;
   border: none;
-  display: flex;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  transition: background 0.2s;
+  cursor: pointer;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: background 0.2s;
 }
 
 .iconBtn:hover {
@@ -214,57 +234,66 @@
 .profileBtn {
   width: 40px;
   height: 40px;
-  border-radius: 50%;
   background: #000;
   border: none;
+  border-radius: 50%;
   cursor: pointer;
   margin-left: 8px;
 }
 
-.hamburger, .iconHamburger {
+.hamburger,
+.iconHamburger {
+  z-index: 120;
   display: none;
+  width: 36px;
+  height: 36px;
   background: none;
   border: none;
+  font-size: 2rem;
+  cursor: pointer;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 36px;
-  height: 36px;
-  font-size: 2rem;
-  cursor: pointer;
-  z-index: 120;
 }
+
 .iconHamburger {
   margin-left: 8px;
 }
+
 .bar {
+  display: block;
   width: 24px;
   height: 3px;
-  background: $accent-first;
   margin: 3px 0;
+  background: $accent-first;
   border-radius: 2px;
-  display: block;
 }
 
 .drawer {
   position: fixed;
   top: 0;
-  left: 0;
   right: auto;
-  width: 70vw;
-  max-width: 320px;
-  height: 100vh;
-  background: $white;
-  box-shadow: 2px 0 12px rgba(0,0,0,0.12);
+  left: 0;
   z-index: 200;
   display: flex;
-  flex-direction: column;
+  width: 70vw;
+  height: 100vh;
   padding: 24px 16px 16px 24px;
+  background: $white;
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.12);
   animation: slideInDrawerLeft 0.2s;
+  max-width: 320px;
+  flex-direction: column;
 }
+
 @keyframes slideInDrawerLeft {
-  from { left: -100vw; }
-  to { left: 0; }
+  from {
+    left: -100vw;
+  }
+
+  to {
+    left: 0;
+  }
 }
 
 .drawerIconsPanel {
@@ -272,21 +301,28 @@
   top: 0;
   right: 0;
   left: auto;
-  width: 70vw;
-  max-width: 320px;
-  height: 100vh;
-  background: $white;
-  box-shadow: -2px 0 12px rgba(0,0,0,0.12);
   z-index: 200;
   display: flex;
-  flex-direction: column;
+  width: 70vw;
+  height: 100vh;
   padding: 24px 16px 16px 24px;
+  background: $white;
+  box-shadow: -2px 0 12px rgba(0, 0, 0, 0.12);
   animation: slideInDrawerRight 0.2s;
+  max-width: 320px;
+  flex-direction: column;
 }
+
 @keyframes slideInDrawerRight {
-  from { right: -100vw; }
-  to { right: 0; }
+  from {
+    right: -100vw;
+  }
+
+  to {
+    right: 0;
+  }
 }
+
 .closeDrawer {
   background: none;
   border: none;
@@ -296,22 +332,26 @@
   cursor: pointer;
   margin-bottom: 16px;
 }
+
 .drawerNav {
   display: flex;
   flex-direction: column;
   gap: 24px;
   margin-bottom: 32px;
+
   a {
-    color: $text-element;
     font-size: 1.1rem;
-    text-decoration: none;
     font-weight: 500;
+    color: $text-element;
     transition: color 0.2s;
+    text-decoration: none;
+
     &:hover {
       color: $accent-first;
     }
   }
 }
+
 .drawerIcons {
   display: flex;
   gap: 16px;
@@ -329,22 +369,31 @@
   right: 32px;
   z-index: 3000;
   background: $white;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
   border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  animation: fadeInPopup 0.18s;
   min-width: 220px;
   max-width: 90vw;
-  animation: fadeInPopup 0.18s;
 }
+
 @keyframes fadeInPopup {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
+
 .notificationContent {
   padding: 18px 20px;
-  color: $text-element;
   font-size: 1rem;
   font-weight: 500;
   text-align: left;
+  color: $text-element;
 }
 
 // Responsive styles
@@ -353,43 +402,56 @@
     padding: 0 12px;
     gap: 16px;
   }
+
   .leftBox {
     gap: 16px;
   }
+
   .rightBox {
     gap: 12px;
   }
+
   .nav {
     gap: 24px;
     margin-left: 16px;
     min-width: 180px;
   }
+
   .search {
-    margin: 0 8px;
-    min-width: 120px;
-    max-width: 260px;
     height: 32px;
+    margin: 0 8px;
     padding: 0 8px;
     flex: 1 1 140px;
+    min-width: 120px;
+    max-width: 260px;
   }
+
   .search input {
     font-size: 0.95rem;
   }
 }
+
 @media (max-width: 900px) {
   .Header {
     padding: 0 4px;
     gap: 8px;
   }
-  .leftBox, .rightBox {
+
+  .leftBox,
+  .rightBox {
     gap: 8px;
   }
-  .nav, .icons {
+
+  .nav,
+  .icons {
     display: none !important;
   }
-  .hamburger, .iconHamburger {
+
+  .hamburger,
+  .iconHamburger {
     display: flex;
   }
+
   .search {
     min-width: 30px;
     max-width: 120px;
@@ -398,63 +460,76 @@
     padding: 0 4px;
     flex: 1 1 40px;
   }
+
   .icons {
     display: none !important;
   }
+
   .iconHamburger {
     display: flex;
   }
+
   .search input {
     font-size: 0.9rem;
   }
 }
+
 @media (min-width: 600px) and (max-width: 899px) {
   .iconGroup {
     gap: 12px;
   }
+
   .icons {
-    gap: 12px;
     display: flex !important;
+    gap: 12px;
   }
+
   .iconBtn {
     width: 28px;
     height: 28px;
     font-size: 1rem;
   }
+
   .profileBtn {
     width: 32px;
     height: 32px;
     margin-left: 6px;
   }
+
   .iconHamburger {
     display: none !important;
   }
 }
+
 @media (max-width: 599.98px) {
   .icons {
     display: none !important;
   }
+
   .fab {
     position: static;
-    margin-left: 8px;
+    display: flex;
     width: 32px;
     height: 32px;
+    padding: 0;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+    margin-left: 8px;
     min-width: 32px;
     min-height: 32px;
-    border-radius: 50%;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-    display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0;
   }
+
   .fab svg {
     width: 100%;
     height: 100%;
   }
+
   .fab:active {
-    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
   }
+
   .fabMenu {
     position: absolute;
     top: 100%;
@@ -467,213 +542,297 @@
     box-shadow: none;
     align-items: flex-end;
   }
+
   .fabMenu .iconBtn {
     width: 32px;
     height: 32px;
-    font-size: 1.1rem;
     background: #fff;
     border: 1.5px solid #e0e0e0;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+    font-size: 1.1rem;
   }
 }
-.fab, .fabMenu {
+
+.fab,
+.fabMenu {
   display: none;
 }
+
 @media (max-width: 599.98px) {
-  .fab, .fabMenu {
+
+  .fab,
+  .fabMenu {
     display: flex;
   }
 }
+
 @media (min-width: 900px) {
-  .drawer, .drawerIconsPanel, .closeDrawer {
+
+  .drawer,
+  .drawerIconsPanel,
+  .closeDrawer {
     display: none !important;
   }
-  .hamburger, .iconHamburger {
+
+  .hamburger,
+  .iconHamburger {
     display: none !important;
   }
-  .nav, .icons {
+
+  .nav,
+  .icons {
     display: flex;
   }
+
   .Header {
     flex-wrap: nowrap;
     width: 100vw;
     min-width: 0;
     max-width: 100vw;
   }
+
   .icons {
     display: flex;
   }
+
   .iconHamburger {
     display: none !important;
   }
 }
+
 @media (max-width: 350px) {
   .Header {
     padding: 0 2px;
     gap: 2px;
   }
+
   .logo {
     width: 20px;
     height: 20px;
   }
+
   .title {
+    overflow: hidden;
     font-size: 0.8rem;
     max-width: 60px;
-    overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
+
   .search {
+    height: 20px;
+    padding: 0 2px;
     min-width: 20px;
     max-width: 60px;
-    padding: 0 2px;
-    height: 20px;
   }
+
   .search input {
     font-size: 0.8rem;
   }
+
   .iconBtn {
     width: 16px;
     height: 16px;
     font-size: 0.7rem;
   }
+
   .profileBtn {
     width: 18px;
     height: 18px;
     margin-left: 1px;
   }
+
   .iconGroup {
     gap: 2px;
   }
 }
+
 @media (min-width: 600px) and (max-width: 899px) {
-  .hamburger, .iconHamburger {
+
+  .hamburger,
+  .iconHamburger {
     width: 28px;
     height: 28px;
     font-size: 1.3rem;
   }
+
   .bar {
     width: 18px;
     height: 2.5px;
     margin: 2px 0;
   }
 }
+
 @media (max-width: 599.98px) {
-  .hamburger, .iconHamburger {
+
+  .hamburger,
+  .iconHamburger {
     width: 22px;
     height: 22px;
     font-size: 1rem;
   }
+
   .bar {
     width: 14px;
     height: 2px;
     margin: 1.5px 0;
   }
 }
+
 @media (max-width: 350px) {
-  .hamburger, .iconHamburger {
+
+  .hamburger,
+  .iconHamburger {
     width: 16px;
     height: 16px;
     font-size: 0.8rem;
   }
+
   .bar {
     width: 10px;
     height: 1.5px;
     margin: 1px 0;
   }
 }
+
 @media (max-width: 899px) {
   .logo {
     width: 28px;
     height: 28px;
   }
+
   .title {
     font-size: 1.1rem;
     margin-left: 2px;
   }
 }
+
 @media (max-width: 599.98px) {
   .logo {
     width: 20px;
     height: 20px;
   }
+
   .title {
     font-size: 0.9rem;
     margin-left: 1px;
   }
 }
+
 .iconBtn.shake {
   animation: shake-bell 0.5s linear 1;
 }
+
 @keyframes shake-bell {
-  0% { transform: rotate(0); }
-  15% { transform: rotate(-18deg); }
-  30% { transform: rotate(16deg); }
-  45% { transform: rotate(-12deg); }
-  60% { transform: rotate(8deg); }
-  75% { transform: rotate(-4deg); }
-  100% { transform: rotate(0); }
+  0% {
+    transform: rotate(0);
+  }
+
+  15% {
+    transform: rotate(-18deg);
+  }
+
+  30% {
+    transform: rotate(16deg);
+  }
+
+  45% {
+    transform: rotate(-12deg);
+  }
+
+  60% {
+    transform: rotate(8deg);
+  }
+
+  75% {
+    transform: rotate(-4deg);
+  }
+
+  100% {
+    transform: rotate(0);
+  }
 }
+
 .iconBtn.spin svg {
   animation: spin-ai 1s linear infinite;
 }
+
 @keyframes spin-ai {
-  100% { transform: rotate(360deg); }
+  100% {
+    transform: rotate(360deg);
+  }
 }
-.iconBtn:hover, .fabMenu .iconBtn:hover {
+
+.iconBtn:hover,
+.fabMenu .iconBtn:hover {
   background: #fffbe6;
-  border-color: $accent-first;
+  box-shadow: 0 2px 12px rgba(255, 205, 41, 0.18);
   color: inherit;
-  box-shadow: 0 2px 12px rgba(255,205,41,0.18);
+  border-color: $accent-first;
 }
+
 .iconBtn[title="Add"]:hover {
   background: color.adjust($accent-first, $lightness: -8%);
   border-color: color.adjust($accent-first, $lightness: -8%);
 }
-.iconBtn[title="AI"]:hover, .iconBtn[title="Notifications"]:hover {
+
+.iconBtn[title="AI"]:hover,
+.iconBtn[title="Notifications"]:hover {
   background: #ffe9a7;
   border-color: $accent-first;
 }
+
 // Đảm bảo icon không đổi màu khi hover
 .iconBtn:hover svg *,
 .fabMenu .iconBtn:hover svg * {
   stroke: #65686C !important;
   fill: none !important;
 }
+
 .iconBtn[title="Add"]:hover svg * {
   stroke: #65686C !important;
   fill: none !important;
 }
+
 .fab {
   transition: background 0.18s, box-shadow 0.18s;
 }
+
 .fab:hover {
   background: color.adjust($accent-first, $lightness: -8%);
-  box-shadow: 0 4px 20px rgba(255,205,41,0.22);
+  box-shadow: 0 4px 20px rgba(255, 205, 41, 0.22);
 }
+
 .desktopOnly {
   display: flex;
 }
+
 @media (max-width: 599.98px) {
   .desktopOnly {
     display: none !important;
   }
 }
+
 @media (max-width: 599.98px) and (min-width: 376px) {
-  .iconBtn, .profileBtn {
+
+  .iconBtn,
+  .profileBtn {
+    display: flex;
     width: 28px;
     height: 28px;
+    border-radius: 50%;
+    font-size: 1rem;
     min-width: 28px;
     min-height: 28px;
-    border-radius: 50%;
-    display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1rem;
   }
 }
+
 @media (max-width: 375px) {
-  .iconBtn, .profileBtn {
+
+  .iconBtn,
+  .profileBtn {
     width: 22px;
     height: 22px;
     min-width: 22px;

@@ -42,6 +42,15 @@ a:active {
         justify-content: flex-start;
         padding: 8px 0;
 
+        .title-link {
+            text-decoration: none;
+            color: inherit;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
         .title {
             font-size: 1.2rem;
             font-weight: bold;
@@ -80,6 +89,15 @@ a:active {
     }
 
     // 🔹 Short description of the post
+    .description-link {
+        text-decoration: none;
+        color: inherit;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
     .description {
         font-size: 0.95rem;
         line-height: 1.5;

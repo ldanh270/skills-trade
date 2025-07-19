@@ -110,8 +110,8 @@ const Home = () => {
                         hasMore={hasMore}
                         loader={<h4>Loading...</h4>}
                     >
-                        {posts.map((post) => (
-                            <Link to={`/posts/${post.id}`} key={post.id}>
+                        {posts.map((post, index) => (
+                            <Link to={`/posts/${post.id}`} key={`${index}`}>
                                 <PostCard post={post} />
                             </Link>
                         ))}

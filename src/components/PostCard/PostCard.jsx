@@ -1,5 +1,6 @@
 import { formatDistanceToNow } from 'date-fns'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import { POST_TYPE } from '~/constants/objectAttributes/PostAttributes'
 
@@ -34,7 +35,9 @@ const PostCard = ({ post, preview = false }) => {
 
             {/* Title section */}
             <div className={styles['info']}>
-                <h2 className={styles['title']}>{post.title}</h2>
+                <Link to={`/posts/${post.id}`} className={styles['title-link']}>
+                    <h2 className={styles['title']}>{post.title}</h2>
+                </Link>
             </div>
 
             {/* Rating + Reactions */}
@@ -54,7 +57,9 @@ const PostCard = ({ post, preview = false }) => {
             </div>
 
             {/* Description */}
-            <p className={styles['description']}>{post.description}</p>
+            <Link to={`/posts/${post.id}`} className={styles['description-link']}>
+                <p className={styles['description']}>{post.description}</p>
+            </Link>
 
             {/* Proof links */}
             <div className={styles['imageWrapper']}>
@@ -68,6 +73,7 @@ const PostCard = ({ post, preview = false }) => {
                                         target="_blank"
                                         rel="noreferrer"
                                         className={styles['github-link']}
+                                        onClick={(e) => e.stopPropagation()}
                                     >
                                         <img
                                             src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
@@ -81,6 +87,7 @@ const PostCard = ({ post, preview = false }) => {
                                         target="_blank"
                                         rel="noreferrer"
                                         className={styles['other-link']}
+                                        onClick={(e) => e.stopPropagation()}
                                     >
                                         {link}
                                     </a>
