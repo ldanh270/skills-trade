@@ -4,9 +4,11 @@
   background: $base-background;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 0;
+  position: relative;
 }
 
 .chatLayout {
@@ -20,22 +22,20 @@
 .chatCard {
   position: relative;
   width: 100%;
-  height: 45vw; // hoặc max-height: 70vh;
+  height: 70vh;
   display: flex;
   flex-direction: column;
   background: $white;
   border-radius: 32px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.10);
-  padding: 0; // padding chỉ cho .chatMain và .chatInputBar
-  overflow: hidden; // Để watermark không tràn ra ngoài
-
-
+  padding: 0;
+  overflow: hidden;
 }
 
 .chatSidebar {
   position: absolute;
-  top: 40%;
-  right: 520px; // hoặc 8px cho sát hơn
+  top: 50%;
+  right: 500px;
   transform: translateY(-50%);
   background: $white;
   border-radius: 24px;
@@ -47,6 +47,7 @@
   gap: 12px;
   align-items: center;
   height: fit-content;
+  z-index: 10;
 }
 
 .iconBtn {
@@ -111,13 +112,13 @@
   left: 50%;
   transform: translate(-50%, -50%) rotate(-15deg);
   font-weight: 900;
-  color: rgba(23, 70, 162, 0.08);
+  color: rgba(79, 128, 226, 0.08);
   z-index: 0;
   pointer-events: none;
   white-space: nowrap;
   text-shadow: 3px 3px 6px rgba(0,0,0,0.15);
   text-align: center;
-  margin-bottom: 0;
+  margin: 0;
   padding: 0;
 }
 .chatInputBar {
@@ -190,7 +191,182 @@
   // padding: 12px 18px;
 }
 
+// Responsive Design
+@media (max-width: 1200px) {
+  .chatLayout {
+    width: 70vw;
+  }
+  
+  .chatSidebar {
+    right: 30px;
+  }
+}
+
 @media (max-width: 1000px) {
-  .chatLayout { width: 98vw; min-width: 0; }
-  .chatCard { padding: 16px 4px 0 4px; }
+  .chatLayout {
+    width: 85vw;
+  }
+  
+  .chatSidebar {
+    right: 20px;
+  }
+  
+  .botName {
+    font-size: 8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .chatPageBg {
+    padding: 20px 10px;
+  }
+  
+  .chatLayout {
+    width: 95vw;
+  }
+  
+  .chatCard {
+    height: 60vh;
+  }
+  
+  .chatSidebar {
+    position: fixed;
+    top: auto;
+    bottom: 20px;
+    right: 20px;
+    transform: none;
+    flex-direction: row;
+    width: auto;
+    padding: 8px 16px;
+    border-radius: 50px;
+  }
+  
+  .botName {
+    font-size: 6rem;
+  }
+  
+  .chatMain {
+    padding: 24px 24px 0 24px;
+  }
+  
+  .userMsg, .botMsg {
+    font-size: 1rem;
+    padding: 20px 24px;
+    max-width: 95%;
+  }
+  
+  .chatInputBar {
+    padding: 20px 20px 20px 20px;
+  }
+  
+  .chatInput {
+    padding: 16px 20px;
+    font-size: 1rem;
+  }
+  
+  .sendBtn {
+    padding: 12px 24px;
+    font-size: 1.2rem;
+  }
+  
+  .botMsgName {
+    font-size: 1.2rem;
+  }
+  
+  .botMsgContent {
+    margin-left: 32px;
+    margin-top: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chatPageBg {
+    padding: 10px 5px;
+  }
+  
+  .chatLayout {
+    width: 98vw;
+  }
+  
+  .chatCard {
+    height: 55vh;
+    border-radius: 20px;
+  }
+  
+  .chatSidebar {
+    bottom: 10px;
+    right: 10px;
+    padding: 6px 12px;
+    gap: 8px;
+  }
+  
+  .iconBtn {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+  
+  .botName {
+    font-size: 4rem;
+  }
+  
+  .chatMain {
+    padding: 16px 16px 0 16px;
+    gap: 12px;
+  }
+  
+  .userMsg, .botMsg {
+    font-size: 0.9rem;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+  }
+  
+  .chatInputBar {
+    padding: 16px 16px 16px 16px;
+    gap: 12px;
+  }
+  
+  .chatInput {
+    padding: 12px 16px;
+    font-size: 0.9rem;
+  }
+  
+  .sendBtn {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+  
+  .botMsgName {
+    font-size: 1rem;
+  }
+  
+  .botMsgContent {
+    margin-left: 24px;
+    margin-top: 6px;
+  }
+  
+  .botAvatar {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+// Landscape orientation for mobile
+@media (max-height: 500px) and (orientation: landscape) {
+  .chatPageBg {
+    padding: 10px;
+  }
+  
+  .chatCard {
+    height: 80vh;
+  }
+  
+  .botName {
+    font-size: 3rem;
+  }
+  
+  .chatSidebar {
+    bottom: 10px;
+    right: 10px;
+  }
 }
