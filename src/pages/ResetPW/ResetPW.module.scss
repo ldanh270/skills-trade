@@ -13,7 +13,6 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  
 }
 
 * {
@@ -33,7 +32,7 @@
   backdrop-filter: blur(10px);
   border-bottom: none;
   z-index: 100;
-  
+
   .logo {
     font-size: 2rem;
     font-weight: 700;
@@ -43,16 +42,15 @@
   }
 }
 
-.login-container {
+.reset-container {
   flex-grow: 1;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   padding: 4rem;
-
 }
 
-.login-box {
+.reset-box {
   background: rgba($accent-first, 0.25);
   border: 2px solid $accent-first;
   border-radius: 1.2rem;
@@ -68,13 +66,36 @@
   position: relative;
 }
 
-.login-title {
+.reset-title {
+    text-align: center;
+    font-size: 2.6rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: $accent-first;
+}
+
+// Subtitle - Reset Password specific
+.reset-subtitle {
   text-align: center;
-  font-size: 2.6rem;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  color: $accent-first;
-  margin-bottom: 1.5rem;
+  font-size: 1.6rem;
+  color: rgba($accent-first, 0.9);
+  margin-bottom: 2.5rem;
+}
+
+// Back Link - Reset Password specific
+.back-link {
+  margin-bottom: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  .reset-password {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+  }
 }
 
 .input-group {
@@ -82,6 +103,7 @@
   position: relative;
   display: flex;
   align-items: center;
+  margin-bottom: 2.5rem;
 
   input {
     width: 100%;
@@ -92,14 +114,14 @@
     border-radius: 4px;
     background-color: $white;
     transition: all 0.3s ease;
-    
+
     &:focus {
       outline: none;
       border-color: $accent-first;
       box-shadow: 0 0 0 2px rgba($accent-first, 0.2);
       background-color: rgba($white, 0.9);
     }
-    
+
     &::placeholder {
       color: $text-element;
     }
@@ -115,55 +137,7 @@
   }
 }
 
-.options-row {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  .checkbox-group {
-    margin-left: 0.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-
-    input[type='checkbox'] {
-      width: 1.2rem;
-      height: 1.2rem;
-      accent-color: $accent-fourth;
-      cursor: pointer;
-    }
-
-    label {
-      font-size: 1.1rem;
-      color: $accent-first;
-      cursor: pointer;
-      transition: color 0.2s;
-    }
-
-    &:hover {
-      label {
-        color: $accent-fourth;
-      }
-    }
-  }
-
-  .forgot-password {
-    font-size: 1.1rem;
-    color: $accent-first;
-    text-decoration: none;
-    transition: color 0.3s;
-    margin-right: 0.5rem;
-
-    &:hover {
-      color: $accent-fourth;
-      text-decoration: underline;
-    }
-  }
-}
-
-.login-button {
-  width: 100%;
+.reset-button {
   padding: 1.1rem;
   background: $accent-first;
   color: $white;
@@ -174,11 +148,12 @@
   letter-spacing: 0.5px;
   cursor: pointer;
   transition: all 0.3s ease;
+  margin-top: 1rem;
   text-transform: uppercase;
-  
+  width: 100%;
+
   &:hover {
     background: $accent-fourth;
-    color: $white;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba($accent-first, 0.2);
   }
@@ -186,21 +161,30 @@
   &:active {
     transform: translateY(0);
   }
-  
-  &:disabled {
-    background: $disabled;
-    cursor: not-allowed;
-    transform: none;
-    box-shadow: none;
+}
+
+// Success Message - Reset Password specific
+.success-message {
+  text-align: center;
+  font-size: 1.4rem;
+  color: $accent-first;
+  margin: 2rem 0;
+  line-height: 1.6;
+
+  p {
+    margin-bottom: 0rem;
+  }
+
+  strong {
+    color: $accent-fourth;
+    font-weight: 600;
   }
 }
 
 .register-link {
   display: flex;
   justify-content: center;
-  align-items: center;
   gap: 0.5rem;
-  margin-top: 0.5rem;
   font-size: 1.1rem;
   color: $accent-first;
 

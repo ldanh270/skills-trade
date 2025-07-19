@@ -8,6 +8,8 @@ import PostDetail from '~/pages/PostDetail/PostDetail'
 import Profile from '~/pages/Profile/Profile'
 import Signup from '~/pages/Signup/Signup'
 import Upload from '~/pages/Upload/Upload'
+import ResetPW from '~/pages/ResetPW/ResetPW'
+
 
 // Public routes
 const publicRoutes = [
@@ -18,6 +20,8 @@ const publicRoutes = [
     { path: '/login', component: Login, layout: NoHeaderLayout },
     { path: '/signup', component: Signup, layout: NoHeaderLayout },
     { path: '/posts/:postId', component: PostDetail },
+    { path: '/reset-password', component: ResetPW , layout: NoHeaderLayout },
+
 ]
 
 // Private routes

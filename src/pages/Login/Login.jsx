@@ -6,10 +6,6 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [password, setPassword] = useState("");
 
-  const handleTogglePassword = () => {
-    setShowPassword((prev) => !prev);
-  };
-
   const handleLinkClick = (e) => {
     e.preventDefault();
   };
@@ -42,11 +38,6 @@ const Login = () => {
               value={password}
               onChange={e => setPassword(e.target.value)}
             />
-            {password && (
-              <span className={styles['toggle-password']} onClick={handleTogglePassword}>
-                {showPassword ? <FaEyeSlash /> : <FaEye />}
-              </span>
-            )}
           </div>
 
           <div className={styles['options-row']}>
