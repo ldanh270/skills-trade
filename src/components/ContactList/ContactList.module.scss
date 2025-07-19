@@ -1,4 +1,5 @@
 @use '~/constants/styles/variables.scss' as *;
+
 // Root wrapper
 .wrapper {
     display: flex;
@@ -55,9 +56,9 @@
         img {
             width: 3rem;
             height: 3rem;
-            background: black;
+            background: $black;
             border-radius: 50%;
-            stroke: rgb(0, 0, 0, 1);
+            stroke: rgba($black, 1);
             backface-visibility: hidden;
         }
 
@@ -70,12 +71,12 @@
             border-radius: 50%;
 
             &.online {
-                background-color: #7edc89;
+                background-color: $online;
             }
 
             &.offline {
-                background-color: #000;
-                border: 3px solid #ff1a1a;
+                background-color: $black;
+                border: 3px solid $offline;
             }
         }
     }

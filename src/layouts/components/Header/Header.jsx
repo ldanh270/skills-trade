@@ -69,13 +69,22 @@ function Header() {
             <div className={styles['rightBox']}>
                 <div className={styles['search']}>
                     <span className={styles['searchIcon']}>
-                        <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg
+                            width="23"
+                            height="23"
+                            viewBox="0 0 23 23"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
                             <g clipPath="url(#clip0_19_1049)">
-                                <path d="M22.7192 21.364L16.999 15.6437C18.5578 13.7372 19.3242 11.3045 19.1397 8.84874C18.9552 6.39298 17.8339 4.10209 16.0076 2.44991C14.1814 0.797736 11.79 -0.0893151 9.32811 -0.0277597C6.8662 0.0337958 4.52213 1.03925 2.78075 2.78063C1.03937 4.522 0.0339179 6.86608 -0.0276376 9.32798C-0.0891931 11.7899 0.797858 14.1813 2.45003 16.0075C4.10221 17.8337 6.39311 18.9551 8.84886 19.1396C11.3046 19.3241 13.7374 18.5577 15.6439 16.9988L21.3642 22.7191C21.5449 22.8937 21.787 22.9903 22.0383 22.9881C22.2895 22.9859 22.5299 22.8851 22.7076 22.7074C22.8853 22.5298 22.986 22.2894 22.9882 22.0381C22.9904 21.7869 22.8938 21.5448 22.7192 21.364ZM9.58337 17.2499C8.06704 17.2499 6.58477 16.8003 5.324 15.9578C4.06322 15.1154 3.08056 13.9181 2.50029 12.5172C1.92002 11.1163 1.76819 9.57474 2.06401 8.08755C2.35983 6.60037 3.09001 5.2343 4.16222 4.16209C5.23442 3.08989 6.60049 2.35971 8.08768 2.06389C9.57486 1.76807 11.1164 1.9199 12.5173 2.50017C13.9182 3.08044 15.1155 4.0631 15.958 5.32387C16.8004 6.58465 17.25 8.06692 17.25 9.58325C17.2478 11.6159 16.4393 13.5646 15.002 15.0019C13.5647 16.4392 11.616 17.2476 9.58337 17.2499Z" fill="#65686C"/>
+                                <path
+                                    d="M22.7192 21.364L16.999 15.6437C18.5578 13.7372 19.3242 11.3045 19.1397 8.84874C18.9552 6.39298 17.8339 4.10209 16.0076 2.44991C14.1814 0.797736 11.79 -0.0893151 9.32811 -0.0277597C6.8662 0.0337958 4.52213 1.03925 2.78075 2.78063C1.03937 4.522 0.0339179 6.86608 -0.0276376 9.32798C-0.0891931 11.7899 0.797858 14.1813 2.45003 16.0075C4.10221 17.8337 6.39311 18.9551 8.84886 19.1396C11.3046 19.3241 13.7374 18.5577 15.6439 16.9988L21.3642 22.7191C21.5449 22.8937 21.787 22.9903 22.0383 22.9881C22.2895 22.9859 22.5299 22.8851 22.7076 22.7074C22.8853 22.5298 22.986 22.2894 22.9882 22.0381C22.9904 21.7869 22.8938 21.5448 22.7192 21.364ZM9.58337 17.2499C8.06704 17.2499 6.58477 16.8003 5.324 15.9578C4.06322 15.1154 3.08056 13.9181 2.50029 12.5172C1.92002 11.1163 1.76819 9.57474 2.06401 8.08755C2.35983 6.60037 3.09001 5.2343 4.16222 4.16209C5.23442 3.08989 6.60049 2.35971 8.08768 2.06389C9.57486 1.76807 11.1164 1.9199 12.5173 2.50017C13.9182 3.08044 15.1155 4.0631 15.958 5.32387C16.8004 6.58465 17.25 8.06692 17.25 9.58325C17.2478 11.6159 16.4393 13.5646 15.002 15.0019C13.5647 16.4392 11.616 17.2476 9.58337 17.2499Z"
+                                    fill="#65686C"
+                                />
                             </g>
                             <defs>
                                 <clipPath id="clip0_19_1049">
-                                    <rect width="23" height="23" fill="white"/>
+                                    <rect width="23" height="23" fill="white" />
                                 </clipPath>
                             </defs>
                         </svg>
@@ -128,7 +137,13 @@ function Header() {
             )}
             {navOpen && (
                 <div className={styles['drawer']}>
-                    <button className={styles['closeDrawer']} onClick={handleNavClose} aria-label="Close Menu">×</button>
+                    <button
+                        className={styles['closeDrawer']}
+                        onClick={handleNavClose}
+                        aria-label="Close Menu"
+                    >
+                        ×
+                    </button>
                     <nav className={styles['drawerNav']} onClick={handleNavClose}>
                         <Link to="/">Home</Link>
                         <Link to="/chat">Chat</Link>
@@ -139,7 +154,13 @@ function Header() {
             )}
             {iconsOpen && (
                 <div className={styles['drawerIconsPanel']}>
-                    <button className={styles['closeDrawer']} onClick={handleIconsClose} aria-label="Close Actions">×</button>
+                    <button
+                        className={styles['closeDrawer']}
+                        onClick={handleIconsClose}
+                        aria-label="Close Actions"
+                    >
+                        ×
+                    </button>
                     <div className={styles['drawerIcons']}>
                         <button className={styles['iconBtn']} title="Add" onClick={() => navigate('/upload')}><svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect width="45" height="45" rx="22.5" fill="#E5E7EB"/>
@@ -162,7 +183,7 @@ function Header() {
 </svg>
 </button>
                     </div>
-        </div>
+                </div>
             )}
             {fabOpen && (
               <div className={styles['fabMenu']} ref={fabMenuRef}>

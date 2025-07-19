@@ -23,3 +23,6 @@ dist-ssr
 
 #Todo notes
 NOTE.md
+
+.env
+.env.*.local

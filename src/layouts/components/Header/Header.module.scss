@@ -1,6 +1,7 @@
 @use 'sass:color';
   @use '~/constants/styles/variables.scss' as *;
-.Header {
+
+  .Header {
     position: fixed;
   top: 0;
   left: 0;

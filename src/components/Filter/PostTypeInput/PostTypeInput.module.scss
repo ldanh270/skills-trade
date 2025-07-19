@@ -1,4 +1,5 @@
 @use '~/constants/styles/variables.scss' as *;
+
 // Root container for the PostTypeInput component
 .PostTypeInput {
     display: flex;
@@ -10,7 +11,7 @@
 label {
     font-size: 14px;
     font-weight: 500;
-    color: #333;
+    color: $text-element;
 }
 
 // Group of buttons for selecting post types
@@ -31,8 +32,9 @@ label {
     border: 1px solid $accent-secondary;
     border-radius: 20px;
     font-size: 14px;
-    cursor: pointer;
+    color: $text-info;
     color: $text-element;
+    cursor: pointer;
 }
 
 // Active button style (highlighted when selected)

@@ -1,17 +1,19 @@
 @use '~/constants/styles/variables.scss' as *;
+
 // Wrapper container for feed tab buttons
 .wrapper {
     display: flex;
     width: auto;
     height: 50px;
-    margin-bottom: 2rem;
 
     background: $accent-secondary;
     border-radius: 6px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0 10px rgba($black, 0.05);
+    cursor: pointer;
+    margin-bottom: 2rem;
+    margin-top: 0;
 
     justify-content: space-between;
-    cursor: pointer;
 }
 
 // Individual tab style
@@ -38,6 +40,7 @@
     .label {
         position: relative;
         top: 3px;
+        color: $text-element;
     }
 
     // Active underline animation
@@ -49,6 +52,7 @@
         background-color: $accent-first;
         border-radius: 9999px;
         transition: all 0.5s ease;
+        background-color: $accent-first;
     }
 }
 
