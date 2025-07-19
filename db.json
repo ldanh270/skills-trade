@@ -537,7 +537,11 @@
       "rating": 4.8,
       "point": 1200,
       "status": "online",
-      "posts": [],
+      "posts": [
+        "post-001",
+        "post-002",
+        "post-003"
+      ],
       "transactions": [
         "tx-001",
         "tx-002"
@@ -554,10 +558,12 @@
         "post-007",
         "post-006",
         "post-009",
-        "post-010"
+        "post-010",
+        "post-001"
       ],
       "dislikedPosts": [
-        "post-004"
+        "post-004",
+        "post-008"
       ],
       "savedPosts": [
         "post-010",

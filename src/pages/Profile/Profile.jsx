@@ -1,7 +1,8 @@
 import * as styles from './Profile.module.scss'
 import { useSelector } from 'react-redux'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import coverImg from '../../assets/images/cover-img.jpg';
+import PostCard from '../../components/PostCard/PostCard';
 
 function getDaysAgo(dateString) {
     if (!dateString) return 'N/A';
@@ -14,12 +15,23 @@ function getDaysAgo(dateString) {
 
 function Profile() {
     const user = useSelector(state => state.user.user)
-    const posts = useSelector(state => state.post.posts)
     const [coverImgPreview, setCoverImgPreview] = useState(null);
     const fileInputRef = React.useRef();
     const [showEditModal, setShowEditModal] = useState(false);
     const [profile, setProfile] = useState(user);
     const [editForm, setEditForm] = useState({ ...user });
+    const [userPosts, setUserPosts] = useState([]);
+
+    useEffect(() => {
+        if (user && Array.isArray(user.posts) && user.posts.length > 0) {
+            const query = user.posts.map(id => `id=${encodeURIComponent(id)}`).join('&');
+            fetch(`http://localhost:3001/posts?${query}`)
+                .then(res => res.json())
+                .then(data => setUserPosts(data));
+        } else {
+            setUserPosts([]);
+        }
+    }, [user]);
 
     const handleEditCoverClick = () => {
         fileInputRef.current.click();
@@ -180,47 +192,8 @@ function Profile() {
                 </div>
                 {/* Center: PostBar + Card(s) */}
                 <div className={styles.MainContent}>
-                    {posts && posts.length > 0 ? posts.map((post, idx) => (
-                        <div className={styles.Card} key={post.id || idx}>
-                            <div className={styles.CardHeader}>
-                                <span className={styles.CardTag}>{post.type || 'N/A'}</span>
-                                <span className={styles.CardTime}>Posted {getDaysAgo(post.createdAt)}</span>
-                                <span className={styles.CardPrice}>
-                                    Hourly: {post.price ? `${post.price.min} - ${post.price.max} points` : 'N/A'}
-                                </span>
-                                <span className={styles.CardAuthor}>
-                                    Author: {post.author && post.author.name ? post.author.name : (post.author && post.author.id ? post.author.id : 'No author')}
-                                </span>
-                            </div>
-                            <h4 className={styles.CardTitle}>{post.title || 'No title'}</h4>
-                            <div style={{display: 'flex', alignItems: 'center', gap: 8}}>
-                                <span style={{fontWeight: 600}}>Rating: {post.rating ? post.rating.toFixed(2) : 'N/A'}</span>
-                                <span className={styles.CardStars}>
-                                    {post.rating ? '★'.repeat(Math.round(post.rating)) + '☆'.repeat(5 - Math.round(post.rating)) : '☆☆☆☆☆'}
-                                </span>
-                            </div>
-                            {post.skills && post.skills.length > 0 && (
-                                <ul className={styles.ProfileSkills}>
-                                    {post.skills.map((skill, i) => <li key={i}>{skill}</li>)}
-                                </ul>
-                            )}
-                            <p className={styles.CardDesc}>{post.description || 'No description'}</p>
-                            {/* Proofs */}
-                            {post.proofs && (post.proofs.links.length > 0 || Object.keys(post.proofs.files || {}).length > 0) && (
-                                <div>
-                                    <strong>Proofs:</strong>
-                                    <ul>
-                                        {post.proofs.links.map((link, i) => (
-                                            <li key={i}><a href={link} target="_blank" rel="noopener noreferrer">{link}</a></li>
-                                        ))}
-                                        {post.proofs.files && Object.entries(post.proofs.files).map(([name, url], i) => (
-                                            <li key={i}><a href={url} target="_blank" rel="noopener noreferrer">{name}</a></li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            )}
-                            {/* Nếu muốn thêm nút like/dislike/save thì chèn component ReactionButtons ở đây */}
-                        </div>
+                    {userPosts && userPosts.length > 0 ? userPosts.map((post, idx) => (
+                        <PostCard key={post.id || idx} post={post} />
                     )) : <div className={styles.Card}>No posts</div>}
                 </div>
                 {/* Right: Sidebar */}

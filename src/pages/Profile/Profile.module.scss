@@ -502,4 +502,39 @@
   border-color: $accent-first;
 }
   
+  .chatPageBg {
+    background: $base-background;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+
+  .chatLayout {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+    width: 50vw;         // CHIẾM 1/2 TRANG
+    max-width: 900px;    // Không vượt quá 900px
+    min-width: 350px;    // Không nhỏ hơn 350px
+  }
+
+  .chatCard {
+    background: $white;
+    border-radius: 32px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+    width: 100%;         // Đảm bảo card chiếm hết .chatLayout
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    padding: 48px 48px 0 48px;
+    position: relative;
+  }
+
+  @media (max-width: 700px) {
+    .chatLayout { width: 98vw; min-width: 0; }
+    .chatCard { padding: 16px 4px 0 4px; }
+  }
+  
   

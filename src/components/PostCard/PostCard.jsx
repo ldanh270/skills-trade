@@ -8,7 +8,7 @@ import ReactionButtons from './ReactionButtons/ReactionButtons'
 import StarRating from './StarRating/StarRating'
 import TagBadge from './TagBadge/TagBadge'
 
-const PostCard = ({ post, preview = false }) => {
+const PostCard = ({ post, preview = false, onEdit }) => {
     const timeAgo = post.createdAt
         ? formatDistanceToNow(new Date(post.createdAt), { addSuffix: true })
         : 'Unknown time'
@@ -29,7 +29,14 @@ const PostCard = ({ post, preview = false }) => {
                         : `${post.price.min} - ${post.price.max}`}{' '}
                     points
                 </span>
-                |<span className={styles['name']}>Author: {post.author.name}</span>
+                |
+                {onEdit ? (
+                  <button className={styles['editBtn']} onClick={() => onEdit && onEdit(post)}>
+                      Edit Post
+                  </button>
+                ) : (
+                  <span className={styles['name']}>Author: {post.author.name}</span>
+                )}
             </div>
 
             {/* Title section */}
@@ -43,7 +50,7 @@ const PostCard = ({ post, preview = false }) => {
                     <span className={styles['rating__number']}>Rating: {post.rating}</span>
                     <StarRating value={post.rating} />
                 </div>
-                {!preview && <ReactionButtons postId={post.id} className={styles['reactions']} />}
+                {!onEdit && !preview && <ReactionButtons postId={post.id} className={styles['reactions']} />}
             </div>
 
             {/* Skill tags */}
