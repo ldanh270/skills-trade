@@ -198,7 +198,7 @@ function Header() {
                         title="Profile"
                         onClick={() => navigate('/profile')}
                     >
-                        {user.avatar ? (
+                        {user?.avatar ? (
                             <img
                                 src={user.avatar}
                                 alt={user.fullName || 'User'}

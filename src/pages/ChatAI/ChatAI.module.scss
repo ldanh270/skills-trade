@@ -1,0 +1,440 @@
+@use '~/constants/styles/variables.scss' as *;
+
+.chatPageBg {
+  position: relative;
+  display: flex;
+  padding: 0;
+  background: $base-background;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.chatLayout {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 50vw;
+  gap: 0;
+}
+
+.chatCard {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 70vh;
+  padding: 0;
+  overflow: hidden;
+  background: $white;
+  border-radius: 32px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.10);
+  flex-direction: column;
+}
+
+.chatSidebar {
+  position: fixed;
+  top: 50%;
+  right: 40px;
+  z-index: 10;
+  display: flex;
+  width: 48px;
+  height: fit-content;
+  padding: 8px 0;
+  gap: 12px;
+  background: $white;
+  border-radius: 24px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.10);
+  transform: translateY(-50%);
+  flex-direction: column;
+  align-items: center;
+}
+
+.iconBtn {
+  width: 44px;
+  height: 44px;
+  background: none;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  color: $accent-first;
+  transition: background 0.2s, color 0.2s;
+
+  &:hover {
+    background: $accent-first;
+    color: $white;
+  }
+}
+
+.chatMain {
+  position: relative;
+  z-index: 1; // Đảm bảo nội dung hiển thị trên watermark
+  display: flex;
+  padding: 48px 48px 0 48px;
+  flex: 1;
+  gap: 18px;
+  overflow-y: auto;
+  flex-direction: column;
+}
+
+.userMsg,
+.botMsg {
+  display: flex;
+  padding: 28px 36px; // padding lớn hơn
+  gap: 16px;
+  border-radius: 24px 24px 8px 24px; // bo góc lớn hơn
+  font-size: 1.25rem; // chữ to hơn
+  align-items: flex-start;
+  margin-bottom: 16px;
+  max-width: 90%; // bubble rộng hơn
+}
+
+.userMsg {
+  align-self: flex-end;
+  background: $accent-first;
+  color: $white;
+}
+
+.botMsg {
+  position: relative;
+  display: flex;
+  padding: 28px 36px;
+  gap: 0; // hoặc 4px nếu muốn cách nhẹ
+  background: #f7f7fa;
+  border-radius: 18px 18px 18px 4px;
+  color: $text-info;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.botAvatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.botName {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 12rem;
+  font-weight: 900;
+  text-align: center;
+  color: rgba(79, 128, 226, 0.08);
+  transform: translate(-50%, -50%) rotate(-15deg);
+  pointer-events: none;
+  white-space: nowrap;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.chatInputBar {
+  position: relative;
+  z-index: 1; // Đảm bảo input bar hiển thị trên watermark
+  display: flex;
+  padding: 40px 40px 40px 40px;
+  gap: 20px;
+  background: $white;
+  border-radius: 0 0 32px 32px;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.03);
+  align-items: center;
+  margin-top: auto;
+}
+
+.chatInput {
+  padding: 24px 32px;
+  flex: 1;
+  background: #f8f8fa;
+  border: 2px solid $accent-first;
+  border-radius: 24px;
+  font-size: 1.25rem;
+  color: $text-info;
+  outline: none;
+}
+
+.sendBtn {
+  padding: 18px 36px;
+  background: $accent-first;
+  border: none;
+  border-radius: 24px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: $white;
+  transition: background 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    background: #1746a2;
+  }
+}
+
+.selectedMsg {
+  border: 2px solid $accent-first;
+  border-radius: 24px;
+  box-shadow: none;
+}
+
+.botMsgHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.botMsgName {
+  padding: 0;
+  font-size: 1.5rem; // To nhưng không quá lớn
+  font-weight: 700;
+  line-height: 1.1;
+  text-align: left;
+  color: $accent-first;
+  margin-bottom: 0;
+}
+
+.botMsgContent {
+  margin-left: 48px; // Lệch phải so với tên bot
+  margin-top: 12px; // Cách tên bot một khoảng
+  // Có thể thêm style nếu muốn:
+  // background: #f9f9fc;
+  // border-radius: 12px;
+  // padding: 12px 18px;
+}
+
+.postsSection {
+  padding: 20px;
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 16px;
+  margin-top: 20px;
+
+  h3 {
+    margin: 0 0 16px 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: $accent-first;
+  }
+}
+
+.postCard {
+  padding: 16px;
+  background: $white;
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 12px;
+
+  h4 {
+    margin: 0 0 8px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: $text-info;
+  }
+
+  p {
+    margin: 0 0 12px 0;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: #6c757d;
+  }
+}
+
+.postMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: #6c757d;
+
+  span {
+    padding: 4px 8px;
+    background: #f1f3f4;
+    border-radius: 6px;
+    font-weight: 500;
+  }
+}
+
+// Responsive Design
+@media (max-width: 1200px) {
+  .chatLayout {
+    width: 70vw;
+  }
+
+  .chatSidebar {
+    right: 30px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .chatLayout {
+    width: 85vw;
+  }
+
+  .chatSidebar {
+    right: 20px;
+  }
+
+  .botName {
+    font-size: 8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .chatPageBg {
+    padding: 20px 10px;
+  }
+
+  .chatLayout {
+    width: 95vw;
+  }
+
+  .chatCard {
+    height: 60vh;
+  }
+
+  .chatSidebar {
+    position: fixed;
+    top: auto;
+    right: 20px;
+    bottom: 20px;
+    width: auto;
+    padding: 8px 16px;
+    gap: 8px;
+    border-radius: 50px;
+    transform: none;
+    flex-direction: row;
+  }
+
+  .botName {
+    font-size: 6rem;
+  }
+
+  .chatMain {
+    padding: 24px 24px 0 24px;
+  }
+
+  .userMsg,
+  .botMsg {
+    padding: 20px 24px;
+    font-size: 1rem;
+    max-width: 95%;
+  }
+
+  .chatInputBar {
+    padding: 20px 20px 20px 20px;
+  }
+
+  .chatInput {
+    padding: 16px 20px;
+    font-size: 1rem;
+  }
+
+  .sendBtn {
+    padding: 12px 24px;
+    font-size: 1.2rem;
+  }
+
+  .botMsgName {
+    font-size: 1.2rem;
+  }
+
+  .botMsgContent {
+    margin-left: 32px;
+    margin-top: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chatPageBg {
+    padding: 10px 5px;
+  }
+
+  .chatLayout {
+    width: 98vw;
+  }
+
+  .chatCard {
+    height: 55vh;
+    border-radius: 20px;
+  }
+
+  .chatSidebar {
+    right: 10px;
+    bottom: 10px;
+    padding: 6px 12px;
+    gap: 6px;
+  }
+
+  .iconBtn {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+
+  .botName {
+    font-size: 4rem;
+  }
+
+  .chatMain {
+    padding: 16px 16px 0 16px;
+    gap: 12px;
+  }
+
+  .userMsg,
+  .botMsg {
+    padding: 16px 20px;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+  }
+
+  .chatInputBar {
+    padding: 16px 16px 16px 16px;
+    gap: 12px;
+  }
+
+  .chatInput {
+    padding: 12px 16px;
+    font-size: 0.9rem;
+  }
+
+  .sendBtn {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+
+  .botMsgName {
+    font-size: 1rem;
+  }
+
+  .botMsgContent {
+    margin-left: 24px;
+    margin-top: 6px;
+  }
+
+  .botAvatar {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+// Landscape orientation for mobile
+@media (max-height: 500px) and (orientation: landscape) {
+  .chatPageBg {
+    padding: 10px;
+  }
+
+  .chatCard {
+    height: 80vh;
+  }
+
+  .botName {
+    font-size: 3rem;
+  }
+
+  .chatSidebar {
+    right: 10px;
+    bottom: 10px;
+  }
+}

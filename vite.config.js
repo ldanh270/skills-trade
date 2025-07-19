@@ -10,4 +10,13 @@ export default defineConfig({
             '~': '/src',
         },
     },
+    server: {
+        proxy: {
+            '/api': {
+                target: 'http://3.27.34.91:8000',
+                changeOrigin: true,
+                rewrite: (path) => path.replace(/^\/api/, ''),
+            },
+        },
+    },
 })

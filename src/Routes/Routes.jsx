@@ -1,6 +1,7 @@
 // Import layouts
 import { NoHeaderLayout } from '~/layouts'
 import Chat from '~/pages/Chat/Chat'
+import ChatAI from '~/pages/ChatAI/ChatAI'
 // Import pages
 import Home from '~/pages/Home/Home'
 import Login from '~/pages/Login/Login'
@@ -18,6 +19,7 @@ const publicRoutes = [
     { path: '/login', component: Login, layout: NoHeaderLayout },
     { path: '/signup', component: Signup, layout: NoHeaderLayout },
     { path: '/posts/:postId', component: PostDetail },
+    { path: '/chat-ai', component: ChatAI },
 ]
 
 // Private routes
