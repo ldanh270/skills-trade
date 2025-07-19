@@ -58,7 +58,7 @@ function Header() {
                 <nav className={styles['nav']}>
                     <Link to="/">Home</Link>
                     <Link to="/chat">Chat</Link>
-                    <Link to="/transaction-history">Transaction history</Link>
+                    <Link to="/transaction">Transaction</Link>
                     <Link to="/about">About</Link>
                 </nav>
                 <button className={styles['hamburger']} onClick={handleNavToggle} aria-label="Menu">
@@ -255,7 +255,7 @@ function Header() {
                     <nav className={styles['drawerNav']} onClick={handleNavClose}>
                         <Link to="/">Home</Link>
                         <Link to="/chat">Chat</Link>
-                        <Link to="/transaction-history">Transaction history</Link>
+                        <Link to="/transaction">Transaction</Link>
                         <Link to="/about">About</Link>
                     </nav>
                 </div>

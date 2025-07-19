@@ -8,6 +8,7 @@ import Login from '~/pages/Login/Login'
 import PostDetail from '~/pages/PostDetail/PostDetail'
 import Profile from '~/pages/Profile/Profile'
 import Signup from '~/pages/Signup/Signup'
+import TxHistory from '~/pages/TxHistory/TxHistory'
 import Upload from '~/pages/Upload/Upload'
 
 // Public routes
@@ -20,6 +21,7 @@ const publicRoutes = [
     { path: '/signup', component: Signup, layout: NoHeaderLayout },
     { path: '/posts/:postId', component: PostDetail },
     { path: '/chat-ai', component: ChatAI },
+    { path: '/transaction', component: TxHistory },
 ]
 
 // Private routes

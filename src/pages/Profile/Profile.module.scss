@@ -1,0 +1,534 @@
+@use '~/constants/styles/variables.scss' as *;
+
+.ProfilePage {
+    background: $base-background;
+    min-height: 100vh;
+    padding-bottom: 40px;
+    padding-top: 100px;
+}
+
+.ProfileHeader {
+    position: relative;
+    display: flex;
+    margin: 32px auto 0 auto;
+    background: $white;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    max-width: 1200px;
+    padding-bottom: 32px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.CoverImg {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 16px 16px 0 0;
+    color: $black;
+    background-color: $black;
+
+}
+
+.AvatarWrap {
+    position: absolute;
+    top: 120px;
+    left: 48px;
+    display: flex;
+    width: 120px;
+    height: 120px;
+    background: $white;
+    border-radius: 50%;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
+    align-items: center;
+    justify-content: center;
+}
+
+.Avatar {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.ProfileInfo {
+    width: 100%;
+    text-align: left;
+    margin-top: 50px;
+    padding-left: 200px;
+    margin-bottom: 10px;
+}
+
+.Name {
+    font-size: 2rem;
+    font-weight: 700;
+    color: $accent-first;
+    margin-bottom: 5px;
+}
+
+.Role {
+    font-size: 1.1rem;
+    color: #4f5d75;
+}
+
+.ProfileActions {
+    position: absolute;
+    top: 160px;
+    right: 48px;
+    display: flex;
+    gap: 16px;
+}
+
+.FollowBtn,
+.ChatBtn {
+    padding: 10px 32px;
+    background: $white;
+    border: 2px solid $accent-first;
+    border-radius: 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fbbf24;
+    transition: background 0.2s, color 0.2s;
+    cursor: pointer;
+}
+
+.FollowBtn {
+    background: $accent-first;
+    color: $white;
+}
+
+.FollowBtn:hover,
+.ChatBtn:hover {
+    background: #72669e;
+    color: $text-info;
+}
+
+.Icon {
+    margin-right: 8px;
+}
+
+.ProfileLayout {
+    display: flex;
+    margin: 32px auto 0 auto;
+    gap: 32px;
+    max-width: 1200px;
+}
+
+.Sidebar {
+    height: fit-content;
+    padding: 24px 24px 24px 32px;
+    background: $white;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    min-width: 100px;
+}
+
+.AboutList {
+    list-style: none;
+    padding-top: 10px;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: $text-info;
+}
+
+.AboutList li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.Stars {
+    font-size: 1.2rem;
+    color: $accent-first;
+    margin-left: 8px;
+}
+
+.MainContent {
+    display: flex;
+    flex: 1;
+    gap: 24px;
+    min-width: 0;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.Card {
+    width: 100%;
+    padding: 24px 32px;
+    box-sizing: border-box;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    margin-bottom: 24px;
+    max-width: 100%;
+}
+
+.CardHeader {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    color: #888;
+}
+
+.CardTag {
+    padding: 2px 10px;
+    background: #2563eb;
+    border-radius: 8px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: #fff;
+    text-transform: capitalize;
+}
+
+.CardTime {
+    color: #888;
+}
+
+.CardPrice {
+    font-weight: 600;
+    color: #2563eb;
+}
+
+.CardAuthor {
+    font-size: 0.95rem;
+    color: #2563eb;
+}
+
+.CardTitle {
+    margin: 8px 0 4px 0;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #22223b;
+}
+
+.CardStars {
+    font-size: 1.2rem;
+    color: #fbbf24;
+    margin-left: 8px;
+}
+
+.CardDesc {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 12px;
+}
+
+.CardImg {
+    width: 100%;
+    border-radius: 12px;
+    margin-top: 8px;
+    object-fit: cover;
+}
+
+.RightSidebar {
+    min-width: 220px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.SideBlock {
+    padding: 18px 16px;
+    background: $white;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.SideBlock h4 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: $text-info;
+}
+
+.SideBlock ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.SideBlock li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.SideBlock img {
+    width: 36px;
+    height: 36px;
+    background: $base-background;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.SideBlock span {
+    display: block;
+    font-size: 0.98rem;
+}
+
+.Online {
+    font-weight: 600;
+    color: $online;
+}
+
+.Busy {
+    font-weight: 600;
+    color: #f87171;
+}
+
+.Time {
+    font-size: 0.85rem;
+    color: #adb5bd;
+    margin-left: auto;
+}
+
+.ProfileModule {
+    display: flex;
+    margin: 10px auto 36px auto;
+    padding: 30px 42px;
+    gap: 12px;
+    background: $white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    max-width: 1200px;
+    flex-direction: column;
+}
+
+.ProfileDesc {
+    font-size: 1.05rem;
+    color: #444;
+    margin-bottom: 4px;
+}
+
+.ProfileSkills {
+    display: flex;
+    margin: 8px 0 8px 0;
+    padding: 0;
+    gap: 8px;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.ProfileSkills li {
+    padding: 4px 14px;
+    background: #f3f4f6;
+    border-radius: 16px;
+    font-size: 0.97rem;
+    font-weight: 500;
+    color: #2563eb;
+}
+
+.Card ul {
+    margin: 0;
+    padding-left: 18px;
+
+    li {
+        font-size: 0.95rem;
+
+        a {
+            color: #2563eb;
+            text-decoration: underline;
+
+            &:hover {
+                color: #72669e;
+            }
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .Card {
+        padding: 16px 8px;
+    }
+
+    .CardTitle {
+        font-size: 1rem;
+    }
+}
+
+.FbPostBar,
+.UploadPort {
+    display: flex;
+    width: 100%;
+    margin: 0 0 24px 0;
+    padding: 18px 20px 10px 20px;
+    gap: 8px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    max-width: 600px;
+    flex-direction: column;
+}
+
+.FbPostBarTop {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+
+
+
+.EditCoverBtn {
+    position: absolute;
+    top: 130px;
+    right: 24px;
+    z-index: 2;
+    padding: 5px 18px;
+    background: #fff;
+    border: 2px solid #2563eb;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2563eb;
+    transition: background 0.2s, color 0.2s, border 0.2s;
+    cursor: pointer;
+}
+
+.EditCoverBtn:hover {
+    background: #2563eb;
+    color: #fff;
+    border-color: #2563eb;
+}
+
+.EditProfileBtn {
+    position: absolute;
+    top: 230px;
+    right: 24px;
+    padding: 6px 18px;
+    background: #fff;
+    border: 2px solid #2563eb;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2563eb;
+    transition: background 0.2s, color 0.2s, border 0.2s;
+    cursor: pointer;
+    margin-top: 8px;
+    margin-left: 30px;
+}
+
+.EditProfileBtn:hover {
+    background: #2563eb;
+    color: #fff;
+    border-color: #2563eb;
+}
+
+.ModalOverlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    background: rgba(0, 0, 0, 0.25);
+    align-items: center;
+    justify-content: center;
+}
+
+.ModalContent {
+    display: flex;
+    padding: 2.5rem 2.25rem 2rem 2.25rem;
+    gap: 1.5rem;
+    background: $white;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+    /* 40px 36px 32px 36px */
+    max-width: 800px;
+    flex-direction: column;
+    /* 24px */
+}
+
+.EditProfileForm {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem 2rem;
+    /* 24px 32px */
+}
+
+.EditProfileForm label {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 1.08rem;
+    font-weight: 600;
+    color: $text-info;
+    flex-direction: column;
+    /* 8px */
+}
+
+.EditProfileForm input,
+.EditProfileForm select,
+.EditProfileForm textarea {
+    padding: 0.8rem 1rem;
+    background: $white;
+    border: 1.5px solid $accent-secondary;
+    border-radius: 8px;
+    /* 13px 16px */
+    font-size: 1.08rem;
+    color: $text-info;
+    transition: border 0.2s;
+    outline: none;
+    margin-top: 2px;
+}
+
+.EditProfileForm input:focus,
+.EditProfileForm select:focus,
+.EditProfileForm textarea:focus {
+    border-color: $accent-first;
+}
+
+.EditProfileForm textarea {
+    min-height: 48px;
+    resize: vertical;
+}
+
+.ModalActions {
+    grid-column: 1 / span 2;
+    display: flex;
+    gap: 1.125rem;
+    /* 18px */
+    justify-content: flex-end;
+    margin-top: 0.75rem;
+    /* 12px */
+}
+
+.ModalActions button {
+    padding: 0.75rem 2.25rem;
+    background: $white;
+    border: 2px solid $accent-first;
+    /* 12px 36px */
+    border-radius: 8px;
+    font-size: 1.08rem;
+    font-weight: 700;
+    color: $accent-first;
+    transition: background 0.2s, color 0.2s, border 0.2s;
+    cursor: pointer;
+}
+
+.ModalActions button[type="submit"] {
+    background: $accent-first;
+    color: $white;
+    border-color: $accent-first;
+}
+
+.ModalActions button:hover {
+    background: $accent-first;
+    color: $white;
+    border-color: $accent-first;
+}

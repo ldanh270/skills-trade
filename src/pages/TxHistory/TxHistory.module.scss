@@ -1,0 +1,558 @@
+@use '~/constants/styles/variables.scss' as *;
+
+.transactionHistoryPage {
+    display: flex;
+    min-height: 100vh;
+    background: $base-background;
+    padding-top: 5vh;
+    /* Space for fixed header */
+}
+
+// Left Sidebar
+.navigationSidebar {
+    position: fixed;
+    top: 5vh;
+    display: flex;
+    width: 280px;
+    /* Position below header */
+    height: calc(100vh - 5vh);
+    padding: 32px 24px;
+    gap: 20px;
+    background: $white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    flex-direction: column;
+    /* Adjust height for header */
+    overflow-y: auto;
+    border-right: 1px solid $accent-secondary;
+}
+
+.navigationItem {
+    display: flex;
+    padding: 18px 24px;
+    gap: 12px;
+    border: 1px solid transparent;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    align-items: center;
+
+    &:hover {
+        background: rgba(79, 128, 226, 0.08);
+        border-color: $accent-first;
+        transform: translateX(4px);
+    }
+}
+
+.navigationIcon {
+    width: 28px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.navigationText {
+    flex: 1;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: $text-info;
+}
+
+.navigationArrow {
+    font-size: 1.2rem;
+    color: $black;
+}
+
+// Main Content
+.mainContentArea {
+    position: relative;
+    padding: 0;
+    flex: 1;
+    margin-left: 280px;
+    min-height: calc(100vh - 5vh);
+    /* Adjust for header */
+}
+
+.topBorderLine {
+    width: 100%;
+    height: 4px;
+    background: $accent-first;
+}
+
+// Earnings Summary
+.earningsSummarySection {
+    display: flex;
+    padding: 40px;
+    gap: 32px;
+    background: $white;
+    border-bottom: 1px solid $accent-secondary;
+}
+
+.totalEarningsCard,
+.pendingPaymentsCard {
+    padding: 32px;
+    flex: 1;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    transition: all 0.3s ease;
+
+    h3 {
+        margin: 0 0 16px 0;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: $text-info;
+    }
+
+    &:hover {
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        transform: translateY(-4px);
+    }
+}
+
+.totalEarningsCard {
+    background: linear-gradient(135deg, $accent-fourth, $element-background);
+    border: 1px solid $accent-fourth;
+}
+
+.pendingPaymentsCard {
+    background: $white;
+    border: 1px solid $accent-secondary;
+}
+
+.earningsAmount {
+    font-size: 3.2rem;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    color: $text-info;
+    margin-bottom: 12px;
+}
+
+.earningsDate {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: $text-element;
+}
+
+// Payment History Section
+.paymentHistorySection {
+    padding: 32px;
+    background: $base-background;
+}
+
+.paymentHistoryTitle {
+    margin: 0 0 32px 0;
+    font-size: 2.5rem;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    color: $accent-first;
+}
+
+// Filter Tabs
+.filterTabsContainer {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.filterTabButton {
+    padding: 16px 32px;
+    background: $white;
+    border: 2px solid transparent;
+    border-radius: 28px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: $text-info;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+        background: rgba(79, 128, 226, 0.08);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transform: translateY(-2px);
+    }
+
+    &.active {
+        background: $accent-first;
+        box-shadow: 0 4px 16px rgba(79, 128, 226, 0.3);
+        color: $white;
+        border-color: $accent-first;
+    }
+}
+
+// Table Card
+.transactionTableCard {
+    overflow: hidden;
+    background: $white;
+    border: 1px solid $accent-secondary;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+.transactionDataTable {
+    width: 100%;
+    border-collapse: collapse;
+
+    th,
+    td {
+        padding: 20px 24px;
+        border-bottom: 1px solid $accent-secondary;
+    }
+
+    th {
+        background: $base-background;
+        font-size: 1.1rem;
+        font-weight: 800;
+        letter-spacing: 0.5px;
+        color: $text-info;
+        text-transform: uppercase;
+    }
+
+    td {
+        font-size: 1.2rem;
+        font-weight: 600;
+        text-align: center;
+        color: $text-info;
+    }
+
+    tbody tr {
+        transition: all 0.3s ease;
+
+        &:hover {
+            background: rgba(79, 128, 226, 0.08);
+            transform: translateX(4px);
+        }
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+}
+
+// Status Colors
+.transactionStatusSuccess {
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    color: $online !important;
+    text-transform: uppercase;
+}
+
+.transactionStatusPending {
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    color: $accent-first !important;
+    text-transform: uppercase;
+}
+
+.transactionStatusRejected {
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    color: $offline !important;
+    text-transform: uppercase;
+}
+
+// Pagination
+.paginationContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 32px;
+    background: $white;
+    border-top: 1px solid $accent-secondary;
+    border-radius: 0 0 20px 20px;
+}
+
+.itemsPerPageSelector {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    select {
+        padding: 12px 20px;
+        background: $white;
+        border: 1px solid $accent-secondary;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: $text-info;
+        cursor: pointer;
+        min-width: 100px;
+
+        &:focus {
+            outline: none;
+            border-color: $accent-first;
+            box-shadow: 0 0 0 3px rgba(79, 128, 226, 0.1);
+        }
+    }
+
+    &::after {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: $text-element;
+        content: "per page";
+        margin-left: 6px;
+    }
+}
+
+.pageInfoDisplay {
+    display: flex;
+    gap: 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: $text-element;
+    align-items: center;
+}
+
+.pageNavigationArrows {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.pageNavigationButton {
+    display: flex;
+    width: 42px;
+    height: 42px;
+    background: $white;
+    border: 1px solid $accent-secondary;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+        background: rgba(79, 128, 226, 0.05);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        color: $black;
+        transform: translateY(-2px);
+        border-color: $accent-first;
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+}
+
+// Responsive Design
+@media (max-width: 1200px) {
+    .navigationSidebar {
+        top: 5vh;
+        width: 240px;
+        /* Keep below header */
+        height: calc(100vh - 5vh);
+    }
+
+    .mainContentArea {
+        margin-left: 240px;
+        min-height: calc(100vh - 5vh);
+    }
+
+    .earningsSummarySection {
+        padding: 24px;
+    }
+
+    .paymentHistorySection {
+        padding: 24px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .navigationSidebar {
+        top: 5vh;
+        width: 200px;
+        /* Keep below header */
+        height: calc(100vh - 5vh);
+    }
+
+    .mainContentArea {
+        margin-left: 200px;
+        min-height: calc(100vh - 5vh);
+    }
+
+    .earningsSummarySection {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .totalEarningsCard,
+    .pendingPaymentsCard {
+        padding: 24px;
+    }
+
+    .earningsAmount {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .transactionHistoryPage {
+        flex-direction: column;
+        padding-top: 5vh;
+        /* Keep space for header on mobile */
+    }
+
+    .navigationSidebar {
+        position: relative;
+        top: 0;
+        width: 100%;
+        height: auto;
+        padding: 16px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        /* Reset top position */
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .mainContentArea {
+        margin-left: 0;
+        min-height: auto;
+        /* Reset height on mobile */
+    }
+
+    .navigationItem {
+        padding: 12px;
+        gap: 8px;
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .navigationText {
+        font-size: 0.9rem;
+    }
+
+    .earningsSummarySection {
+        padding: 20px;
+    }
+
+    .paymentHistorySection {
+        padding: 20px;
+    }
+
+    .paymentHistoryTitle {
+        font-size: 1.5rem;
+    }
+
+    .filterTabsContainer {
+        gap: 8px;
+    }
+
+    .filterTabButton {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+    }
+
+    .transactionDataTable {
+        font-size: 0.8rem;
+
+        th,
+        td {
+            padding: 12px 8px;
+        }
+    }
+
+    .paginationContainer {
+        padding: 16px;
+        gap: 16px;
+        flex-direction: column;
+    }
+
+    .pageInfoDisplay {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navigationSidebar {
+        padding: 12px;
+    }
+
+    .navigationItem {
+        padding: 8px;
+    }
+
+    .navigationIcon {
+        font-size: 1rem;
+    }
+
+    .navigationText {
+        font-size: 0.8rem;
+    }
+
+    .earningsSummarySection {
+        padding: 16px;
+    }
+
+    .totalEarningsCard,
+    .pendingPaymentsCard {
+        padding: 20px;
+    }
+
+    .earningsAmount {
+        font-size: 1.5rem;
+    }
+
+    .paymentHistorySection {
+        padding: 16px;
+    }
+
+    .paymentHistoryTitle {
+        font-size: 1.3rem;
+        margin-bottom: 16px;
+    }
+
+    .filterTabsContainer {
+        margin-bottom: 16px;
+    }
+
+    .filterTabButton {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+
+    .transactionDataTable {
+        font-size: 0.75rem;
+
+        th,
+        td {
+            padding: 8px 6px;
+        }
+    }
+
+    .paginationContainer {
+        padding: 12px;
+    }
+
+    .pageNavigationButton {
+        width: 28px;
+        height: 28px;
+    }
+
+    .itemsPerPageSelector select {
+        padding: 6px 8px;
+        font-size: 0.8rem;
+    }
+}
+
+// Landscape orientation for mobile
+@media (max-height: 500px) and (orientation: landscape) {
+    .navigationSidebar {
+        flex-direction: row;
+        height: auto;
+        padding: 12px;
+    }
+
+    .earningsSummarySection {
+        padding: 16px;
+    }
+
+    .paymentHistorySection {
+        padding: 16px;
+    }
+}
