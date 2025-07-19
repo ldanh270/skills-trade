@@ -66,7 +66,7 @@ const ReactionButtons = ({ postId }) => {
     }
 
     return (
-        <div className={styles['reactions']}>
+        <div className={`${styles['reactions']} reactions`} onClick={(e) => e.stopPropagation()}>
             <button onClick={handleLike}>
                 <ThumbsUp className={liked ? styles['active'] : styles['inactive']} size={20} />
             </button>

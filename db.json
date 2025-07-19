@@ -1,1403 +1,1201 @@
 {
-  "posts": [
-    {
-      "id": "post-001",
-      "type": "Hire",
-      "title": "Looking for a Java mentor",
-      "author": {
-        "id": "user-001",
-        "name": "Le Minh Duc",
-        "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=LeMinhDuc",
-        "rating": 4.7,
-        "region": "Hồ Chí Minh"
-      },
-      "rating": 4.7,
-      "skills": [
-        "Java",
-        "OOP",
-        "Mentoring"
-      ],
-      "price": {
-        "min": 0,
-        "max": 300
-      },
-      "description": "I'm a first-year student looking for someone to help me understand Java and OOP concepts.",
-      "createdAt": "2025-07-10T08:00:00Z",
-      "proofs": {
-        "files": {},
-        "links": []
-      }
-    },
-    {
-      "id": "post-002",
-      "type": "Offer",
-      "title": "Offering online English speaking lessons",
-      "author": {
-        "id": "user-002",
-        "name": "Pham Hong Hanh",
-        "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=PhamHongHanh",
-        "rating": 4.9,
-        "region": "Hà Nội"
-      },
-      "rating": 4.9,
-      "skills": [
-        "English",
-        "Speaking",
-        "Teaching"
-      ],
-      "price": {
-        "min": 0,
-        "max": 250
-      },
-      "description": "I have an IELTS 8.0 and experience teaching communication English for students and professionals.",
-      "createdAt": "2025-07-09T14:20:00Z",
-      "proofs": {
-        "files": {},
-        "links": []
-      }
-    },
-    {
-      "id": "post-003",
-      "type": "Hire",
-      "title": "Need poster designer for school event",
-      "author": {
-        "id": "user-003",
-        "name": "Ngo Truong Giang",
-        "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=NgoTruongGiang",
-        "rating": 4.2,
-        "region": "Đà Nẵng"
-      },
-      "rating": 4.2,
-      "skills": [
-        "Photoshop",
-        "Illustrator",
-        "Design"
-      ],
-      "price": {
-        "min": 0,
-        "max": 180
-      },
-      "description": "We need an attractive event poster. Deadline is within 3 days.",
-      "createdAt": "2025-07-08T17:45:00Z",
-      "proofs": {
-        "files": {},
-        "links": []
-      }
-    },
-    {
-      "id": "post-004",
-      "type": "Offer",
-      "title": "Build your personal portfolio with HTML/CSS",
-      "author": {
-        "id": "user-004",
-        "name": "Nguyen Thi Kim",
-        "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=NguyenThiKim",
-        "rating": 4.8,
-        "region": "Cần Thơ"
-      },
-      "rating": 4.8,
-      "skills": [
-        "HTML",
-        "CSS",
-        "Portfolio"
-      ],
-      "price": {
-        "min": 0,
-        "max": 120
-      },
-      "description": "Step-by-step guidance to create a responsive personal portfolio.",
-      "createdAt": "2025-07-07T12:00:00Z",
-      "proofs": {
-        "files": {},
-        "links": []
-      }
-    },
-    {
-      "id": "post-005",
-      "type": "Hire",
-      "title": "Looking for an IT interview coach",
-      "author": {
-        "id": "user-005",
-        "name": "Tran Quoc Huy",
-        "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=TranQuocHuy",
-        "rating": 4,
-        "region": "Hải Phòng"
-      },
-      "rating": 4,
-      "skills": [
-        "Interview",
-        "IT",
-        "Soft Skills"
-      ],
-      "price": {
-        "min": 0,
-        "max": 220
-      },
-      "description": "I need mock interviews in English for backend developer roles.",
-      "createdAt": "2025-07-06T19:00:00Z",
-      "proofs": {
-        "files": {},
-        "links": []
-      }
-    },
-    {
-      "id": "post-006",
-      "type": "Offer",
-      "title": "Writing tech blog content on demand",
-      "author": {
-        "id": "user-006",
-        "name": "Dang Thi Lan",
-        "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=DangThiLan",
-        "rating": 4.3,
-        "region": "Huế"
-      },
-      "rating": 4.3,
-      "skills": [
-        "Content",
-        "Writing",
-        "Tech"
-      ],
-      "price": {
-        "min": 0,
-        "max": 90
-      },
-      "description": "Experienced in writing technical blog posts for various platforms.",
-      "createdAt": "2025-07-06T09:15:00Z",
-      "proofs": {
-        "files": {},
-        "links": []
-      }
-    },
-    {
-      "id": "post-007",
-      "type": "Hire",
-      "title": "Need video editor for short TikToks",
-      "author": {
-        "id": "user-007",
-        "name": "Phan Duy Anh",
-        "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=PhanDuyAnh",
-        "rating": 3.9,
-        "region": "Nha Trang"
-      },
-      "rating": 3.9,
-      "skills": [
-        "CapCut",
-        "Editing",
-        "Video"
-      ],
-      "price": {
-        "min": 0,
-        "max": 130
-      },
-      "description": "Looking for trendy and engaging edits with captions under 60s.",
-      "createdAt": "2025-07-05T18:10:00Z",
-      "proofs": {
-        "files": {},
-        "links": []
-      }
-    },
-    {
-      "id": "post-008",
-      "type": "Offer",
-      "title": "Teaching Python from scratch",
-      "author": {
-        "id": "user-008",
-        "name": "Vu Thanh Tung",
-        "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=VuThanhTung",
-        "rating": 4.6,
-        "region": "Vũng Tàu"
-      },
-      "rating": 4.6,
-      "skills": [
-        "Python",
-        "Beginner",
-        "Teaching"
-      ],
-      "price": {
-        "min": 0,
-        "max": 200
-      },
-      "description": "Project-based learning for Python beginners with simple explanations.",
-      "createdAt": "2025-07-05T10:00:00Z",
-      "proofs": {
-        "files": {},
-        "links": []
-      }
-    },
-    {
-      "id": "post-009",
-      "type": "Hire",
-      "title": "Looking for digital art teacher",
-      "author": {
-        "id": "user-009",
-        "name": "Ly Thi Mai",
-        "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=LyThiMai",
-        "rating": 3.5,
-        "region": "Bình Dương"
-      },
-      "rating": 3.5,
-      "skills": [
-        "Digital Art",
-        "Drawing",
-        "Tablet"
-      ],
-      "price": {
-        "min": 0,
-        "max": 170
-      },
-      "description": "Need help with Clip Studio and Wacom tablet basics.",
-      "createdAt": "2025-07-04T20:30:00Z",
-      "proofs": {
-        "files": {},
-        "links": []
-      }
-    },
-    {
-      "id": "post-010",
-      "type": "Offer",
-      "title": "Professional presentation slide design",
-      "author": {
-        "id": "user-010",
-        "name": "Nguyen Khanh Linh",
-        "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=NguyenKhanhLinh",
-        "rating": 4.95,
-        "region": "Đồng Nai"
-      },
-      "rating": 4.95,
-      "skills": [
-        "PowerPoint",
-        "Design",
-        "Presentation"
-      ],
-      "price": {
-        "min": 0,
-        "max": 110
-      },
-      "description": "Slides for reports, conferences, or startup pitches with premium quality.",
-      "createdAt": "2025-07-04T08:00:00Z",
-      "proofs": {
-        "files": {},
-        "links": []
-      }
-    },
-    {
-      "id": "«r2»",
-      "type": "Hire",
-      "title": "a",
-      "author": {
-        "id": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516"
-      },
-      "rating": 4.8,
-      "skills": [
-        "Python",
-        "Speaking"
-      ],
-      "price": {
-        "min": 0,
-        "max": 0
-      },
-      "description": "1",
-      "media": null,
-      "min": 1,
-      "max": 100,
-      "createdAt": "2025-07-14T14:58:15.926Z",
-      "proofs": {
-        "files": {},
-        "links": [
-          "https://github.com/cybervinh2077/cuuDomConBackend/tree/master/user-acc-log-reg",
-          "https://github.com/Skills-Trade/skills-trade"
-        ]
-      }
-    },
-    {
-      "id": "«r3»",
-      "type": "Hire",
-      "title": "a",
-      "author": {
-        "id": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516"
-      },
-      "rating": 4.8,
-      "skills": [
-        "Python",
-        "Speaking"
-      ],
-      "price": {
-        "min": 0,
-        "max": 0
-      },
-      "description": "1",
-      "media": null,
-      "min": 1,
-      "max": 100,
-      "createdAt": "2025-07-14T14:58:37.350Z",
-      "proofs": {
-        "files": {},
-        "links": [
-          "https://github.com/cybervinh2077/cuuDomConBackend/tree/master/user-acc-log-reg",
-          "https://github.com/Skills-Trade/skills-trade"
-        ]
-      }
-    },
-    {
-      "id": "«r4»",
-      "type": "Hire",
-      "title": "a",
-      "author": {
-        "id": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
-        "name": "Lê Đức Anh"
-      },
-      "rating": 4.8,
-      "skills": [
-        "Python",
-        "Interview"
-      ],
-      "price": {
-        "min": 0,
-        "max": 1
-      },
-      "description": "abc",
-      "media": null,
-      "min": 1,
-      "max": 100,
-      "createdAt": "2025-07-14T16:10:17.183Z",
-      "proofs": {
-        "files": {},
-        "links": []
-      }
-    },
-    {
-      "id": "«r0»",
-      "type": "Hire",
-      "title": "a",
-      "author": {
-        "id": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
-        "name": "Lê Đức Anh"
-      },
-      "rating": 4.8,
-      "skills": [
-        "Python",
-        "Speaking"
-      ],
-      "price": {
-        "min": 1,
-        "max": 100
-      },
-      "description": "dsàdsà",
-      "media": null,
-      "createdAt": "2025-07-14T16:11:22.174Z",
-      "proofs": {
-        "files": {},
-        "links": [
-          "https://github.com/",
-          "https://github.com/Skills-Trade/skills-trade",
-          "https://github.com/Skills-Trade/to-do-app-react",
-          "https://github.com/cybervinh2077/cuuDomConBackend/tree/master/user-acc-log-reg"
-        ]
-      }
-    },
-    {
-      "id": "«r2»",
-      "type": "Hire",
-      "title": "1",
-      "author": {
-        "id": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
-        "name": "Lê Đức Anh"
-      },
-      "rating": 4.8,
-      "skills": [
-        "OOP",
-        "Teaching"
-      ],
-      "price": {
-        "min": 0,
-        "max": 100
-      },
-      "description": "100",
-      "media": null,
-      "createdAt": "2025-07-16T00:48:43.482Z",
-      "proofs": {
-        "files": {},
-        "links": []
-      }
-    },
-    {
-      "id": "«r0»",
-      "type": "Hire",
-      "title": "1",
-      "author": {
-        "id": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
-        "name": "Lê Đức Anh"
-      },
-      "rating": 4.8,
-      "skills": [
-        "OOP"
-      ],
-      "price": {
-        "min": 0,
-        "max": 1
-      },
-      "description": "1000",
-      "media": null,
-      "createdAt": "2025-07-16T00:50:20.284Z",
-      "proofs": {
-        "files": {},
-        "links": []
-      }
-    },
-    {
-      "id": "«r0»",
-      "type": "Offer",
-      "title": "123",
-      "author": {
-        "id": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
-        "name": "Lê Đức Anh"
-      },
-      "rating": 4.8,
-      "skills": [
-        "OOP",
-        "Speaking"
-      ],
-      "price": {
-        "min": 0,
-        "max": 100
-      },
-      "description": "141441",
-      "media": null,
-      "createdAt": "2025-07-16T06:37:29.615Z",
-      "proofs": {
-        "files": {},
-        "links": []
-      }
-    },
-    {
-      "id": "«r1»",
-      "type": "Hire",
-      "title": "1ret",
-      "author": {
-        "id": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
-        "name": "Lê Đức Anh"
-      },
-      "rating": 4.8,
-      "skills": [
-        "Mentoring"
-      ],
-      "price": {
-        "min": 0,
-        "max": 13414
-      },
-      "description": "sgágág",
-      "media": null,
-      "createdAt": "2025-07-16T07:17:38.441Z",
-      "proofs": {
-        "files": {},
-        "links": [
-          "https://github.com/",
-          "https://github.com/Garchomppy",
-          "https://github.com/HyunDinh/D10-RT01",
-          "https://chat.deepseek.com/a/chat/s/e02efba7-9ca2-4441-8f6f-cfaab871e1d2"
-        ]
-      }
-    },
-    {
-      "id": "«r0»",
-      "type": "Hire",
-      "title": "124412",
-      "author": {
-        "id": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
-        "name": "Lê Đức Anh"
-      },
-      "rating": 4.8,
-      "skills": [
-        "OOP",
-        "Interview"
-      ],
-      "price": {
-        "min": 0,
-        "max": 13141
-      },
-      "description": "sdsagdág",
-      "media": null,
-      "createdAt": "2025-07-16T08:13:34.294Z",
-      "proofs": {
-        "files": {},
-        "links": [
-          "https://github.com/"
-        ]
-      }
-    },
-    {
-      "id": "«r0»",
-      "type": "Hire",
-      "title": "Title",
-      "author": {
-        "id": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
-        "name": "Lê Đức Anh"
-      },
-      "rating": 4.8,
-      "skills": [
-        "OOP",
-        "Interview",
-        "Speaking"
-      ],
-      "price": {
-        "min": 10,
-        "max": 100
-      },
-      "description": "This is description.",
-      "media": null,
-      "createdAt": "2025-07-16T08:19:14.115Z",
-      "proofs": {
-        "files": {},
-        "links": [
-          "https://github.com/ldanh270/skills-trade/compare/Upload?expand=1"
-        ]
-      }
-    }
-  ],
-  "users": [
-    {
-      "id": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
-      "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=LeDucAnh",
-      "fullName": "Lê Đức Anh",
-      "email": "leducanh@example.com",
-      "username": "leducanh",
-      "password": "daylapassword",
-      "phone": "0901234567",
-      "region": "Hồ Chí Minh",
-      "rating": 4.8,
-      "point": 1200,
-      "status": "online",
-      "posts": [],
-      "transactions": [
-        "tx-001",
-        "tx-002"
-      ],
-      "notifications": [
+    "posts": [
         {
-          "id": "noti-001",
-          "message": "You received a new message",
-          "read": false,
-          "createdAt": "2025-07-11T12:00:00Z"
+            "id": "post-001",
+            "type": "Hire",
+            "title": "Looking for a Java mentor",
+            "author": {
+                "id": "user-001",
+                "name": "Le Minh Duc",
+                "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=LeMinhDuc",
+                "rating": 4.7,
+                "region": "Hồ Chí Minh"
+            },
+            "rating": 4.7,
+            "skills": ["Java", "OOP", "Mentoring"],
+            "price": {
+                "min": 0,
+                "max": 300
+            },
+            "description": "I'm a first-year student looking for someone to help me understand Java and OOP concepts.",
+            "createdAt": "2025-07-10T08:00:00Z",
+            "proofs": {
+                "files": {},
+                "links": []
+            }
+        },
+        {
+            "id": "post-002",
+            "type": "Offer",
+            "title": "Offering online English speaking lessons",
+            "author": {
+                "id": "user-002",
+                "name": "Pham Hong Hanh",
+                "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=PhamHongHanh",
+                "rating": 4.9,
+                "region": "Hà Nội"
+            },
+            "rating": 4.9,
+            "skills": ["English", "Speaking", "Teaching"],
+            "price": {
+                "min": 0,
+                "max": 250
+            },
+            "description": "I have an IELTS 8.0 and experience teaching communication English for students and professionals.",
+            "createdAt": "2025-07-09T14:20:00Z",
+            "proofs": {
+                "files": {},
+                "links": []
+            }
+        },
+        {
+            "id": "post-003",
+            "type": "Hire",
+            "title": "Need poster designer for school event",
+            "author": {
+                "id": "user-003",
+                "name": "Ngo Truong Giang",
+                "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=NgoTruongGiang",
+                "rating": 4.2,
+                "region": "Đà Nẵng"
+            },
+            "rating": 4.2,
+            "skills": ["Photoshop", "Illustrator", "Design"],
+            "price": {
+                "min": 0,
+                "max": 180
+            },
+            "description": "We need an attractive event poster. Deadline is within 3 days.",
+            "createdAt": "2025-07-08T17:45:00Z",
+            "proofs": {
+                "files": {},
+                "links": []
+            }
+        },
+        {
+            "id": "post-004",
+            "type": "Offer",
+            "title": "Build your personal portfolio with HTML/CSS",
+            "author": {
+                "id": "user-004",
+                "name": "Nguyen Thi Kim",
+                "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=NguyenThiKim",
+                "rating": 4.8,
+                "region": "Cần Thơ"
+            },
+            "rating": 4.8,
+            "skills": ["HTML", "CSS", "Portfolio"],
+            "price": {
+                "min": 0,
+                "max": 120
+            },
+            "description": "Step-by-step guidance to create a responsive personal portfolio.",
+            "createdAt": "2025-07-07T12:00:00Z",
+            "proofs": {
+                "files": {},
+                "links": []
+            }
+        },
+        {
+            "id": "post-005",
+            "type": "Hire",
+            "title": "Looking for an IT interview coach",
+            "author": {
+                "id": "user-005",
+                "name": "Tran Quoc Huy",
+                "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=TranQuocHuy",
+                "rating": 4,
+                "region": "Hải Phòng"
+            },
+            "rating": 4,
+            "skills": ["Interview", "IT", "Soft Skills"],
+            "price": {
+                "min": 0,
+                "max": 220
+            },
+            "description": "I need mock interviews in English for backend developer roles.",
+            "createdAt": "2025-07-06T19:00:00Z",
+            "proofs": {
+                "files": {},
+                "links": []
+            }
+        },
+        {
+            "id": "post-006",
+            "type": "Offer",
+            "title": "Writing tech blog content on demand",
+            "author": {
+                "id": "user-006",
+                "name": "Dang Thi Lan",
+                "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=DangThiLan",
+                "rating": 4.3,
+                "region": "Huế"
+            },
+            "rating": 4.3,
+            "skills": ["Content", "Writing", "Tech"],
+            "price": {
+                "min": 0,
+                "max": 90
+            },
+            "description": "Experienced in writing technical blog posts for various platforms.",
+            "createdAt": "2025-07-06T09:15:00Z",
+            "proofs": {
+                "files": {},
+                "links": []
+            }
+        },
+        {
+            "id": "post-007",
+            "type": "Hire",
+            "title": "Need video editor for short TikToks",
+            "author": {
+                "id": "user-007",
+                "name": "Phan Duy Anh",
+                "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=PhanDuyAnh",
+                "rating": 3.9,
+                "region": "Nha Trang"
+            },
+            "rating": 3.9,
+            "skills": ["CapCut", "Editing", "Video"],
+            "price": {
+                "min": 0,
+                "max": 130
+            },
+            "description": "Looking for trendy and engaging edits with captions under 60s.",
+            "createdAt": "2025-07-05T18:10:00Z",
+            "proofs": {
+                "files": {},
+                "links": []
+            }
+        },
+        {
+            "id": "post-008",
+            "type": "Offer",
+            "title": "Teaching Python from scratch",
+            "author": {
+                "id": "user-008",
+                "name": "Vu Thanh Tung",
+                "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=VuThanhTung",
+                "rating": 4.6,
+                "region": "Vũng Tàu"
+            },
+            "rating": 4.6,
+            "skills": ["Python", "Beginner", "Teaching"],
+            "price": {
+                "min": 0,
+                "max": 200
+            },
+            "description": "Project-based learning for Python beginners with simple explanations.",
+            "createdAt": "2025-07-05T10:00:00Z",
+            "proofs": {
+                "files": {},
+                "links": []
+            }
+        },
+        {
+            "id": "post-009",
+            "type": "Hire",
+            "title": "Looking for digital art teacher",
+            "author": {
+                "id": "user-009",
+                "name": "Ly Thi Mai",
+                "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=LyThiMai",
+                "rating": 3.5,
+                "region": "Bình Dương"
+            },
+            "rating": 3.5,
+            "skills": ["Digital Art", "Drawing", "Tablet"],
+            "price": {
+                "min": 0,
+                "max": 170
+            },
+            "description": "Need help with Clip Studio and Wacom tablet basics.",
+            "createdAt": "2025-07-04T20:30:00Z",
+            "proofs": {
+                "files": {},
+                "links": []
+            }
+        },
+        {
+            "id": "post-010",
+            "type": "Offer",
+            "title": "Professional presentation slide design",
+            "author": {
+                "id": "user-010",
+                "name": "Nguyen Khanh Linh",
+                "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=NguyenKhanhLinh",
+                "rating": 4.95,
+                "region": "Đồng Nai"
+            },
+            "rating": 4.95,
+            "skills": ["PowerPoint", "Design", "Presentation"],
+            "price": {
+                "min": 0,
+                "max": 110
+            },
+            "description": "Slides for reports, conferences, or startup pitches with premium quality.",
+            "createdAt": "2025-07-04T08:00:00Z",
+            "proofs": {
+                "files": {},
+                "links": []
+            }
+        },
+        {
+            "id": "«r2»",
+            "type": "Hire",
+            "title": "a",
+            "author": {
+                "id": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516"
+            },
+            "rating": 4.8,
+            "skills": ["Python", "Speaking"],
+            "price": {
+                "min": 0,
+                "max": 0
+            },
+            "description": "1",
+            "media": null,
+            "min": 1,
+            "max": 100,
+            "createdAt": "2025-07-14T14:58:15.926Z",
+            "proofs": {
+                "files": {},
+                "links": [
+                    "https://github.com/cybervinh2077/cuuDomConBackend/tree/master/user-acc-log-reg",
+                    "https://github.com/Skills-Trade/skills-trade"
+                ]
+            }
+        },
+        {
+            "id": "«r3»",
+            "type": "Hire",
+            "title": "a",
+            "author": {
+                "id": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516"
+            },
+            "rating": 4.8,
+            "skills": ["Python", "Speaking"],
+            "price": {
+                "min": 0,
+                "max": 0
+            },
+            "description": "1",
+            "media": null,
+            "min": 1,
+            "max": 100,
+            "createdAt": "2025-07-14T14:58:37.350Z",
+            "proofs": {
+                "files": {},
+                "links": [
+                    "https://github.com/cybervinh2077/cuuDomConBackend/tree/master/user-acc-log-reg",
+                    "https://github.com/Skills-Trade/skills-trade"
+                ]
+            }
+        },
+        {
+            "id": "«r4»",
+            "type": "Hire",
+            "title": "a",
+            "author": {
+                "id": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+                "name": "Lê Đức Anh"
+            },
+            "rating": 4.8,
+            "skills": ["Python", "Interview"],
+            "price": {
+                "min": 0,
+                "max": 1
+            },
+            "description": "abc",
+            "media": null,
+            "min": 1,
+            "max": 100,
+            "createdAt": "2025-07-14T16:10:17.183Z",
+            "proofs": {
+                "files": {},
+                "links": []
+            }
+        },
+        {
+            "id": "«r0»",
+            "type": "Hire",
+            "title": "a",
+            "author": {
+                "id": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+                "name": "Lê Đức Anh"
+            },
+            "rating": 4.8,
+            "skills": ["Python", "Speaking"],
+            "price": {
+                "min": 1,
+                "max": 100
+            },
+            "description": "dsàdsà",
+            "media": null,
+            "createdAt": "2025-07-14T16:11:22.174Z",
+            "proofs": {
+                "files": {},
+                "links": [
+                    "https://github.com/",
+                    "https://github.com/Skills-Trade/skills-trade",
+                    "https://github.com/Skills-Trade/to-do-app-react",
+                    "https://github.com/cybervinh2077/cuuDomConBackend/tree/master/user-acc-log-reg"
+                ]
+            }
+        },
+        {
+            "id": "«r2»",
+            "type": "Hire",
+            "title": "1",
+            "author": {
+                "id": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+                "name": "Lê Đức Anh"
+            },
+            "rating": 4.8,
+            "skills": ["OOP", "Teaching"],
+            "price": {
+                "min": 0,
+                "max": 100
+            },
+            "description": "100",
+            "media": null,
+            "createdAt": "2025-07-16T00:48:43.482Z",
+            "proofs": {
+                "files": {},
+                "links": []
+            }
+        },
+        {
+            "id": "«r0»",
+            "type": "Hire",
+            "title": "1",
+            "author": {
+                "id": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+                "name": "Lê Đức Anh"
+            },
+            "rating": 4.8,
+            "skills": ["OOP"],
+            "price": {
+                "min": 0,
+                "max": 1
+            },
+            "description": "1000",
+            "media": null,
+            "createdAt": "2025-07-16T00:50:20.284Z",
+            "proofs": {
+                "files": {},
+                "links": []
+            }
+        },
+        {
+            "id": "«r0»",
+            "type": "Offer",
+            "title": "123",
+            "author": {
+                "id": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+                "name": "Lê Đức Anh"
+            },
+            "rating": 4.8,
+            "skills": ["OOP", "Speaking"],
+            "price": {
+                "min": 0,
+                "max": 100
+            },
+            "description": "141441",
+            "media": null,
+            "createdAt": "2025-07-16T06:37:29.615Z",
+            "proofs": {
+                "files": {},
+                "links": []
+            }
+        },
+        {
+            "id": "«r1»",
+            "type": "Hire",
+            "title": "1ret",
+            "author": {
+                "id": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+                "name": "Lê Đức Anh"
+            },
+            "rating": 4.8,
+            "skills": ["Mentoring"],
+            "price": {
+                "min": 0,
+                "max": 13414
+            },
+            "description": "sgágág",
+            "media": null,
+            "createdAt": "2025-07-16T07:17:38.441Z",
+            "proofs": {
+                "files": {},
+                "links": [
+                    "https://github.com/",
+                    "https://github.com/Garchomppy",
+                    "https://github.com/HyunDinh/D10-RT01",
+                    "https://chat.deepseek.com/a/chat/s/e02efba7-9ca2-4441-8f6f-cfaab871e1d2"
+                ]
+            }
+        },
+        {
+            "id": "«r0»",
+            "type": "Hire",
+            "title": "124412",
+            "author": {
+                "id": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+                "name": "Lê Đức Anh"
+            },
+            "rating": 4.8,
+            "skills": ["OOP", "Interview"],
+            "price": {
+                "min": 0,
+                "max": 13141
+            },
+            "description": "sdsagdág",
+            "media": null,
+            "createdAt": "2025-07-16T08:13:34.294Z",
+            "proofs": {
+                "files": {},
+                "links": ["https://github.com/"]
+            }
+        },
+        {
+            "id": "«r0»",
+            "type": "Hire",
+            "title": "Title",
+            "author": {
+                "id": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+                "name": "Lê Đức Anh"
+            },
+            "rating": 4.8,
+            "skills": ["OOP", "Interview", "Speaking"],
+            "price": {
+                "min": 10,
+                "max": 100
+            },
+            "description": "This is description.",
+            "media": null,
+            "createdAt": "2025-07-16T08:19:14.115Z",
+            "proofs": {
+                "files": {},
+                "links": ["https://github.com/ldanh270/skills-trade/compare/Upload?expand=1"]
+            }
         }
-      ],
-      "likedPosts": [
-        "post-007",
-        "post-006",
-        "post-009",
-        "post-010"
-      ],
-      "dislikedPosts": [
-        "post-004"
-      ],
-      "savedPosts": [
-        "post-009",
-        "post-010"
-      ],
-      "follower": [
+    ],
+    "users": [
         {
-          "id": "user-002",
-          "fullName": "Nguyễn Văn A",
-          "status": "offline",
-          "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=NguyenVanA"
+            "id": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+            "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=LeDucAnh",
+            "fullName": "Lê Đức Anh",
+            "email": "leducanh@example.com",
+            "username": "leducanh",
+            "password": "daylapassword",
+            "phone": "0901234567",
+            "region": "Hồ Chí Minh",
+            "rating": 4.8,
+            "point": 1200,
+            "status": "online",
+            "posts": [],
+            "transactions": ["tx-001", "tx-002"],
+            "notifications": [
+                {
+                    "id": "noti-001",
+                    "message": "You received a new message",
+                    "read": false,
+                    "createdAt": "2025-07-11T12:00:00Z"
+                }
+            ],
+            "likedPosts": ["post-007", "post-006", "post-009", "post-010"],
+            "dislikedPosts": ["post-004"],
+            "savedPosts": ["post-009", "post-010"],
+            "follower": [
+                {
+                    "id": "user-002",
+                    "fullName": "Nguyễn Văn A",
+                    "status": "offline",
+                    "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=NguyenVanA"
+                },
+                {
+                    "id": "user-003",
+                    "fullName": "Trần Thị B",
+                    "status": "online",
+                    "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=TranThiB"
+                }
+            ],
+            "following": [
+                {
+                    "id": "user-002",
+                    "fullName": "Nguyễn Văn A",
+                    "status": "offline",
+                    "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=NguyenVanA"
+                },
+                {
+                    "id": "user-003",
+                    "fullName": "Trần Thị B",
+                    "status": "online",
+                    "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=TranThiB"
+                },
+                {
+                    "id": "user-004",
+                    "fullName": "Phạm Văn C",
+                    "status": "online",
+                    "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=PhamVanC"
+                },
+                {
+                    "id": "user-005",
+                    "fullName": "Lê Thị D",
+                    "status": "offline",
+                    "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=LeThiD"
+                }
+            ]
         },
         {
-          "id": "user-003",
-          "fullName": "Trần Thị B",
-          "status": "online",
-          "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=TranThiB"
+            "id": "user-002",
+            "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=PhamHongHanh",
+            "fullName": "Phạm Hồng Hạnh",
+            "email": "phamhonghanh@example.com",
+            "username": "phamhonghanh",
+            "password": "$2a$10$FWLuunwIFoTRActzqAwOC.SwFKehpKRBKtHwbbC6Pd.iXjig0Jy3u",
+            "phone": "0901234568",
+            "region": "Hà Nội",
+            "rating": 4.9,
+            "point": 850,
+            "status": "online",
+            "posts": ["post-002"],
+            "transactions": ["tx-003", "tx-004"],
+            "notifications": [
+                {
+                    "id": "noti-002",
+                    "message": "Your post received a new offer",
+                    "read": false,
+                    "createdAt": "2025-07-11T14:00:00Z"
+                }
+            ],
+            "likedPosts": ["post-001", "post-003", "post-005"],
+            "dislikedPosts": [],
+            "savedPosts": ["post-001", "post-003"],
+            "follower": [
+                {
+                    "id": "user-001",
+                    "fullName": "Lê Minh Đức",
+                    "status": "offline",
+                    "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=LeMinhDuc"
+                }
+            ],
+            "following": [
+                {
+                    "id": "user-001",
+                    "fullName": "Lê Minh Đức",
+                    "status": "offline",
+                    "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=LeMinhDuc"
+                }
+            ]
+        },
+        {
+            "id": "user-003",
+            "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=NgoTruongGiang",
+            "fullName": "Ngô Trường Giang",
+            "email": "ngotruonggiang@example.com",
+            "username": "ngotruonggiang",
+            "password": "$2a$10$K6cZmXndPq1dx/AVjQLJwOTjX9aQZg2y1Z6rBFTwRrOd59h8n/ONy",
+            "phone": "0901234569",
+            "region": "Đà Nẵng",
+            "rating": 4.2,
+            "point": 650,
+            "status": "offline",
+            "posts": ["post-003"],
+            "transactions": ["tx-005"],
+            "notifications": [
+                {
+                    "id": "noti-003",
+                    "message": "Someone liked your post",
+                    "read": true,
+                    "createdAt": "2025-07-10T10:00:00Z"
+                }
+            ],
+            "likedPosts": ["post-002", "post-004"],
+            "dislikedPosts": ["post-007"],
+            "savedPosts": ["post-002"],
+            "follower": [],
+            "following": [
+                {
+                    "id": "user-002",
+                    "fullName": "Phạm Hồng Hạnh",
+                    "status": "online",
+                    "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=PhamHongHanh"
+                }
+            ]
+        },
+        {
+            "id": "user-004",
+            "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=NguyenThiKim",
+            "fullName": "Nguyễn Thị Kim",
+            "email": "nguyenthiKim@example.com",
+            "username": "nguyenthiKim",
+            "password": "$2a$10$Sx9PpH1RIbE/7rZwSnDnTu1.3cZc7QUJnyGxYqhvjlqX41wQpJ1N2",
+            "phone": "0901234570",
+            "region": "Cần Thơ",
+            "rating": 4.8,
+            "point": 920,
+            "status": "online",
+            "posts": ["post-004"],
+            "transactions": ["tx-006", "tx-007"],
+            "notifications": [
+                {
+                    "id": "noti-004",
+                    "message": "New message from client",
+                    "read": false,
+                    "createdAt": "2025-07-11T16:00:00Z"
+                }
+            ],
+            "likedPosts": ["post-001", "post-005", "post-008"],
+            "dislikedPosts": ["post-009"],
+            "savedPosts": ["post-005", "post-008"],
+            "follower": [
+                {
+                    "id": "user-005",
+                    "fullName": "Trần Quốc Huy",
+                    "status": "online",
+                    "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=TranQuocHuy"
+                }
+            ],
+            "following": [
+                {
+                    "id": "user-005",
+                    "fullName": "Trần Quốc Huy",
+                    "status": "online",
+                    "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=TranQuocHuy"
+                }
+            ]
+        },
+        {
+            "id": "user-005",
+            "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=TranQuocHuy",
+            "fullName": "Trần Quốc Huy",
+            "email": "tranquochuy@example.com",
+            "username": "tranquochuy",
+            "password": "$2a$10$FWLuunwIFoTRActzqAwOC.SwFKehpKRBKtHwbbC6Pd.iXjig0Jy3u",
+            "phone": "0901234571",
+            "region": "Hải Phòng",
+            "rating": 4,
+            "point": 480,
+            "status": "online",
+            "posts": ["post-005"],
+            "transactions": ["tx-008"],
+            "notifications": [
+                {
+                    "id": "noti-005",
+                    "message": "Your interview request was accepted",
+                    "read": false,
+                    "createdAt": "2025-07-11T18:00:00Z"
+                }
+            ],
+            "likedPosts": ["post-004", "post-006"],
+            "dislikedPosts": ["post-003"],
+            "savedPosts": ["post-004"],
+            "follower": [
+                {
+                    "id": "user-004",
+                    "fullName": "Nguyễn Thị Kim",
+                    "status": "online",
+                    "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=NguyenThiKim"
+                }
+            ],
+            "following": [
+                {
+                    "id": "user-004",
+                    "fullName": "Nguyễn Thị Kim",
+                    "status": "online",
+                    "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=NguyenThiKim"
+                }
+            ]
+        },
+        {
+            "id": "user-006",
+            "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=DangThiLan",
+            "fullName": "Đặng Thị Lan",
+            "email": "dangthilan@example.com",
+            "username": "dangthilan",
+            "password": "$2a$10$K6cZmXndPq1dx/AVjQLJwOTjX9aQZg2y1Z6rBFTwRrOd59h8n/ONy",
+            "phone": "0901234572",
+            "region": "Huế",
+            "rating": 4.3,
+            "point": 720,
+            "status": "offline",
+            "posts": ["post-006"],
+            "transactions": ["tx-009"],
+            "notifications": [
+                {
+                    "id": "noti-006",
+                    "message": "New blog post request",
+                    "read": true,
+                    "createdAt": "2025-07-10T15:00:00Z"
+                }
+            ],
+            "likedPosts": ["post-007", "post-010"],
+            "dislikedPosts": [],
+            "savedPosts": ["post-007"],
+            "follower": [],
+            "following": []
+        },
+        {
+            "id": "user-007",
+            "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=PhanDuyAnh",
+            "fullName": "Phan Duy Anh",
+            "email": "phanduyanh@example.com",
+            "username": "phanduyanh",
+            "password": "$2a$10$Sx9PpH1RIbE/7rZwSnDnTu1.3cZc7QUJnyGxYqhvjlqX41wQpJ1N2",
+            "phone": "0901234573",
+            "region": "Nha Trang",
+            "rating": 3.9,
+            "point": 350,
+            "status": "offline",
+            "posts": ["post-007"],
+            "transactions": ["tx-010"],
+            "notifications": [
+                {
+                    "id": "noti-007",
+                    "message": "Video editing project completed",
+                    "read": true,
+                    "createdAt": "2025-07-09T20:00:00Z"
+                }
+            ],
+            "likedPosts": ["post-006", "post-008"],
+            "dislikedPosts": ["post-001"],
+            "savedPosts": ["post-006"],
+            "follower": [],
+            "following": []
+        },
+        {
+            "id": "user-008",
+            "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=VuThanhTung",
+            "fullName": "Vũ Thanh Tùng",
+            "email": "vuthanhtung@example.com",
+            "username": "vuthanhtung",
+            "password": "$2a$10$FWLuunwIFoTRActzqAwOC.SwFKehpKRBKtHwbbC6Pd.iXjig0Jy3u",
+            "phone": "0901234574",
+            "region": "Vũng Tàu",
+            "rating": 4.6,
+            "point": 880,
+            "status": "online",
+            "posts": ["post-008"],
+            "transactions": ["tx-011", "tx-012"],
+            "notifications": [
+                {
+                    "id": "noti-008",
+                    "message": "New student enrolled in Python course",
+                    "read": false,
+                    "createdAt": "2025-07-11T19:00:00Z"
+                }
+            ],
+            "likedPosts": ["post-001", "post-004", "post-007"],
+            "dislikedPosts": [],
+            "savedPosts": ["post-001", "post-004"],
+            "follower": [
+                {
+                    "id": "user-009",
+                    "fullName": "Lý Thị Mai",
+                    "status": "offline",
+                    "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=LyThiMai"
+                }
+            ],
+            "following": [
+                {
+                    "id": "user-009",
+                    "fullName": "Lý Thị Mai",
+                    "status": "offline",
+                    "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=LyThiMai"
+                }
+            ]
+        },
+        {
+            "id": "user-009",
+            "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=LyThiMai",
+            "fullName": "Lý Thị Mai",
+            "email": "lythimai@example.com",
+            "username": "lythimai",
+            "password": "$2a$10$K6cZmXndPq1dx/AVjQLJwOTjX9aQZg2y1Z6rBFTwRrOd59h8n/ONy",
+            "phone": "0901234575",
+            "region": "Bình Dương",
+            "rating": 3.5,
+            "point": 280,
+            "status": "offline",
+            "posts": ["post-009"],
+            "transactions": ["tx-013"],
+            "notifications": [
+                {
+                    "id": "noti-009",
+                    "message": "Digital art lesson scheduled",
+                    "read": false,
+                    "createdAt": "2025-07-11T20:00:00Z"
+                }
+            ],
+            "likedPosts": ["post-008", "post-010"],
+            "dislikedPosts": ["post-004"],
+            "savedPosts": ["post-008"],
+            "follower": [
+                {
+                    "id": "user-008",
+                    "fullName": "Vũ Thanh Tùng",
+                    "status": "online",
+                    "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=VuThanhTung"
+                }
+            ],
+            "following": [
+                {
+                    "id": "user-008",
+                    "fullName": "Vũ Thanh Tùng",
+                    "status": "online",
+                    "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=VuThanhTung"
+                }
+            ]
+        },
+        {
+            "id": "user-010",
+            "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=NguyenKhanhLinh",
+            "fullName": "Nguyễn Khánh Linh",
+            "email": "nguyenkhanhlinh@example.com",
+            "username": "nguyenkhanhlinh",
+            "password": "$2a$10$Sx9PpH1RIbE/7rZwSnDnTu1.3cZc7QUJnyGxYqhvjlqX41wQpJ1N2",
+            "phone": "0901234576",
+            "region": "Đồng Nai",
+            "rating": 4.95,
+            "point": 1500,
+            "status": "online",
+            "posts": ["post-010"],
+            "transactions": ["tx-014", "tx-015", "tx-016"],
+            "notifications": [
+                {
+                    "id": "noti-010",
+                    "message": "Presentation design completed successfully",
+                    "read": true,
+                    "createdAt": "2025-07-11T21:00:00Z"
+                }
+            ],
+            "likedPosts": ["post-001", "post-002", "post-003"],
+            "dislikedPosts": [],
+            "savedPosts": ["post-001", "post-002"],
+            "follower": [
+                {
+                    "id": "user-001",
+                    "fullName": "Lê Minh Đức",
+                    "status": "offline",
+                    "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=LeMinhDuc"
+                },
+                {
+                    "id": "user-002",
+                    "fullName": "Phạm Hồng Hạnh",
+                    "status": "online",
+                    "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=PhamHongHanh"
+                }
+            ],
+            "following": [
+                {
+                    "id": "user-001",
+                    "fullName": "Lê Minh Đức",
+                    "status": "offline",
+                    "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=LeMinhDuc"
+                },
+                {
+                    "id": "user-002",
+                    "fullName": "Phạm Hồng Hạnh",
+                    "status": "online",
+                    "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=PhamHongHanh"
+                }
+            ]
         }
-      ],
-      "following": [
+    ],
+    "chats": [
         {
-          "id": "user-002",
-          "fullName": "Nguyễn Văn A",
-          "status": "offline",
-          "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=NguyenVanA"
+            "id": "chat-001",
+            "participants": ["1a2b3c4d-5e6f-7a8b-9c0d-111213141516", "user-002"],
+            "messages": [
+                {
+                    "senderId": "user-002",
+                    "content": "Chào bạn!",
+                    "timestamp": "2025-07-11T13:00:00Z"
+                },
+                {
+                    "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+                    "content": "Xin chào, cần hỗ trợ gì?",
+                    "timestamp": "2025-07-11T13:01:00Z"
+                },
+                {
+                    "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+                    "content": "gm",
+                    "timestamp": "2025-07-11T08:23:43.102Z"
+                },
+                {
+                    "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+                    "content": "sao",
+                    "timestamp": "2025-07-11T08:23:46.384Z"
+                },
+                {
+                    "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+                    "content": "j",
+                    "timestamp": "2025-07-11T08:23:48.400Z"
+                },
+                {
+                    "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+                    "content": "k",
+                    "timestamp": "2025-07-11T08:23:49.304Z"
+                },
+                {
+                    "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+                    "content": "j",
+                    "timestamp": "2025-07-11T08:23:50.576Z"
+                },
+                {
+                    "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+                    "content": "g",
+                    "timestamp": "2025-07-11T08:23:52.043Z"
+                },
+                {
+                    "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+                    "content": "f",
+                    "timestamp": "2025-07-11T08:23:53.256Z"
+                },
+                {
+                    "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+                    "content": "k",
+                    "timestamp": "2025-07-11T08:23:54.336Z"
+                },
+                {
+                    "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+                    "content": "g",
+                    "timestamp": "2025-07-11T08:23:55.424Z"
+                },
+                {
+                    "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+                    "content": "j",
+                    "timestamp": "2025-07-11T08:23:57.856Z"
+                },
+                {
+                    "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+                    "content": "âfsdagdsagsadg",
+                    "timestamp": "2025-07-11T13:16:14.601Z"
+                },
+                {
+                    "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+                    "content": "hi",
+                    "timestamp": "2025-07-12T09:24:07.994Z"
+                },
+                {
+                    "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+                    "content": "test",
+                    "timestamp": "2025-07-12T09:24:38.642Z"
+                },
+                {
+                    "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+                    "content": "zo",
+                    "timestamp": "2025-07-12T09:44:25.384Z"
+                },
+                {
+                    "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+                    "content": "hi",
+                    "timestamp": "2025-07-12T09:46:51.697Z"
+                },
+                {
+                    "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+                    "content": "gm",
+                    "timestamp": "2025-07-12T09:47:04.209Z"
+                },
+                {
+                    "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+                    "content": "test",
+                    "timestamp": "2025-07-12T12:42:20.052Z"
+                },
+                {
+                    "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+                    "content": "Hi",
+                    "timestamp": "2025-07-12T16:35:54.045Z"
+                },
+                {
+                    "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+                    "content": "hello",
+                    "timestamp": "2025-07-12T16:38:17.887Z"
+                },
+                {
+                    "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+                    "content": "ok",
+                    "timestamp": "2025-07-18T22:08:17.778Z"
+                }
+            ]
         },
         {
-          "id": "user-003",
-          "fullName": "Trần Thị B",
-          "status": "online",
-          "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=TranThiB"
+            "id": "c9e7",
+            "participants": ["1a2b3c4d-5e6f-7a8b-9c0d-111213141516", "user-005"],
+            "messages": [
+                {
+                    "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+                    "content": "a",
+                    "timestamp": "2025-07-11T07:33:01.518Z"
+                },
+                {
+                    "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+                    "content": "a",
+                    "timestamp": "2025-07-11T13:28:10.853Z"
+                },
+                {
+                    "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+                    "content": "hi",
+                    "timestamp": "2025-07-11T13:38:39.900Z"
+                }
+            ]
         },
         {
-          "id": "user-004",
-          "fullName": "Phạm Văn C",
-          "status": "online",
-          "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=PhamVanC"
+            "id": "c0fb",
+            "participants": ["1a2b3c4d-5e6f-7a8b-9c0d-111213141516", "user-003"],
+            "messages": [
+                {
+                    "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+                    "content": "gm",
+                    "timestamp": "2025-07-11T07:33:05.933Z"
+                },
+                {
+                    "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+                    "content": "Abc",
+                    "timestamp": "2025-07-12T16:35:58.074Z"
+                },
+                {
+                    "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+                    "content": "gm",
+                    "timestamp": "2025-07-12T16:36:04.861Z"
+                },
+                {
+                    "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+                    "content": "hi",
+                    "timestamp": "2025-07-12T16:38:22.276Z"
+                }
+            ]
         },
         {
-          "id": "user-005",
-          "fullName": "Lê Thị D",
-          "status": "offline",
-          "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=LeThiD"
+            "id": "6b54",
+            "participants": ["1a2b3c4d-5e6f-7a8b-9c0d-111213141516", "user-004"],
+            "messages": [
+                {
+                    "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
+                    "content": "s",
+                    "timestamp": "2025-07-11T13:26:44.243Z"
+                }
+            ]
         }
-      ]
-    },
-    {
-      "id": "user-002",
-      "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=PhamHongHanh",
-      "fullName": "Phạm Hồng Hạnh",
-      "email": "phamhonghanh@example.com",
-      "username": "phamhonghanh",
-      "password": "$2a$10$FWLuunwIFoTRActzqAwOC.SwFKehpKRBKtHwbbC6Pd.iXjig0Jy3u",
-      "phone": "0901234568",
-      "region": "Hà Nội",
-      "rating": 4.9,
-      "point": 850,
-      "status": "online",
-      "posts": [
-        "post-002"
-      ],
-      "transactions": [
-        "tx-003",
-        "tx-004"
-      ],
-      "notifications": [
+    ],
+    "skills": [
         {
-          "id": "noti-002",
-          "message": "Your post received a new offer",
-          "read": false,
-          "createdAt": "2025-07-11T14:00:00Z"
+            "label": "Programming",
+            "options": [
+                {
+                    "value": "Java",
+                    "label": "Java"
+                },
+                {
+                    "value": "OOP",
+                    "label": "OOP"
+                },
+                {
+                    "value": "Python",
+                    "label": "Python"
+                }
+            ],
+            "id": "4be3"
+        },
+        {
+            "label": "Soft Skills",
+            "options": [
+                {
+                    "value": "Mentoring",
+                    "label": "Mentoring"
+                },
+                {
+                    "value": "Teaching",
+                    "label": "Teaching"
+                },
+                {
+                    "value": "Interview",
+                    "label": "Interview"
+                },
+                {
+                    "value": "Speaking",
+                    "label": "Speaking"
+                },
+                {
+                    "value": "Beginner",
+                    "label": "Beginner"
+                }
+            ],
+            "id": "9457"
+        },
+        {
+            "label": "Design",
+            "options": [
+                {
+                    "value": "Photoshop",
+                    "label": "Photoshop"
+                },
+                {
+                    "value": "Illustrator",
+                    "label": "Illustrator"
+                },
+                {
+                    "value": "Design",
+                    "label": "Design"
+                },
+                {
+                    "value": "Portfolio",
+                    "label": "Portfolio"
+                },
+                {
+                    "value": "Digital Art",
+                    "label": "Digital Art"
+                },
+                {
+                    "value": "Drawing",
+                    "label": "Drawing"
+                },
+                {
+                    "value": "Tablet",
+                    "label": "Tablet"
+                },
+                {
+                    "value": "PowerPoint",
+                    "label": "PowerPoint"
+                },
+                {
+                    "value": "Presentation",
+                    "label": "Presentation"
+                }
+            ],
+            "id": "1666"
+        },
+        {
+            "label": "Video & Content",
+            "options": [
+                {
+                    "value": "CapCut",
+                    "label": "CapCut"
+                },
+                {
+                    "value": "Editing",
+                    "label": "Editing"
+                },
+                {
+                    "value": "Video",
+                    "label": "Video"
+                },
+                {
+                    "value": "Content",
+                    "label": "Content"
+                },
+                {
+                    "value": "Writing",
+                    "label": "Writing"
+                },
+                {
+                    "value": "Tech",
+                    "label": "Tech"
+                }
+            ],
+            "id": "6856"
         }
-      ],
-      "likedPosts": [
-        "post-001",
-        "post-003",
-        "post-005"
-      ],
-      "dislikedPosts": [],
-      "savedPosts": [
-        "post-001",
-        "post-003"
-      ],
-      "follower": [
-        {
-          "id": "user-001",
-          "fullName": "Lê Minh Đức",
-          "status": "offline",
-          "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=LeMinhDuc"
-        }
-      ],
-      "following": [
-        {
-          "id": "user-001",
-          "fullName": "Lê Minh Đức",
-          "status": "offline",
-          "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=LeMinhDuc"
-        }
-      ]
-    },
-    {
-      "id": "user-003",
-      "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=NgoTruongGiang",
-      "fullName": "Ngô Trường Giang",
-      "email": "ngotruonggiang@example.com",
-      "username": "ngotruonggiang",
-      "password": "$2a$10$K6cZmXndPq1dx/AVjQLJwOTjX9aQZg2y1Z6rBFTwRrOd59h8n/ONy",
-      "phone": "0901234569",
-      "region": "Đà Nẵng",
-      "rating": 4.2,
-      "point": 650,
-      "status": "offline",
-      "posts": [
-        "post-003"
-      ],
-      "transactions": [
-        "tx-005"
-      ],
-      "notifications": [
-        {
-          "id": "noti-003",
-          "message": "Someone liked your post",
-          "read": true,
-          "createdAt": "2025-07-10T10:00:00Z"
-        }
-      ],
-      "likedPosts": [
-        "post-002",
-        "post-004"
-      ],
-      "dislikedPosts": [
-        "post-007"
-      ],
-      "savedPosts": [
-        "post-002"
-      ],
-      "follower": [],
-      "following": [
-        {
-          "id": "user-002",
-          "fullName": "Phạm Hồng Hạnh",
-          "status": "online",
-          "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=PhamHongHanh"
-        }
-      ]
-    },
-    {
-      "id": "user-004",
-      "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=NguyenThiKim",
-      "fullName": "Nguyễn Thị Kim",
-      "email": "nguyenthiKim@example.com",
-      "username": "nguyenthiKim",
-      "password": "$2a$10$Sx9PpH1RIbE/7rZwSnDnTu1.3cZc7QUJnyGxYqhvjlqX41wQpJ1N2",
-      "phone": "0901234570",
-      "region": "Cần Thơ",
-      "rating": 4.8,
-      "point": 920,
-      "status": "online",
-      "posts": [
-        "post-004"
-      ],
-      "transactions": [
-        "tx-006",
-        "tx-007"
-      ],
-      "notifications": [
-        {
-          "id": "noti-004",
-          "message": "New message from client",
-          "read": false,
-          "createdAt": "2025-07-11T16:00:00Z"
-        }
-      ],
-      "likedPosts": [
-        "post-001",
-        "post-005",
-        "post-008"
-      ],
-      "dislikedPosts": [
-        "post-009"
-      ],
-      "savedPosts": [
-        "post-005",
-        "post-008"
-      ],
-      "follower": [
-        {
-          "id": "user-005",
-          "fullName": "Trần Quốc Huy",
-          "status": "online",
-          "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=TranQuocHuy"
-        }
-      ],
-      "following": [
-        {
-          "id": "user-005",
-          "fullName": "Trần Quốc Huy",
-          "status": "online",
-          "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=TranQuocHuy"
-        }
-      ]
-    },
-    {
-      "id": "user-005",
-      "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=TranQuocHuy",
-      "fullName": "Trần Quốc Huy",
-      "email": "tranquochuy@example.com",
-      "username": "tranquochuy",
-      "password": "$2a$10$FWLuunwIFoTRActzqAwOC.SwFKehpKRBKtHwbbC6Pd.iXjig0Jy3u",
-      "phone": "0901234571",
-      "region": "Hải Phòng",
-      "rating": 4,
-      "point": 480,
-      "status": "online",
-      "posts": [
-        "post-005"
-      ],
-      "transactions": [
-        "tx-008"
-      ],
-      "notifications": [
-        {
-          "id": "noti-005",
-          "message": "Your interview request was accepted",
-          "read": false,
-          "createdAt": "2025-07-11T18:00:00Z"
-        }
-      ],
-      "likedPosts": [
-        "post-004",
-        "post-006"
-      ],
-      "dislikedPosts": [
-        "post-003"
-      ],
-      "savedPosts": [
-        "post-004"
-      ],
-      "follower": [
-        {
-          "id": "user-004",
-          "fullName": "Nguyễn Thị Kim",
-          "status": "online",
-          "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=NguyenThiKim"
-        }
-      ],
-      "following": [
-        {
-          "id": "user-004",
-          "fullName": "Nguyễn Thị Kim",
-          "status": "online",
-          "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=NguyenThiKim"
-        }
-      ]
-    },
-    {
-      "id": "user-006",
-      "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=DangThiLan",
-      "fullName": "Đặng Thị Lan",
-      "email": "dangthilan@example.com",
-      "username": "dangthilan",
-      "password": "$2a$10$K6cZmXndPq1dx/AVjQLJwOTjX9aQZg2y1Z6rBFTwRrOd59h8n/ONy",
-      "phone": "0901234572",
-      "region": "Huế",
-      "rating": 4.3,
-      "point": 720,
-      "status": "offline",
-      "posts": [
-        "post-006"
-      ],
-      "transactions": [
-        "tx-009"
-      ],
-      "notifications": [
-        {
-          "id": "noti-006",
-          "message": "New blog post request",
-          "read": true,
-          "createdAt": "2025-07-10T15:00:00Z"
-        }
-      ],
-      "likedPosts": [
-        "post-007",
-        "post-010"
-      ],
-      "dislikedPosts": [],
-      "savedPosts": [
-        "post-007"
-      ],
-      "follower": [],
-      "following": []
-    },
-    {
-      "id": "user-007",
-      "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=PhanDuyAnh",
-      "fullName": "Phan Duy Anh",
-      "email": "phanduyanh@example.com",
-      "username": "phanduyanh",
-      "password": "$2a$10$Sx9PpH1RIbE/7rZwSnDnTu1.3cZc7QUJnyGxYqhvjlqX41wQpJ1N2",
-      "phone": "0901234573",
-      "region": "Nha Trang",
-      "rating": 3.9,
-      "point": 350,
-      "status": "offline",
-      "posts": [
-        "post-007"
-      ],
-      "transactions": [
-        "tx-010"
-      ],
-      "notifications": [
-        {
-          "id": "noti-007",
-          "message": "Video editing project completed",
-          "read": true,
-          "createdAt": "2025-07-09T20:00:00Z"
-        }
-      ],
-      "likedPosts": [
-        "post-006",
-        "post-008"
-      ],
-      "dislikedPosts": [
-        "post-001"
-      ],
-      "savedPosts": [
-        "post-006"
-      ],
-      "follower": [],
-      "following": []
-    },
-    {
-      "id": "user-008",
-      "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=VuThanhTung",
-      "fullName": "Vũ Thanh Tùng",
-      "email": "vuthanhtung@example.com",
-      "username": "vuthanhtung",
-      "password": "$2a$10$FWLuunwIFoTRActzqAwOC.SwFKehpKRBKtHwbbC6Pd.iXjig0Jy3u",
-      "phone": "0901234574",
-      "region": "Vũng Tàu",
-      "rating": 4.6,
-      "point": 880,
-      "status": "online",
-      "posts": [
-        "post-008"
-      ],
-      "transactions": [
-        "tx-011",
-        "tx-012"
-      ],
-      "notifications": [
-        {
-          "id": "noti-008",
-          "message": "New student enrolled in Python course",
-          "read": false,
-          "createdAt": "2025-07-11T19:00:00Z"
-        }
-      ],
-      "likedPosts": [
-        "post-001",
-        "post-004",
-        "post-007"
-      ],
-      "dislikedPosts": [],
-      "savedPosts": [
-        "post-001",
-        "post-004"
-      ],
-      "follower": [
-        {
-          "id": "user-009",
-          "fullName": "Lý Thị Mai",
-          "status": "offline",
-          "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=LyThiMai"
-        }
-      ],
-      "following": [
-        {
-          "id": "user-009",
-          "fullName": "Lý Thị Mai",
-          "status": "offline",
-          "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=LyThiMai"
-        }
-      ]
-    },
-    {
-      "id": "user-009",
-      "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=LyThiMai",
-      "fullName": "Lý Thị Mai",
-      "email": "lythimai@example.com",
-      "username": "lythimai",
-      "password": "$2a$10$K6cZmXndPq1dx/AVjQLJwOTjX9aQZg2y1Z6rBFTwRrOd59h8n/ONy",
-      "phone": "0901234575",
-      "region": "Bình Dương",
-      "rating": 3.5,
-      "point": 280,
-      "status": "offline",
-      "posts": [
-        "post-009"
-      ],
-      "transactions": [
-        "tx-013"
-      ],
-      "notifications": [
-        {
-          "id": "noti-009",
-          "message": "Digital art lesson scheduled",
-          "read": false,
-          "createdAt": "2025-07-11T20:00:00Z"
-        }
-      ],
-      "likedPosts": [
-        "post-008",
-        "post-010"
-      ],
-      "dislikedPosts": [
-        "post-004"
-      ],
-      "savedPosts": [
-        "post-008"
-      ],
-      "follower": [
-        {
-          "id": "user-008",
-          "fullName": "Vũ Thanh Tùng",
-          "status": "online",
-          "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=VuThanhTung"
-        }
-      ],
-      "following": [
-        {
-          "id": "user-008",
-          "fullName": "Vũ Thanh Tùng",
-          "status": "online",
-          "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=VuThanhTung"
-        }
-      ]
-    },
-    {
-      "id": "user-010",
-      "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=NguyenKhanhLinh",
-      "fullName": "Nguyễn Khánh Linh",
-      "email": "nguyenkhanhlinh@example.com",
-      "username": "nguyenkhanhlinh",
-      "password": "$2a$10$Sx9PpH1RIbE/7rZwSnDnTu1.3cZc7QUJnyGxYqhvjlqX41wQpJ1N2",
-      "phone": "0901234576",
-      "region": "Đồng Nai",
-      "rating": 4.95,
-      "point": 1500,
-      "status": "online",
-      "posts": [
-        "post-010"
-      ],
-      "transactions": [
-        "tx-014",
-        "tx-015",
-        "tx-016"
-      ],
-      "notifications": [
-        {
-          "id": "noti-010",
-          "message": "Presentation design completed successfully",
-          "read": true,
-          "createdAt": "2025-07-11T21:00:00Z"
-        }
-      ],
-      "likedPosts": [
-        "post-001",
-        "post-002",
-        "post-003"
-      ],
-      "dislikedPosts": [],
-      "savedPosts": [
-        "post-001",
-        "post-002"
-      ],
-      "follower": [
-        {
-          "id": "user-001",
-          "fullName": "Lê Minh Đức",
-          "status": "offline",
-          "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=LeMinhDuc"
-        },
-        {
-          "id": "user-002",
-          "fullName": "Phạm Hồng Hạnh",
-          "status": "online",
-          "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=PhamHongHanh"
-        }
-      ],
-      "following": [
-        {
-          "id": "user-001",
-          "fullName": "Lê Minh Đức",
-          "status": "offline",
-          "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=LeMinhDuc"
-        },
-        {
-          "id": "user-002",
-          "fullName": "Phạm Hồng Hạnh",
-          "status": "online",
-          "avatar": "https://api.dicebear.com/7.x/initials/svg?seed=PhamHongHanh"
-        }
-      ]
-    }
-  ],
-  "chats": [
-    {
-      "id": "chat-001",
-      "participants": [
-        "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
-        "user-002"
-      ],
-      "messages": [
-        {
-          "senderId": "user-002",
-          "content": "Chào bạn!",
-          "timestamp": "2025-07-11T13:00:00Z"
-        },
-        {
-          "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
-          "content": "Xin chào, cần hỗ trợ gì?",
-          "timestamp": "2025-07-11T13:01:00Z"
-        },
-        {
-          "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
-          "content": "gm",
-          "timestamp": "2025-07-11T08:23:43.102Z"
-        },
-        {
-          "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
-          "content": "sao",
-          "timestamp": "2025-07-11T08:23:46.384Z"
-        },
-        {
-          "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
-          "content": "j",
-          "timestamp": "2025-07-11T08:23:48.400Z"
-        },
-        {
-          "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
-          "content": "k",
-          "timestamp": "2025-07-11T08:23:49.304Z"
-        },
-        {
-          "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
-          "content": "j",
-          "timestamp": "2025-07-11T08:23:50.576Z"
-        },
-        {
-          "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
-          "content": "g",
-          "timestamp": "2025-07-11T08:23:52.043Z"
-        },
-        {
-          "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
-          "content": "f",
-          "timestamp": "2025-07-11T08:23:53.256Z"
-        },
-        {
-          "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
-          "content": "k",
-          "timestamp": "2025-07-11T08:23:54.336Z"
-        },
-        {
-          "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
-          "content": "g",
-          "timestamp": "2025-07-11T08:23:55.424Z"
-        },
-        {
-          "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
-          "content": "j",
-          "timestamp": "2025-07-11T08:23:57.856Z"
-        },
-        {
-          "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
-          "content": "âfsdagdsagsadg",
-          "timestamp": "2025-07-11T13:16:14.601Z"
-        },
-        {
-          "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
-          "content": "hi",
-          "timestamp": "2025-07-12T09:24:07.994Z"
-        },
-        {
-          "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
-          "content": "test",
-          "timestamp": "2025-07-12T09:24:38.642Z"
-        },
-        {
-          "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
-          "content": "zo",
-          "timestamp": "2025-07-12T09:44:25.384Z"
-        },
-        {
-          "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
-          "content": "hi",
-          "timestamp": "2025-07-12T09:46:51.697Z"
-        },
-        {
-          "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
-          "content": "gm",
-          "timestamp": "2025-07-12T09:47:04.209Z"
-        },
-        {
-          "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
-          "content": "test",
-          "timestamp": "2025-07-12T12:42:20.052Z"
-        },
-        {
-          "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
-          "content": "Hi",
-          "timestamp": "2025-07-12T16:35:54.045Z"
-        },
-        {
-          "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
-          "content": "hello",
-          "timestamp": "2025-07-12T16:38:17.887Z"
-        },
-        {
-          "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
-          "content": "ok",
-          "timestamp": "2025-07-18T22:08:17.778Z"
-        }
-      ]
-    },
-    {
-      "id": "c9e7",
-      "participants": [
-        "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
-        "user-005"
-      ],
-      "messages": [
-        {
-          "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
-          "content": "a",
-          "timestamp": "2025-07-11T07:33:01.518Z"
-        },
-        {
-          "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
-          "content": "a",
-          "timestamp": "2025-07-11T13:28:10.853Z"
-        },
-        {
-          "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
-          "content": "hi",
-          "timestamp": "2025-07-11T13:38:39.900Z"
-        }
-      ]
-    },
-    {
-      "id": "c0fb",
-      "participants": [
-        "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
-        "user-003"
-      ],
-      "messages": [
-        {
-          "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
-          "content": "gm",
-          "timestamp": "2025-07-11T07:33:05.933Z"
-        },
-        {
-          "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
-          "content": "Abc",
-          "timestamp": "2025-07-12T16:35:58.074Z"
-        },
-        {
-          "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
-          "content": "gm",
-          "timestamp": "2025-07-12T16:36:04.861Z"
-        },
-        {
-          "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
-          "content": "hi",
-          "timestamp": "2025-07-12T16:38:22.276Z"
-        }
-      ]
-    },
-    {
-      "id": "6b54",
-      "participants": [
-        "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
-        "user-004"
-      ],
-      "messages": [
-        {
-          "senderId": "1a2b3c4d-5e6f-7a8b-9c0d-111213141516",
-          "content": "s",
-          "timestamp": "2025-07-11T13:26:44.243Z"
-        }
-      ]
-    }
-  ],
-  "skills": [
-    {
-      "label": "Programming",
-      "options": [
-        {
-          "value": "Java",
-          "label": "Java"
-        },
-        {
-          "value": "OOP",
-          "label": "OOP"
-        },
-        {
-          "value": "Python",
-          "label": "Python"
-        }
-      ],
-      "id": "4be3"
-    },
-    {
-      "label": "Soft Skills",
-      "options": [
-        {
-          "value": "Mentoring",
-          "label": "Mentoring"
-        },
-        {
-          "value": "Teaching",
-          "label": "Teaching"
-        },
-        {
-          "value": "Interview",
-          "label": "Interview"
-        },
-        {
-          "value": "Speaking",
-          "label": "Speaking"
-        },
-        {
-          "value": "Beginner",
-          "label": "Beginner"
-        }
-      ],
-      "id": "9457"
-    },
-    {
-      "label": "Design",
-      "options": [
-        {
-          "value": "Photoshop",
-          "label": "Photoshop"
-        },
-        {
-          "value": "Illustrator",
-          "label": "Illustrator"
-        },
-        {
-          "value": "Design",
-          "label": "Design"
-        },
-        {
-          "value": "Portfolio",
-          "label": "Portfolio"
-        },
-        {
-          "value": "Digital Art",
-          "label": "Digital Art"
-        },
-        {
-          "value": "Drawing",
-          "label": "Drawing"
-        },
-        {
-          "value": "Tablet",
-          "label": "Tablet"
-        },
-        {
-          "value": "PowerPoint",
-          "label": "PowerPoint"
-        },
-        {
-          "value": "Presentation",
-          "label": "Presentation"
-        }
-      ],
-      "id": "1666"
-    },
-    {
-      "label": "Video & Content",
-      "options": [
-        {
-          "value": "CapCut",
-          "label": "CapCut"
-        },
-        {
-          "value": "Editing",
-          "label": "Editing"
-        },
-        {
-          "value": "Video",
-          "label": "Video"
-        },
-        {
-          "value": "Content",
-          "label": "Content"
-        },
-        {
-          "value": "Writing",
-          "label": "Writing"
-        },
-        {
-          "value": "Tech",
-          "label": "Tech"
-        }
-      ],
-      "id": "6856"
-    }
-  ]
+    ]
 }

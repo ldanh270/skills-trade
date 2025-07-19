@@ -1,6 +1,6 @@
 import { formatDistanceToNow } from 'date-fns'
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 import { POST_TYPE } from '~/constants/objectAttributes/PostAttributes'
 
@@ -10,12 +10,25 @@ import StarRating from './StarRating/StarRating'
 import TagBadge from './TagBadge/TagBadge'
 
 const PostCard = ({ post, preview = false }) => {
+    const navigate = useNavigate()
     const timeAgo = post.createdAt
         ? formatDistanceToNow(new Date(post.createdAt), { addSuffix: true })
         : 'Unknown time'
 
+    const handleCardClick = (e) => {
+        // Nếu click vào reaction buttons, không chuyển hướng
+        if (e.target.closest('.reactions')) {
+            e.preventDefault()
+            e.stopPropagation()
+            return false
+        }
+
+        // Nếu click vào các phần khác, chuyển hướng sang PostDetail
+        navigate(`/posts/${post.id}`)
+    }
+
     return (
-        <div className={styles['container']}>
+        <div className={styles['container']} onClick={handleCardClick}>
             {/* Top metadata line: type, time, price, author */}
             <div className={styles['top']}>
                 <TagBadge name={POST_TYPE[post.type]} type="post" />
@@ -35,9 +48,7 @@ const PostCard = ({ post, preview = false }) => {
 
             {/* Title section */}
             <div className={styles['info']}>
-                <Link to={`/posts/${post.id}`} className={styles['title-link']}>
-                    <h2 className={styles['title']}>{post.title}</h2>
-                </Link>
+                <h2 className={styles['title']}>{post.title}</h2>
             </div>
 
             {/* Rating + Reactions */}
@@ -57,9 +68,7 @@ const PostCard = ({ post, preview = false }) => {
             </div>
 
             {/* Description */}
-            <Link to={`/posts/${post.id}`} className={styles['description-link']}>
-                <p className={styles['description']}>{post.description}</p>
-            </Link>
+            <p className={styles['description']}>{post.description}</p>
 
             {/* Proof links */}
             <div className={styles['imageWrapper']}>
