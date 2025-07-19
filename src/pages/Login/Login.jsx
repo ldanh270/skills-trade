@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { FaEnvelope, FaEye, FaEyeSlash, FaLock } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
 
 import styles from './Login.module.scss'
 
@@ -42,9 +43,9 @@ const Login = () => {
                             <input type="checkbox" id="remember" />
                             <label htmlFor="remember">Remember me</label>
                         </div>
-                        <a href="#" className={styles['forgot-password']} onClick={handleLinkClick}>
+                        <Link to="/reset-passwords" className={styles['forgot-password']}>
                             Forgot Password?
-                        </a>
+                        </Link>
                     </div>
 
                     <button
